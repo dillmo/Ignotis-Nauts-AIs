@@ -75,4 +75,4 @@ for his allies, and to use Black Hole Sun to escape and secure kills.
 **Cons:**
 * Not very clever with Teleport Beacon.
 
-**[Build](http://nautsbuilder.com/#Sentry_X-58/1230100130001113002011301100/26-1-25-3-3-3-23-23-21-2-2-5-23-19-19-16-16-16-8-14-9-9-9-13)**
+**[Build](http://nautsbuilder.com/#Sentry_X-58/1230100130001113002011301010/27-1-25-3-3-3-23-23-21-2-2-5-23-19-19-16-16-16-8-14-9-9-9-13)**
