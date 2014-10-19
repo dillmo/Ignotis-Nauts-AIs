@@ -1,0 +1,10 @@
+# Vim temporary files
+*~
+*.swp
+*.swo
+
+# Behaviour Tree Creator log
+ApplicationBehaviourCreator.log
+
+# Releases
+Release
