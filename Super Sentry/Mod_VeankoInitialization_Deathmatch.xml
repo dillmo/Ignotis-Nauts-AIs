@@ -1,0 +1,110 @@
+<?xml version="1.0" ?>
+<enemy>
+    <behaviour>
+        <root x="110" y="40">
+            <normal>
+                <condition id="getBoolEquals">
+                    <string id="id">init</string>
+                    <string id="value" values="yesno">yes</string>
+                    <normal>
+                        <condition id="isInNamedArea">
+                            <string id="area name">StartArea</string>
+                            <string id="team" values="ownenemy">OWN_TEAM</string>
+                            <string id="who" values="targetself">self</string>
+                            <normal>
+                                <condition id="getBoolEquals">
+                                    <string id="id">StartHealthSet</string>
+                                    <string id="value" values="yesno">no</string>
+                                    <normal>
+                                        <action id="adjustCharacterValue">
+                                            <string id="property" values="charactervaluesAdjustable">health percentage</string>
+                                            <float id="value">100.00</float>
+                                            <string id="adjust method" values="valueadjust">set</string>
+                                        </action>
+                                        <action id="setBool">
+                                            <string id="id">StartHealthSet</string>
+                                            <string id="value" values="flagtoggle">yes</string>
+                                        </action>
+                                    </normal>
+                                </condition>
+                            </normal>
+                        </condition>
+                    </normal>
+                </condition>
+                <condition id="getBoolEquals">
+                    <string id="id">init</string>
+                    <string id="value" values="yesno">no</string>
+                    <normal>
+                        <condition id="directionToEnemyBase">
+                            <string id="direction" values="forwardbackward">FORWARD</string>
+                            <normal>
+                                <action id="adjustCounter">
+                                    <string id="id">TeamNo</string>
+                                    <string id="value">0</string>
+                                    <string id="adjust method" values="valueadjust">set</string>
+                                </action>
+                            </normal>
+                            <else>
+                                <action id="adjustCounter">
+                                    <string id="id">TeamNo</string>
+                                    <string id="value">1</string>
+                                    <string id="adjust method" values="valueadjust">set</string>
+                                </action>
+                            </else>
+                        </condition>
+                        <condition id="checkCharacterValue">
+                            <string id="property" values="charactervaluesCheckable">AI skill</string>
+                            <float id="value">0.50</float>
+                            <string id="compare method" values="valuecompare">greater</string>
+                            <string id="check on" values="targetself">self</string>
+                            <string id="Comment">bot cheats</string>
+                            <normal>
+                                <action id="enableUpgrade">
+                                    <string id="condition" values="yesno">yes</string>
+                                    <string id="upgrade name">Coinregen1</string>
+                                </action>
+                            </normal>
+                        </condition>
+                        <action id="setBool">
+                            <string id="id">init</string>
+                            <string id="value" values="flagtoggle">yes</string>
+                        </action>
+                        <action id="adjustCounter">
+                            <string id="id">EnemiesChecked</string>
+                            <string id="value">0</string>
+                            <string id="adjust method" values="valueadjust">set</string>
+                        </action>
+                        <action id="adjustCounter">
+                            <string id="id">KnownEnemies</string>
+                            <string id="value">0</string>
+                            <string id="adjust method" values="valueadjust">set</string>
+                        </action>
+                        <action id="enableUpgrade">
+                            <string id="condition" values="yesno">yes</string>
+                            <string id="upgrade name">Bot</string>
+                        </action>
+                        <condition id="checkCharacterValue">
+                            <string id="property" values="charactervaluesCheckable">gold</string>
+                            <float id="value">0.00</float>
+                            <string id="compare method" values="valuecompare">equal</string>
+                            <string id="check on" values="targetself">self</string>
+                            <normal>
+                                <action id="adjustCharacterValue">
+                                    <string id="property" values="charactervaluesAdjustable">health</string>
+                                    <float id="value">100.00</float>
+                                    <string id="adjust method" values="valueadjust">set</string>
+                                </action>
+                            </normal>
+                        </condition>
+                        <action id="adjustCounter">
+                            <string id="id">setState</string>
+                            <string id="value">3</string>
+                            <string id="adjust method" values="valueadjust">set</string>
+                            <string id="Comment">advanceToFrontline(3)</string>
+                        </action>
+                    </normal>
+                </condition>
+            </normal>
+        </root>
+    </behaviour>
+</enemy>

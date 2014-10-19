@@ -1,0 +1,254 @@
+<?xml version="1.0" ?><enemy><behaviour><root x="110" y="40"><normal><condition id="isInNamedArea"><string id="area name">HEALAREA</string><string id="team" values="ownenemy">OWN_TEAM</string><string id="who" values="targetself">self</string><string id="Comment">Am I in shop?</string><normal><condition id="isUpgradeEnabled">
+<string id="condition" values="yesno">no</string>
+<string id="upgrade name">SummonerSpeed</string>
+<normal><condition id="canPayUpgrade">
+<string id="upgrade name">SummonerSpeed</string>
+<normal><action id="buyUpgrade">
+<string id="upgrade name">SummonerSpeed</string>
+</action></normal>
+</condition>
+</normal>
+<else>
+<condition id="isUpgradeEnabled">
+<string id="condition" values="yesno">no</string>
+<string id="upgrade name">SummonDrone</string>
+<normal><condition id="canPayUpgrade">
+<string id="upgrade name">SummonDrone</string>
+<normal><action id="buyUpgrade">
+<string id="upgrade name">SummonDrone</string>
+</action></normal>
+</condition>
+</normal>
+<else>
+<condition id="isUpgradeEnabled">
+<string id="condition" values="yesno">no</string>
+<string id="upgrade name">HealTotem</string>
+<normal><condition id="canPayUpgrade">
+<string id="upgrade name">HealTotem</string>
+<normal><action id="buyUpgrade">
+<string id="upgrade name">HealTotem</string>
+</action></normal>
+</condition>
+</normal>
+<else>
+<condition id="isUpgradeEnabled">
+<string id="condition" values="yesno">no</string>
+<string id="upgrade name">SummonerShotHealpower1</string>
+<normal><condition id="canPayUpgrade">
+<string id="upgrade name">SummonerShotHealpower1</string>
+<normal><action id="buyUpgrade">
+<string id="upgrade name">SummonerShotHealpower1</string>
+</action></normal>
+</condition>
+</normal>
+<else>
+<condition id="isUpgradeEnabled">
+<string id="condition" values="yesno">no</string>
+<string id="upgrade name">SummonerShotHealpower2</string>
+<normal><condition id="canPayUpgrade">
+<string id="upgrade name">SummonerShotHealpower2</string>
+<normal><action id="buyUpgrade">
+<string id="upgrade name">SummonerShotHealpower2</string>
+</action></normal>
+</condition>
+</normal>
+<else>
+<condition id="isUpgradeEnabled">
+<string id="condition" values="yesno">no</string>
+<string id="upgrade name">SummonerShotSolar1</string>
+<normal><condition id="canPayUpgrade">
+<string id="upgrade name">SummonerShotSolar1</string>
+<normal><action id="buyUpgrade">
+<string id="upgrade name">SummonerShotSolar1</string>
+</action></normal>
+</condition>
+</normal>
+<else>
+<condition id="isUpgradeEnabled">
+<string id="condition" values="yesno">no</string>
+<string id="upgrade name">PassiveSummonerCoinHeal</string>
+<normal><condition id="canPayUpgrade">
+<string id="upgrade name">PassiveSummonerCoinHeal</string>
+<normal><action id="buyUpgrade">
+<string id="upgrade name">PassiveSummonerCoinHeal</string>
+</action></normal>
+</condition>
+</normal>
+<else>
+<condition id="isUpgradeEnabled">
+<string id="condition" values="yesno">no</string>
+<string id="upgrade name">SummonerDroneAmount1</string>
+<normal><condition id="canPayUpgrade">
+<string id="upgrade name">SummonerDroneAmount1</string>
+<normal><action id="buyUpgrade">
+<string id="upgrade name">SummonerDroneAmount1</string>
+</action></normal>
+</condition>
+</normal>
+<else>
+<condition id="isUpgradeEnabled">
+<string id="condition" values="yesno">no</string>
+<string id="upgrade name">SummonerDroneExplode</string>
+<normal><condition id="canPayUpgrade">
+<string id="upgrade name">SummonerDroneExplode</string>
+<normal><action id="buyUpgrade">
+<string id="upgrade name">SummonerDroneExplode</string>
+</action></normal>
+</condition>
+</normal>
+<else>
+<condition id="isUpgradeEnabled">
+<string id="condition" values="yesno">no</string>
+<string id="upgrade name">SummonerDroneExplode2</string>
+<normal><condition id="canPayUpgrade">
+<string id="upgrade name">SummonerDroneExplode2</string>
+<normal><action id="buyUpgrade">
+<string id="upgrade name">SummonerDroneExplode2</string>
+</action></normal>
+</condition>
+</normal>
+<else>
+<condition id="isUpgradeEnabled">
+<string id="condition" values="yesno">no</string>
+<string id="upgrade name">addHealth1</string>
+<normal><condition id="canPayUpgrade">
+<string id="upgrade name">addHealth1</string>
+<normal><action id="buyUpgrade">
+<string id="upgrade name">addHealth1</string>
+</action></normal>
+</condition>
+</normal>
+<else>
+<condition id="isUpgradeEnabled">
+<string id="condition" values="yesno">no</string>
+<string id="upgrade name">SummonerHealtotemDamage</string>
+<normal><condition id="canPayUpgrade">
+<string id="upgrade name">SummonerHealtotemDamage</string>
+<normal><action id="buyUpgrade">
+<string id="upgrade name">SummonerHealtotemDamage</string>
+</action></normal>
+</condition>
+</normal>
+<else>
+<condition id="isUpgradeEnabled">
+<string id="condition" values="yesno">no</string>
+<string id="upgrade name">addHealth2</string>
+<normal><condition id="canPayUpgrade">
+<string id="upgrade name">addHealth2</string>
+<normal><action id="buyUpgrade">
+<string id="upgrade name">addHealth2</string>
+</action></normal>
+</condition>
+</normal>
+<else>
+<condition id="isUpgradeEnabled">
+<string id="condition" values="yesno">no</string>
+<string id="upgrade name">SummonerHealtotemDamage2</string>
+<normal><condition id="canPayUpgrade">
+<string id="upgrade name">SummonerHealtotemDamage2</string>
+<normal><action id="buyUpgrade">
+<string id="upgrade name">SummonerHealtotemDamage2</string>
+</action></normal>
+</condition>
+</normal>
+<else>
+<condition id="isUpgradeEnabled">
+<string id="condition" values="yesno">no</string>
+<string id="upgrade name">addHealth3</string>
+<normal><condition id="canPayUpgrade">
+<string id="upgrade name">addHealth3</string>
+<normal><action id="buyUpgrade">
+<string id="upgrade name">addHealth3</string>
+</action></normal>
+</condition>
+</normal>
+<else>
+<condition id="isUpgradeEnabled">
+<string id="condition" values="yesno">no</string>
+<string id="upgrade name">SummonerShotRange1</string>
+<normal><condition id="canPayUpgrade">
+<string id="upgrade name">SummonerShotRange1</string>
+<normal><action id="buyUpgrade">
+<string id="upgrade name">SummonerShotRange1</string>
+</action></normal>
+</condition>
+</normal>
+<else>
+<condition id="isUpgradeEnabled">
+<string id="condition" values="yesno">no</string>
+<string id="upgrade name">SummonerShotRange2</string>
+<normal><condition id="canPayUpgrade">
+<string id="upgrade name">SummonerShotRange2</string>
+<normal><action id="buyUpgrade">
+<string id="upgrade name">SummonerShotRange2</string>
+</action></normal>
+</condition>
+</normal>
+<else>
+<condition id="isUpgradeEnabled">
+<string id="condition" values="yesno">no</string>
+<string id="upgrade name">SummonerDroneDamage1</string>
+<normal><condition id="canPayUpgrade">
+<string id="upgrade name">SummonerDroneDamage1</string>
+<normal><action id="buyUpgrade">
+<string id="upgrade name">SummonerDroneDamage1</string>
+</action></normal>
+</condition>
+</normal>
+<else>
+<condition id="isUpgradeEnabled">
+<string id="condition" values="yesno">no</string>
+<string id="upgrade name">SummonerDroneDamage2</string>
+<normal><condition id="canPayUpgrade">
+<string id="upgrade name">SummonerDroneDamage2</string>
+<normal><action id="buyUpgrade">
+<string id="upgrade name">SummonerDroneDamage2</string>
+</action></normal>
+</condition>
+</normal>
+<else>
+<condition id="isUpgradeEnabled">
+<string id="condition" values="yesno">no</string>
+<string id="upgrade name">SummonerHealtotemDuration1</string>
+<normal><condition id="canPayUpgrade">
+<string id="upgrade name">SummonerHealtotemDuration1</string>
+<normal><action id="buyUpgrade">
+<string id="upgrade name">SummonerHealtotemDuration1</string>
+</action></normal>
+</condition>
+</normal>
+<else>
+<condition id="isUpgradeEnabled">
+<string id="condition" values="yesno">no</string>
+<string id="upgrade name">SummonerHealtotemDuration2</string>
+<normal><condition id="canPayUpgrade">
+<string id="upgrade name">SummonerHealtotemDuration2</string>
+<normal><action id="buyUpgrade">
+<string id="upgrade name">SummonerHealtotemDuration2</string>
+</action></normal>
+</condition>
+</normal>
+<else>
+<condition id="isUpgradeEnabled">
+<string id="condition" values="yesno">no</string>
+<string id="upgrade name">SummonerHealtotemHeal1</string>
+<normal><condition id="canPayUpgrade">
+<string id="upgrade name">SummonerHealtotemHeal1</string>
+<normal><action id="buyUpgrade">
+<string id="upgrade name">SummonerHealtotemHeal1</string>
+</action></normal>
+</condition>
+</normal>
+<else>
+<condition id="isUpgradeEnabled">
+<string id="condition" values="yesno">no</string>
+<string id="upgrade name">SummonerHealtotemHeal2</string>
+<normal><condition id="canPayUpgrade">
+<string id="upgrade name">SummonerHealtotemHeal2</string>
+<normal><action id="buyUpgrade">
+<string id="upgrade name">SummonerHealtotemHeal2</string>
+</action></normal>
+</condition>
+</normal>
+<else>
+</else></condition></else></condition></else></condition></else></condition></else></condition></else></condition></else></condition></else></condition></else></condition></else></condition></else></condition></else></condition></else></condition></else></condition></else></condition></else></condition></else></condition></else></condition></else></condition></else></condition></else></condition></else></condition></else></condition></normal></condition></normal></root></behaviour></enemy>

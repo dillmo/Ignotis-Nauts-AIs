@@ -1,0 +1,36 @@
+1	MyApp constructor starts
+2	Z:\home\dillon\Awesomenauts Behavior Creator
+3	Command Line:  0
+4	MyApp constructor ends
+5	NetworkManager constructor starts
+6	NetworkManager constructor ends
+7	BehaviourBlockExecute::open uses fullFileName: "../BehaviourCreator/ExampleAIs/VeankoInitialization.xml" CurrentFile is: ""
+8	BehaviourBlockExecute::open uses fullFileName: "../BehaviourCreator/ExampleAIs/VeankoLookingForHealthPacks.xml" CurrentFile is: ""
+9	BehaviourBlockExecute::open uses fullFileName: "../BehaviourCreator/ExampleAIs/VeankoCheckToSwitchLane.xml" CurrentFile is: ""
+10	BehaviourBlockExecute::open uses fullFileName: "../BehaviourCreator/ExampleAIs/VeankoStatusChecker.xml" CurrentFile is: ""
+11	BehaviourBlockExecute::open uses fullFileName: "../BehaviourCreator/ExampleAIs/VeankoFocusEnemy.xml" CurrentFile is: ""
+12	BehaviourBlockExecute::open uses fullFileName: "../BehaviourCreator/ExampleAIs/FN_FindAndTargetEnemiesLongRange.xml" CurrentFile is: ""
+13	BehaviourBlockExecute::open uses fullFileName: "../BehaviourCreator/ExampleAIs/VeankoFindAndTargetEnemiesShortRange.xml" CurrentFile is: ""
+14	BehaviourBlockExecute::open uses fullFileName: "../BehaviourCreator/ExampleAIs/FN_FindAndTargetEnemiesLongRange.xml" CurrentFile is: ""
+15	BehaviourBlockExecute::open uses fullFileName: "../BehaviourCreator/ExampleAIs/VeankoFindHealthPack.xml" CurrentFile is: ""
+16	BehaviourBlockExecute::open uses fullFileName: "../BehaviourCreator/ExampleAIs/FN_SelectFrontlineWaypoint.xml" CurrentFile is: ""
+17	BehaviourBlockExecute::open uses fullFileName: "../BehaviourCreator/ExampleAIs/VeankoFindAndTargetEnemiesShortRange.xml" CurrentFile is: ""
+18	BehaviourBlockExecute::open uses fullFileName: "../BehaviourCreator/ExampleAIs/VeankoFindAndTargetEnemiesShortRange.xml" CurrentFile is: ""
+19	BehaviourBlockExecute::open uses fullFileName: "../BehaviourCreator/ExampleAIs/FN_CheckIfEnemyTooClose_AllNauts.xml" CurrentFile is: ""
+20	BehaviourBlockExecute::open uses fullFileName: "../BehaviourCreator/ExampleAIs/FN_CheckIfEnemyInCombatRange_AllNauts.xml" CurrentFile is: ""
+21	BehaviourBlockExecute::open uses fullFileName: "../BehaviourCreator/ExampleAIs/VeankoFindAndTargetEnemiesShortRange.xml" CurrentFile is: ""
+22	BehaviourBlockExecute::open uses fullFileName: "../BehaviourCreator/ExampleAIs/FN_CheckIfEnemyInCombatRange_AllNauts.xml" CurrentFile is: ""
+23	BehaviourBlockExecute::open uses fullFileName: "../BehaviourCreator/ExampleAIs/FN_CheckIfEnemyTooClose_AllNauts.xml" CurrentFile is: ""
+24	BehaviourBlockExecute::open uses fullFileName: "../BehaviourCreator/ExampleAIs/VeankoFindAndTargetEnemiesShortRange.xml" CurrentFile is: ""
+25	BehaviourBlockExecute::open uses fullFileName: "../BehaviourCreator/ExampleAIs/VeankoFindAndTargetEnemiesShortRange.xml" CurrentFile is: ""
+26	BehaviourBlockExecute::open uses fullFileName: "../BehaviourCreator/ExampleAIs/VeankoFindAndTargetEnemiesShortRange.xml" CurrentFile is: ""
+27	BehaviourBlockExecute::open uses fullFileName: "../BehaviourCreator/ExampleAIs/VeankoFindAndTargetEnemiesShortRange.xml" CurrentFile is: ""
+28	BehaviourBlockExecute::open uses fullFileName: "../BehaviourCreator/ExampleAIs/VeankoFindAndTargetEnemiesShortRange.xml" CurrentFile is: ""
+29	BehaviourBlockExecute::open uses fullFileName: "../BehaviourCreator/ExampleAIs/VeankoFindHealthPack.xml" CurrentFile is: ""
+30	BehaviourBlockExecute::open uses fullFileName: "../BehaviourCreator/ExampleAIs/VeankoFindAndTargetEnemiesShortRange.xml" CurrentFile is: ""
+31	BehaviourBlockExecute::open uses fullFileName: "../BehaviourCreator/ExampleAIs/VeankoFindAndTargetEnemiesShortRange.xml" CurrentFile is: ""
+32	BehaviourBlockExecute::open uses fullFileName: "../BehaviourCreator/ExampleAIs/FN_SelectFrontlineWaypoint.xml" CurrentFile is: ""
+33	NetworkManager destructor starts
+34	NetworkManager destructor ends
+35	MyApp destructor starts
+36	MyApp destructor ends

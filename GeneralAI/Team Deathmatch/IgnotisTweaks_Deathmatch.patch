@@ -1,0 +1,22 @@
+diff --git a/Mod_VeankoAI_Deathmatch.xml b/Mod_VeankoAI_Deathmatch_IgnotisTweaks.xml
+index 9697364..f913516 100644
+--- a/Mod_VeankoAI_Deathmatch.xml
++++ b/Mod_VeankoAI_Deathmatch_IgnotisTweaks.xml
+@@ -2176,7 +2176,7 @@
+                                                     </normal>
+                                                     <else>
+                                                         <action id="executeBehaviourTree">
+-                                                            <string id="fileName">Mod_VeankoCheckIfEnemyTooClose_Deathmatch</string>
++                                                            <string id="fileName">FN_CheckIfEnemyTooClose_AllNauts</string>
+                                                             <string id="Minimized">yes</string>
+                                                         </action>
+                                                         <orblock>
+@@ -2219,7 +2219,7 @@
+                                                             </normal>
+                                                             <else>
+                                                                 <action id="executeBehaviourTree">
+-                                                                    <string id="fileName">Mod_VeankoCheckIfEnemyInCombatRange_Deathmatch</string>
++                                                                    <string id="fileName">FN_CheckIfEnemyInCombatRange_AllNauts</string>
+                                                                     <string id="Minimized">yes</string>
+                                                                 </action>
+                                                                 <condition id="getBoolEquals">

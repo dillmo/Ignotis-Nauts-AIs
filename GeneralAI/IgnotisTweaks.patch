@@ -1,0 +1,40 @@
+diff --git a/../ExampleAIs/VeankoAI.xml b/Mod_VeankoAI_IgnotisTweaks.xml
+index e691286..e343824 100755
+--- a/../ExampleAIs/VeankoAI.xml
++++ b/Mod_VeankoAI_IgnotisTweaks.xml
+@@ -4353,7 +4353,7 @@
+                                                     </normal>
+                                                     <else>
+                                                         <action id="executeBehaviourTree">
+-                                                            <string id="fileName">VeankoCheckIfEnemyTooClose</string>
++                                                            <string id="fileName">FN_CheckIfEnemyTooClose_AllNauts</string>
+                                                             <string id="Minimized">yes</string>
+                                                         </action>
+                                                         <orblock>
+@@ -4396,7 +4396,7 @@
+                                                             </normal>
+                                                             <else>
+                                                                 <action id="executeBehaviourTree">
+-                                                                    <string id="fileName">VeankoCheckIfEnemyInCombatRange</string>
++                                                                    <string id="fileName">FN_CheckIfEnemyInCombatRange_AllNauts</string>
+                                                                     <string id="Minimized">yes</string>
+                                                                 </action>
+                                                                 <condition id="getBoolEquals">
+@@ -5181,7 +5181,7 @@
+                                                     <string id="Comment">creeps in front</string>
+                                                     <normal>
+                                                         <action id="executeBehaviourTree">
+-                                                            <string id="fileName">VeankoCheckIfEnemyInCombatRange</string>
++                                                            <string id="fileName">FN_CheckIfEnemyInCombatRange_AllNauts</string>
+                                                             <string id="Minimized">yes</string>
+                                                         </action>
+                                                         <condition id="getBoolEquals">
+@@ -5197,7 +5197,7 @@
+                                                             </normal>
+                                                             <else>
+                                                                 <action id="executeBehaviourTree">
+-                                                                    <string id="fileName">VeankoCheckIfEnemyTooClose</string>
++                                                                    <string id="fileName">FN_CheckIfEnemyTooClose_AllNauts</string>
+                                                                     <string id="Minimized">yes</string>
+                                                                 </action>
+                                                                 <condition id="getBoolEquals">
