@@ -1,5 +1,4 @@
 #!/bin/bash
-
 DEST=~/.local/share/Steam/SteamApps/common/Awesomenauts/Data/BehavioursCustom/
 
 rm "$DEST"/*
