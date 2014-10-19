@@ -21,7 +21,7 @@ will start of slow, but leapfrog his allies by about 300 solar by midgame. By
 lategame, he starts racking up kills, even to the point of becoming a Killing
 Machine.
 
-Pros:
+**Pros:**
 * Tries to stay behind and heal droids on his team while pushing. This tactic
   works *really* well)
 * Heals nearby team members with the lowest health.
@@ -34,9 +34,11 @@ Pros:
 * Uses Suicide Drones intelligently.
 * Very cautious, preventing lots of deaths.
 
-Cons:
+**Cons:**
 * Doesn't regroup with allies when he is caught alone. Instead, he just stays
   outside of the enemy's range.
+
+**[Build](http://nautsbuilder.com/#Voltar_the_Omniscient/1102020122200012021001301010/25-1-8-16-16-19-27-2-6-6-23-11-23-11-23-18-18-4-4-9-9-10-10)**
 
 Unstoppable Fox
 ---------------
@@ -44,7 +46,7 @@ Unstoppable Fox is a Penny Fox AI that takes advantage of 0.1-second reaction
 speeds inherent in bots. This can be used for very effective Heartshaped Net
 spam, allowing her to easily cripple her enemies.
 
-Pros:
+**Pros:**
 * Excellent combat skills.
 * Heartshaped Net + Death Lens spam.
 * Dyanmic combo logic that allows her to string together a variety of combos in
@@ -53,17 +55,24 @@ Pros:
   difficulties 3 and up, ranged for 2, and melee for 0 and 1.
 * Supports the team deathmatch gamemode
 
+**Builds:**
+* [Heartshaped Net Spam](http://nautsbuilder.com/#Penny_Fox/1210200102002110202101301010/27-25-1-3-8-14-23-10-10-23-23-20-13-13-2-2-17-17-19-19-5-5)
+* [Ranged](http://nautsbuilder.com/#Penny_Fox/1200210112300010212001301010/27-25-18-17-17-23-23-1-19-19-23-2-2-8-11-11-11-9-6-5-5-10-10)
+* [Melee](http://nautsbuilder.com/#Penny_Fox/1200210112300010202011000000/17-17-1-19-19-21-8-2-2-11-11-11-9-6-5-5-10-10)
+
 Super Sentry
 ------------
 Super Sentry is a Sentry X-58 AI designed to take advantage of Sentry-X58's
 affinities. He tries to use his Photon Mine ability for area control, to tank
 for his allies, and to use Black Hole Sun to escape and secure kills.
 
-Pros:
+**Pros:**
 * Clever at charging Black Hole Sun
 * Uses Photon Mine for area denial
 * Good at chasing
 * Supports the team deathmatch gamemode
 
-Cons:
+**Cons:**
 * Not very clever with Teleport Beacon.
+
+**[Build](http://nautsbuilder.com/#Sentry_X-58/1230100130001113002011301100/26-1-25-3-3-3-23-23-21-2-2-5-23-19-19-16-16-16-8-14-9-9-9-13)**
