@@ -15,8 +15,13 @@ if [ "$(echo "$*" | grep -c "spy")" -gt 0 ]; then
   cp -a Super\ Sentry/. "$DEST"
 fi
 
+if [ "$(echo "$*" | grep -c "jetter")" -gt 0 ]; then
+  cp -a YuriAI/. "$DEST"
+fi
+
 if [ -z "$*" ]; then
   cp -a Unstoppable\ Fox/. "$DEST"
   cp -a BrainyVoltar/. "$DEST"
   cp -a Super\ Sentry/. "$DEST"
+  cp -a YuriAI/. "$DEST"
 fi
