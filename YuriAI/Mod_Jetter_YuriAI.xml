@@ -179,8 +179,8 @@
                     <string id="condition" values="yesno">yes</string>
                     <float id="xOffset">0.00</float>
                     <float id="yOffset">0.00</float>
-                    <float id="width">0.50</float>
-                    <float id="height">0.50</float>
+                    <float id="width">0.74</float>
+                    <float id="height">0.74</float>
                     <string id="check line of sight" values="yesno">no</string>
                     <string id="ignore invisibility" values="yesno">no</string>
                     <string id="Comment">Laser Logic</string>
