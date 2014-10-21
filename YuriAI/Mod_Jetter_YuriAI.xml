@@ -189,12 +189,12 @@
                             <string id="Comment">Not running away?</string>
                             <else>
                                 <action id="aimStickAtTarget">
-                                    <float id="duration seconds">0.14</float>
+                                    <float id="duration seconds">0.10</float>
                                     <string id="only aim when needed" values="yesno">no</string>
                                 </action>
                                 <action id="pressButton">
                                     <string id="button" values="buttons">FACE_LEFT</string>
-                                    <float id="duration in seconds">0.14</float>
+                                    <float id="duration in seconds">0.10</float>
                                 </action>
                             </else>
                             <or>
