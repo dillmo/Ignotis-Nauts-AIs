@@ -1039,7 +1039,7 @@
                     <normal>
                         <condition id="isUpgradeEnabled">
                             <string id="condition" values="yesno">yes</string>
-                            <string id="upgrade name">SummonderDroneShot4</string>
+                            <string id="upgrade name">SummonerDroneShot4</string>
                             <normal>
                                 <action id="setBool">
                                     <string id="id">FullSuicideDrones</string>
