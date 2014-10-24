@@ -33,7 +33,9 @@
                     <string id="fileName">Assassin</string>
                     <string id="Minimized">yes</string>
                 </action>
-                <andblock>
+                <condition id="getBoolEquals">
+                    <string id="id">TDMMode</string>
+                    <string id="value" values="yesno">no</string>
                     <normal>
                         <action id="executeBehaviourTree">
                             <string id="fileName">Mod_VeankoAI_IgnotisTweaks</string>
@@ -46,17 +48,7 @@
                             <string id="Minimized">yes</string>
                         </action>
                     </else>
-                    <or>
-                        <condition id="getBoolEquals">
-                            <string id="id">isFacetanking</string>
-                            <string id="value" values="yesno">no</string>
-                        </condition>
-                        <condition id="getBoolEquals">
-                            <string id="id">TDMMode</string>
-                            <string id="value" values="yesno">no</string>
-                        </condition>
-                    </or>
-                </andblock>
+                </condition>
                 <action id="executeBehaviourTree">
                     <string id="fileName">Mod_BotSkill</string>
                     <string id="Minimized">yes</string>
@@ -4862,7 +4854,8 @@
                         </condition>
                     </or>
                 </andblock>
-                <andblock>
+                <condition id="isSkillOnButtonAvailable">
+                    <string id="button" values="buttons">FACE_LEFT</string>
                     <string id="Comment">Claw logic</string>
                     <normal>
                         <andblock>
@@ -5490,16 +5483,7 @@
                             </or>
                         </andblock>
                     </normal>
-                    <or>
-                        <condition id="isSkillOnButtonAvailable">
-                            <string id="button" values="buttons">FACE_LEFT</string>
-                        </condition>
-                        <condition id="getBoolEquals">
-                            <string id="id">isFacetanking</string>
-                            <string id="value" values="yesno">no</string>
-                        </condition>
-                    </or>
-                </andblock>
+                </condition>
                 <condition id="getBoolEquals">
                     <string id="id">MoveAwayFromTarget</string>
                     <string id="value" values="yesno">yes</string>
@@ -5743,6 +5727,7 @@
                     <string id="id">botSkill</string>
                     <string id="value">3</string>
                     <string id="compare method" values="valuecompare">greater or equal</string>
+                    <string id="Comment">Hurley&apos;s pushfix</string>
                     <normal>
                         <condition id="isInArea">
                             <string id="condition" values="yesno">yes</string>
@@ -5882,173 +5867,78 @@
                             <string id="value" values="flagtoggle">no</string>
                             <string id="Comment">Don&apos;t jump near turrets</string>
                         </action>
-                        <condition id="isTargetPosition">
-                            <string id="condition" values="yesno">yes</string>
-                            <string id="target position" values="offsetposition">FRONT</string>
+                        <action id="executeBehaviourTree">
+                            <string id="fileName">FN_CheckIfEnemyInCombatRange_AllNauts</string>
+                            <string id="Comment">Turret in range?</string>
+                            <string id="Minimized">yes</string>
+                        </action>
+                        <condition id="getBoolEquals">
+                            <string id="id">EnemyIsInCombatRange</string>
+                            <string id="value" values="yesno">yes</string>
                             <normal>
-                                <condition id="isInArea">
-                                    <string id="condition" values="yesno">yes</string>
-                                    <string id="collision groups" values="collison groups" multiselect="true">CREEPS;;</string>
-                                    <string id="check green obstacles only" values="yesno">no</string>
-                                    <string id="teams" values="teams" multiselect="true">OWN_TEAM;;</string>
-                                    <string id="areaName"></string>
-                                    <float id="xOffset">0.34</float>
-                                    <float id="yOffset">0.00</float>
-                                    <float id="width">0.40</float>
-                                    <float id="height">0.40</float>
-                                    <string id="check line of sight" values="yesno">yes</string>
-                                    <string id="ignore invisibility" values="yesno">yes</string>
-                                    <string id="Comment">Creeps blocking?</string>
+                                <andblock>
+                                    <string id="Comment">Facing turret -&gt; check if creeps in front</string>
                                     <normal>
-                                        <action id="setBool">
-                                            <string id="id">isFacetanking</string>
-                                            <string id="value" values="flagtoggle">no</string>
-                                        </action>
-                                        <action id="executeBehaviourTree">
-                                            <string id="fileName">FN_CheckIfEnemyInCombatRange_AllNauts</string>
-                                            <string id="Minimized">yes</string>
-                                        </action>
-                                        <condition id="getBoolEquals">
-                                            <string id="id">EnemyIsInCombatRange</string>
-                                            <string id="value" values="yesno">yes</string>
-                                            <normal>
-                                                <action id="setBool">
-                                                    <string id="id">DontMove</string>
-                                                    <string id="value" values="flagtoggle">yes</string>
-                                                </action>
-                                            </normal>
-                                        </condition>
-                                    </normal>
-                                    <else>
-                                        <action id="setBool">
-                                            <string id="id">isFacetanking</string>
-                                            <string id="value" values="flagtoggle">yes</string>
-                                        </action>
                                         <action id="setBool">
                                             <string id="id">DontMove</string>
                                             <string id="value" values="flagtoggle">yes</string>
+                                            <string id="Comment">Don&apos;t move</string>
                                         </action>
-                                        <condition id="isFromTeam">
-                                            <string id="team" values="teamswithnumbers">ZERO_TEAM</string>
-                                            <string id="check on" values="targetself">self</string>
-                                            <normal>
-                                                <action id="pressStick">
-                                                    <string id="direction" values="directions">LEFT</string>
-                                                    <float id="duration in seconds">0.10</float>
-                                                </action>
-                                            </normal>
-                                            <else>
-                                                <action id="pressStick">
-                                                    <string id="direction" values="directions">RIGHT</string>
-                                                    <float id="duration in seconds">0.10</float>
-                                                </action>
-                                            </else>
+                                    </normal>
+                                    <or>
+                                        <condition id="isTargetPosition">
+                                            <string id="condition" values="yesno">yes</string>
+                                            <string id="target position" values="offsetposition">FRONT</string>
                                         </condition>
-                                    </else>
-                                </condition>
-                            </normal>
-                            <else>
-                                <condition id="isTargetPosition">
-                                    <string id="condition" values="yesno">yes</string>
-                                    <string id="target position" values="offsetposition">BACK</string>
-                                    <normal>
                                         <condition id="isInArea">
                                             <string id="condition" values="yesno">yes</string>
                                             <string id="collision groups" values="collison groups" multiselect="true">CREEPS;;</string>
                                             <string id="check green obstacles only" values="yesno">no</string>
                                             <string id="teams" values="teams" multiselect="true">OWN_TEAM;;</string>
                                             <string id="areaName"></string>
-                                            <float id="xOffset">-0.34</float>
+                                            <float id="xOffset">0.20</float>
                                             <float id="yOffset">0.00</float>
-                                            <float id="width">0.40</float>
+                                            <float id="width">0.20</float>
                                             <float id="height">0.40</float>
-                                            <string id="check line of sight" values="yesno">yes</string>
-                                            <string id="ignore invisibility" values="yesno">yes</string>
-                                            <string id="Comment">Creeps blocking?</string>
-                                            <normal>
-                                                <action id="setBool">
-                                                    <string id="id">isFacetanking</string>
-                                                    <string id="value" values="flagtoggle">no</string>
-                                                </action>
-                                                <condition id="isUpgradeEnabled">
-                                                    <string id="condition" values="yesno">yes</string>
-                                                    <string id="upgrade name">AssasinStrikeMaxChargeRangedActivate</string>
-                                                    <normal>
-                                                        <condition id="isTargetInArea">
-                                                            <string id="condition" values="yesno">yes</string>
-                                                            <float id="xOffset">-0.22</float>
-                                                            <float id="yOffset">0.00</float>
-                                                            <float id="width">0.30</float>
-                                                            <float id="height">0.13</float>
-                                                            <string id="check line of sight" values="yesno">no</string>
-                                                            <string id="ignore invisibility" values="yesno">no</string>
-                                                            <string id="Comment">in range</string>
-                                                            <normal>
-                                                                <action id="setBool">
-                                                                    <string id="id">DontMove</string>
-                                                                    <string id="value" values="flagtoggle">yes</string>
-                                                                </action>
-                                                            </normal>
-                                                        </condition>
-                                                    </normal>
-                                                    <else>
-                                                        <condition id="isTargetInArea">
-                                                            <string id="condition" values="yesno">yes</string>
-                                                            <float id="xOffset">-0.05</float>
-                                                            <float id="yOffset">0.00</float>
-                                                            <float id="width">0.08</float>
-                                                            <float id="height">0.13</float>
-                                                            <string id="check line of sight" values="yesno">no</string>
-                                                            <string id="ignore invisibility" values="yesno">no</string>
-                                                            <string id="Comment">in range</string>
-                                                            <normal>
-                                                                <action id="setBool">
-                                                                    <string id="id">DontMove</string>
-                                                                    <string id="value" values="flagtoggle">yes</string>
-                                                                </action>
-                                                            </normal>
-                                                        </condition>
-                                                    </else>
-                                                </condition>
-                                            </normal>
-                                            <else>
-                                                <action id="setBool">
-                                                    <string id="id">isFacetanking</string>
-                                                    <string id="value" values="flagtoggle">yes</string>
-                                                </action>
-                                                <action id="setBool">
-                                                    <string id="id">DontMove</string>
-                                                    <string id="value" values="flagtoggle">yes</string>
-                                                </action>
-                                                <condition id="isFromTeam">
-                                                    <string id="team" values="teamswithnumbers">ZERO_TEAM</string>
-                                                    <string id="check on" values="targetself">self</string>
-                                                    <normal>
-                                                        <action id="pressStick">
-                                                            <string id="direction" values="directions">LEFT</string>
-                                                            <float id="duration in seconds">0.10</float>
-                                                        </action>
-                                                    </normal>
-                                                    <else>
-                                                        <action id="pressStick">
-                                                            <string id="direction" values="directions">RIGHT</string>
-                                                            <float id="duration in seconds">0.10</float>
-                                                        </action>
-                                                    </else>
-                                                </condition>
-                                            </else>
+                                            <string id="check line of sight" values="yesno">no</string>
+                                            <string id="ignore invisibility" values="yesno">no</string>
+                                            <string id="Comment">Creeps in front?</string>
                                         </condition>
+                                    </or>
+                                </andblock>
+                                <andblock>
+                                    <string id="Comment">Facing away from turret -&gt; check if creeps behind</string>
+                                    <normal>
+                                        <action id="setBool">
+                                            <string id="id">DontMove</string>
+                                            <string id="value" values="flagtoggle">yes</string>
+                                            <string id="Comment">Don&apos;t move</string>
+                                        </action>
                                     </normal>
-                                </condition>
-                            </else>
+                                    <or>
+                                        <condition id="isTargetPosition">
+                                            <string id="condition" values="yesno">yes</string>
+                                            <string id="target position" values="offsetposition">FRONT</string>
+                                        </condition>
+                                        <condition id="isInArea">
+                                            <string id="condition" values="yesno">yes</string>
+                                            <string id="collision groups" values="collison groups" multiselect="true">CREEPS;;</string>
+                                            <string id="check green obstacles only" values="yesno">no</string>
+                                            <string id="teams" values="teams" multiselect="true">OWN_TEAM;;</string>
+                                            <string id="areaName"></string>
+                                            <float id="xOffset">-0.20</float>
+                                            <float id="yOffset">0.00</float>
+                                            <float id="width">0.20</float>
+                                            <float id="height">0.40</float>
+                                            <string id="check line of sight" values="yesno">no</string>
+                                            <string id="ignore invisibility" values="yesno">no</string>
+                                            <string id="Comment">Creeps behind?</string>
+                                        </condition>
+                                    </or>
+                                </andblock>
+                            </normal>
                         </condition>
                     </normal>
-                    <else>
-                        <action id="setBool">
-                            <string id="id">isFacetanking</string>
-                            <string id="value" values="flagtoggle">no</string>
-                        </action>
-                    </else>
                     <or>
                         <condition id="isTargetType">
                             <string id="condition" values="yesno">yes</string>
@@ -6072,6 +5962,19 @@
                             <float id="width">0.60</float>
                             <float id="height">0.40</float>
                             <string id="check line of sight" values="yesno">no</string>
+                        </condition>
+                        <condition id="isInArea">
+                            <string id="condition" values="yesno">yes</string>
+                            <string id="collision groups" values="collison groups" multiselect="true">CREEPS;;</string>
+                            <string id="check green obstacles only" values="yesno">no</string>
+                            <string id="teams" values="teams" multiselect="true">OWN_TEAM;;</string>
+                            <string id="areaName"></string>
+                            <float id="xOffset">0.00</float>
+                            <float id="yOffset">0.00</float>
+                            <float id="width">0.40</float>
+                            <float id="height">0.40</float>
+                            <string id="check line of sight" values="yesno">no</string>
+                            <string id="ignore invisibility" values="yesno">no</string>
                         </condition>
                     </or>
                 </andblock>
