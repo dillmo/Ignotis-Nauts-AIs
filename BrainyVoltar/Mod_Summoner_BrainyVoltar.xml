@@ -1036,6 +1036,7 @@
                 <condition id="isUpgradeEnabled">
                     <string id="condition" values="yesno">yes</string>
                     <string id="upgrade name">SummonDroneAmount1</string>
+                    <string id="Comment">Full suicide drones?</string>
                     <normal>
                         <condition id="isUpgradeEnabled">
                             <string id="condition" values="yesno">yes</string>
