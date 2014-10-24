@@ -5857,24 +5857,9 @@
                 <andblock>
                     <string id="Comment">Facetank fix</string>
                     <normal>
-                        <action id="setBool">
-                            <string id="id">jump</string>
-                            <string id="value" values="flagtoggle">no</string>
-                            <string id="Comment">Don&apos;t jump near turrets</string>
-                        </action>
-                        <action id="setBool">
-                            <string id="id">GoUp</string>
-                            <string id="value" values="flagtoggle">no</string>
-                            <string id="Comment">Don&apos;t jump near turrets</string>
-                        </action>
-                        <action id="executeBehaviourTree">
-                            <string id="fileName">FN_CheckIfEnemyInCombatRange_AllNauts</string>
-                            <string id="Comment">Turret in range?</string>
-                            <string id="Minimized">yes</string>
-                        </action>
-                        <condition id="getBoolEquals">
-                            <string id="id">EnemyIsInCombatRange</string>
-                            <string id="value" values="yesno">yes</string>
+                        <condition id="isUpgradeEnabled">
+                            <string id="condition" values="yesno">yes</string>
+                            <string id="upgrade name">AssasinStrikeMaxChargeRangedActivate</string>
                             <normal>
                                 <andblock>
                                     <string id="Comment">Facing turret -&gt; check if creeps in front</string>
@@ -5904,10 +5889,62 @@
                                             <string id="ignore invisibility" values="yesno">no</string>
                                             <string id="Comment">Creeps in front?</string>
                                         </condition>
+                                        <condition id="isTargetInArea">
+                                            <string id="condition" values="yesno">yes</string>
+                                            <float id="xOffset">0.22</float>
+                                            <float id="yOffset">0.00</float>
+                                            <float id="width">0.30</float>
+                                            <float id="height">0.13</float>
+                                            <string id="check line of sight" values="yesno">no</string>
+                                            <string id="ignore invisibility" values="yesno">no</string>
+                                            <string id="Comment">in range</string>
+                                        </condition>
                                     </or>
                                 </andblock>
                                 <andblock>
                                     <string id="Comment">Facing away from turret -&gt; check if creeps behind</string>
+                                    <normal>
+                                        <action id="setBool">
+                                            <string id="id">DontMove</string>
+                                            <string id="value" values="flagtoggle">yes</string>
+                                            <string id="Comment">Don&apos;t move</string>
+                                        </action>
+                                    </normal>
+                                    <or>
+                                        <condition id="isTargetPosition">
+                                            <string id="condition" values="yesno">yes</string>
+                                            <string id="target position" values="offsetposition">BACK</string>
+                                        </condition>
+                                        <condition id="isInArea">
+                                            <string id="condition" values="yesno">yes</string>
+                                            <string id="collision groups" values="collison groups" multiselect="true">CREEPS;;</string>
+                                            <string id="check green obstacles only" values="yesno">no</string>
+                                            <string id="teams" values="teams" multiselect="true">OWN_TEAM;;</string>
+                                            <string id="areaName"></string>
+                                            <float id="xOffset">-0.20</float>
+                                            <float id="yOffset">0.00</float>
+                                            <float id="width">0.20</float>
+                                            <float id="height">0.40</float>
+                                            <string id="check line of sight" values="yesno">no</string>
+                                            <string id="ignore invisibility" values="yesno">no</string>
+                                            <string id="Comment">Creeps behind?</string>
+                                        </condition>
+                                        <condition id="isTargetInArea">
+                                            <string id="condition" values="yesno">yes</string>
+                                            <float id="xOffset">-0.22</float>
+                                            <float id="yOffset">0.00</float>
+                                            <float id="width">0.30</float>
+                                            <float id="height">0.13</float>
+                                            <string id="check line of sight" values="yesno">no</string>
+                                            <string id="ignore invisibility" values="yesno">no</string>
+                                            <string id="Comment">in range</string>
+                                        </condition>
+                                    </or>
+                                </andblock>
+                            </normal>
+                            <else>
+                                <andblock>
+                                    <string id="Comment">Facing turret -&gt; check if creeps in front</string>
                                     <normal>
                                         <action id="setBool">
                                             <string id="id">DontMove</string>
@@ -5926,6 +5963,46 @@
                                             <string id="check green obstacles only" values="yesno">no</string>
                                             <string id="teams" values="teams" multiselect="true">OWN_TEAM;;</string>
                                             <string id="areaName"></string>
+                                            <float id="xOffset">0.20</float>
+                                            <float id="yOffset">0.00</float>
+                                            <float id="width">0.20</float>
+                                            <float id="height">0.40</float>
+                                            <string id="check line of sight" values="yesno">no</string>
+                                            <string id="ignore invisibility" values="yesno">no</string>
+                                            <string id="Comment">Creeps in front?</string>
+                                        </condition>
+                                        <condition id="isTargetInArea">
+                                            <string id="condition" values="yesno">yes</string>
+                                            <float id="xOffset">0.05</float>
+                                            <float id="yOffset">0.00</float>
+                                            <float id="width">0.08</float>
+                                            <float id="height">0.13</float>
+                                            <string id="check line of sight" values="yesno">no</string>
+                                            <string id="ignore invisibility" values="yesno">no</string>
+                                            <string id="Comment">in range</string>
+                                        </condition>
+                                    </or>
+                                </andblock>
+                                <andblock>
+                                    <string id="Comment">Facing away from turret -&gt; check if creeps behind</string>
+                                    <normal>
+                                        <action id="setBool">
+                                            <string id="id">DontMove</string>
+                                            <string id="value" values="flagtoggle">yes</string>
+                                            <string id="Comment">Don&apos;t move</string>
+                                        </action>
+                                    </normal>
+                                    <or>
+                                        <condition id="isTargetPosition">
+                                            <string id="condition" values="yesno">yes</string>
+                                            <string id="target position" values="offsetposition">BACK</string>
+                                        </condition>
+                                        <condition id="isInArea">
+                                            <string id="condition" values="yesno">yes</string>
+                                            <string id="collision groups" values="collison groups" multiselect="true">CREEPS;;</string>
+                                            <string id="check green obstacles only" values="yesno">no</string>
+                                            <string id="teams" values="teams" multiselect="true">OWN_TEAM;;</string>
+                                            <string id="areaName"></string>
                                             <float id="xOffset">-0.20</float>
                                             <float id="yOffset">0.00</float>
                                             <float id="width">0.20</float>
@@ -5934,9 +6011,19 @@
                                             <string id="ignore invisibility" values="yesno">no</string>
                                             <string id="Comment">Creeps behind?</string>
                                         </condition>
+                                        <condition id="isTargetInArea">
+                                            <string id="condition" values="yesno">yes</string>
+                                            <float id="xOffset">-0.05</float>
+                                            <float id="yOffset">0.00</float>
+                                            <float id="width">0.08</float>
+                                            <float id="height">0.13</float>
+                                            <string id="check line of sight" values="yesno">no</string>
+                                            <string id="ignore invisibility" values="yesno">no</string>
+                                            <string id="Comment">in range</string>
+                                        </condition>
                                     </or>
                                 </andblock>
-                            </normal>
+                            </else>
                         </condition>
                     </normal>
                     <or>
