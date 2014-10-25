@@ -4036,23 +4036,15 @@
                                                     <string id="value">pounceDmg + pulseDmg1Charge + deathLenseExtraDmg + clawDmg1Charge</string>
                                                     <string id="compare method" values="valuecompare">less or equal</string>
                                                     <normal>
-                                                        <sequence>
-                                                            <string id="Is blocking">no</string>
+                                                        <action id="aimStickAtTarget">
+                                                            <float id="duration seconds">0.10</float>
+                                                            <string id="only aim when needed" values="yesno">no</string>
+                                                        </action>
+                                                        <action id="pressButton">
+                                                            <string id="button" values="buttons">FACE_RIGHT</string>
+                                                            <float id="duration in seconds">0.00</float>
                                                             <string id="Comment">Pounce!</string>
-                                                            <normal>
-                                                                <action id="aimStickAtTarget">
-                                                                    <float id="duration seconds">0.10</float>
-                                                                    <string id="only aim when needed" values="yesno">no</string>
-                                                                </action>
-                                                                <action id="wait">
-                                                                    <float id="time">0.01</float>
-                                                                </action>
-                                                                <action id="pressButton">
-                                                                    <string id="button" values="buttons">FACE_RIGHT</string>
-                                                                    <float id="duration in seconds">0.00</float>
-                                                                </action>
-                                                            </normal>
-                                                        </sequence>
+                                                        </action>
                                                     </normal>
                                                     <else>
                                                         <andblock>
@@ -4061,23 +4053,15 @@
                                                                 <orblock>
                                                                     <string id="Comment">Not running away?</string>
                                                                     <normal>
-                                                                        <sequence>
-                                                                            <string id="Is blocking">no</string>
+                                                                        <action id="aimStickAtTarget">
+                                                                            <float id="duration seconds">0.10</float>
+                                                                            <string id="only aim when needed" values="yesno">no</string>
+                                                                        </action>
+                                                                        <action id="pressButton">
+                                                                            <string id="button" values="buttons">FACE_RIGHT</string>
+                                                                            <float id="duration in seconds">0.00</float>
                                                                             <string id="Comment">Pounce!</string>
-                                                                            <normal>
-                                                                                <action id="aimStickAtTarget">
-                                                                                    <float id="duration seconds">0.10</float>
-                                                                                    <string id="only aim when needed" values="yesno">no</string>
-                                                                                </action>
-                                                                                <action id="wait">
-                                                                                    <float id="time">0.01</float>
-                                                                                </action>
-                                                                                <action id="pressButton">
-                                                                                    <string id="button" values="buttons">FACE_RIGHT</string>
-                                                                                    <float id="duration in seconds">0.00</float>
-                                                                                </action>
-                                                                            </normal>
-                                                                        </sequence>
+                                                                        </action>
                                                                     </normal>
                                                                     <or>
                                                                         <condition id="checkCounter">
@@ -4111,36 +4095,28 @@
                                                                     <normal>
                                                                         <andblock>
                                                                             <string id="Comment">Don&apos;t wait for Energy Pulse?</string>
-                                                                            <else>
-                                                                                <sequence>
-                                                                                    <string id="Is blocking">no</string>
+                                                                            <normal>
+                                                                                <action id="aimStickAtTarget">
+                                                                                    <float id="duration seconds">0.10</float>
+                                                                                    <string id="only aim when needed" values="yesno">no</string>
+                                                                                </action>
+                                                                                <action id="pressButton">
+                                                                                    <string id="button" values="buttons">FACE_RIGHT</string>
+                                                                                    <float id="duration in seconds">0.00</float>
                                                                                     <string id="Comment">Pounce!</string>
+                                                                                </action>
+                                                                                <condition id="isUpgradeEnabled">
+                                                                                    <string id="condition" values="yesno">yes</string>
+                                                                                    <string id="upgrade name">AssassinAssailCharge</string>
                                                                                     <normal>
-                                                                                        <action id="aimStickAtTarget">
-                                                                                            <float id="duration seconds">0.10</float>
-                                                                                            <string id="only aim when needed" values="yesno">no</string>
+                                                                                        <action id="setBool">
+                                                                                            <string id="id">joltInit</string>
+                                                                                            <string id="value" values="flagtoggle">yes</string>
+                                                                                            <string id="Comment">Remember to use Energy Pulse</string>
                                                                                         </action>
-                                                                                        <action id="wait">
-                                                                                            <float id="time">0.01</float>
-                                                                                        </action>
-                                                                                        <action id="pressButton">
-                                                                                            <string id="button" values="buttons">FACE_RIGHT</string>
-                                                                                            <float id="duration in seconds">0.00</float>
-                                                                                        </action>
-                                                                                        <condition id="isUpgradeEnabled">
-                                                                                            <string id="condition" values="yesno">yes</string>
-                                                                                            <string id="upgrade name">AssassinAssailCharge</string>
-                                                                                            <normal>
-                                                                                                <action id="setBool">
-                                                                                                    <string id="id">joltInit</string>
-                                                                                                    <string id="value" values="flagtoggle">yes</string>
-                                                                                                    <string id="Comment">Remember to use Energy Pulse</string>
-                                                                                                </action>
-                                                                                            </normal>
-                                                                                        </condition>
                                                                                     </normal>
-                                                                                </sequence>
-                                                                            </else>
+                                                                                </condition>
+                                                                            </normal>
                                                                             <or>
                                                                                 <condition id="isUpgradeEnabled">
                                                                                     <string id="condition" values="yesno">yes</string>
@@ -4189,23 +4165,15 @@
                                             <string id="value">pounceDmg + pulseDmg1Charge + deathLenseExtraDmg + clawDmg1Charge</string>
                                             <string id="compare method" values="valuecompare">less or equal</string>
                                             <normal>
-                                                <sequence>
-                                                    <string id="Is blocking">no</string>
+                                                <action id="aimStickAtTarget">
+                                                    <float id="duration seconds">0.10</float>
+                                                    <string id="only aim when needed" values="yesno">no</string>
+                                                </action>
+                                                <action id="pressButton">
+                                                    <string id="button" values="buttons">FACE_RIGHT</string>
+                                                    <float id="duration in seconds">0.00</float>
                                                     <string id="Comment">Pounce!</string>
-                                                    <normal>
-                                                        <action id="aimStickAtTarget">
-                                                            <float id="duration seconds">0.10</float>
-                                                            <string id="only aim when needed" values="yesno">no</string>
-                                                        </action>
-                                                        <action id="wait">
-                                                            <float id="time">0.01</float>
-                                                        </action>
-                                                        <action id="pressButton">
-                                                            <string id="button" values="buttons">FACE_RIGHT</string>
-                                                            <float id="duration in seconds">0.00</float>
-                                                        </action>
-                                                    </normal>
-                                                </sequence>
+                                                </action>
                                             </normal>
                                             <else>
                                                 <andblock>
@@ -4214,23 +4182,15 @@
                                                         <orblock>
                                                             <string id="Comment">Not running away?</string>
                                                             <normal>
-                                                                <sequence>
-                                                                    <string id="Is blocking">no</string>
+                                                                <action id="aimStickAtTarget">
+                                                                    <float id="duration seconds">0.10</float>
+                                                                    <string id="only aim when needed" values="yesno">no</string>
+                                                                </action>
+                                                                <action id="pressButton">
+                                                                    <string id="button" values="buttons">FACE_RIGHT</string>
+                                                                    <float id="duration in seconds">0.00</float>
                                                                     <string id="Comment">Pounce!</string>
-                                                                    <normal>
-                                                                        <action id="aimStickAtTarget">
-                                                                            <float id="duration seconds">0.10</float>
-                                                                            <string id="only aim when needed" values="yesno">no</string>
-                                                                        </action>
-                                                                        <action id="wait">
-                                                                            <float id="time">0.01</float>
-                                                                        </action>
-                                                                        <action id="pressButton">
-                                                                            <string id="button" values="buttons">FACE_RIGHT</string>
-                                                                            <float id="duration in seconds">0.00</float>
-                                                                        </action>
-                                                                    </normal>
-                                                                </sequence>
+                                                                </action>
                                                             </normal>
                                                             <or>
                                                                 <condition id="checkCounter">
@@ -4264,36 +4224,28 @@
                                                             <normal>
                                                                 <andblock>
                                                                     <string id="Comment">Don&apos;t wait for Energy Pulse?</string>
-                                                                    <else>
-                                                                        <sequence>
-                                                                            <string id="Is blocking">no</string>
+                                                                    <normal>
+                                                                        <action id="aimStickAtTarget">
+                                                                            <float id="duration seconds">0.10</float>
+                                                                            <string id="only aim when needed" values="yesno">no</string>
+                                                                        </action>
+                                                                        <action id="pressButton">
+                                                                            <string id="button" values="buttons">FACE_RIGHT</string>
+                                                                            <float id="duration in seconds">0.00</float>
                                                                             <string id="Comment">Pounce!</string>
+                                                                        </action>
+                                                                        <condition id="isUpgradeEnabled">
+                                                                            <string id="condition" values="yesno">yes</string>
+                                                                            <string id="upgrade name">AssassinAssailCharge</string>
                                                                             <normal>
-                                                                                <action id="aimStickAtTarget">
-                                                                                    <float id="duration seconds">0.10</float>
-                                                                                    <string id="only aim when needed" values="yesno">no</string>
+                                                                                <action id="setBool">
+                                                                                    <string id="id">joltInit</string>
+                                                                                    <string id="value" values="flagtoggle">yes</string>
+                                                                                    <string id="Comment">Remember to use Energy Pulse</string>
                                                                                 </action>
-                                                                                <action id="wait">
-                                                                                    <float id="time">0.01</float>
-                                                                                </action>
-                                                                                <action id="pressButton">
-                                                                                    <string id="button" values="buttons">FACE_RIGHT</string>
-                                                                                    <float id="duration in seconds">0.00</float>
-                                                                                </action>
-                                                                                <condition id="isUpgradeEnabled">
-                                                                                    <string id="condition" values="yesno">yes</string>
-                                                                                    <string id="upgrade name">AssassinAssailCharge</string>
-                                                                                    <normal>
-                                                                                        <action id="setBool">
-                                                                                            <string id="id">joltInit</string>
-                                                                                            <string id="value" values="flagtoggle">yes</string>
-                                                                                            <string id="Comment">Remember to use Energy Pulse</string>
-                                                                                        </action>
-                                                                                    </normal>
-                                                                                </condition>
                                                                             </normal>
-                                                                        </sequence>
-                                                                    </else>
+                                                                        </condition>
+                                                                    </normal>
                                                                     <or>
                                                                         <condition id="isUpgradeEnabled">
                                                                             <string id="condition" values="yesno">yes</string>
@@ -4430,23 +4382,15 @@
                                                             <string id="value">pulseDmg</string>
                                                             <string id="compare method" values="valuecompare">less or equal</string>
                                                             <normal>
-                                                                <sequence>
-                                                                    <string id="Is blocking">no</string>
-                                                                    <string id="Comment">Energy pulse!</string>
-                                                                    <normal>
-                                                                        <action id="aimStickAtTarget">
-                                                                            <float id="duration seconds">0.10</float>
-                                                                            <string id="only aim when needed" values="yesno">no</string>
-                                                                        </action>
-                                                                        <action id="wait">
-                                                                            <float id="time">0.01</float>
-                                                                        </action>
-                                                                        <action id="pressButton">
-                                                                            <string id="button" values="buttons">FACE_TOP</string>
-                                                                            <float id="duration in seconds">0.00</float>
-                                                                        </action>
-                                                                    </normal>
-                                                                </sequence>
+                                                                <action id="aimStickAtTarget">
+                                                                    <float id="duration seconds">0.10</float>
+                                                                    <string id="only aim when needed" values="yesno">no</string>
+                                                                </action>
+                                                                <action id="pressButton">
+                                                                    <string id="button" values="buttons">FACE_TOP</string>
+                                                                    <float id="duration in seconds">0.00</float>
+                                                                    <string id="Comment">Energy Pulse!</string>
+                                                                </action>
                                                             </normal>
                                                             <else>
                                                                 <condition id="isTargetInArea">
@@ -4463,23 +4407,15 @@
                                                                             <string id="value">pulseDmg + deathLensExtraDmg + clawDmg1Charge</string>
                                                                             <string id="compare method" values="valuecompare">less or equal</string>
                                                                             <normal>
-                                                                                <sequence>
-                                                                                    <string id="Is blocking">no</string>
-                                                                                    <string id="Comment">Energy pulse!</string>
-                                                                                    <normal>
-                                                                                        <action id="aimStickAtTarget">
-                                                                                            <float id="duration seconds">0.10</float>
-                                                                                            <string id="only aim when needed" values="yesno">no</string>
-                                                                                        </action>
-                                                                                        <action id="wait">
-                                                                                            <float id="time">0.01</float>
-                                                                                        </action>
-                                                                                        <action id="pressButton">
-                                                                                            <string id="button" values="buttons">FACE_TOP</string>
-                                                                                            <float id="duration in seconds">0.00</float>
-                                                                                        </action>
-                                                                                    </normal>
-                                                                                </sequence>
+                                                                                <action id="aimStickAtTarget">
+                                                                                    <float id="duration seconds">0.10</float>
+                                                                                    <string id="only aim when needed" values="yesno">no</string>
+                                                                                </action>
+                                                                                <action id="pressButton">
+                                                                                    <string id="button" values="buttons">FACE_TOP</string>
+                                                                                    <float id="duration in seconds">0.00</float>
+                                                                                    <string id="Comment">Energy Pulse!</string>
+                                                                                </action>
                                                                             </normal>
                                                                             <else>
                                                                                 <condition id="isUpgradeEnabled">
@@ -4497,23 +4433,15 @@
                                                                                                             <string id="condition" values="yesno">yes</string>
                                                                                                             <string id="upgrade name">AssassinLightningcharges1</string>
                                                                                                             <normal>
-                                                                                                                <sequence>
-                                                                                                                    <string id="Is blocking">no</string>
-                                                                                                                    <string id="Comment">Energy pulse!</string>
-                                                                                                                    <normal>
-                                                                                                                        <action id="aimStickAtTarget">
-                                                                                                                            <float id="duration seconds">0.10</float>
-                                                                                                                            <string id="only aim when needed" values="yesno">no</string>
-                                                                                                                        </action>
-                                                                                                                        <action id="wait">
-                                                                                                                            <float id="time">0.01</float>
-                                                                                                                        </action>
-                                                                                                                        <action id="pressButton">
-                                                                                                                            <string id="button" values="buttons">FACE_TOP</string>
-                                                                                                                            <float id="duration in seconds">0.00</float>
-                                                                                                                        </action>
-                                                                                                                    </normal>
-                                                                                                                </sequence>
+                                                                                                                <action id="aimStickAtTarget">
+                                                                                                                    <float id="duration seconds">0.10</float>
+                                                                                                                    <string id="only aim when needed" values="yesno">no</string>
+                                                                                                                </action>
+                                                                                                                <action id="pressButton">
+                                                                                                                    <string id="button" values="buttons">FACE_TOP</string>
+                                                                                                                    <float id="duration in seconds">0.00</float>
+                                                                                                                    <string id="Comment">Energy Pulse!</string>
+                                                                                                                </action>
                                                                                                             </normal>
                                                                                                         </condition>
                                                                                                     </else>
@@ -4564,23 +4492,15 @@
                                                                                     <else>
                                                                                         <orblock>
                                                                                             <normal>
-                                                                                                <sequence>
-                                                                                                    <string id="Is blocking">no</string>
-                                                                                                    <string id="Comment">Energy pulse!</string>
-                                                                                                    <normal>
-                                                                                                        <action id="aimStickAtTarget">
-                                                                                                            <float id="duration seconds">0.10</float>
-                                                                                                            <string id="only aim when needed" values="yesno">no</string>
-                                                                                                        </action>
-                                                                                                        <action id="wait">
-                                                                                                            <float id="time">0.01</float>
-                                                                                                        </action>
-                                                                                                        <action id="pressButton">
-                                                                                                            <string id="button" values="buttons">FACE_TOP</string>
-                                                                                                            <float id="duration in seconds">0.00</float>
-                                                                                                        </action>
-                                                                                                    </normal>
-                                                                                                </sequence>
+                                                                                                <action id="aimStickAtTarget">
+                                                                                                    <float id="duration seconds">0.10</float>
+                                                                                                    <string id="only aim when needed" values="yesno">no</string>
+                                                                                                </action>
+                                                                                                <action id="pressButton">
+                                                                                                    <string id="button" values="buttons">FACE_TOP</string>
+                                                                                                    <float id="duration in seconds">0.00</float>
+                                                                                                    <string id="Comment">Energy Pulse!</string>
+                                                                                                </action>
                                                                                             </normal>
                                                                                             <or>
                                                                                                 <condition id="getBoolEquals">
@@ -4622,23 +4542,15 @@
                                                     <string id="value">pulseDmg</string>
                                                     <string id="compare method" values="valuecompare">less or equal</string>
                                                     <normal>
-                                                        <sequence>
-                                                            <string id="Is blocking">no</string>
-                                                            <string id="Comment">Energy pulse!</string>
-                                                            <normal>
-                                                                <action id="aimStickAtTarget">
-                                                                    <float id="duration seconds">0.10</float>
-                                                                    <string id="only aim when needed" values="yesno">no</string>
-                                                                </action>
-                                                                <action id="wait">
-                                                                    <float id="time">0.01</float>
-                                                                </action>
-                                                                <action id="pressButton">
-                                                                    <string id="button" values="buttons">FACE_TOP</string>
-                                                                    <float id="duration in seconds">0.00</float>
-                                                                </action>
-                                                            </normal>
-                                                        </sequence>
+                                                        <action id="aimStickAtTarget">
+                                                            <float id="duration seconds">0.10</float>
+                                                            <string id="only aim when needed" values="yesno">no</string>
+                                                        </action>
+                                                        <action id="pressButton">
+                                                            <string id="button" values="buttons">FACE_TOP</string>
+                                                            <float id="duration in seconds">0.00</float>
+                                                            <string id="Comment">Energy Pulse!</string>
+                                                        </action>
                                                     </normal>
                                                     <else>
                                                         <condition id="isTargetInArea">
@@ -4655,23 +4567,15 @@
                                                                     <string id="value">pulseDmg + deathLensExtraDmg + clawDmg1Charge</string>
                                                                     <string id="compare method" values="valuecompare">less or equal</string>
                                                                     <normal>
-                                                                        <sequence>
-                                                                            <string id="Is blocking">no</string>
-                                                                            <string id="Comment">Energy pulse!</string>
-                                                                            <normal>
-                                                                                <action id="aimStickAtTarget">
-                                                                                    <float id="duration seconds">0.10</float>
-                                                                                    <string id="only aim when needed" values="yesno">no</string>
-                                                                                </action>
-                                                                                <action id="wait">
-                                                                                    <float id="time">0.01</float>
-                                                                                </action>
-                                                                                <action id="pressButton">
-                                                                                    <string id="button" values="buttons">FACE_TOP</string>
-                                                                                    <float id="duration in seconds">0.00</float>
-                                                                                </action>
-                                                                            </normal>
-                                                                        </sequence>
+                                                                        <action id="aimStickAtTarget">
+                                                                            <float id="duration seconds">0.10</float>
+                                                                            <string id="only aim when needed" values="yesno">no</string>
+                                                                        </action>
+                                                                        <action id="pressButton">
+                                                                            <string id="button" values="buttons">FACE_TOP</string>
+                                                                            <float id="duration in seconds">0.00</float>
+                                                                            <string id="Comment">Energy Pulse!</string>
+                                                                        </action>
                                                                     </normal>
                                                                     <else>
                                                                         <condition id="isUpgradeEnabled">
@@ -4689,23 +4593,15 @@
                                                                                                     <string id="condition" values="yesno">yes</string>
                                                                                                     <string id="upgrade name">AssassinLightningcharges1</string>
                                                                                                     <normal>
-                                                                                                        <sequence>
-                                                                                                            <string id="Is blocking">no</string>
-                                                                                                            <string id="Comment">Energy pulse!</string>
-                                                                                                            <normal>
-                                                                                                                <action id="aimStickAtTarget">
-                                                                                                                    <float id="duration seconds">0.10</float>
-                                                                                                                    <string id="only aim when needed" values="yesno">no</string>
-                                                                                                                </action>
-                                                                                                                <action id="wait">
-                                                                                                                    <float id="time">0.01</float>
-                                                                                                                </action>
-                                                                                                                <action id="pressButton">
-                                                                                                                    <string id="button" values="buttons">FACE_TOP</string>
-                                                                                                                    <float id="duration in seconds">0.00</float>
-                                                                                                                </action>
-                                                                                                            </normal>
-                                                                                                        </sequence>
+                                                                                                        <action id="aimStickAtTarget">
+                                                                                                            <float id="duration seconds">0.10</float>
+                                                                                                            <string id="only aim when needed" values="yesno">no</string>
+                                                                                                        </action>
+                                                                                                        <action id="pressButton">
+                                                                                                            <string id="button" values="buttons">FACE_TOP</string>
+                                                                                                            <float id="duration in seconds">0.00</float>
+                                                                                                            <string id="Comment">Energy Pulse!</string>
+                                                                                                        </action>
                                                                                                     </normal>
                                                                                                 </condition>
                                                                                             </else>
@@ -4756,23 +4652,15 @@
                                                                             <else>
                                                                                 <orblock>
                                                                                     <normal>
-                                                                                        <sequence>
-                                                                                            <string id="Is blocking">no</string>
-                                                                                            <string id="Comment">Energy pulse!</string>
-                                                                                            <normal>
-                                                                                                <action id="aimStickAtTarget">
-                                                                                                    <float id="duration seconds">0.10</float>
-                                                                                                    <string id="only aim when needed" values="yesno">no</string>
-                                                                                                </action>
-                                                                                                <action id="wait">
-                                                                                                    <float id="time">0.01</float>
-                                                                                                </action>
-                                                                                                <action id="pressButton">
-                                                                                                    <string id="button" values="buttons">FACE_TOP</string>
-                                                                                                    <float id="duration in seconds">0.00</float>
-                                                                                                </action>
-                                                                                            </normal>
-                                                                                        </sequence>
+                                                                                        <action id="aimStickAtTarget">
+                                                                                            <float id="duration seconds">0.10</float>
+                                                                                            <string id="only aim when needed" values="yesno">no</string>
+                                                                                        </action>
+                                                                                        <action id="pressButton">
+                                                                                            <string id="button" values="buttons">FACE_TOP</string>
+                                                                                            <float id="duration in seconds">0.00</float>
+                                                                                            <string id="Comment">Energy Pulse!</string>
+                                                                                        </action>
                                                                                     </normal>
                                                                                     <or>
                                                                                         <condition id="getBoolEquals">
@@ -4884,45 +4772,37 @@
                                                             <string id="ignore invisibility" values="yesno">no</string>
                                                             <string id="Comment">in range</string>
                                                             <normal>
-                                                                <sequence>
-                                                                    <string id="Is blocking">no</string>
+                                                                <andblock>
+                                                                    <string id="Comment">Facing turret -&gt; check if creeps in front</string>
+                                                                    <else>
+                                                                        <action id="aimStickAtTarget">
+                                                                            <float id="duration seconds">0.01</float>
+                                                                            <string id="only aim when needed" values="yesno">no</string>
+                                                                        </action>
+                                                                    </else>
+                                                                    <or>
+                                                                        <condition id="isTargetInArea">
+                                                                            <string id="condition" values="yesno">yes</string>
+                                                                            <float id="xOffset">0.08</float>
+                                                                            <float id="yOffset">0.00</float>
+                                                                            <float id="width">0.16</float>
+                                                                            <float id="height">0.13</float>
+                                                                            <string id="check line of sight" values="yesno">no</string>
+                                                                            <string id="ignore invisibility" values="yesno">no</string>
+                                                                            <string id="Comment">in range</string>
+                                                                            <string id="Minimized">yes</string>
+                                                                        </condition>
+                                                                        <condition id="isTargetType">
+                                                                            <string id="condition" values="yesno">yes</string>
+                                                                            <string id="target groups" values="target groups" multiselect="true">DESTROYABLE_OBSTACLES;;</string>
+                                                                        </condition>
+                                                                    </or>
+                                                                </andblock>
+                                                                <action id="pressButton">
+                                                                    <string id="button" values="buttons">FACE_LEFT</string>
+                                                                    <float id="duration in seconds">0.00</float>
                                                                     <string id="Comment">Claw!</string>
-                                                                    <normal>
-                                                                        <andblock>
-                                                                            <string id="Comment">Facing turret -&gt; check if creeps in front</string>
-                                                                            <else>
-                                                                                <action id="aimStickAtTarget">
-                                                                                    <float id="duration seconds">0.01</float>
-                                                                                    <string id="only aim when needed" values="yesno">no</string>
-                                                                                </action>
-                                                                            </else>
-                                                                            <or>
-                                                                                <condition id="isTargetInArea">
-                                                                                    <string id="condition" values="yesno">yes</string>
-                                                                                    <float id="xOffset">0.08</float>
-                                                                                    <float id="yOffset">0.00</float>
-                                                                                    <float id="width">0.16</float>
-                                                                                    <float id="height">0.13</float>
-                                                                                    <string id="check line of sight" values="yesno">no</string>
-                                                                                    <string id="ignore invisibility" values="yesno">no</string>
-                                                                                    <string id="Comment">in range</string>
-                                                                                    <string id="Minimized">yes</string>
-                                                                                </condition>
-                                                                                <condition id="isTargetType">
-                                                                                    <string id="condition" values="yesno">yes</string>
-                                                                                    <string id="target groups" values="target groups" multiselect="true">DESTROYABLE_OBSTACLES;;</string>
-                                                                                </condition>
-                                                                            </or>
-                                                                        </andblock>
-                                                                        <action id="wait">
-                                                                            <float id="time">0.01</float>
-                                                                        </action>
-                                                                        <action id="pressButton">
-                                                                            <string id="button" values="buttons">FACE_LEFT</string>
-                                                                            <float id="duration in seconds">0.00</float>
-                                                                        </action>
-                                                                    </normal>
-                                                                </sequence>
+                                                                </action>
                                                             </normal>
                                                         </condition>
                                                         <andblock>
@@ -4955,45 +4835,37 @@
                                                                                     <string id="ignore invisibility" values="yesno">no</string>
                                                                                     <string id="Comment">in range</string>
                                                                                     <normal>
-                                                                                        <sequence>
-                                                                                            <string id="Is blocking">no</string>
+                                                                                        <andblock>
+                                                                                            <string id="Comment">Facing turret -&gt; check if creeps in front</string>
+                                                                                            <else>
+                                                                                                <action id="aimStickAtTarget">
+                                                                                                    <float id="duration seconds">0.01</float>
+                                                                                                    <string id="only aim when needed" values="yesno">no</string>
+                                                                                                </action>
+                                                                                            </else>
+                                                                                            <or>
+                                                                                                <condition id="isTargetInArea">
+                                                                                                    <string id="condition" values="yesno">yes</string>
+                                                                                                    <float id="xOffset">0.08</float>
+                                                                                                    <float id="yOffset">0.00</float>
+                                                                                                    <float id="width">0.16</float>
+                                                                                                    <float id="height">0.13</float>
+                                                                                                    <string id="check line of sight" values="yesno">no</string>
+                                                                                                    <string id="ignore invisibility" values="yesno">no</string>
+                                                                                                    <string id="Comment">in range</string>
+                                                                                                    <string id="Minimized">yes</string>
+                                                                                                </condition>
+                                                                                                <condition id="isTargetType">
+                                                                                                    <string id="condition" values="yesno">yes</string>
+                                                                                                    <string id="target groups" values="target groups" multiselect="true">DESTROYABLE_OBSTACLES;;</string>
+                                                                                                </condition>
+                                                                                            </or>
+                                                                                        </andblock>
+                                                                                        <action id="pressButton">
+                                                                                            <string id="button" values="buttons">FACE_LEFT</string>
+                                                                                            <float id="duration in seconds">0.00</float>
                                                                                             <string id="Comment">Claw!</string>
-                                                                                            <normal>
-                                                                                                <andblock>
-                                                                                                    <string id="Comment">Facing turret -&gt; check if creeps in front</string>
-                                                                                                    <else>
-                                                                                                        <action id="aimStickAtTarget">
-                                                                                                            <float id="duration seconds">0.01</float>
-                                                                                                            <string id="only aim when needed" values="yesno">no</string>
-                                                                                                        </action>
-                                                                                                    </else>
-                                                                                                    <or>
-                                                                                                        <condition id="isTargetInArea">
-                                                                                                            <string id="condition" values="yesno">yes</string>
-                                                                                                            <float id="xOffset">0.08</float>
-                                                                                                            <float id="yOffset">0.00</float>
-                                                                                                            <float id="width">0.16</float>
-                                                                                                            <float id="height">0.13</float>
-                                                                                                            <string id="check line of sight" values="yesno">no</string>
-                                                                                                            <string id="ignore invisibility" values="yesno">no</string>
-                                                                                                            <string id="Comment">in range</string>
-                                                                                                            <string id="Minimized">yes</string>
-                                                                                                        </condition>
-                                                                                                        <condition id="isTargetType">
-                                                                                                            <string id="condition" values="yesno">yes</string>
-                                                                                                            <string id="target groups" values="target groups" multiselect="true">DESTROYABLE_OBSTACLES;;</string>
-                                                                                                        </condition>
-                                                                                                    </or>
-                                                                                                </andblock>
-                                                                                                <action id="wait">
-                                                                                                    <float id="time">0.01</float>
-                                                                                                </action>
-                                                                                                <action id="pressButton">
-                                                                                                    <string id="button" values="buttons">FACE_LEFT</string>
-                                                                                                    <float id="duration in seconds">0.00</float>
-                                                                                                </action>
-                                                                                            </normal>
-                                                                                        </sequence>
+                                                                                        </action>
                                                                                     </normal>
                                                                                 </condition>
                                                                             </normal>
@@ -5008,45 +4880,37 @@
                                                                                     <string id="ignore invisibility" values="yesno">no</string>
                                                                                     <string id="Comment">in range</string>
                                                                                     <normal>
-                                                                                        <sequence>
-                                                                                            <string id="Is blocking">no</string>
+                                                                                        <andblock>
+                                                                                            <string id="Comment">Facing turret -&gt; check if creeps in front</string>
+                                                                                            <else>
+                                                                                                <action id="aimStickAtTarget">
+                                                                                                    <float id="duration seconds">0.01</float>
+                                                                                                    <string id="only aim when needed" values="yesno">no</string>
+                                                                                                </action>
+                                                                                            </else>
+                                                                                            <or>
+                                                                                                <condition id="isTargetInArea">
+                                                                                                    <string id="condition" values="yesno">yes</string>
+                                                                                                    <float id="xOffset">0.08</float>
+                                                                                                    <float id="yOffset">0.00</float>
+                                                                                                    <float id="width">0.16</float>
+                                                                                                    <float id="height">0.13</float>
+                                                                                                    <string id="check line of sight" values="yesno">no</string>
+                                                                                                    <string id="ignore invisibility" values="yesno">no</string>
+                                                                                                    <string id="Comment">in range</string>
+                                                                                                    <string id="Minimized">yes</string>
+                                                                                                </condition>
+                                                                                                <condition id="isTargetType">
+                                                                                                    <string id="condition" values="yesno">yes</string>
+                                                                                                    <string id="target groups" values="target groups" multiselect="true">DESTROYABLE_OBSTACLES;;</string>
+                                                                                                </condition>
+                                                                                            </or>
+                                                                                        </andblock>
+                                                                                        <action id="pressButton">
+                                                                                            <string id="button" values="buttons">FACE_LEFT</string>
+                                                                                            <float id="duration in seconds">0.00</float>
                                                                                             <string id="Comment">Claw!</string>
-                                                                                            <normal>
-                                                                                                <andblock>
-                                                                                                    <string id="Comment">Facing turret -&gt; check if creeps in front</string>
-                                                                                                    <else>
-                                                                                                        <action id="aimStickAtTarget">
-                                                                                                            <float id="duration seconds">0.01</float>
-                                                                                                            <string id="only aim when needed" values="yesno">no</string>
-                                                                                                        </action>
-                                                                                                    </else>
-                                                                                                    <or>
-                                                                                                        <condition id="isTargetInArea">
-                                                                                                            <string id="condition" values="yesno">yes</string>
-                                                                                                            <float id="xOffset">0.08</float>
-                                                                                                            <float id="yOffset">0.00</float>
-                                                                                                            <float id="width">0.16</float>
-                                                                                                            <float id="height">0.13</float>
-                                                                                                            <string id="check line of sight" values="yesno">no</string>
-                                                                                                            <string id="ignore invisibility" values="yesno">no</string>
-                                                                                                            <string id="Comment">in range</string>
-                                                                                                            <string id="Minimized">yes</string>
-                                                                                                        </condition>
-                                                                                                        <condition id="isTargetType">
-                                                                                                            <string id="condition" values="yesno">yes</string>
-                                                                                                            <string id="target groups" values="target groups" multiselect="true">DESTROYABLE_OBSTACLES;;</string>
-                                                                                                        </condition>
-                                                                                                    </or>
-                                                                                                </andblock>
-                                                                                                <action id="wait">
-                                                                                                    <float id="time">0.01</float>
-                                                                                                </action>
-                                                                                                <action id="pressButton">
-                                                                                                    <string id="button" values="buttons">FACE_LEFT</string>
-                                                                                                    <float id="duration in seconds">0.00</float>
-                                                                                                </action>
-                                                                                            </normal>
-                                                                                        </sequence>
+                                                                                        </action>
                                                                                     </normal>
                                                                                 </condition>
                                                                             </else>
@@ -5077,45 +4941,37 @@
                                                                             <string id="ignore invisibility" values="yesno">no</string>
                                                                             <string id="Comment">in range</string>
                                                                             <normal>
-                                                                                <sequence>
-                                                                                    <string id="Is blocking">no</string>
+                                                                                <andblock>
+                                                                                    <string id="Comment">Facing turret -&gt; check if creeps in front</string>
+                                                                                    <else>
+                                                                                        <action id="aimStickAtTarget">
+                                                                                            <float id="duration seconds">0.01</float>
+                                                                                            <string id="only aim when needed" values="yesno">no</string>
+                                                                                        </action>
+                                                                                    </else>
+                                                                                    <or>
+                                                                                        <condition id="isTargetInArea">
+                                                                                            <string id="condition" values="yesno">yes</string>
+                                                                                            <float id="xOffset">0.08</float>
+                                                                                            <float id="yOffset">0.00</float>
+                                                                                            <float id="width">0.16</float>
+                                                                                            <float id="height">0.13</float>
+                                                                                            <string id="check line of sight" values="yesno">no</string>
+                                                                                            <string id="ignore invisibility" values="yesno">no</string>
+                                                                                            <string id="Comment">in range</string>
+                                                                                            <string id="Minimized">yes</string>
+                                                                                        </condition>
+                                                                                        <condition id="isTargetType">
+                                                                                            <string id="condition" values="yesno">yes</string>
+                                                                                            <string id="target groups" values="target groups" multiselect="true">DESTROYABLE_OBSTACLES;;</string>
+                                                                                        </condition>
+                                                                                    </or>
+                                                                                </andblock>
+                                                                                <action id="pressButton">
+                                                                                    <string id="button" values="buttons">FACE_LEFT</string>
+                                                                                    <float id="duration in seconds">0.00</float>
                                                                                     <string id="Comment">Claw!</string>
-                                                                                    <normal>
-                                                                                        <andblock>
-                                                                                            <string id="Comment">Facing turret -&gt; check if creeps in front</string>
-                                                                                            <else>
-                                                                                                <action id="aimStickAtTarget">
-                                                                                                    <float id="duration seconds">0.01</float>
-                                                                                                    <string id="only aim when needed" values="yesno">no</string>
-                                                                                                </action>
-                                                                                            </else>
-                                                                                            <or>
-                                                                                                <condition id="isTargetInArea">
-                                                                                                    <string id="condition" values="yesno">yes</string>
-                                                                                                    <float id="xOffset">0.08</float>
-                                                                                                    <float id="yOffset">0.00</float>
-                                                                                                    <float id="width">0.16</float>
-                                                                                                    <float id="height">0.13</float>
-                                                                                                    <string id="check line of sight" values="yesno">no</string>
-                                                                                                    <string id="ignore invisibility" values="yesno">no</string>
-                                                                                                    <string id="Comment">in range</string>
-                                                                                                    <string id="Minimized">yes</string>
-                                                                                                </condition>
-                                                                                                <condition id="isTargetType">
-                                                                                                    <string id="condition" values="yesno">yes</string>
-                                                                                                    <string id="target groups" values="target groups" multiselect="true">DESTROYABLE_OBSTACLES;;</string>
-                                                                                                </condition>
-                                                                                            </or>
-                                                                                        </andblock>
-                                                                                        <action id="wait">
-                                                                                            <float id="time">0.01</float>
-                                                                                        </action>
-                                                                                        <action id="pressButton">
-                                                                                            <string id="button" values="buttons">FACE_LEFT</string>
-                                                                                            <float id="duration in seconds">0.00</float>
-                                                                                        </action>
-                                                                                    </normal>
-                                                                                </sequence>
+                                                                                </action>
                                                                             </normal>
                                                                         </condition>
                                                                     </normal>
@@ -5130,45 +4986,37 @@
                                                                             <string id="ignore invisibility" values="yesno">no</string>
                                                                             <string id="Comment">in range</string>
                                                                             <normal>
-                                                                                <sequence>
-                                                                                    <string id="Is blocking">no</string>
+                                                                                <andblock>
+                                                                                    <string id="Comment">Facing turret -&gt; check if creeps in front</string>
+                                                                                    <else>
+                                                                                        <action id="aimStickAtTarget">
+                                                                                            <float id="duration seconds">0.01</float>
+                                                                                            <string id="only aim when needed" values="yesno">no</string>
+                                                                                        </action>
+                                                                                    </else>
+                                                                                    <or>
+                                                                                        <condition id="isTargetInArea">
+                                                                                            <string id="condition" values="yesno">yes</string>
+                                                                                            <float id="xOffset">0.08</float>
+                                                                                            <float id="yOffset">0.00</float>
+                                                                                            <float id="width">0.16</float>
+                                                                                            <float id="height">0.13</float>
+                                                                                            <string id="check line of sight" values="yesno">no</string>
+                                                                                            <string id="ignore invisibility" values="yesno">no</string>
+                                                                                            <string id="Comment">in range</string>
+                                                                                            <string id="Minimized">yes</string>
+                                                                                        </condition>
+                                                                                        <condition id="isTargetType">
+                                                                                            <string id="condition" values="yesno">yes</string>
+                                                                                            <string id="target groups" values="target groups" multiselect="true">DESTROYABLE_OBSTACLES;;</string>
+                                                                                        </condition>
+                                                                                    </or>
+                                                                                </andblock>
+                                                                                <action id="pressButton">
+                                                                                    <string id="button" values="buttons">FACE_LEFT</string>
+                                                                                    <float id="duration in seconds">0.00</float>
                                                                                     <string id="Comment">Claw!</string>
-                                                                                    <normal>
-                                                                                        <andblock>
-                                                                                            <string id="Comment">Facing turret -&gt; check if creeps in front</string>
-                                                                                            <else>
-                                                                                                <action id="aimStickAtTarget">
-                                                                                                    <float id="duration seconds">0.01</float>
-                                                                                                    <string id="only aim when needed" values="yesno">no</string>
-                                                                                                </action>
-                                                                                            </else>
-                                                                                            <or>
-                                                                                                <condition id="isTargetInArea">
-                                                                                                    <string id="condition" values="yesno">yes</string>
-                                                                                                    <float id="xOffset">0.08</float>
-                                                                                                    <float id="yOffset">0.00</float>
-                                                                                                    <float id="width">0.16</float>
-                                                                                                    <float id="height">0.13</float>
-                                                                                                    <string id="check line of sight" values="yesno">no</string>
-                                                                                                    <string id="ignore invisibility" values="yesno">no</string>
-                                                                                                    <string id="Comment">in range</string>
-                                                                                                    <string id="Minimized">yes</string>
-                                                                                                </condition>
-                                                                                                <condition id="isTargetType">
-                                                                                                    <string id="condition" values="yesno">yes</string>
-                                                                                                    <string id="target groups" values="target groups" multiselect="true">DESTROYABLE_OBSTACLES;;</string>
-                                                                                                </condition>
-                                                                                            </or>
-                                                                                        </andblock>
-                                                                                        <action id="wait">
-                                                                                            <float id="time">0.01</float>
-                                                                                        </action>
-                                                                                        <action id="pressButton">
-                                                                                            <string id="button" values="buttons">FACE_LEFT</string>
-                                                                                            <float id="duration in seconds">0.00</float>
-                                                                                        </action>
-                                                                                    </normal>
-                                                                                </sequence>
+                                                                                </action>
                                                                             </normal>
                                                                         </condition>
                                                                     </else>
@@ -5239,45 +5087,37 @@
                                                     <string id="ignore invisibility" values="yesno">no</string>
                                                     <string id="Comment">in range</string>
                                                     <normal>
-                                                        <sequence>
-                                                            <string id="Is blocking">no</string>
+                                                        <andblock>
+                                                            <string id="Comment">Facing turret -&gt; check if creeps in front</string>
+                                                            <else>
+                                                                <action id="aimStickAtTarget">
+                                                                    <float id="duration seconds">0.01</float>
+                                                                    <string id="only aim when needed" values="yesno">no</string>
+                                                                </action>
+                                                            </else>
+                                                            <or>
+                                                                <condition id="isTargetInArea">
+                                                                    <string id="condition" values="yesno">yes</string>
+                                                                    <float id="xOffset">0.08</float>
+                                                                    <float id="yOffset">0.00</float>
+                                                                    <float id="width">0.16</float>
+                                                                    <float id="height">0.13</float>
+                                                                    <string id="check line of sight" values="yesno">no</string>
+                                                                    <string id="ignore invisibility" values="yesno">no</string>
+                                                                    <string id="Comment">in range</string>
+                                                                    <string id="Minimized">yes</string>
+                                                                </condition>
+                                                                <condition id="isTargetType">
+                                                                    <string id="condition" values="yesno">yes</string>
+                                                                    <string id="target groups" values="target groups" multiselect="true">DESTROYABLE_OBSTACLES;;</string>
+                                                                </condition>
+                                                            </or>
+                                                        </andblock>
+                                                        <action id="pressButton">
+                                                            <string id="button" values="buttons">FACE_LEFT</string>
+                                                            <float id="duration in seconds">0.00</float>
                                                             <string id="Comment">Claw!</string>
-                                                            <normal>
-                                                                <andblock>
-                                                                    <string id="Comment">Facing turret -&gt; check if creeps in front</string>
-                                                                    <else>
-                                                                        <action id="aimStickAtTarget">
-                                                                            <float id="duration seconds">0.01</float>
-                                                                            <string id="only aim when needed" values="yesno">no</string>
-                                                                        </action>
-                                                                    </else>
-                                                                    <or>
-                                                                        <condition id="isTargetInArea">
-                                                                            <string id="condition" values="yesno">yes</string>
-                                                                            <float id="xOffset">0.08</float>
-                                                                            <float id="yOffset">0.00</float>
-                                                                            <float id="width">0.16</float>
-                                                                            <float id="height">0.13</float>
-                                                                            <string id="check line of sight" values="yesno">no</string>
-                                                                            <string id="ignore invisibility" values="yesno">no</string>
-                                                                            <string id="Comment">in range</string>
-                                                                            <string id="Minimized">yes</string>
-                                                                        </condition>
-                                                                        <condition id="isTargetType">
-                                                                            <string id="condition" values="yesno">yes</string>
-                                                                            <string id="target groups" values="target groups" multiselect="true">DESTROYABLE_OBSTACLES;;</string>
-                                                                        </condition>
-                                                                    </or>
-                                                                </andblock>
-                                                                <action id="wait">
-                                                                    <float id="time">0.01</float>
-                                                                </action>
-                                                                <action id="pressButton">
-                                                                    <string id="button" values="buttons">FACE_LEFT</string>
-                                                                    <float id="duration in seconds">0.00</float>
-                                                                </action>
-                                                            </normal>
-                                                        </sequence>
+                                                        </action>
                                                     </normal>
                                                 </condition>
                                             </else>
@@ -5311,45 +5151,37 @@
                                                     <string id="ignore invisibility" values="yesno">no</string>
                                                     <string id="Comment">in range</string>
                                                     <normal>
-                                                        <sequence>
-                                                            <string id="Is blocking">no</string>
+                                                        <andblock>
+                                                            <string id="Comment">Facing turret -&gt; check if creeps in front</string>
+                                                            <else>
+                                                                <action id="aimStickAtTarget">
+                                                                    <float id="duration seconds">0.01</float>
+                                                                    <string id="only aim when needed" values="yesno">no</string>
+                                                                </action>
+                                                            </else>
+                                                            <or>
+                                                                <condition id="isTargetInArea">
+                                                                    <string id="condition" values="yesno">yes</string>
+                                                                    <float id="xOffset">0.08</float>
+                                                                    <float id="yOffset">0.00</float>
+                                                                    <float id="width">0.16</float>
+                                                                    <float id="height">0.13</float>
+                                                                    <string id="check line of sight" values="yesno">no</string>
+                                                                    <string id="ignore invisibility" values="yesno">no</string>
+                                                                    <string id="Comment">in range</string>
+                                                                    <string id="Minimized">yes</string>
+                                                                </condition>
+                                                                <condition id="isTargetType">
+                                                                    <string id="condition" values="yesno">yes</string>
+                                                                    <string id="target groups" values="target groups" multiselect="true">DESTROYABLE_OBSTACLES;;</string>
+                                                                </condition>
+                                                            </or>
+                                                        </andblock>
+                                                        <action id="pressButton">
+                                                            <string id="button" values="buttons">FACE_LEFT</string>
+                                                            <float id="duration in seconds">0.00</float>
                                                             <string id="Comment">Claw!</string>
-                                                            <normal>
-                                                                <andblock>
-                                                                    <string id="Comment">Facing turret -&gt; check if creeps in front</string>
-                                                                    <else>
-                                                                        <action id="aimStickAtTarget">
-                                                                            <float id="duration seconds">0.01</float>
-                                                                            <string id="only aim when needed" values="yesno">no</string>
-                                                                        </action>
-                                                                    </else>
-                                                                    <or>
-                                                                        <condition id="isTargetInArea">
-                                                                            <string id="condition" values="yesno">yes</string>
-                                                                            <float id="xOffset">0.08</float>
-                                                                            <float id="yOffset">0.00</float>
-                                                                            <float id="width">0.16</float>
-                                                                            <float id="height">0.13</float>
-                                                                            <string id="check line of sight" values="yesno">no</string>
-                                                                            <string id="ignore invisibility" values="yesno">no</string>
-                                                                            <string id="Comment">in range</string>
-                                                                            <string id="Minimized">yes</string>
-                                                                        </condition>
-                                                                        <condition id="isTargetType">
-                                                                            <string id="condition" values="yesno">yes</string>
-                                                                            <string id="target groups" values="target groups" multiselect="true">DESTROYABLE_OBSTACLES;;</string>
-                                                                        </condition>
-                                                                    </or>
-                                                                </andblock>
-                                                                <action id="wait">
-                                                                    <float id="time">0.01</float>
-                                                                </action>
-                                                                <action id="pressButton">
-                                                                    <string id="button" values="buttons">FACE_LEFT</string>
-                                                                    <float id="duration in seconds">0.00</float>
-                                                                </action>
-                                                            </normal>
-                                                        </sequence>
+                                                        </action>
                                                     </normal>
                                                 </condition>
                                                 <andblock>
@@ -5382,45 +5214,37 @@
                                                                             <string id="ignore invisibility" values="yesno">no</string>
                                                                             <string id="Comment">in range</string>
                                                                             <normal>
-                                                                                <sequence>
-                                                                                    <string id="Is blocking">no</string>
+                                                                                <andblock>
+                                                                                    <string id="Comment">Facing turret -&gt; check if creeps in front</string>
+                                                                                    <else>
+                                                                                        <action id="aimStickAtTarget">
+                                                                                            <float id="duration seconds">0.01</float>
+                                                                                            <string id="only aim when needed" values="yesno">no</string>
+                                                                                        </action>
+                                                                                    </else>
+                                                                                    <or>
+                                                                                        <condition id="isTargetInArea">
+                                                                                            <string id="condition" values="yesno">yes</string>
+                                                                                            <float id="xOffset">0.08</float>
+                                                                                            <float id="yOffset">0.00</float>
+                                                                                            <float id="width">0.16</float>
+                                                                                            <float id="height">0.13</float>
+                                                                                            <string id="check line of sight" values="yesno">no</string>
+                                                                                            <string id="ignore invisibility" values="yesno">no</string>
+                                                                                            <string id="Comment">in range</string>
+                                                                                            <string id="Minimized">yes</string>
+                                                                                        </condition>
+                                                                                        <condition id="isTargetType">
+                                                                                            <string id="condition" values="yesno">yes</string>
+                                                                                            <string id="target groups" values="target groups" multiselect="true">DESTROYABLE_OBSTACLES;;</string>
+                                                                                        </condition>
+                                                                                    </or>
+                                                                                </andblock>
+                                                                                <action id="pressButton">
+                                                                                    <string id="button" values="buttons">FACE_LEFT</string>
+                                                                                    <float id="duration in seconds">0.00</float>
                                                                                     <string id="Comment">Claw!</string>
-                                                                                    <normal>
-                                                                                        <andblock>
-                                                                                            <string id="Comment">Facing turret -&gt; check if creeps in front</string>
-                                                                                            <else>
-                                                                                                <action id="aimStickAtTarget">
-                                                                                                    <float id="duration seconds">0.01</float>
-                                                                                                    <string id="only aim when needed" values="yesno">no</string>
-                                                                                                </action>
-                                                                                            </else>
-                                                                                            <or>
-                                                                                                <condition id="isTargetInArea">
-                                                                                                    <string id="condition" values="yesno">yes</string>
-                                                                                                    <float id="xOffset">0.08</float>
-                                                                                                    <float id="yOffset">0.00</float>
-                                                                                                    <float id="width">0.16</float>
-                                                                                                    <float id="height">0.13</float>
-                                                                                                    <string id="check line of sight" values="yesno">no</string>
-                                                                                                    <string id="ignore invisibility" values="yesno">no</string>
-                                                                                                    <string id="Comment">in range</string>
-                                                                                                    <string id="Minimized">yes</string>
-                                                                                                </condition>
-                                                                                                <condition id="isTargetType">
-                                                                                                    <string id="condition" values="yesno">yes</string>
-                                                                                                    <string id="target groups" values="target groups" multiselect="true">DESTROYABLE_OBSTACLES;;</string>
-                                                                                                </condition>
-                                                                                            </or>
-                                                                                        </andblock>
-                                                                                        <action id="wait">
-                                                                                            <float id="time">0.01</float>
-                                                                                        </action>
-                                                                                        <action id="pressButton">
-                                                                                            <string id="button" values="buttons">FACE_LEFT</string>
-                                                                                            <float id="duration in seconds">0.00</float>
-                                                                                        </action>
-                                                                                    </normal>
-                                                                                </sequence>
+                                                                                </action>
                                                                             </normal>
                                                                         </condition>
                                                                     </normal>
@@ -5435,45 +5259,37 @@
                                                                             <string id="ignore invisibility" values="yesno">no</string>
                                                                             <string id="Comment">in range</string>
                                                                             <normal>
-                                                                                <sequence>
-                                                                                    <string id="Is blocking">no</string>
+                                                                                <andblock>
+                                                                                    <string id="Comment">Facing turret -&gt; check if creeps in front</string>
+                                                                                    <else>
+                                                                                        <action id="aimStickAtTarget">
+                                                                                            <float id="duration seconds">0.01</float>
+                                                                                            <string id="only aim when needed" values="yesno">no</string>
+                                                                                        </action>
+                                                                                    </else>
+                                                                                    <or>
+                                                                                        <condition id="isTargetInArea">
+                                                                                            <string id="condition" values="yesno">yes</string>
+                                                                                            <float id="xOffset">0.08</float>
+                                                                                            <float id="yOffset">0.00</float>
+                                                                                            <float id="width">0.16</float>
+                                                                                            <float id="height">0.13</float>
+                                                                                            <string id="check line of sight" values="yesno">no</string>
+                                                                                            <string id="ignore invisibility" values="yesno">no</string>
+                                                                                            <string id="Comment">in range</string>
+                                                                                            <string id="Minimized">yes</string>
+                                                                                        </condition>
+                                                                                        <condition id="isTargetType">
+                                                                                            <string id="condition" values="yesno">yes</string>
+                                                                                            <string id="target groups" values="target groups" multiselect="true">DESTROYABLE_OBSTACLES;;</string>
+                                                                                        </condition>
+                                                                                    </or>
+                                                                                </andblock>
+                                                                                <action id="pressButton">
+                                                                                    <string id="button" values="buttons">FACE_LEFT</string>
+                                                                                    <float id="duration in seconds">0.00</float>
                                                                                     <string id="Comment">Claw!</string>
-                                                                                    <normal>
-                                                                                        <andblock>
-                                                                                            <string id="Comment">Facing turret -&gt; check if creeps in front</string>
-                                                                                            <else>
-                                                                                                <action id="aimStickAtTarget">
-                                                                                                    <float id="duration seconds">0.01</float>
-                                                                                                    <string id="only aim when needed" values="yesno">no</string>
-                                                                                                </action>
-                                                                                            </else>
-                                                                                            <or>
-                                                                                                <condition id="isTargetInArea">
-                                                                                                    <string id="condition" values="yesno">yes</string>
-                                                                                                    <float id="xOffset">0.08</float>
-                                                                                                    <float id="yOffset">0.00</float>
-                                                                                                    <float id="width">0.16</float>
-                                                                                                    <float id="height">0.13</float>
-                                                                                                    <string id="check line of sight" values="yesno">no</string>
-                                                                                                    <string id="ignore invisibility" values="yesno">no</string>
-                                                                                                    <string id="Comment">in range</string>
-                                                                                                    <string id="Minimized">yes</string>
-                                                                                                </condition>
-                                                                                                <condition id="isTargetType">
-                                                                                                    <string id="condition" values="yesno">yes</string>
-                                                                                                    <string id="target groups" values="target groups" multiselect="true">DESTROYABLE_OBSTACLES;;</string>
-                                                                                                </condition>
-                                                                                            </or>
-                                                                                        </andblock>
-                                                                                        <action id="wait">
-                                                                                            <float id="time">0.01</float>
-                                                                                        </action>
-                                                                                        <action id="pressButton">
-                                                                                            <string id="button" values="buttons">FACE_LEFT</string>
-                                                                                            <float id="duration in seconds">0.00</float>
-                                                                                        </action>
-                                                                                    </normal>
-                                                                                </sequence>
+                                                                                </action>
                                                                             </normal>
                                                                         </condition>
                                                                     </else>
@@ -5504,45 +5320,37 @@
                                                                     <string id="ignore invisibility" values="yesno">no</string>
                                                                     <string id="Comment">in range</string>
                                                                     <normal>
-                                                                        <sequence>
-                                                                            <string id="Is blocking">no</string>
+                                                                        <andblock>
+                                                                            <string id="Comment">Facing turret -&gt; check if creeps in front</string>
+                                                                            <else>
+                                                                                <action id="aimStickAtTarget">
+                                                                                    <float id="duration seconds">0.01</float>
+                                                                                    <string id="only aim when needed" values="yesno">no</string>
+                                                                                </action>
+                                                                            </else>
+                                                                            <or>
+                                                                                <condition id="isTargetInArea">
+                                                                                    <string id="condition" values="yesno">yes</string>
+                                                                                    <float id="xOffset">0.08</float>
+                                                                                    <float id="yOffset">0.00</float>
+                                                                                    <float id="width">0.16</float>
+                                                                                    <float id="height">0.13</float>
+                                                                                    <string id="check line of sight" values="yesno">no</string>
+                                                                                    <string id="ignore invisibility" values="yesno">no</string>
+                                                                                    <string id="Comment">in range</string>
+                                                                                    <string id="Minimized">yes</string>
+                                                                                </condition>
+                                                                                <condition id="isTargetType">
+                                                                                    <string id="condition" values="yesno">yes</string>
+                                                                                    <string id="target groups" values="target groups" multiselect="true">DESTROYABLE_OBSTACLES;;</string>
+                                                                                </condition>
+                                                                            </or>
+                                                                        </andblock>
+                                                                        <action id="pressButton">
+                                                                            <string id="button" values="buttons">FACE_LEFT</string>
+                                                                            <float id="duration in seconds">0.00</float>
                                                                             <string id="Comment">Claw!</string>
-                                                                            <normal>
-                                                                                <andblock>
-                                                                                    <string id="Comment">Facing turret -&gt; check if creeps in front</string>
-                                                                                    <else>
-                                                                                        <action id="aimStickAtTarget">
-                                                                                            <float id="duration seconds">0.01</float>
-                                                                                            <string id="only aim when needed" values="yesno">no</string>
-                                                                                        </action>
-                                                                                    </else>
-                                                                                    <or>
-                                                                                        <condition id="isTargetInArea">
-                                                                                            <string id="condition" values="yesno">yes</string>
-                                                                                            <float id="xOffset">0.08</float>
-                                                                                            <float id="yOffset">0.00</float>
-                                                                                            <float id="width">0.16</float>
-                                                                                            <float id="height">0.13</float>
-                                                                                            <string id="check line of sight" values="yesno">no</string>
-                                                                                            <string id="ignore invisibility" values="yesno">no</string>
-                                                                                            <string id="Comment">in range</string>
-                                                                                            <string id="Minimized">yes</string>
-                                                                                        </condition>
-                                                                                        <condition id="isTargetType">
-                                                                                            <string id="condition" values="yesno">yes</string>
-                                                                                            <string id="target groups" values="target groups" multiselect="true">DESTROYABLE_OBSTACLES;;</string>
-                                                                                        </condition>
-                                                                                    </or>
-                                                                                </andblock>
-                                                                                <action id="wait">
-                                                                                    <float id="time">0.01</float>
-                                                                                </action>
-                                                                                <action id="pressButton">
-                                                                                    <string id="button" values="buttons">FACE_LEFT</string>
-                                                                                    <float id="duration in seconds">0.00</float>
-                                                                                </action>
-                                                                            </normal>
-                                                                        </sequence>
+                                                                        </action>
                                                                     </normal>
                                                                 </condition>
                                                             </normal>
@@ -5557,45 +5365,37 @@
                                                                     <string id="ignore invisibility" values="yesno">no</string>
                                                                     <string id="Comment">in range</string>
                                                                     <normal>
-                                                                        <sequence>
-                                                                            <string id="Is blocking">no</string>
+                                                                        <andblock>
+                                                                            <string id="Comment">Facing turret -&gt; check if creeps in front</string>
+                                                                            <else>
+                                                                                <action id="aimStickAtTarget">
+                                                                                    <float id="duration seconds">0.01</float>
+                                                                                    <string id="only aim when needed" values="yesno">no</string>
+                                                                                </action>
+                                                                            </else>
+                                                                            <or>
+                                                                                <condition id="isTargetInArea">
+                                                                                    <string id="condition" values="yesno">yes</string>
+                                                                                    <float id="xOffset">0.08</float>
+                                                                                    <float id="yOffset">0.00</float>
+                                                                                    <float id="width">0.16</float>
+                                                                                    <float id="height">0.13</float>
+                                                                                    <string id="check line of sight" values="yesno">no</string>
+                                                                                    <string id="ignore invisibility" values="yesno">no</string>
+                                                                                    <string id="Comment">in range</string>
+                                                                                    <string id="Minimized">yes</string>
+                                                                                </condition>
+                                                                                <condition id="isTargetType">
+                                                                                    <string id="condition" values="yesno">yes</string>
+                                                                                    <string id="target groups" values="target groups" multiselect="true">DESTROYABLE_OBSTACLES;;</string>
+                                                                                </condition>
+                                                                            </or>
+                                                                        </andblock>
+                                                                        <action id="pressButton">
+                                                                            <string id="button" values="buttons">FACE_LEFT</string>
+                                                                            <float id="duration in seconds">0.00</float>
                                                                             <string id="Comment">Claw!</string>
-                                                                            <normal>
-                                                                                <andblock>
-                                                                                    <string id="Comment">Facing turret -&gt; check if creeps in front</string>
-                                                                                    <else>
-                                                                                        <action id="aimStickAtTarget">
-                                                                                            <float id="duration seconds">0.01</float>
-                                                                                            <string id="only aim when needed" values="yesno">no</string>
-                                                                                        </action>
-                                                                                    </else>
-                                                                                    <or>
-                                                                                        <condition id="isTargetInArea">
-                                                                                            <string id="condition" values="yesno">yes</string>
-                                                                                            <float id="xOffset">0.08</float>
-                                                                                            <float id="yOffset">0.00</float>
-                                                                                            <float id="width">0.16</float>
-                                                                                            <float id="height">0.13</float>
-                                                                                            <string id="check line of sight" values="yesno">no</string>
-                                                                                            <string id="ignore invisibility" values="yesno">no</string>
-                                                                                            <string id="Comment">in range</string>
-                                                                                            <string id="Minimized">yes</string>
-                                                                                        </condition>
-                                                                                        <condition id="isTargetType">
-                                                                                            <string id="condition" values="yesno">yes</string>
-                                                                                            <string id="target groups" values="target groups" multiselect="true">DESTROYABLE_OBSTACLES;;</string>
-                                                                                        </condition>
-                                                                                    </or>
-                                                                                </andblock>
-                                                                                <action id="wait">
-                                                                                    <float id="time">0.01</float>
-                                                                                </action>
-                                                                                <action id="pressButton">
-                                                                                    <string id="button" values="buttons">FACE_LEFT</string>
-                                                                                    <float id="duration in seconds">0.00</float>
-                                                                                </action>
-                                                                            </normal>
-                                                                        </sequence>
+                                                                        </action>
                                                                     </normal>
                                                                 </condition>
                                                             </else>
@@ -5666,45 +5466,37 @@
                                             <string id="ignore invisibility" values="yesno">no</string>
                                             <string id="Comment">in range</string>
                                             <normal>
-                                                <sequence>
-                                                    <string id="Is blocking">no</string>
+                                                <andblock>
+                                                    <string id="Comment">Facing turret -&gt; check if creeps in front</string>
+                                                    <else>
+                                                        <action id="aimStickAtTarget">
+                                                            <float id="duration seconds">0.01</float>
+                                                            <string id="only aim when needed" values="yesno">no</string>
+                                                        </action>
+                                                    </else>
+                                                    <or>
+                                                        <condition id="isTargetInArea">
+                                                            <string id="condition" values="yesno">yes</string>
+                                                            <float id="xOffset">0.08</float>
+                                                            <float id="yOffset">0.00</float>
+                                                            <float id="width">0.16</float>
+                                                            <float id="height">0.13</float>
+                                                            <string id="check line of sight" values="yesno">no</string>
+                                                            <string id="ignore invisibility" values="yesno">no</string>
+                                                            <string id="Comment">in range</string>
+                                                            <string id="Minimized">yes</string>
+                                                        </condition>
+                                                        <condition id="isTargetType">
+                                                            <string id="condition" values="yesno">yes</string>
+                                                            <string id="target groups" values="target groups" multiselect="true">DESTROYABLE_OBSTACLES;;</string>
+                                                        </condition>
+                                                    </or>
+                                                </andblock>
+                                                <action id="pressButton">
+                                                    <string id="button" values="buttons">FACE_LEFT</string>
+                                                    <float id="duration in seconds">0.00</float>
                                                     <string id="Comment">Claw!</string>
-                                                    <normal>
-                                                        <andblock>
-                                                            <string id="Comment">Facing turret -&gt; check if creeps in front</string>
-                                                            <else>
-                                                                <action id="aimStickAtTarget">
-                                                                    <float id="duration seconds">0.01</float>
-                                                                    <string id="only aim when needed" values="yesno">no</string>
-                                                                </action>
-                                                            </else>
-                                                            <or>
-                                                                <condition id="isTargetInArea">
-                                                                    <string id="condition" values="yesno">yes</string>
-                                                                    <float id="xOffset">0.08</float>
-                                                                    <float id="yOffset">0.00</float>
-                                                                    <float id="width">0.16</float>
-                                                                    <float id="height">0.13</float>
-                                                                    <string id="check line of sight" values="yesno">no</string>
-                                                                    <string id="ignore invisibility" values="yesno">no</string>
-                                                                    <string id="Comment">in range</string>
-                                                                    <string id="Minimized">yes</string>
-                                                                </condition>
-                                                                <condition id="isTargetType">
-                                                                    <string id="condition" values="yesno">yes</string>
-                                                                    <string id="target groups" values="target groups" multiselect="true">DESTROYABLE_OBSTACLES;;</string>
-                                                                </condition>
-                                                            </or>
-                                                        </andblock>
-                                                        <action id="wait">
-                                                            <float id="time">0.01</float>
-                                                        </action>
-                                                        <action id="pressButton">
-                                                            <string id="button" values="buttons">FACE_LEFT</string>
-                                                            <float id="duration in seconds">0.00</float>
-                                                        </action>
-                                                    </normal>
-                                                </sequence>
+                                                </action>
                                             </normal>
                                         </condition>
                                     </else>
@@ -6682,7 +6474,7 @@
         </root>
     </behaviour>
     <behaviour>
-        <andblock x="2021" y="50652">
+        <andblock x="2196" y="50652">
             <string id="Comment">Facetank fix</string>
             <normal>
                 <condition id="isUpgradeEnabled">
