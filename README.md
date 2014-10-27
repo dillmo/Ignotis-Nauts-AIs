@@ -75,3 +75,16 @@ for his allies, and to use Black Hole Sun to escape and secure kills.
 * Supports the team deathmatch gamemode
 
 **[Build](http://nautsbuilder.com/#Sentry_X-58/1030103132000113002011320002/1-21-24-19-8-10-10-14-9-9-9-19-24-28-28-23-16-23-16-23-16-5-3-3-3-7-7-7)**
+
+YuriAI
+------
+YuriAI is a Yuri AI which works off of area control. Using mines, he is able to
+wreak havoc with enemy navigation of lanes. Additionally, he is capable of
+using Time Warp to escape and being generally annoying.
+
+**Pros:**
+* Uses mines for very effective area control
+* Uses Time Warp to escape
+* Makes good use of Laser to destroy droid waves and harass enemies
+
+**[Build](http://nautsbuilder.com/#Yuri/1001011102010311201001301100/26-1-4-6-7-8-25-23-23-23-14-14-14-12-10-10-17-17-16-19)**
