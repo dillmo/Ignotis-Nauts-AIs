@@ -64,7 +64,10 @@ Super Sentry
 ------------
 Super Sentry is a Sentry X-58 AI designed to take advantage of Sentry-X58's
 affinities. He tries to use his Photon Mine ability for area control, to tank
-for his allies, and to use Black Hole Sun to escape and secure kills.
+for his allies, and to use Black Hole Sun to escape and secure kills. However,
+his biggest benefit is his use of tele-bombing midgame. He is capable of
+instantly doing 950 damage and applying 2.5 seconds of silencing, which
+absolutely cripples his foes.
 
 **Pros:**
 * Clever at charging Black Hole Sun
