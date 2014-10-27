@@ -1,0 +1,24 @@
+diff --git a/../default/Mod_Assassin_Unstoppable.xml b/Mod_Assassin_Boss.xml
+index 791ab1f..9a71b0b 100644
+--- a/../default/Mod_Assassin_Unstoppable.xml
++++ b/Mod_Assassin_Boss.xml
+@@ -29,6 +29,10 @@
+                     <string id="fileName">Mod_BotCollab_Main</string>
+                     <string id="Minimized">yes</string>
+                 </action>
++                <action id="executeBehaviourTree">
++                    <string id="fileName">Mod_Bossmode</string>
++                    <string id="Minimized">yes</string>
++                </action>
+                 <condition id="checkCounter">
+                     <string id="id">botSkill</string>
+                     <string id="value">3</string>
+@@ -5128,7 +5132,7 @@
+         </root>
+     </behaviour>
+     <behaviour>
+-        <andblock x="2371" y="50652">
++        <andblock x="2546" y="50652">
+             <string id="Comment">Facetank fix</string>
+             <normal>
+                 <condition id="isUpgradeEnabled">
