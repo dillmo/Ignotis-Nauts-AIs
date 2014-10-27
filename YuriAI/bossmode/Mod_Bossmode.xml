@@ -1,0 +1,1447 @@
+<?xml version="1.0" ?>
+<enemy>
+    <behaviour>
+        <root x="110" y="40">
+            <normal>
+                <condition id="once">
+                    <normal>
+                        <action id="setBool">
+                            <string id="id">ready</string>
+                            <string id="value" values="flagtoggle">no</string>
+                        </action>
+                    </normal>
+                </condition>
+                <condition id="getBoolEquals">
+                    <string id="id">ready</string>
+                    <string id="value" values="yesno">yes</string>
+                    <normal>
+                        <condition id="once">
+                            <string id="Comment">Am I the boss?</string>
+                            <normal>
+                                <condition id="receivedMessage">
+                                    <string id="id">imBoss</string>
+                                    <normal>
+                                        <action id="setBool">
+                                            <string id="id">boss</string>
+                                            <string id="value" values="flagtoggle">no</string>
+                                        </action>
+                                    </normal>
+                                    <else>
+                                        <action id="setBool">
+                                            <string id="id">boss</string>
+                                            <string id="value" values="flagtoggle">yes</string>
+                                        </action>
+                                    </else>
+                                </condition>
+                            </normal>
+                        </condition>
+                        <condition id="isUpgradeEnabled">
+                            <string id="condition" values="yesno">yes</string>
+                            <string id="upgrade name">addHealth3</string>
+                            <normal>
+                                <action id="emitMessageInArea">
+                                    <string id="id">iHaveAddHealth3</string>
+                                    <string id="receive groups" values="target receive groups" multiselect="true">CREEPS;;</string>
+                                    <string id="teams" values="teamswithtarget" multiselect="true">OWN_TEAM;;</string>
+                                    <float id="xOffset">0.00</float>
+                                    <float id="yOffset">0.00</float>
+                                    <float id="width">50.00</float>
+                                    <float id="height">50.00</float>
+                                    <string id="ignore invisibility" values="yesno">yes</string>
+                                    <string id="check line of sight" values="yesno">no</string>
+                                </action>
+                            </normal>
+                            <else>
+                                <condition id="isUpgradeEnabled">
+                                    <string id="condition" values="yesno">yes</string>
+                                    <string id="upgrade name">addHealth2</string>
+                                    <normal>
+                                        <action id="emitMessageInArea">
+                                            <string id="id">iHaveAddHealth2</string>
+                                            <string id="receive groups" values="target receive groups" multiselect="true">CREEPS;;</string>
+                                            <string id="teams" values="teamswithtarget" multiselect="true">OWN_TEAM;;</string>
+                                            <float id="xOffset">0.00</float>
+                                            <float id="yOffset">0.00</float>
+                                            <float id="width">50.00</float>
+                                            <float id="height">50.00</float>
+                                            <string id="ignore invisibility" values="yesno">yes</string>
+                                            <string id="check line of sight" values="yesno">no</string>
+                                        </action>
+                                    </normal>
+                                    <else>
+                                        <condition id="isUpgradeEnabled">
+                                            <string id="condition" values="yesno">yes</string>
+                                            <string id="upgrade name">addHealth1</string>
+                                            <normal>
+                                                <action id="emitMessageInArea">
+                                                    <string id="id">iHaveAddHealth1</string>
+                                                    <string id="receive groups" values="target receive groups" multiselect="true">CREEPS;;</string>
+                                                    <string id="teams" values="teamswithtarget" multiselect="true">OWN_TEAM;;</string>
+                                                    <float id="xOffset">0.00</float>
+                                                    <float id="yOffset">0.00</float>
+                                                    <float id="width">50.00</float>
+                                                    <float id="height">50.00</float>
+                                                    <string id="ignore invisibility" values="yesno">yes</string>
+                                                    <string id="check line of sight" values="yesno">no</string>
+                                                </action>
+                                            </normal>
+                                        </condition>
+                                    </else>
+                                </condition>
+                            </else>
+                        </condition>
+                        <condition id="getBoolEquals">
+                            <string id="id">boss</string>
+                            <string id="value" values="yesno">yes</string>
+                            <normal>
+                                <action id="emitMessageInArea">
+                                    <string id="id">imBoss</string>
+                                    <string id="receive groups" values="target receive groups" multiselect="true">CREEPS;;</string>
+                                    <string id="teams" values="teamswithtarget" multiselect="true">OWN_TEAM;;</string>
+                                    <float id="xOffset">0.00</float>
+                                    <float id="yOffset">0.00</float>
+                                    <float id="width">50.00</float>
+                                    <float id="height">50.00</float>
+                                    <string id="ignore invisibility" values="yesno">yes</string>
+                                    <string id="check line of sight" values="yesno">no</string>
+                                    <string id="Comment">Tell everyone I&apos;m the boss</string>
+                                </action>
+                            </normal>
+                        </condition>
+                        <condition id="getBoolEquals">
+                            <string id="id">boss</string>
+                            <string id="value" values="yesno">yes</string>
+                            <string id="Comment">Boss logic</string>
+                            <normal>
+                                <condition id="once">
+                                    <string id="Comment">Extra starting Solar</string>
+                                    <normal>
+                                        <action id="adjustCharacterValue">
+                                            <string id="property" values="charactervaluesAdjustable">gold</string>
+                                            <float id="value">500.00</float>
+                                            <string id="adjust method" values="valueadjust">add</string>
+                                        </action>
+                                    </normal>
+                                </condition>
+                                <action id="adjustCharacterValue">
+                                    <string id="property" values="charactervaluesAdjustable">gold</string>
+                                    <float id="value">1.00</float>
+                                    <string id="adjust method" values="valueadjust">add</string>
+                                    <string id="Comment">Extra Solar gain</string>
+                                </action>
+                                <condition id="getBoolEquals">
+                                    <string id="id">fastHeal</string>
+                                    <string id="value" values="yesno">no</string>
+                                    <string id="Comment">Fast healing logic</string>
+                                    <normal>
+                                        <condition id="checkCharacterValue">
+                                            <string id="property" values="charactervaluesCheckable">health percentage</string>
+                                            <float id="value">40.00</float>
+                                            <string id="compare method" values="valuecompare">less or equal</string>
+                                            <string id="check on" values="targetself">self</string>
+                                            <normal>
+                                                <condition id="random">
+                                                    <string id="amount">20</string>
+                                                    <normal>
+                                                        <action id="setBool">
+                                                            <string id="id">fastHeal</string>
+                                                            <string id="value" values="flagtoggle">yes</string>
+                                                        </action>
+                                                    </normal>
+                                                </condition>
+                                            </normal>
+                                        </condition>
+                                    </normal>
+                                    <else>
+                                        <condition id="checkCharacterValue">
+                                            <string id="property" values="charactervaluesCheckable">health percentage</string>
+                                            <float id="value">100.00</float>
+                                            <string id="compare method" values="valuecompare">less</string>
+                                            <string id="check on" values="targetself">self</string>
+                                            <normal>
+                                                <action id="adjustCharacterValue">
+                                                    <string id="property" values="charactervaluesAdjustable">health</string>
+                                                    <float id="value">2.00</float>
+                                                    <string id="adjust method" values="valueadjust">add</string>
+                                                </action>
+                                            </normal>
+                                        </condition>
+                                        <condition id="checkCharacterValue">
+                                            <string id="property" values="charactervaluesCheckable">health percentage</string>
+                                            <float id="value">40.00</float>
+                                            <string id="compare method" values="valuecompare">greater</string>
+                                            <string id="check on" values="targetself">self</string>
+                                            <normal>
+                                                <condition id="random">
+                                                    <string id="amount">40</string>
+                                                    <normal>
+                                                        <action id="setBool">
+                                                            <string id="id">fastHeal</string>
+                                                            <string id="value" values="flagtoggle">no</string>
+                                                        </action>
+                                                    </normal>
+                                                </condition>
+                                            </normal>
+                                        </condition>
+                                    </else>
+                                </condition>
+                                <condition id="isInArea">
+                                    <string id="condition" values="yesno">yes</string>
+                                    <string id="collision groups" values="collison groups" multiselect="true">PLAYERS;;</string>
+                                    <string id="check green obstacles only" values="yesno">no</string>
+                                    <string id="teams" values="teams" multiselect="true">ENEMY_TEAM;;</string>
+                                    <string id="areaName"></string>
+                                    <float id="xOffset">0.00</float>
+                                    <float id="yOffset">0.00</float>
+                                    <float id="width">0.50</float>
+                                    <float id="height">0.50</float>
+                                    <string id="check line of sight" values="yesno">no</string>
+                                    <string id="ignore invisibility" values="yesno">no</string>
+                                    <string id="Comment">Clone Spawning Logic</string>
+                                    <normal>
+                                        <condition id="random">
+                                            <string id="amount">50</string>
+                                            <normal>
+                                                <condition id="checkClass">
+                                                    <string id="check on" values="targetself">self</string>
+                                                    <string id="class">Vampire</string>
+                                                    <string id="Minimized">yes</string>
+                                                    <normal>
+                                                        <action id="spawnCharacter">
+                                                            <string id="className">Vampire</string>
+                                                            <string id="aiFileName">Mod_Vampire_Boss</string>
+                                                            <string id="team" values="teamswithnumbers">OWN_TEAM</string>
+                                                            <float id="count">1.00</float>
+                                                            <string id="spawnPositionNodeID"></string>
+                                                            <float id="spawnPositionOffsetX">0.00</float>
+                                                            <float id="spawnPositionOffsetY">0.00</float>
+                                                        </action>
+                                                    </normal>
+                                                    <else>
+                                                        <condition id="checkClass">
+                                                            <string id="check on" values="targetself">self</string>
+                                                            <string id="class">Tank</string>
+                                                            <normal>
+                                                                <action id="spawnCharacter">
+                                                                    <string id="className">Tank</string>
+                                                                    <string id="aiFileName">Mod_Tank_Boss</string>
+                                                                    <string id="team" values="teamswithnumbers">OWN_TEAM</string>
+                                                                    <float id="count">1.00</float>
+                                                                    <string id="spawnPositionNodeID"></string>
+                                                                    <float id="spawnPositionOffsetX">0.00</float>
+                                                                    <float id="spawnPositionOffsetY">0.00</float>
+                                                                </action>
+                                                            </normal>
+                                                            <else>
+                                                                <condition id="checkClass">
+                                                                    <string id="check on" values="targetself">self</string>
+                                                                    <string id="class">Blazer</string>
+                                                                    <normal>
+                                                                        <action id="spawnCharacter">
+                                                                            <string id="className">Blazer</string>
+                                                                            <string id="aiFileName">Mod_Blazer_Boss</string>
+                                                                            <string id="team" values="teamswithnumbers">OWN_TEAM</string>
+                                                                            <float id="count">1.00</float>
+                                                                            <string id="spawnPositionNodeID"></string>
+                                                                            <float id="spawnPositionOffsetX">0.00</float>
+                                                                            <float id="spawnPositionOffsetY">0.00</float>
+                                                                        </action>
+                                                                    </normal>
+                                                                    <else>
+                                                                        <condition id="checkClass">
+                                                                            <string id="check on" values="targetself">self</string>
+                                                                            <string id="class">Heavy</string>
+                                                                            <normal>
+                                                                                <action id="spawnCharacter">
+                                                                                    <string id="className">Heavy</string>
+                                                                                    <string id="aiFileName">Mod_Heavy_Boss</string>
+                                                                                    <string id="team" values="teamswithnumbers">OWN_TEAM</string>
+                                                                                    <float id="count">1.00</float>
+                                                                                    <string id="spawnPositionNodeID"></string>
+                                                                                    <float id="spawnPositionOffsetX">0.00</float>
+                                                                                    <float id="spawnPositionOffsetY">0.00</float>
+                                                                                </action>
+                                                                            </normal>
+                                                                            <else>
+                                                                                <condition id="checkClass">
+                                                                                    <string id="check on" values="targetself">self</string>
+                                                                                    <string id="class">Dasher</string>
+                                                                                    <normal>
+                                                                                        <action id="spawnCharacter">
+                                                                                            <string id="className">Dasher</string>
+                                                                                            <string id="aiFileName">Mod_Dasher_Boss</string>
+                                                                                            <string id="team" values="teamswithnumbers">OWN_TEAM</string>
+                                                                                            <float id="count">1.00</float>
+                                                                                            <string id="spawnPositionNodeID"></string>
+                                                                                            <float id="spawnPositionOffsetX">0.00</float>
+                                                                                            <float id="spawnPositionOffsetY">0.00</float>
+                                                                                        </action>
+                                                                                    </normal>
+                                                                                    <else>
+                                                                                        <condition id="checkClass">
+                                                                                            <string id="check on" values="targetself">self</string>
+                                                                                            <string id="class">Butterfly</string>
+                                                                                            <normal>
+                                                                                                <action id="spawnCharacter">
+                                                                                                    <string id="className">Butterfly</string>
+                                                                                                    <string id="aiFileName">Mod_Butterfly_Boss</string>
+                                                                                                    <string id="team" values="teamswithnumbers">OWN_TEAM</string>
+                                                                                                    <float id="count">1.00</float>
+                                                                                                    <string id="spawnPositionNodeID"></string>
+                                                                                                    <float id="spawnPositionOffsetX">0.00</float>
+                                                                                                    <float id="spawnPositionOffsetY">0.00</float>
+                                                                                                </action>
+                                                                                            </normal>
+                                                                                            <else>
+                                                                                                <condition id="checkClass">
+                                                                                                    <string id="check on" values="targetself">self</string>
+                                                                                                    <string id="class">Maw</string>
+                                                                                                    <normal>
+                                                                                                        <action id="spawnCharacter">
+                                                                                                            <string id="className">Maw</string>
+                                                                                                            <string id="aiFileName">Mod_Maw_Boss</string>
+                                                                                                            <string id="team" values="teamswithnumbers">OWN_TEAM</string>
+                                                                                                            <float id="count">1.00</float>
+                                                                                                            <string id="spawnPositionNodeID"></string>
+                                                                                                            <float id="spawnPositionOffsetX">0.00</float>
+                                                                                                            <float id="spawnPositionOffsetY">0.00</float>
+                                                                                                        </action>
+                                                                                                    </normal>
+                                                                                                    <else>
+                                                                                                        <condition id="checkClass">
+                                                                                                            <string id="check on" values="targetself">self</string>
+                                                                                                            <string id="class">Chameleon</string>
+                                                                                                            <normal>
+                                                                                                                <action id="spawnCharacter">
+                                                                                                                    <string id="className">Chameleon</string>
+                                                                                                                    <string id="aiFileName">Mod_Chameleon_Boss</string>
+                                                                                                                    <string id="team" values="teamswithnumbers">OWN_TEAM</string>
+                                                                                                                    <float id="count">1.00</float>
+                                                                                                                    <string id="spawnPositionNodeID"></string>
+                                                                                                                    <float id="spawnPositionOffsetX">0.00</float>
+                                                                                                                    <float id="spawnPositionOffsetY">0.00</float>
+                                                                                                                </action>
+                                                                                                            </normal>
+                                                                                                            <else>
+                                                                                                                <condition id="checkClass">
+                                                                                                                    <string id="check on" values="targetself">self</string>
+                                                                                                                    <string id="class">Cowboy</string>
+                                                                                                                    <normal>
+                                                                                                                        <action id="spawnCharacter">
+                                                                                                                            <string id="className">Cowboy</string>
+                                                                                                                            <string id="aiFileName">Mod_Cowboy_Boss</string>
+                                                                                                                            <string id="team" values="teamswithnumbers">OWN_TEAM</string>
+                                                                                                                            <float id="count">1.00</float>
+                                                                                                                            <string id="spawnPositionNodeID"></string>
+                                                                                                                            <float id="spawnPositionOffsetX">0.00</float>
+                                                                                                                            <float id="spawnPositionOffsetY">0.00</float>
+                                                                                                                        </action>
+                                                                                                                    </normal>
+                                                                                                                    <else>
+                                                                                                                        <condition id="checkClass">
+                                                                                                                            <string id="check on" values="targetself">self</string>
+                                                                                                                            <string id="class">Assassin</string>
+                                                                                                                            <normal>
+                                                                                                                                <action id="spawnCharacter">
+                                                                                                                                    <string id="className">Assassin</string>
+                                                                                                                                    <string id="aiFileName">Mod_Assassin_Boss</string>
+                                                                                                                                    <string id="team" values="teamswithnumbers">OWN_TEAM</string>
+                                                                                                                                    <float id="count">1.00</float>
+                                                                                                                                    <string id="spawnPositionNodeID"></string>
+                                                                                                                                    <float id="spawnPositionOffsetX">0.00</float>
+                                                                                                                                    <float id="spawnPositionOffsetY">0.00</float>
+                                                                                                                                </action>
+                                                                                                                            </normal>
+                                                                                                                            <else>
+                                                                                                                                <condition id="checkClass">
+                                                                                                                                    <string id="check on" values="targetself">self</string>
+                                                                                                                                    <string id="class">Hunter</string>
+                                                                                                                                    <normal>
+                                                                                                                                        <action id="spawnCharacter">
+                                                                                                                                            <string id="className">Hunter</string>
+                                                                                                                                            <string id="aiFileName">Mod_Hunter_Boss</string>
+                                                                                                                                            <string id="team" values="teamswithnumbers">OWN_TEAM</string>
+                                                                                                                                            <float id="count">1.00</float>
+                                                                                                                                            <string id="spawnPositionNodeID"></string>
+                                                                                                                                            <float id="spawnPositionOffsetX">0.00</float>
+                                                                                                                                            <float id="spawnPositionOffsetY">0.00</float>
+                                                                                                                                        </action>
+                                                                                                                                    </normal>
+                                                                                                                                    <else>
+                                                                                                                                        <condition id="checkClass">
+                                                                                                                                            <string id="check on" values="targetself">self</string>
+                                                                                                                                            <string id="class">Spy</string>
+                                                                                                                                            <normal>
+                                                                                                                                                <action id="spawnCharacter">
+                                                                                                                                                    <string id="className">Spy</string>
+                                                                                                                                                    <string id="aiFileName">Mod_Spy_Boss</string>
+                                                                                                                                                    <string id="team" values="teamswithnumbers">OWN_TEAM</string>
+                                                                                                                                                    <float id="count">1.00</float>
+                                                                                                                                                    <string id="spawnPositionNodeID"></string>
+                                                                                                                                                    <float id="spawnPositionOffsetX">0.00</float>
+                                                                                                                                                    <float id="spawnPositionOffsetY">0.00</float>
+                                                                                                                                                </action>
+                                                                                                                                            </normal>
+                                                                                                                                            <else>
+                                                                                                                                                <condition id="checkClass">
+                                                                                                                                                    <string id="check on" values="targetself">self</string>
+                                                                                                                                                    <string id="class">Brute</string>
+                                                                                                                                                    <normal>
+                                                                                                                                                        <action id="spawnCharacter">
+                                                                                                                                                            <string id="className">Brute</string>
+                                                                                                                                                            <string id="aiFileName">Mod_Brute_Boss</string>
+                                                                                                                                                            <string id="team" values="teamswithnumbers">OWN_TEAM</string>
+                                                                                                                                                            <float id="count">1.00</float>
+                                                                                                                                                            <string id="spawnPositionNodeID"></string>
+                                                                                                                                                            <float id="spawnPositionOffsetX">0.00</float>
+                                                                                                                                                            <float id="spawnPositionOffsetY">0.00</float>
+                                                                                                                                                        </action>
+                                                                                                                                                    </normal>
+                                                                                                                                                    <else>
+                                                                                                                                                        <condition id="checkClass">
+                                                                                                                                                            <string id="check on" values="targetself">self</string>
+                                                                                                                                                            <string id="class">Shaman</string>
+                                                                                                                                                            <normal>
+                                                                                                                                                                <action id="spawnCharacter">
+                                                                                                                                                                    <string id="className">Shaman</string>
+                                                                                                                                                                    <string id="aiFileName">Mod_Shaman_Boss</string>
+                                                                                                                                                                    <string id="team" values="teamswithnumbers">OWN_TEAM</string>
+                                                                                                                                                                    <float id="count">1.00</float>
+                                                                                                                                                                    <string id="spawnPositionNodeID"></string>
+                                                                                                                                                                    <float id="spawnPositionOffsetX">0.00</float>
+                                                                                                                                                                    <float id="spawnPositionOffsetY">0.00</float>
+                                                                                                                                                                </action>
+                                                                                                                                                            </normal>
+                                                                                                                                                            <else>
+                                                                                                                                                                <condition id="checkClass">
+                                                                                                                                                                    <string id="check on" values="targetself">self</string>
+                                                                                                                                                                    <string id="class">Captain</string>
+                                                                                                                                                                    <normal>
+                                                                                                                                                                        <action id="spawnCharacter">
+                                                                                                                                                                            <string id="className">Captain</string>
+                                                                                                                                                                            <string id="aiFileName">Mod_Captain_Boss</string>
+                                                                                                                                                                            <string id="team" values="teamswithnumbers">OWN_TEAM</string>
+                                                                                                                                                                            <float id="count">1.00</float>
+                                                                                                                                                                            <string id="spawnPositionNodeID"></string>
+                                                                                                                                                                            <float id="spawnPositionOffsetX">0.00</float>
+                                                                                                                                                                            <float id="spawnPositionOffsetY">0.00</float>
+                                                                                                                                                                        </action>
+                                                                                                                                                                    </normal>
+                                                                                                                                                                    <else>
+                                                                                                                                                                        <condition id="checkClass">
+                                                                                                                                                                            <string id="check on" values="targetself">self</string>
+                                                                                                                                                                            <string id="class">Commando</string>
+                                                                                                                                                                            <normal>
+                                                                                                                                                                                <action id="spawnCharacter">
+                                                                                                                                                                                    <string id="className">Commando</string>
+                                                                                                                                                                                    <string id="aiFileName">Mod_Commando_Boss</string>
+                                                                                                                                                                                    <string id="team" values="teamswithnumbers">OWN_TEAM</string>
+                                                                                                                                                                                    <float id="count">1.00</float>
+                                                                                                                                                                                    <string id="spawnPositionNodeID"></string>
+                                                                                                                                                                                    <float id="spawnPositionOffsetX">0.00</float>
+                                                                                                                                                                                    <float id="spawnPositionOffsetY">0.00</float>
+                                                                                                                                                                                </action>
+                                                                                                                                                                            </normal>
+                                                                                                                                                                            <else>
+                                                                                                                                                                                <condition id="checkClass">
+                                                                                                                                                                                    <string id="check on" values="targetself">self</string>
+                                                                                                                                                                                    <string id="class">Bird</string>
+                                                                                                                                                                                    <normal>
+                                                                                                                                                                                        <action id="spawnCharacter">
+                                                                                                                                                                                            <string id="className">Bird</string>
+                                                                                                                                                                                            <string id="aiFileName">Mod_Bird_Boss</string>
+                                                                                                                                                                                            <string id="team" values="teamswithnumbers">OWN_TEAM</string>
+                                                                                                                                                                                            <float id="count">1.00</float>
+                                                                                                                                                                                            <string id="spawnPositionNodeID"></string>
+                                                                                                                                                                                            <float id="spawnPositionOffsetX">0.00</float>
+                                                                                                                                                                                            <float id="spawnPositionOffsetY">0.00</float>
+                                                                                                                                                                                        </action>
+                                                                                                                                                                                    </normal>
+                                                                                                                                                                                    <else>
+                                                                                                                                                                                        <condition id="checkClass">
+                                                                                                                                                                                            <string id="check on" values="targetself">self</string>
+                                                                                                                                                                                            <string id="class">Summoner</string>
+                                                                                                                                                                                            <normal>
+                                                                                                                                                                                                <action id="spawnCharacter">
+                                                                                                                                                                                                    <string id="className">Summoner</string>
+                                                                                                                                                                                                    <string id="aiFileName">Mod_Summoner_Boss</string>
+                                                                                                                                                                                                    <string id="team" values="teamswithnumbers">OWN_TEAM</string>
+                                                                                                                                                                                                    <float id="count">1.00</float>
+                                                                                                                                                                                                    <string id="spawnPositionNodeID"></string>
+                                                                                                                                                                                                    <float id="spawnPositionOffsetX">0.00</float>
+                                                                                                                                                                                                    <float id="spawnPositionOffsetY">0.00</float>
+                                                                                                                                                                                                    <string id="Minimized">yes</string>
+                                                                                                                                                                                                </action>
+                                                                                                                                                                                            </normal>
+                                                                                                                                                                                            <else>
+                                                                                                                                                                                                <condition id="checkClass">
+                                                                                                                                                                                                    <string id="check on" values="targetself">self</string>
+                                                                                                                                                                                                    <string id="class">Jetter</string>
+                                                                                                                                                                                                    <normal>
+                                                                                                                                                                                                        <action id="spawnCharacter">
+                                                                                                                                                                                                            <string id="className">Jetter</string>
+                                                                                                                                                                                                            <string id="aiFileName">Mod_Jetter_Boss</string>
+                                                                                                                                                                                                            <string id="team" values="teamswithnumbers">OWN_TEAM</string>
+                                                                                                                                                                                                            <float id="count">1.00</float>
+                                                                                                                                                                                                            <string id="spawnPositionNodeID"></string>
+                                                                                                                                                                                                            <float id="spawnPositionOffsetX">0.00</float>
+                                                                                                                                                                                                            <float id="spawnPositionOffsetY">0.00</float>
+                                                                                                                                                                                                        </action>
+                                                                                                                                                                                                    </normal>
+                                                                                                                                                                                                    <else>
+                                                                                                                                                                                                        <condition id="checkClass">
+                                                                                                                                                                                                            <string id="check on" values="targetself">self</string>
+                                                                                                                                                                                                            <string id="class">Paladin</string>
+                                                                                                                                                                                                            <normal>
+                                                                                                                                                                                                                <action id="spawnCharacter">
+                                                                                                                                                                                                                    <string id="className">Paladin</string>
+                                                                                                                                                                                                                    <string id="aiFileName">Mod_Paladin_Boss</string>
+                                                                                                                                                                                                                    <string id="team" values="teamswithnumbers">OWN_TEAM</string>
+                                                                                                                                                                                                                    <float id="count">1.00</float>
+                                                                                                                                                                                                                    <string id="spawnPositionNodeID"></string>
+                                                                                                                                                                                                                    <float id="spawnPositionOffsetX">0.00</float>
+                                                                                                                                                                                                                    <float id="spawnPositionOffsetY">0.00</float>
+                                                                                                                                                                                                                </action>
+                                                                                                                                                                                                            </normal>
+                                                                                                                                                                                                        </condition>
+                                                                                                                                                                                                    </else>
+                                                                                                                                                                                                </condition>
+                                                                                                                                                                                            </else>
+                                                                                                                                                                                        </condition>
+                                                                                                                                                                                    </else>
+                                                                                                                                                                                </condition>
+                                                                                                                                                                            </else>
+                                                                                                                                                                        </condition>
+                                                                                                                                                                    </else>
+                                                                                                                                                                </condition>
+                                                                                                                                                            </else>
+                                                                                                                                                        </condition>
+                                                                                                                                                    </else>
+                                                                                                                                                </condition>
+                                                                                                                                            </else>
+                                                                                                                                        </condition>
+                                                                                                                                    </else>
+                                                                                                                                </condition>
+                                                                                                                            </else>
+                                                                                                                        </condition>
+                                                                                                                    </else>
+                                                                                                                </condition>
+                                                                                                            </else>
+                                                                                                        </condition>
+                                                                                                    </else>
+                                                                                                </condition>
+                                                                                            </else>
+                                                                                        </condition>
+                                                                                    </else>
+                                                                                </condition>
+                                                                            </else>
+                                                                        </condition>
+                                                                    </else>
+                                                                </condition>
+                                                            </else>
+                                                        </condition>
+                                                    </else>
+                                                </condition>
+                                            </normal>
+                                        </condition>
+                                    </normal>
+                                </condition>
+                            </normal>
+                        </condition>
+                        <condition id="getBoolEquals">
+                            <string id="id">boss</string>
+                            <string id="value" values="yesno">no</string>
+                            <string id="Comment">Clone logic</string>
+                            <normal>
+                                <condition id="receivedMessage">
+                                    <string id="id">iHaveAddHealth3</string>
+                                    <string id="Minimized">yes</string>
+                                    <normal>
+                                        <action id="adjustCounter">
+                                            <string id="id">extraHealth</string>
+                                            <string id="value">3</string>
+                                            <string id="adjust method" values="valueadjust">set</string>
+                                        </action>
+                                    </normal>
+                                    <else>
+                                        <condition id="receivedMessage">
+                                            <string id="id">iHaveAddHealth2</string>
+                                            <normal>
+                                                <action id="adjustCounter">
+                                                    <string id="id">extraHealth</string>
+                                                    <string id="value">2</string>
+                                                    <string id="adjust method" values="valueadjust">set</string>
+                                                </action>
+                                            </normal>
+                                            <else>
+                                                <condition id="receivedMessage">
+                                                    <string id="id">iHaveAddHealth1</string>
+                                                    <normal>
+                                                        <action id="adjustCounter">
+                                                            <string id="id">extraHealth</string>
+                                                            <string id="value">1</string>
+                                                            <string id="adjust method" values="valueadjust">set</string>
+                                                        </action>
+                                                    </normal>
+                                                    <else>
+                                                        <action id="adjustCounter">
+                                                            <string id="id">extraHealth</string>
+                                                            <string id="value">0</string>
+                                                            <string id="adjust method" values="valueadjust">set</string>
+                                                        </action>
+                                                    </else>
+                                                </condition>
+                                            </else>
+                                        </condition>
+                                    </else>
+                                </condition>
+                                <condition id="checkCounter">
+                                    <string id="id">extraHealth</string>
+                                    <string id="value">3</string>
+                                    <string id="compare method" values="valuecompare">equal</string>
+                                    <string id="Minimized">yes</string>
+                                    <normal>
+                                        <condition id="checkCharacterValue">
+                                            <string id="property" values="charactervaluesCheckable">health percentage</string>
+                                            <float id="value">65.00</float>
+                                            <string id="compare method" values="valuecompare">greater</string>
+                                            <string id="check on" values="targetself">self</string>
+                                            <string id="Comment">Limit health to 65%</string>
+                                            <normal>
+                                                <action id="adjustCharacterValue">
+                                                    <string id="property" values="charactervaluesAdjustable">health percentage</string>
+                                                    <float id="value">65.00</float>
+                                                    <string id="adjust method" values="valueadjust">set</string>
+                                                </action>
+                                            </normal>
+                                        </condition>
+                                    </normal>
+                                    <else>
+                                        <condition id="checkCounter">
+                                            <string id="id">extraHealth</string>
+                                            <string id="value">2</string>
+                                            <string id="compare method" values="valuecompare">equal</string>
+                                            <normal>
+                                                <condition id="checkCharacterValue">
+                                                    <string id="property" values="charactervaluesCheckable">health percentage</string>
+                                                    <float id="value">55.00</float>
+                                                    <string id="compare method" values="valuecompare">greater</string>
+                                                    <string id="check on" values="targetself">self</string>
+                                                    <string id="Comment">Limit health to 55%</string>
+                                                    <normal>
+                                                        <action id="adjustCharacterValue">
+                                                            <string id="property" values="charactervaluesAdjustable">health percentage</string>
+                                                            <float id="value">55.00</float>
+                                                            <string id="adjust method" values="valueadjust">set</string>
+                                                        </action>
+                                                    </normal>
+                                                </condition>
+                                            </normal>
+                                            <else>
+                                                <condition id="checkCounter">
+                                                    <string id="id">extraHealth</string>
+                                                    <string id="value">1</string>
+                                                    <string id="compare method" values="valuecompare">equal</string>
+                                                    <normal>
+                                                        <condition id="checkCharacterValue">
+                                                            <string id="property" values="charactervaluesCheckable">health percentage</string>
+                                                            <float id="value">45.00</float>
+                                                            <string id="compare method" values="valuecompare">greater</string>
+                                                            <string id="check on" values="targetself">self</string>
+                                                            <string id="Comment">Limit health to35%</string>
+                                                            <normal>
+                                                                <action id="adjustCharacterValue">
+                                                                    <string id="property" values="charactervaluesAdjustable">health percentage</string>
+                                                                    <float id="value">45.00</float>
+                                                                    <string id="adjust method" values="valueadjust">set</string>
+                                                                </action>
+                                                            </normal>
+                                                        </condition>
+                                                    </normal>
+                                                    <else>
+                                                        <condition id="checkCounter">
+                                                            <string id="id">extraHealth</string>
+                                                            <string id="value">0</string>
+                                                            <string id="compare method" values="valuecompare">equal</string>
+                                                            <normal>
+                                                                <condition id="checkCharacterValue">
+                                                                    <string id="property" values="charactervaluesCheckable">health percentage</string>
+                                                                    <float id="value">35.00</float>
+                                                                    <string id="compare method" values="valuecompare">greater</string>
+                                                                    <string id="check on" values="targetself">self</string>
+                                                                    <string id="Comment">Limit health to 35%</string>
+                                                                    <normal>
+                                                                        <action id="adjustCharacterValue">
+                                                                            <string id="property" values="charactervaluesAdjustable">health percentage</string>
+                                                                            <float id="value">35.00</float>
+                                                                            <string id="adjust method" values="valueadjust">set</string>
+                                                                        </action>
+                                                                    </normal>
+                                                                </condition>
+                                                            </normal>
+                                                        </condition>
+                                                    </else>
+                                                </condition>
+                                            </else>
+                                        </condition>
+                                    </else>
+                                </condition>
+                                <condition id="checkCounter">
+                                    <string id="id">setState</string>
+                                    <string id="value">4</string>
+                                    <string id="compare method" values="valuecompare">equal</string>
+                                    <string id="Comment">Be aggressive</string>
+                                    <else>
+                                        <action id="adjustCounter">
+                                            <string id="id">state</string>
+                                            <string id="value">4</string>
+                                            <string id="adjust method" values="valueadjust">set</string>
+                                        </action>
+                                    </else>
+                                </condition>
+                                <condition id="checkGameTime">
+                                    <float id="time in seconds">300.00</float>
+                                    <string id="compare method" values="valuecompare">greater or equal</string>
+                                    <string id="Comment">Buy first ability if 5 minutes have elapsed</string>
+                                    <normal>
+                                        <condition id="checkClass">
+                                            <string id="check on" values="targetself">self</string>
+                                            <string id="class">vampire</string>
+                                            <string id="Minimized">yes</string>
+                                            <normal>
+                                                <condition id="isUpgradeEnabled">
+                                                    <string id="condition" values="yesno">no</string>
+                                                    <string id="upgrade name">VampireBolas</string>
+                                                    <normal>
+                                                        <action id="enableUpgrade">
+                                                            <string id="condition" values="yesno">yes</string>
+                                                            <string id="upgrade name">VampireBolas</string>
+                                                        </action>
+                                                    </normal>
+                                                </condition>
+                                            </normal>
+                                            <else>
+                                                <condition id="checkClass">
+                                                    <string id="check on" values="targetself">self</string>
+                                                    <string id="class">Tank</string>
+                                                    <normal>
+                                                        <condition id="isUpgradeEnabled">
+                                                            <string id="condition" values="yesno">no</string>
+                                                            <string id="upgrade name">LifeSteal</string>
+                                                            <normal>
+                                                                <action id="enableUpgrade">
+                                                                    <string id="condition" values="yesno">yes</string>
+                                                                    <string id="upgrade name">LifeSteal</string>
+                                                                </action>
+                                                            </normal>
+                                                        </condition>
+                                                    </normal>
+                                                    <else>
+                                                        <condition id="checkClass">
+                                                            <string id="check on" values="targetself">self</string>
+                                                            <string id="class">Blazer</string>
+                                                            <normal>
+                                                                <condition id="isUpgradeEnabled">
+                                                                    <string id="condition" values="yesno">no</string>
+                                                                    <string id="upgrade name">Detonator</string>
+                                                                    <normal>
+                                                                        <action id="enableUpgrade">
+                                                                            <string id="condition" values="yesno">yes</string>
+                                                                            <string id="upgrade name">Detonator</string>
+                                                                        </action>
+                                                                    </normal>
+                                                                </condition>
+                                                            </normal>
+                                                            <else>
+                                                                <condition id="checkClass">
+                                                                    <string id="check on" values="targetself">self</string>
+                                                                    <string id="class">Heavy</string>
+                                                                    <normal>
+                                                                        <condition id="isUpgradeEnabled">
+                                                                            <string id="condition" values="yesno">no</string>
+                                                                            <string id="upgrade name">Trap</string>
+                                                                            <normal>
+                                                                                <action id="enableUpgrade">
+                                                                                    <string id="condition" values="yesno">yes</string>
+                                                                                    <string id="upgrade name">Trap</string>
+                                                                                </action>
+                                                                            </normal>
+                                                                        </condition>
+                                                                    </normal>
+                                                                    <else>
+                                                                        <condition id="checkClass">
+                                                                            <string id="check on" values="targetself">self</string>
+                                                                            <string id="class">Dasher</string>
+                                                                            <normal>
+                                                                                <condition id="isUpgradeEnabled">
+                                                                                    <string id="condition" values="yesno">no</string>
+                                                                                    <string id="upgrade name">dash</string>
+                                                                                    <normal>
+                                                                                        <action id="enableUpgrade">
+                                                                                            <string id="condition" values="yesno">yes</string>
+                                                                                            <string id="upgrade name">dash</string>
+                                                                                        </action>
+                                                                                    </normal>
+                                                                                </condition>
+                                                                            </normal>
+                                                                            <else>
+                                                                                <condition id="checkClass">
+                                                                                    <string id="check on" values="targetself">self</string>
+                                                                                    <string id="class">Butterfly</string>
+                                                                                    <normal>
+                                                                                        <condition id="isUpgradeEnabled">
+                                                                                            <string id="condition" values="yesno">no</string>
+                                                                                            <string id="upgrade name">ButterflyCocoon</string>
+                                                                                            <normal>
+                                                                                                <action id="enableUpgrade">
+                                                                                                    <string id="condition" values="yesno">yes</string>
+                                                                                                    <string id="upgrade name">ButterflyCocoon</string>
+                                                                                                </action>
+                                                                                            </normal>
+                                                                                        </condition>
+                                                                                    </normal>
+                                                                                    <else>
+                                                                                        <condition id="checkClass">
+                                                                                            <string id="check on" values="targetself">self</string>
+                                                                                            <string id="class">Maw</string>
+                                                                                            <normal>
+                                                                                                <condition id="isUpgradeEnabled">
+                                                                                                    <string id="condition" values="yesno">no</string>
+                                                                                                    <string id="upgrade name">MawSpit</string>
+                                                                                                    <normal>
+                                                                                                        <action id="enableUpgrade">
+                                                                                                            <string id="condition" values="yesno">yes</string>
+                                                                                                            <string id="upgrade name">MawSpit</string>
+                                                                                                        </action>
+                                                                                                    </normal>
+                                                                                                </condition>
+                                                                                            </normal>
+                                                                                            <else>
+                                                                                                <condition id="checkClass">
+                                                                                                    <string id="check on" values="targetself">self</string>
+                                                                                                    <string id="class">Chameleon</string>
+                                                                                                    <normal>
+                                                                                                        <condition id="isUpgradeEnabled">
+                                                                                                            <string id="condition" values="yesno">no</string>
+                                                                                                            <string id="upgrade name">ChameleonTongue</string>
+                                                                                                            <normal>
+                                                                                                                <action id="enableUpgrade">
+                                                                                                                    <string id="condition" values="yesno">yes</string>
+                                                                                                                    <string id="upgrade name">ChameleonTongue</string>
+                                                                                                                </action>
+                                                                                                            </normal>
+                                                                                                        </condition>
+                                                                                                    </normal>
+                                                                                                    <else>
+                                                                                                        <condition id="checkClass">
+                                                                                                            <string id="check on" values="targetself">self</string>
+                                                                                                            <string id="class">Cowboy</string>
+                                                                                                            <normal>
+                                                                                                                <condition id="isUpgradeEnabled">
+                                                                                                                    <string id="condition" values="yesno">no</string>
+                                                                                                                    <string id="upgrade name">Grenade</string>
+                                                                                                                    <normal>
+                                                                                                                        <action id="enableUpgrade">
+                                                                                                                            <string id="condition" values="yesno">yes</string>
+                                                                                                                            <string id="upgrade name">Grenade</string>
+                                                                                                                        </action>
+                                                                                                                    </normal>
+                                                                                                                </condition>
+                                                                                                            </normal>
+                                                                                                            <else>
+                                                                                                                <condition id="checkClass">
+                                                                                                                    <string id="check on" values="targetself">self</string>
+                                                                                                                    <string id="class">Assassin</string>
+                                                                                                                    <normal>
+                                                                                                                        <condition id="isUpgradeEnabled">
+                                                                                                                            <string id="condition" values="yesno">no</string>
+                                                                                                                            <string id="upgrade name">AssassinAssail</string>
+                                                                                                                            <normal>
+                                                                                                                                <action id="enableUpgrade">
+                                                                                                                                    <string id="condition" values="yesno">yes</string>
+                                                                                                                                    <string id="upgrade name">AssassinAssail</string>
+                                                                                                                                </action>
+                                                                                                                            </normal>
+                                                                                                                        </condition>
+                                                                                                                    </normal>
+                                                                                                                    <else>
+                                                                                                                        <condition id="checkClass">
+                                                                                                                            <string id="check on" values="targetself">self</string>
+                                                                                                                            <string id="class">Hunter</string>
+                                                                                                                            <normal>
+                                                                                                                                <condition id="isUpgradeEnabled">
+                                                                                                                                    <string id="condition" values="yesno">no</string>
+                                                                                                                                    <string id="upgrade name">HunterWall</string>
+                                                                                                                                    <normal>
+                                                                                                                                        <action id="enableUpgrade">
+                                                                                                                                            <string id="condition" values="yesno">yes</string>
+                                                                                                                                            <string id="upgrade name">HunterWall</string>
+                                                                                                                                        </action>
+                                                                                                                                    </normal>
+                                                                                                                                </condition>
+                                                                                                                            </normal>
+                                                                                                                            <else>
+                                                                                                                                <condition id="checkClass">
+                                                                                                                                    <string id="check on" values="targetself">self</string>
+                                                                                                                                    <string id="class">Spy</string>
+                                                                                                                                    <normal>
+                                                                                                                                        <condition id="isUpgradeEnabled">
+                                                                                                                                            <string id="condition" values="yesno">no</string>
+                                                                                                                                            <string id="upgrade name">SpyAbsorb</string>
+                                                                                                                                            <normal>
+                                                                                                                                                <action id="enableUpgrade">
+                                                                                                                                                    <string id="condition" values="yesno">yes</string>
+                                                                                                                                                    <string id="upgrade name">SpyAbsorb</string>
+                                                                                                                                                </action>
+                                                                                                                                            </normal>
+                                                                                                                                        </condition>
+                                                                                                                                    </normal>
+                                                                                                                                    <else>
+                                                                                                                                        <condition id="checkClass">
+                                                                                                                                            <string id="check on" values="targetself">self</string>
+                                                                                                                                            <string id="class">Brute</string>
+                                                                                                                                            <normal>
+                                                                                                                                                <condition id="isUpgradeEnabled">
+                                                                                                                                                    <string id="condition" values="yesno">no</string>
+                                                                                                                                                    <string id="upgrade name">BruteThrow</string>
+                                                                                                                                                    <normal>
+                                                                                                                                                        <action id="enableUpgrade">
+                                                                                                                                                            <string id="condition" values="yesno">yes</string>
+                                                                                                                                                            <string id="upgrade name">BruteThrow</string>
+                                                                                                                                                        </action>
+                                                                                                                                                    </normal>
+                                                                                                                                                </condition>
+                                                                                                                                            </normal>
+                                                                                                                                            <else>
+                                                                                                                                                <condition id="checkClass">
+                                                                                                                                                    <string id="check on" values="targetself">self</string>
+                                                                                                                                                    <string id="class">Shaman</string>
+                                                                                                                                                    <normal>
+                                                                                                                                                        <condition id="isUpgradeEnabled">
+                                                                                                                                                            <string id="condition" values="yesno">no</string>
+                                                                                                                                                            <string id="upgrade name">ShamanSpirit</string>
+                                                                                                                                                            <normal>
+                                                                                                                                                                <action id="enableUpgrade">
+                                                                                                                                                                    <string id="condition" values="yesno">yes</string>
+                                                                                                                                                                    <string id="upgrade name">ShamanSpirit</string>
+                                                                                                                                                                </action>
+                                                                                                                                                            </normal>
+                                                                                                                                                        </condition>
+                                                                                                                                                    </normal>
+                                                                                                                                                    <else>
+                                                                                                                                                        <condition id="checkClass">
+                                                                                                                                                            <string id="check on" values="targetself">self</string>
+                                                                                                                                                            <string id="class">Captain</string>
+                                                                                                                                                            <normal>
+                                                                                                                                                                <condition id="isUpgradeEnabled">
+                                                                                                                                                                    <string id="condition" values="yesno">no</string>
+                                                                                                                                                                    <string id="upgrade name">CaptainHook</string>
+                                                                                                                                                                    <normal>
+                                                                                                                                                                        <action id="enableUpgrade">
+                                                                                                                                                                            <string id="condition" values="yesno">yes</string>
+                                                                                                                                                                            <string id="upgrade name">CaptainHook</string>
+                                                                                                                                                                        </action>
+                                                                                                                                                                    </normal>
+                                                                                                                                                                </condition>
+                                                                                                                                                            </normal>
+                                                                                                                                                            <else>
+                                                                                                                                                                <condition id="checkClass">
+                                                                                                                                                                    <string id="check on" values="targetself">self</string>
+                                                                                                                                                                    <string id="class">Commando</string>
+                                                                                                                                                                    <normal>
+                                                                                                                                                                        <condition id="isUpgradeEnabled">
+                                                                                                                                                                            <string id="condition" values="yesno">no</string>
+                                                                                                                                                                            <string id="upgrade name">CommandoAirstrike</string>
+                                                                                                                                                                            <normal>
+                                                                                                                                                                                <action id="enableUpgrade">
+                                                                                                                                                                                    <string id="condition" values="yesno">yes</string>
+                                                                                                                                                                                    <string id="upgrade name">CommandoAirstrike</string>
+                                                                                                                                                                                </action>
+                                                                                                                                                                            </normal>
+                                                                                                                                                                        </condition>
+                                                                                                                                                                    </normal>
+                                                                                                                                                                    <else>
+                                                                                                                                                                        <condition id="checkClass">
+                                                                                                                                                                            <string id="check on" values="targetself">self</string>
+                                                                                                                                                                            <string id="class">Bird</string>
+                                                                                                                                                                            <normal>
+                                                                                                                                                                                <condition id="isUpgradeEnabled">
+                                                                                                                                                                                    <string id="condition" values="yesno">no</string>
+                                                                                                                                                                                    <string id="upgrade name">BirdDive</string>
+                                                                                                                                                                                    <normal>
+                                                                                                                                                                                        <action id="enableUpgrade">
+                                                                                                                                                                                            <string id="condition" values="yesno">yes</string>
+                                                                                                                                                                                            <string id="upgrade name">BirdDive</string>
+                                                                                                                                                                                        </action>
+                                                                                                                                                                                    </normal>
+                                                                                                                                                                                </condition>
+                                                                                                                                                                            </normal>
+                                                                                                                                                                            <else>
+                                                                                                                                                                                <condition id="checkClass">
+                                                                                                                                                                                    <string id="check on" values="targetself">self</string>
+                                                                                                                                                                                    <string id="class">Summoner</string>
+                                                                                                                                                                                    <normal>
+                                                                                                                                                                                        <condition id="isUpgradeEnabled">
+                                                                                                                                                                                            <string id="condition" values="yesno">no</string>
+                                                                                                                                                                                            <string id="upgrade name">SummonDrone</string>
+                                                                                                                                                                                            <normal>
+                                                                                                                                                                                                <action id="enableUpgrade">
+                                                                                                                                                                                                    <string id="condition" values="yesno">yes</string>
+                                                                                                                                                                                                    <string id="upgrade name">SummonDrone</string>
+                                                                                                                                                                                                </action>
+                                                                                                                                                                                            </normal>
+                                                                                                                                                                                        </condition>
+                                                                                                                                                                                    </normal>
+                                                                                                                                                                                    <else>
+                                                                                                                                                                                        <condition id="checkClass">
+                                                                                                                                                                                            <string id="check on" values="targetself">self</string>
+                                                                                                                                                                                            <string id="class">Jetter</string>
+                                                                                                                                                                                            <normal>
+                                                                                                                                                                                                <condition id="isUpgradeEnabled">
+                                                                                                                                                                                                    <string id="condition" values="yesno">no</string>
+                                                                                                                                                                                                    <string id="upgrade name">Mine</string>
+                                                                                                                                                                                                    <normal>
+                                                                                                                                                                                                        <action id="enableUpgrade">
+                                                                                                                                                                                                            <string id="condition" values="yesno">yes</string>
+                                                                                                                                                                                                            <string id="upgrade name">Mine</string>
+                                                                                                                                                                                                        </action>
+                                                                                                                                                                                                    </normal>
+                                                                                                                                                                                                </condition>
+                                                                                                                                                                                            </normal>
+                                                                                                                                                                                            <else>
+                                                                                                                                                                                                <condition id="checkClass">
+                                                                                                                                                                                                    <string id="check on" values="targetself">self</string>
+                                                                                                                                                                                                    <string id="class">Paladin</string>
+                                                                                                                                                                                                    <normal>
+                                                                                                                                                                                                        <condition id="isUpgradeEnabled">
+                                                                                                                                                                                                            <string id="condition" values="yesno">no</string>
+                                                                                                                                                                                                            <string id="upgrade name">PaladinHammer</string>
+                                                                                                                                                                                                            <normal>
+                                                                                                                                                                                                                <action id="enableUpgrade">
+                                                                                                                                                                                                                    <string id="condition" values="yesno">yes</string>
+                                                                                                                                                                                                                    <string id="upgrade name">PaladinHammer</string>
+                                                                                                                                                                                                                </action>
+                                                                                                                                                                                                            </normal>
+                                                                                                                                                                                                        </condition>
+                                                                                                                                                                                                    </normal>
+                                                                                                                                                                                                </condition>
+                                                                                                                                                                                            </else>
+                                                                                                                                                                                        </condition>
+                                                                                                                                                                                    </else>
+                                                                                                                                                                                </condition>
+                                                                                                                                                                            </else>
+                                                                                                                                                                        </condition>
+                                                                                                                                                                    </else>
+                                                                                                                                                                </condition>
+                                                                                                                                                            </else>
+                                                                                                                                                        </condition>
+                                                                                                                                                    </else>
+                                                                                                                                                </condition>
+                                                                                                                                            </else>
+                                                                                                                                        </condition>
+                                                                                                                                    </else>
+                                                                                                                                </condition>
+                                                                                                                            </else>
+                                                                                                                        </condition>
+                                                                                                                    </else>
+                                                                                                                </condition>
+                                                                                                            </else>
+                                                                                                        </condition>
+                                                                                                    </else>
+                                                                                                </condition>
+                                                                                            </else>
+                                                                                        </condition>
+                                                                                    </else>
+                                                                                </condition>
+                                                                            </else>
+                                                                        </condition>
+                                                                    </else>
+                                                                </condition>
+                                                            </else>
+                                                        </condition>
+                                                    </else>
+                                                </condition>
+                                            </else>
+                                        </condition>
+                                        <condition id="checkGameTime">
+                                            <float id="time in seconds">600.00</float>
+                                            <string id="compare method" values="valuecompare">greater or equal</string>
+                                            <string id="Comment">Buy second ability if 10 minutes have elapsed</string>
+                                            <normal>
+                                                <condition id="checkClass">
+                                                    <string id="check on" values="targetself">self</string>
+                                                    <string id="class">vampire</string>
+                                                    <string id="Minimized">yes</string>
+                                                    <normal>
+                                                        <condition id="isUpgradeEnabled">
+                                                            <string id="condition" values="yesno">no</string>
+                                                            <string id="upgrade name">VampireBloodThirst</string>
+                                                            <normal>
+                                                                <action id="enableUpgrade">
+                                                                    <string id="condition" values="yesno">yes</string>
+                                                                    <string id="upgrade name">VampireBloodThirst</string>
+                                                                </action>
+                                                            </normal>
+                                                        </condition>
+                                                    </normal>
+                                                    <else>
+                                                        <condition id="checkClass">
+                                                            <string id="check on" values="targetself">self</string>
+                                                            <string id="class">Tank</string>
+                                                            <normal>
+                                                                <condition id="isUpgradeEnabled">
+                                                                    <string id="condition" values="yesno">no</string>
+                                                                    <string id="upgrade name">suicide</string>
+                                                                    <normal>
+                                                                        <action id="enableUpgrade">
+                                                                            <string id="condition" values="yesno">yes</string>
+                                                                            <string id="upgrade name">suicide</string>
+                                                                        </action>
+                                                                    </normal>
+                                                                </condition>
+                                                            </normal>
+                                                            <else>
+                                                                <condition id="checkClass">
+                                                                    <string id="check on" values="targetself">self</string>
+                                                                    <string id="class">Blazer</string>
+                                                                    <normal>
+                                                                        <condition id="isUpgradeEnabled">
+                                                                            <string id="condition" values="yesno">no</string>
+                                                                            <string id="upgrade name">Blaze</string>
+                                                                            <normal>
+                                                                                <action id="enableUpgrade">
+                                                                                    <string id="condition" values="yesno">yes</string>
+                                                                                    <string id="upgrade name">Blaze</string>
+                                                                                </action>
+                                                                            </normal>
+                                                                        </condition>
+                                                                    </normal>
+                                                                    <else>
+                                                                        <condition id="checkClass">
+                                                                            <string id="check on" values="targetself">self</string>
+                                                                            <string id="class">Heavy</string>
+                                                                            <normal>
+                                                                                <condition id="isUpgradeEnabled">
+                                                                                    <string id="condition" values="yesno">no</string>
+                                                                                    <string id="upgrade name">Turretmode</string>
+                                                                                    <normal>
+                                                                                        <action id="enableUpgrade">
+                                                                                            <string id="condition" values="yesno">yes</string>
+                                                                                            <string id="upgrade name">Turretmode</string>
+                                                                                        </action>
+                                                                                    </normal>
+                                                                                </condition>
+                                                                            </normal>
+                                                                            <else>
+                                                                                <condition id="checkClass">
+                                                                                    <string id="check on" values="targetself">self</string>
+                                                                                    <string id="class">Dasher</string>
+                                                                                    <normal>
+                                                                                        <condition id="isUpgradeEnabled">
+                                                                                            <string id="condition" values="yesno">no</string>
+                                                                                            <string id="upgrade name">whirlwind</string>
+                                                                                            <normal>
+                                                                                                <action id="enableUpgrade">
+                                                                                                    <string id="condition" values="yesno">yes</string>
+                                                                                                    <string id="upgrade name">whirlwind</string>
+                                                                                                </action>
+                                                                                            </normal>
+                                                                                        </condition>
+                                                                                    </normal>
+                                                                                    <else>
+                                                                                        <condition id="checkClass">
+                                                                                            <string id="check on" values="targetself">self</string>
+                                                                                            <string id="class">Butterfly</string>
+                                                                                            <normal>
+                                                                                                <condition id="isUpgradeEnabled">
+                                                                                                    <string id="condition" values="yesno">no</string>
+                                                                                                    <string id="upgrade name">ButterflyBuff</string>
+                                                                                                    <normal>
+                                                                                                        <action id="enableUpgrade">
+                                                                                                            <string id="condition" values="yesno">yes</string>
+                                                                                                            <string id="upgrade name">ButterflyBuff</string>
+                                                                                                        </action>
+                                                                                                    </normal>
+                                                                                                </condition>
+                                                                                            </normal>
+                                                                                            <else>
+                                                                                                <condition id="checkClass">
+                                                                                                    <string id="check on" values="targetself">self</string>
+                                                                                                    <string id="class">Maw</string>
+                                                                                                    <normal>
+                                                                                                        <condition id="isUpgradeEnabled">
+                                                                                                            <string id="condition" values="yesno">no</string>
+                                                                                                            <string id="upgrade name">MawTurret</string>
+                                                                                                            <normal>
+                                                                                                                <action id="enableUpgrade">
+                                                                                                                    <string id="condition" values="yesno">yes</string>
+                                                                                                                    <string id="upgrade name">MawTurret</string>
+                                                                                                                </action>
+                                                                                                            </normal>
+                                                                                                        </condition>
+                                                                                                    </normal>
+                                                                                                    <else>
+                                                                                                        <condition id="checkClass">
+                                                                                                            <string id="check on" values="targetself">self</string>
+                                                                                                            <string id="class">Chameleon</string>
+                                                                                                            <normal>
+                                                                                                                <condition id="isUpgradeEnabled">
+                                                                                                                    <string id="condition" values="yesno">no</string>
+                                                                                                                    <string id="upgrade name">Stealth</string>
+                                                                                                                    <normal>
+                                                                                                                        <action id="enableUpgrade">
+                                                                                                                            <string id="condition" values="yesno">yes</string>
+                                                                                                                            <string id="upgrade name">Stealth</string>
+                                                                                                                        </action>
+                                                                                                                    </normal>
+                                                                                                                </condition>
+                                                                                                            </normal>
+                                                                                                            <else>
+                                                                                                                <condition id="checkClass">
+                                                                                                                    <string id="check on" values="targetself">self</string>
+                                                                                                                    <string id="class">Cowboy</string>
+                                                                                                                    <normal>
+                                                                                                                        <condition id="isUpgradeEnabled">
+                                                                                                                            <string id="condition" values="yesno">no</string>
+                                                                                                                            <string id="upgrade name">Bull</string>
+                                                                                                                            <normal>
+                                                                                                                                <action id="enableUpgrade">
+                                                                                                                                    <string id="condition" values="yesno">yes</string>
+                                                                                                                                    <string id="upgrade name">Bull</string>
+                                                                                                                                </action>
+                                                                                                                            </normal>
+                                                                                                                        </condition>
+                                                                                                                    </normal>
+                                                                                                                    <else>
+                                                                                                                        <condition id="checkClass">
+                                                                                                                            <string id="check on" values="targetself">self</string>
+                                                                                                                            <string id="class">Assassin</string>
+                                                                                                                            <normal>
+                                                                                                                                <condition id="isUpgradeEnabled">
+                                                                                                                                    <string id="condition" values="yesno">no</string>
+                                                                                                                                    <string id="upgrade name">AssassinJolt</string>
+                                                                                                                                    <normal>
+                                                                                                                                        <action id="enableUpgrade">
+                                                                                                                                            <string id="condition" values="yesno">yes</string>
+                                                                                                                                            <string id="upgrade name">AssassinJolt</string>
+                                                                                                                                        </action>
+                                                                                                                                    </normal>
+                                                                                                                                </condition>
+                                                                                                                            </normal>
+                                                                                                                            <else>
+                                                                                                                                <condition id="checkClass">
+                                                                                                                                    <string id="check on" values="targetself">self</string>
+                                                                                                                                    <string id="class">Hunter</string>
+                                                                                                                                    <normal>
+                                                                                                                                        <condition id="isUpgradeEnabled">
+                                                                                                                                            <string id="condition" values="yesno">no</string>
+                                                                                                                                            <string id="upgrade name">HunterSnipe</string>
+                                                                                                                                            <normal>
+                                                                                                                                                <action id="enableUpgrade">
+                                                                                                                                                    <string id="condition" values="yesno">yes</string>
+                                                                                                                                                    <string id="upgrade name">HunterSnipe</string>
+                                                                                                                                                </action>
+                                                                                                                                            </normal>
+                                                                                                                                        </condition>
+                                                                                                                                    </normal>
+                                                                                                                                    <else>
+                                                                                                                                        <condition id="checkClass">
+                                                                                                                                            <string id="check on" values="targetself">self</string>
+                                                                                                                                            <string id="class">Spy</string>
+                                                                                                                                            <normal>
+                                                                                                                                                <condition id="isUpgradeEnabled">
+                                                                                                                                                    <string id="condition" values="yesno">no</string>
+                                                                                                                                                    <string id="upgrade name">SpyBooth</string>
+                                                                                                                                                    <normal>
+                                                                                                                                                        <action id="enableUpgrade">
+                                                                                                                                                            <string id="condition" values="yesno">yes</string>
+                                                                                                                                                            <string id="upgrade name">SpyBooth</string>
+                                                                                                                                                        </action>
+                                                                                                                                                    </normal>
+                                                                                                                                                </condition>
+                                                                                                                                            </normal>
+                                                                                                                                            <else>
+                                                                                                                                                <condition id="checkClass">
+                                                                                                                                                    <string id="check on" values="targetself">self</string>
+                                                                                                                                                    <string id="class">Brute</string>
+                                                                                                                                                    <normal>
+                                                                                                                                                        <condition id="isUpgradeEnabled">
+                                                                                                                                                            <string id="condition" values="yesno">no</string>
+                                                                                                                                                            <string id="upgrade name">BruteStamp</string>
+                                                                                                                                                            <normal>
+                                                                                                                                                                <action id="enableUpgrade">
+                                                                                                                                                                    <string id="condition" values="yesno">yes</string>
+                                                                                                                                                                    <string id="upgrade name">BruteStamp</string>
+                                                                                                                                                                </action>
+                                                                                                                                                            </normal>
+                                                                                                                                                        </condition>
+                                                                                                                                                    </normal>
+                                                                                                                                                    <else>
+                                                                                                                                                        <condition id="checkClass">
+                                                                                                                                                            <string id="check on" values="targetself">self</string>
+                                                                                                                                                            <string id="class">Shaman</string>
+                                                                                                                                                            <normal>
+                                                                                                                                                                <condition id="isUpgradeEnabled">
+                                                                                                                                                                    <string id="condition" values="yesno">no</string>
+                                                                                                                                                                    <string id="upgrade name">ShamanWall</string>
+                                                                                                                                                                    <normal>
+                                                                                                                                                                        <action id="enableUpgrade">
+                                                                                                                                                                            <string id="condition" values="yesno">yes</string>
+                                                                                                                                                                            <string id="upgrade name">ShamanWall</string>
+                                                                                                                                                                        </action>
+                                                                                                                                                                    </normal>
+                                                                                                                                                                </condition>
+                                                                                                                                                            </normal>
+                                                                                                                                                            <else>
+                                                                                                                                                                <condition id="checkClass">
+                                                                                                                                                                    <string id="check on" values="targetself">self</string>
+                                                                                                                                                                    <string id="class">Captain</string>
+                                                                                                                                                                    <normal>
+                                                                                                                                                                        <condition id="isUpgradeEnabled">
+                                                                                                                                                                            <string id="condition" values="yesno">no</string>
+                                                                                                                                                                            <string id="upgrade name">CaptainDrop</string>
+                                                                                                                                                                            <normal>
+                                                                                                                                                                                <action id="enableUpgrade">
+                                                                                                                                                                                    <string id="condition" values="yesno">yes</string>
+                                                                                                                                                                                    <string id="upgrade name">CaptainDrop</string>
+                                                                                                                                                                                </action>
+                                                                                                                                                                            </normal>
+                                                                                                                                                                        </condition>
+                                                                                                                                                                    </normal>
+                                                                                                                                                                    <else>
+                                                                                                                                                                        <condition id="checkClass">
+                                                                                                                                                                            <string id="check on" values="targetself">self</string>
+                                                                                                                                                                            <string id="class">Commando</string>
+                                                                                                                                                                            <normal>
+                                                                                                                                                                                <condition id="isUpgradeEnabled">
+                                                                                                                                                                                    <string id="condition" values="yesno">no</string>
+                                                                                                                                                                                    <string id="upgrade name">CommandoStimpack</string>
+                                                                                                                                                                                    <normal>
+                                                                                                                                                                                        <action id="enableUpgrade">
+                                                                                                                                                                                            <string id="condition" values="yesno">yes</string>
+                                                                                                                                                                                            <string id="upgrade name">CommandoStimpack</string>
+                                                                                                                                                                                        </action>
+                                                                                                                                                                                    </normal>
+                                                                                                                                                                                </condition>
+                                                                                                                                                                            </normal>
+                                                                                                                                                                            <else>
+                                                                                                                                                                                <condition id="checkClass">
+                                                                                                                                                                                    <string id="check on" values="targetself">self</string>
+                                                                                                                                                                                    <string id="class">Bird</string>
+                                                                                                                                                                                    <normal>
+                                                                                                                                                                                        <condition id="isUpgradeEnabled">
+                                                                                                                                                                                            <string id="condition" values="yesno">no</string>
+                                                                                                                                                                                            <string id="upgrade name">BirdSmoke</string>
+                                                                                                                                                                                            <normal>
+                                                                                                                                                                                                <action id="enableUpgrade">
+                                                                                                                                                                                                    <string id="condition" values="yesno">yes</string>
+                                                                                                                                                                                                    <string id="upgrade name">BirdSmoke</string>
+                                                                                                                                                                                                </action>
+                                                                                                                                                                                            </normal>
+                                                                                                                                                                                        </condition>
+                                                                                                                                                                                    </normal>
+                                                                                                                                                                                    <else>
+                                                                                                                                                                                        <condition id="checkClass">
+                                                                                                                                                                                            <string id="check on" values="targetself">self</string>
+                                                                                                                                                                                            <string id="class">Summoner</string>
+                                                                                                                                                                                            <normal>
+                                                                                                                                                                                                <condition id="isUpgradeEnabled">
+                                                                                                                                                                                                    <string id="condition" values="yesno">no</string>
+                                                                                                                                                                                                    <string id="upgrade name">SummonTotem</string>
+                                                                                                                                                                                                    <normal>
+                                                                                                                                                                                                        <action id="enableUpgrade">
+                                                                                                                                                                                                            <string id="condition" values="yesno">yes</string>
+                                                                                                                                                                                                            <string id="upgrade name">SummonTotem</string>
+                                                                                                                                                                                                        </action>
+                                                                                                                                                                                                    </normal>
+                                                                                                                                                                                                </condition>
+                                                                                                                                                                                            </normal>
+                                                                                                                                                                                            <else>
+                                                                                                                                                                                                <condition id="checkClass">
+                                                                                                                                                                                                    <string id="check on" values="targetself">self</string>
+                                                                                                                                                                                                    <string id="class">Jetter</string>
+                                                                                                                                                                                                    <normal>
+                                                                                                                                                                                                        <condition id="isUpgradeEnabled">
+                                                                                                                                                                                                            <string id="condition" values="yesno">no</string>
+                                                                                                                                                                                                            <string id="upgrade name">TimeBubble</string>
+                                                                                                                                                                                                            <normal>
+                                                                                                                                                                                                                <action id="enableUpgrade">
+                                                                                                                                                                                                                    <string id="condition" values="yesno">yes</string>
+                                                                                                                                                                                                                    <string id="upgrade name">TimeBubble</string>
+                                                                                                                                                                                                                </action>
+                                                                                                                                                                                                            </normal>
+                                                                                                                                                                                                        </condition>
+                                                                                                                                                                                                    </normal>
+                                                                                                                                                                                                    <else>
+                                                                                                                                                                                                        <condition id="checkClass">
+                                                                                                                                                                                                            <string id="check on" values="targetself">self</string>
+                                                                                                                                                                                                            <string id="class">Paladin</string>
+                                                                                                                                                                                                            <normal>
+                                                                                                                                                                                                                <condition id="isUpgradeEnabled">
+                                                                                                                                                                                                                    <string id="condition" values="yesno">no</string>
+                                                                                                                                                                                                                    <string id="upgrade name">PaladinAura</string>
+                                                                                                                                                                                                                    <normal>
+                                                                                                                                                                                                                        <action id="enableUpgrade">
+                                                                                                                                                                                                                            <string id="condition" values="yesno">yes</string>
+                                                                                                                                                                                                                            <string id="upgrade name">PaladinAura</string>
+                                                                                                                                                                                                                        </action>
+                                                                                                                                                                                                                    </normal>
+                                                                                                                                                                                                                </condition>
+                                                                                                                                                                                                            </normal>
+                                                                                                                                                                                                        </condition>
+                                                                                                                                                                                                    </else>
+                                                                                                                                                                                                </condition>
+                                                                                                                                                                                            </else>
+                                                                                                                                                                                        </condition>
+                                                                                                                                                                                    </else>
+                                                                                                                                                                                </condition>
+                                                                                                                                                                            </else>
+                                                                                                                                                                        </condition>
+                                                                                                                                                                    </else>
+                                                                                                                                                                </condition>
+                                                                                                                                                            </else>
+                                                                                                                                                        </condition>
+                                                                                                                                                    </else>
+                                                                                                                                                </condition>
+                                                                                                                                            </else>
+                                                                                                                                        </condition>
+                                                                                                                                    </else>
+                                                                                                                                </condition>
+                                                                                                                            </else>
+                                                                                                                        </condition>
+                                                                                                                    </else>
+                                                                                                                </condition>
+                                                                                                            </else>
+                                                                                                        </condition>
+                                                                                                    </else>
+                                                                                                </condition>
+                                                                                            </else>
+                                                                                        </condition>
+                                                                                    </else>
+                                                                                </condition>
+                                                                            </else>
+                                                                        </condition>
+                                                                    </else>
+                                                                </condition>
+                                                            </else>
+                                                        </condition>
+                                                    </else>
+                                                </condition>
+                                            </normal>
+                                        </condition>
+                                    </normal>
+                                </condition>
+                            </normal>
+                        </condition>
+                    </normal>
+                    <else>
+                        <action id="setBool">
+                            <string id="id">ready</string>
+                            <string id="value" values="flagtoggle">yes</string>
+                        </action>
+                    </else>
+                </condition>
+            </normal>
+        </root>
+    </behaviour>
+</enemy>
