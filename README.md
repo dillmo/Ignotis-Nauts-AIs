@@ -70,9 +70,8 @@ for his allies, and to use Black Hole Sun to escape and secure kills.
 * Clever at charging Black Hole Sun
 * Uses Photon Mine for area denial
 * Good at chasing
+* Very clever at Teleport Beacon
+* Tele-bomb!
 * Supports the team deathmatch gamemode
-
-**Cons:**
-* Not very clever with Teleport Beacon.
 
 **[Build](http://nautsbuilder.com/#Sentry_X-58/1230003132001013002011301010/27-25-1-7-7-7-23-23-23-21-3-3-3-19-19-2-2-16-16-16-8-9-9-9-10-10-13)**
