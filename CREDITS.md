@@ -10,3 +10,4 @@ Credits
 * Veanko and FlawlessHair for testing Unstoppable Fox
 * hurleybird for fixing Unstoppable Fox's facetanking issue
 * hurleybird for testing Unstoppable Fox and Super Sentry
+* chaorace for letting me use YuriBot's movement logic
