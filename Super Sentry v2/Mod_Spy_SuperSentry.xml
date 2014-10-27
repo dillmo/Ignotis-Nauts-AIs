@@ -491,7 +491,7 @@
                             <float id="yOffset">0.00</float>
                             <float id="width">0.80</float>
                             <float id="height">0.80</float>
-                            <string id="check line of sight" values="yesno">no</string>
+                            <string id="check line of sight" values="yesno">yes</string>
                             <string id="ignore invisibility" values="yesno">no</string>
                             <string id="Comment">Shoot target</string>
                             <normal>
@@ -1313,62 +1313,35 @@
                                 </condition>
                             </or>
                         </andblock>
-                        <condition id="isSkillOnButtonAvailable">
-                            <string id="button" values="buttons">FACE_BOTTOM</string>
+                        <andblock>
                             <string id="Comment">Can I place the beacon?</string>
                             <normal>
                                 <condition id="isUpgradeEnabled">
-                                    <string id="condition" values="yesno">no</string>
-                                    <string id="upgrade name">SpyBoothIsPlaced</string>
+                                    <string id="condition" values="yesno">yes</string>
+                                    <string id="upgrade name">SpyBoothClone2</string>
+                                    <string id="Comment">Tele-bomb logic</string>
                                     <normal>
-                                        <condition id="isUpgradeEnabled">
-                                            <string id="condition" values="yesno">yes</string>
-                                            <string id="upgrade name">SpyBoothClone2</string>
-                                            <string id="Comment">Tele-bomb logic</string>
+                                        <andblock>
+                                            <string id="Comment">Can I tele-bomb?</string>
                                             <normal>
                                                 <andblock>
-                                                    <string id="Comment">Can I tele-bomb?</string>
+                                                    <string id="Comment">Don&apos;t attack charging Spy</string>
                                                     <normal>
-                                                        <andblock>
-                                                            <string id="Comment">Don&apos;t attack charging Spy</string>
+                                                        <condition id="isCharacterInArea">
+                                                            <string id="groups" values="target receive groups" multiselect="true">PLAYERS;;</string>
+                                                            <string id="teams" values="teams" multiselect="true">ENEMY_TEAM;;</string>
+                                                            <string id="class">2</string>
+                                                            <string id="condition" values="charactervaluesCheckable">health</string>
+                                                            <string id="comparison" values="valuecompare">greater or equal</string>
+                                                            <float id="value">0.00</float>
+                                                            <string id="character minimum">2</string>
+                                                            <float id="xOffset">0.00</float>
+                                                            <float id="yOffset">0.00</float>
+                                                            <float id="width">50.00</float>
+                                                            <float id="height">50.00</float>
+                                                            <string id="check line of sight" values="yesno">no</string>
+                                                            <string id="Comment">Not accurate with multiple Spy&apos;s</string>
                                                             <normal>
-                                                                <condition id="isCharacterInArea">
-                                                                    <string id="groups" values="target receive groups" multiselect="true">PLAYERS;;</string>
-                                                                    <string id="teams" values="teams" multiselect="true">ENEMY_TEAM;;</string>
-                                                                    <string id="class">2</string>
-                                                                    <string id="condition" values="charactervaluesCheckable">health</string>
-                                                                    <string id="comparison" values="valuecompare">greater or equal</string>
-                                                                    <float id="value">0.00</float>
-                                                                    <string id="character minimum">2</string>
-                                                                    <float id="xOffset">0.00</float>
-                                                                    <float id="yOffset">0.00</float>
-                                                                    <float id="width">50.00</float>
-                                                                    <float id="height">50.00</float>
-                                                                    <string id="check line of sight" values="yesno">no</string>
-                                                                    <string id="Comment">Not accurate with multiple Spy&apos;s</string>
-                                                                    <normal>
-                                                                        <sequence>
-                                                                            <string id="Is blocking">no</string>
-                                                                            <normal>
-                                                                                <action id="pressButton">
-                                                                                    <string id="button" values="buttons">FACE_TOP</string>
-                                                                                    <float id="duration in seconds">0.00</float>
-                                                                                    <string id="Comment">Place beacon</string>
-                                                                                </action>
-                                                                                <action id="wait">
-                                                                                    <float id="time">0.01</float>
-                                                                                </action>
-                                                                                <action id="pressButton">
-                                                                                    <string id="button" values="buttons">FACE_TOP</string>
-                                                                                    <float id="duration in seconds">0.00</float>
-                                                                                    <string id="Comment">Teleport</string>
-                                                                                </action>
-                                                                            </normal>
-                                                                        </sequence>
-                                                                    </normal>
-                                                                </condition>
-                                                            </normal>
-                                                            <else>
                                                                 <sequence>
                                                                     <string id="Is blocking">no</string>
                                                                     <normal>
@@ -1378,7 +1351,7 @@
                                                                             <string id="Comment">Place beacon</string>
                                                                         </action>
                                                                         <action id="wait">
-                                                                            <float id="time">0.01</float>
+                                                                            <float id="time">0.10</float>
                                                                         </action>
                                                                         <action id="pressButton">
                                                                             <string id="button" values="buttons">FACE_TOP</string>
@@ -1387,70 +1360,103 @@
                                                                         </action>
                                                                     </normal>
                                                                 </sequence>
-                                                            </else>
-                                                            <or>
-                                                                <condition id="checkClass">
-                                                                    <string id="check on" values="targetself">target</string>
-                                                                    <string id="class">Spy</string>
-                                                                </condition>
-                                                                <condition id="hasUpgrade">
-                                                                    <string id="class">Spy</string>
-                                                                    <string id="team" values="teamswithnumbers">ENEMY_TEAM</string>
-                                                                    <string id="upgrade name">SpyAbsorbStartOn</string>
-                                                                </condition>
-                                                                <condition id="checkCharacterValue">
-                                                                    <string id="property" values="charactervaluesCheckable">health</string>
-                                                                    <float id="value">200.00</float>
-                                                                    <string id="compare method" values="valuecompare">greater</string>
-                                                                    <string id="check on" values="targetself">target</string>
-                                                                    <string id="Comment">But he has such low health!</string>
-                                                                </condition>
-                                                            </or>
-                                                        </andblock>
-                                                    </normal>
-                                                    <or>
-                                                        <condition id="isTargetInArea">
-                                                            <string id="condition" values="yesno">yes</string>
-                                                            <float id="xOffset">0.00</float>
-                                                            <float id="yOffset">0.00</float>
-                                                            <float id="width">0.50</float>
-                                                            <float id="height">0.50</float>
-                                                            <string id="check line of sight" values="yesno">no</string>
-                                                            <string id="ignore invisibility" values="yesno">no</string>
+                                                            </normal>
                                                         </condition>
-                                                        <condition id="isUpgradeEnabled">
-                                                            <string id="condition" values="yesno">yes</string>
-                                                            <string id="upgrade name">SpyBoothEnable</string>
+                                                    </normal>
+                                                    <else>
+                                                        <sequence>
+                                                            <string id="Is blocking">no</string>
+                                                            <normal>
+                                                                <action id="pressButton">
+                                                                    <string id="button" values="buttons">FACE_TOP</string>
+                                                                    <float id="duration in seconds">0.00</float>
+                                                                    <string id="Comment">Place beacon</string>
+                                                                </action>
+                                                                <action id="wait">
+                                                                    <float id="time">0.10</float>
+                                                                </action>
+                                                                <action id="pressButton">
+                                                                    <string id="button" values="buttons">FACE_TOP</string>
+                                                                    <float id="duration in seconds">0.00</float>
+                                                                    <string id="Comment">Teleport</string>
+                                                                </action>
+                                                            </normal>
+                                                        </sequence>
+                                                    </else>
+                                                    <or>
+                                                        <condition id="checkClass">
+                                                            <string id="check on" values="targetself">target</string>
+                                                            <string id="class">Spy</string>
+                                                        </condition>
+                                                        <condition id="hasUpgrade">
+                                                            <string id="class">Spy</string>
+                                                            <string id="team" values="teamswithnumbers">ENEMY_TEAM</string>
+                                                            <string id="upgrade name">SpyAbsorbStartOn</string>
+                                                        </condition>
+                                                        <condition id="checkCharacterValue">
+                                                            <string id="property" values="charactervaluesCheckable">health</string>
+                                                            <float id="value">200.00</float>
+                                                            <string id="compare method" values="valuecompare">greater</string>
+                                                            <string id="check on" values="targetself">target</string>
+                                                            <string id="Comment">But he has such low health!</string>
                                                         </condition>
                                                     </or>
                                                 </andblock>
                                             </normal>
-                                            <else>
-                                                <condition id="isInNamedArea">
-                                                    <string id="area name">AREAHOME</string>
-                                                    <string id="team" values="ownenemy">OWN_TEAM</string>
-                                                    <string id="who" values="targetself">self</string>
-                                                    <string id="Comment">At base -&gt; place beacon</string>
-                                                    <normal>
-                                                        <action id="pressButton">
-                                                            <string id="button" values="buttons">FACE_TOP</string>
-                                                            <float id="duration in seconds">0.00</float>
-                                                            <string id="Comment">Place beacon</string>
-                                                        </action>
-                                                        <action id="adjustCounter">
-                                                            <string id="id">beaconLocation</string>
-                                                            <string id="value">1</string>
-                                                            <string id="adjust method" values="valueadjust">set</string>
-                                                            <string id="Comment">Beacon at base</string>
-                                                        </action>
-                                                    </normal>
+                                            <or>
+                                                <condition id="isTargetInArea">
+                                                    <string id="condition" values="yesno">yes</string>
+                                                    <float id="xOffset">0.00</float>
+                                                    <float id="yOffset">0.00</float>
+                                                    <float id="width">0.50</float>
+                                                    <float id="height">0.50</float>
+                                                    <string id="check line of sight" values="yesno">no</string>
+                                                    <string id="ignore invisibility" values="yesno">no</string>
                                                 </condition>
-                                            </else>
-                                        </condition>
+                                                <condition id="isTargetType">
+                                                    <string id="condition" values="yesno">yes</string>
+                                                    <string id="target groups" values="target groups" multiselect="true">PLAYERS;;</string>
+                                                </condition>
+                                                <condition id="isUpgradeEnabled">
+                                                    <string id="condition" values="yesno">yes</string>
+                                                    <string id="upgrade name">SpyBoothEnable</string>
+                                                </condition>
+                                            </or>
+                                        </andblock>
                                     </normal>
+                                    <else>
+                                        <condition id="isInNamedArea">
+                                            <string id="area name">AREAHOME</string>
+                                            <string id="team" values="ownenemy">OWN_TEAM</string>
+                                            <string id="who" values="targetself">self</string>
+                                            <string id="Comment">At base -&gt; place beacon</string>
+                                            <normal>
+                                                <action id="pressButton">
+                                                    <string id="button" values="buttons">FACE_TOP</string>
+                                                    <float id="duration in seconds">0.00</float>
+                                                    <string id="Comment">Place beacon</string>
+                                                </action>
+                                                <action id="adjustCounter">
+                                                    <string id="id">beaconLocation</string>
+                                                    <string id="value">1</string>
+                                                    <string id="adjust method" values="valueadjust">set</string>
+                                                    <string id="Comment">Beacon at base</string>
+                                                </action>
+                                            </normal>
+                                        </condition>
+                                    </else>
                                 </condition>
                             </normal>
-                        </condition>
+                            <or>
+                                <condition id="isSkillOnButtonAvailable">
+                                    <string id="button" values="buttons">FACE_BOTTOM</string>
+                                </condition>
+                                <condition id="isUpgradeEnabled">
+                                    <string id="condition" values="yesno">no</string>
+                                    <string id="upgrade name">SpyBoothIsPlaced</string>
+                                </condition>
+                            </or>
+                        </andblock>
                         <andblock>
                             <string id="Comment">Tele-bomb failed</string>
                             <normal>
@@ -1474,6 +1480,26 @@
                                 </condition>
                             </or>
                         </andblock>
+                    </normal>
+                </condition>
+                <condition id="isTargetInArea">
+                    <string id="condition" values="yesno">yes</string>
+                    <float id="xOffset">0.00</float>
+                    <float id="yOffset">0.00</float>
+                    <float id="width">0.30</float>
+                    <float id="height">0.30</float>
+                    <string id="check line of sight" values="yesno">no</string>
+                    <string id="ignore invisibility" values="yesno">no</string>
+                    <string id="Comment">Keep my distance from enemies</string>
+                    <normal>
+                        <action id="setBool">
+                            <string id="id">MoveAwayFromTarget</string>
+                            <string id="value" values="flagtoggle">yes</string>
+                        </action>
+                        <action id="setBool">
+                            <string id="id">MoveTowardsTarget</string>
+                            <string id="value" values="flagtoggle">no</string>
+                        </action>
                     </normal>
                 </condition>
                 <condition id="getBoolEquals">
@@ -1847,6 +1873,26 @@
                                 </condition>
                             </normal>
                         </condition>
+                    </normal>
+                </condition>
+                <condition id="isInArea">
+                    <string id="condition" values="yesno">yes</string>
+                    <string id="collision groups" values="collison groups" multiselect="true">PROJECTILES;;</string>
+                    <string id="check green obstacles only" values="yesno">no</string>
+                    <string id="teams" values="teams" multiselect="true">ENEMY_TEAM;;</string>
+                    <string id="areaName"></string>
+                    <float id="xOffset">0.00</float>
+                    <float id="yOffset">0.00</float>
+                    <float id="width">0.20</float>
+                    <float id="height">0.20</float>
+                    <string id="check line of sight" values="yesno">no</string>
+                    <string id="ignore invisibility" values="yesno">no</string>
+                    <string id="Comment">Dodge projectiles</string>
+                    <normal>
+                        <action id="setBool">
+                            <string id="id">jump</string>
+                            <string id="value" values="flagtoggle">yes</string>
+                        </action>
                     </normal>
                 </condition>
                 <condition id="getBoolEquals">
