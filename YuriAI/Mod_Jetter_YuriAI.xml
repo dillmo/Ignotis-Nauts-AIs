@@ -194,13 +194,103 @@
                         </condition>
                     </or>
                 </andblock>
+                <andblock>
+                    <string id="Comment">Time Warp logic</string>
+                    <normal>
+                        <condition id="checkCounter">
+                            <string id="id">state</string>
+                            <string id="value">1</string>
+                            <string id="compare method" values="valuecompare">equal</string>
+                            <string id="Comment">Use bubble to heal</string>
+                            <normal>
+                                <orblock>
+                                    <normal>
+                                        <action id="pressButton">
+                                            <string id="button" values="buttons">FACE_TOP</string>
+                                            <float id="duration in seconds">0.00</float>
+                                        </action>
+                                    </normal>
+                                    <or>
+                                        <condition id="isUpgradeEnabled">
+                                            <string id="condition" values="yesno">yes</string>
+                                            <string id="upgrade name">JetterTimebubbleHeal1</string>
+                                        </condition>
+                                        <condition id="isUpgradeEnabled">
+                                            <string id="condition" values="yesno">yes</string>
+                                            <string id="upgrade name">JetterTimebubbleHeal2</string>
+                                        </condition>
+                                    </or>
+                                </orblock>
+                            </normal>
+                        </condition>
+                        <orblock>
+                            <string id="Comment">Use bubble to escape</string>
+                            <normal>
+                                <condition id="isInArea">
+                                    <string id="condition" values="yesno">yes</string>
+                                    <string id="collision groups" values="collison groups" multiselect="true">PLAYERS;;</string>
+                                    <string id="check green obstacles only" values="yesno">no</string>
+                                    <string id="teams" values="teams" multiselect="true">ENEMY_TEAM;;</string>
+                                    <string id="areaName"></string>
+                                    <float id="xOffset">0.00</float>
+                                    <float id="yOffset">0.00</float>
+                                    <float id="width">0.60</float>
+                                    <float id="height">0.60</float>
+                                    <string id="check line of sight" values="yesno">no</string>
+                                    <string id="ignore invisibility" values="yesno">no</string>
+                                    <normal>
+                                        <action id="pressButton">
+                                            <string id="button" values="buttons">FACE_TOP</string>
+                                            <float id="duration in seconds">0.00</float>
+                                        </action>
+                                    </normal>
+                                </condition>
+                            </normal>
+                            <or>
+                                <condition id="checkCounter">
+                                    <string id="id">state</string>
+                                    <string id="value">1</string>
+                                    <string id="compare method" values="valuecompare">equal</string>
+                                    <string id="Comment">RetreatHP</string>
+                                </condition>
+                                <condition id="checkCounter">
+                                    <string id="id">state</string>
+                                    <string id="value">6</string>
+                                    <string id="compare method" values="valuecompare">equal</string>
+                                    <string id="Comment">FleeTower</string>
+                                </condition>
+                                <condition id="checkCounter">
+                                    <string id="id">state</string>
+                                    <string id="value">10</string>
+                                    <string id="compare method" values="valuecompare">equal</string>
+                                    <string id="Comment">ReturnToUpgrade</string>
+                                </condition>
+                                <condition id="checkCounter">
+                                    <string id="id">state</string>
+                                    <string id="value">11</string>
+                                    <string id="compare method" values="valuecompare">equal</string>
+                                    <string id="Comment">Defend</string>
+                                </condition>
+                            </or>
+                        </orblock>
+                    </normal>
+                    <or>
+                        <condition id="isUpgradeEnabled">
+                            <string id="condition" values="yesno">yes</string>
+                            <string id="upgrade name">TimeBubble</string>
+                        </condition>
+                        <condition id="isSkillOnButtonAvailable">
+                            <string id="button" values="buttons">FACE_TOP</string>
+                        </condition>
+                    </or>
+                </andblock>
                 <condition id="isTargetInArea">
                     <string id="condition" values="yesno">yes</string>
                     <float id="xOffset">0.00</float>
                     <float id="yOffset">0.00</float>
                     <float id="width">0.74</float>
                     <float id="height">0.74</float>
-                    <string id="check line of sight" values="yesno">no</string>
+                    <string id="check line of sight" values="yesno">yes</string>
                     <string id="ignore invisibility" values="yesno">no</string>
                     <string id="Comment">Laser Logic</string>
                     <normal>
