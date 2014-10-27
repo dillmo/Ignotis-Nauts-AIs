@@ -8,4 +8,5 @@ Credits
 * exploder1531, FlawlessHair, and TheMesp for testing BrainyVoltar
 * r0estir0bbe for suggesting a change to BranyVoltar's build
 * Veanko and FlawlessHair for testing Unstoppable Fox
-* TheMesp and FlawlessHair for helping me diagnose facetanking in Unstoppable Fox
+* hurleybird for fixing Unstoppable Fox's facetanking issue
+* hurleybird for testing Unstoppable Fox and Super Sentry
