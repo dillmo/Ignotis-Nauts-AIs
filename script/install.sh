@@ -20,10 +20,6 @@ if [ "$(echo "$*" | grep -c "summoner")" -gt 0 ]; then
 fi
 
 if [ "$(echo "$*" | grep -c "jetter")" -gt 0 ]; then
-  cp -a YuriAI/*.xml "$DEST"
-fi
-
-if [ "$(echo "$*" | grep -c "jetter")" -gt 0 ]; then
   if [ "$(echo "$*" | grep -c "default")" -gt 0 ]; then
     cp -a YuriAI/default/*.xml "$DEST"
   elif [ "$(echo "$*" | grep -c "deathmatch")" -gt 0 ]; then
