@@ -1,0 +1,15 @@
+diff --git a/../default/Mod_Jetter_YuriAI.xml b/Mod_Jetter_Boss.xml
+index 7927e78..dc3e0a1 100644
+--- a/../default/Mod_Jetter_YuriAI.xml
++++ b/Mod_Jetter_Boss.xml
+@@ -25,6 +25,10 @@
+                     <string id="fileName">Mod_BotSkill</string>
+                     <string id="Minimized">yes</string>
+                 </action>
++                <action id="executeBehaviourTree">
++                    <string id="fileName">Mod_Bossmode</string>
++                    <string id="Minimized">yes</string>
++                </action>
+                 <condition id="isInNamedArea">
+                     <string id="area name">HEALAREA</string>
+                     <string id="team" values="ownenemy">OWN_TEAM</string>
