@@ -34,6 +34,7 @@
                     <string id="value">3</string>
                     <string id="compare method" values="valuecompare">greater or equal</string>
                     <string id="Comment">Shop logic</string>
+                    <string id="Minimized">yes</string>
                     <normal>
                         <condition id="isUpgradeEnabled">
                             <string id="condition" values="yesno">no</string>
@@ -1366,6 +1367,7 @@
                 </condition>
                 <andblock>
                     <string id="Comment">Calculate pounce damage</string>
+                    <string id="Minimized">yes</string>
                     <normal>
                         <condition id="isUpgradeEnabled">
                             <string id="condition" values="yesno">yes</string>
@@ -1613,6 +1615,7 @@
                 </andblock>
                 <andblock>
                     <string id="Comment">Calculate energy pulse damage</string>
+                    <string id="Minimized">yes</string>
                     <normal>
                         <condition id="isUpgradeEnabled">
                             <string id="condition" values="yesno">yes</string>
@@ -1938,6 +1941,7 @@
                 </andblock>
                 <andblock>
                     <string id="Comment">Calculate energy pulse damage at 1 charge</string>
+                    <string id="Minimized">yes</string>
                     <normal>
                         <condition id="isUpgradeEnabled">
                             <string id="condition" values="yesno">yes</string>
@@ -2005,6 +2009,7 @@
                     <string id="condition" values="yesno">yes</string>
                     <string id="upgrade name">AssassinJoltNexthit2</string>
                     <string id="Comment">Calculate death lens extra damage</string>
+                    <string id="Minimized">yes</string>
                     <normal>
                         <action id="adjustCounter">
                             <string id="id">deathLensExtraDmg</string>
@@ -2037,6 +2042,7 @@
                     <string id="condition" values="yesno">yes</string>
                     <string id="upgrade name">AssassinStrikeDmg2</string>
                     <string id="Comment">Calculate claw damage at 1 charge</string>
+                    <string id="Minimized">yes</string>
                     <normal>
                         <action id="adjustCounter">
                             <string id="id">clawDmg1Charge</string>
@@ -2071,6 +2077,7 @@
                     <string id="compare method" values="valuecompare">less or equal</string>
                     <string id="check on" values="targetself">target</string>
                     <string id="Comment">Document target health</string>
+                    <string id="Minimized">yes</string>
                     <normal>
                         <action id="adjustCounter">
                             <string id="id">targetHealth</string>
@@ -2630,6 +2637,48 @@
                         </condition>
                     </else>
                 </condition>
+                <condition id="once">
+                    <string id="Comment">Reset counters</string>
+                    <normal>
+                        <action id="adjustCounter">
+                            <string id="id">chaseTimer</string>
+                            <string id="value">0</string>
+                            <string id="adjust method" values="valueadjust">set</string>
+                        </action>
+                    </normal>
+                </condition>
+                <andblock>
+                    <string id="Comment">Helps decide whether to Pounce to close ranges</string>
+                    <normal>
+                        <action id="adjustCounter">
+                            <string id="id">chaseTimer</string>
+                            <string id="value">1</string>
+                            <string id="adjust method" values="valueadjust">add</string>
+                        </action>
+                    </normal>
+                    <else>
+                        <action id="adjustCounter">
+                            <string id="id">chaseTimer</string>
+                            <string id="value">0</string>
+                            <string id="adjust method" values="valueadjust">set</string>
+                        </action>
+                    </else>
+                    <or>
+                        <condition id="checkCounter">
+                            <string id="id">state</string>
+                            <string id="value">4</string>
+                            <string id="compare method" values="valuecompare">equal</string>
+                            <string id="Comment">chaseBattle</string>
+                        </condition>
+                        <condition id="hasTarget">
+                            <string id="condition" values="yesno">yes</string>
+                        </condition>
+                        <condition id="isTargetType">
+                            <string id="condition" values="yesno">yes</string>
+                            <string id="target groups" values="target groups" multiselect="true">PLAYERS;;</string>
+                        </condition>
+                    </or>
+                </andblock>
                 <andblock>
                     <string id="Comment">Pounce logic</string>
                     <normal>
@@ -2653,37 +2702,105 @@
                                             <string id="check line of sight" values="yesno">no</string>
                                             <string id="Comment">Not accurate with multiple Spy&apos;s</string>
                                             <normal>
-                                                <condition id="checkCounter">
-                                                    <string id="id">targetHealth</string>
-                                                    <string id="value">pounceDmg + pulseDmg1Charge + deathLenseExtraDmg + clawDmg1Charge</string>
-                                                    <string id="compare method" values="valuecompare">less or equal</string>
+                                                <condition id="isTargetInArea">
+                                                    <string id="condition" values="yesno">yes</string>
+                                                    <float id="xOffset">0.00</float>
+                                                    <float id="yOffset">0.00</float>
+                                                    <float id="width">0.50</float>
+                                                    <float id="height">0.50</float>
+                                                    <string id="check line of sight" values="yesno">yes</string>
+                                                    <string id="ignore invisibility" values="yesno">no</string>
                                                     <normal>
-                                                        <action id="aimStickAtTarget">
-                                                            <float id="duration seconds">0.10</float>
-                                                            <string id="only aim when needed" values="yesno">no</string>
-                                                        </action>
-                                                        <action id="pressButton">
-                                                            <string id="button" values="buttons">FACE_RIGHT</string>
-                                                            <float id="duration in seconds">0.00</float>
-                                                            <string id="Comment">Pounce!</string>
-                                                        </action>
-                                                    </normal>
-                                                    <else>
-                                                        <andblock>
-                                                            <string id="Comment">Heart shaped net spam</string>
+                                                        <condition id="checkCounter">
+                                                            <string id="id">targetHealth</string>
+                                                            <string id="value">pounceDmg + pulseDmg1Charge + deathLenseExtraDmg + clawDmg1Charge</string>
+                                                            <string id="compare method" values="valuecompare">less or equal</string>
                                                             <normal>
+                                                                <action id="aimStickAtTarget">
+                                                                    <float id="duration seconds">0.10</float>
+                                                                    <string id="only aim when needed" values="yesno">no</string>
+                                                                </action>
+                                                                <action id="pressButton">
+                                                                    <string id="button" values="buttons">FACE_RIGHT</string>
+                                                                    <float id="duration in seconds">0.00</float>
+                                                                    <string id="Comment">Pounce!</string>
+                                                                </action>
+                                                                <action id="adjustCounter">
+                                                                    <string id="id">chaseTimer</string>
+                                                                    <string id="value">0</string>
+                                                                    <string id="adjust method" values="valueadjust">set</string>
+                                                                    <string id="Comment">I don&apos;t need to close my range</string>
+                                                                </action>
+                                                            </normal>
+                                                            <else>
                                                                 <orblock>
                                                                     <string id="Comment">Not running away?</string>
                                                                     <normal>
-                                                                        <action id="aimStickAtTarget">
-                                                                            <float id="duration seconds">0.10</float>
-                                                                            <string id="only aim when needed" values="yesno">no</string>
-                                                                        </action>
-                                                                        <action id="pressButton">
-                                                                            <string id="button" values="buttons">FACE_RIGHT</string>
-                                                                            <float id="duration in seconds">0.00</float>
-                                                                            <string id="Comment">Pounce!</string>
-                                                                        </action>
+                                                                        <andblock>
+                                                                            <string id="Comment">Heart shaped net spam</string>
+                                                                            <normal>
+                                                                                <action id="aimStickAtTarget">
+                                                                                    <float id="duration seconds">0.10</float>
+                                                                                    <string id="only aim when needed" values="yesno">no</string>
+                                                                                </action>
+                                                                                <action id="pressButton">
+                                                                                    <string id="button" values="buttons">FACE_RIGHT</string>
+                                                                                    <float id="duration in seconds">0.00</float>
+                                                                                    <string id="Comment">Pounce!</string>
+                                                                                </action>
+                                                                                <action id="adjustCounter">
+                                                                                    <string id="id">chaseTimer</string>
+                                                                                    <string id="value">0</string>
+                                                                                    <string id="adjust method" values="valueadjust">set</string>
+                                                                                    <string id="Comment">I don&apos;t need to close my range</string>
+                                                                                </action>
+                                                                            </normal>
+                                                                            <else>
+                                                                                <condition id="getBoolEquals">
+                                                                                    <string id="id">chargesFull</string>
+                                                                                    <string id="value" values="yesno">yes</string>
+                                                                                    <string id="Comment">Full charges?</string>
+                                                                                    <normal>
+                                                                                        <action id="aimStickAtTarget">
+                                                                                            <float id="duration seconds">0.10</float>
+                                                                                            <string id="only aim when needed" values="yesno">no</string>
+                                                                                        </action>
+                                                                                        <action id="pressButton">
+                                                                                            <string id="button" values="buttons">FACE_RIGHT</string>
+                                                                                            <float id="duration in seconds">0.00</float>
+                                                                                            <string id="Comment">Pounce!</string>
+                                                                                        </action>
+                                                                                        <condition id="isUpgradeEnabled">
+                                                                                            <string id="condition" values="yesno">yes</string>
+                                                                                            <string id="upgrade name">AssassinAssailCharge</string>
+                                                                                            <normal>
+                                                                                                <action id="setBool">
+                                                                                                    <string id="id">joltInit</string>
+                                                                                                    <string id="value" values="flagtoggle">yes</string>
+                                                                                                    <string id="Comment">Remember to use Energy Pulse</string>
+                                                                                                </action>
+                                                                                            </normal>
+                                                                                        </condition>
+                                                                                        <action id="adjustCounter">
+                                                                                            <string id="id">chaseTimer</string>
+                                                                                            <string id="value">0</string>
+                                                                                            <string id="adjust method" values="valueadjust">set</string>
+                                                                                            <string id="Comment">I don&apos;t need to close my range</string>
+                                                                                        </action>
+                                                                                    </normal>
+                                                                                </condition>
+                                                                            </else>
+                                                                            <or>
+                                                                                <condition id="isUpgradeEnabled">
+                                                                                    <string id="condition" values="yesno">yes</string>
+                                                                                    <string id="upgrade name">AssassinAssailCharge</string>
+                                                                                </condition>
+                                                                                <condition id="isUpgradeEnabled">
+                                                                                    <string id="condition" values="yesno">yes</string>
+                                                                                    <string id="upgrade name">AssassinJoltCdreset</string>
+                                                                                </condition>
+                                                                            </or>
+                                                                        </andblock>
                                                                     </normal>
                                                                     <or>
                                                                         <condition id="checkCounter">
@@ -2708,15 +2825,112 @@
                                                                         </condition>
                                                                     </or>
                                                                 </orblock>
+                                                            </else>
+                                                        </condition>
+                                                    </normal>
+                                                    <else>
+                                                        <andblock>
+                                                            <string id="Comment">Close range?</string>
+                                                            <normal>
+                                                                <action id="aimStickAtTarget">
+                                                                    <float id="duration seconds">0.10</float>
+                                                                    <string id="only aim when needed" values="yesno">no</string>
+                                                                </action>
+                                                                <action id="pressButton">
+                                                                    <string id="button" values="buttons">FACE_RIGHT</string>
+                                                                    <float id="duration in seconds">0.00</float>
+                                                                    <string id="Comment">Pounce!</string>
+                                                                </action>
+                                                                <action id="adjustCounter">
+                                                                    <string id="id">chaseTimer</string>
+                                                                    <string id="value">0</string>
+                                                                    <string id="adjust method" values="valueadjust">set</string>
+                                                                    <string id="Comment">I don&apos;t need to close my range</string>
+                                                                </action>
                                                             </normal>
-                                                            <else>
-                                                                <condition id="getBoolEquals">
-                                                                    <string id="id">chargesFull</string>
-                                                                    <string id="value" values="yesno">yes</string>
-                                                                    <string id="Comment">Full charges?</string>
+                                                            <or>
+                                                                <condition id="checkCounter">
+                                                                    <string id="id">chaseTimer</string>
+                                                                    <string id="value">20</string>
+                                                                    <string id="compare method" values="valuecompare">greater or equal</string>
+                                                                </condition>
+                                                                <condition id="isTargetInArea">
+                                                                    <string id="condition" values="yesno">yes</string>
+                                                                    <float id="xOffset">0.00</float>
+                                                                    <float id="yOffset">0.00</float>
+                                                                    <float id="width">5.00</float>
+                                                                    <float id="height">5.00</float>
+                                                                    <string id="check line of sight" values="yesno">yes</string>
+                                                                    <string id="ignore invisibility" values="yesno">no</string>
+                                                                    <string id="Comment">Do I have a line of sight?</string>
+                                                                </condition>
+                                                            </or>
+                                                        </andblock>
+                                                    </else>
+                                                </condition>
+                                            </normal>
+                                        </condition>
+                                    </normal>
+                                    <else>
+                                        <condition id="isTargetInArea">
+                                            <string id="condition" values="yesno">yes</string>
+                                            <float id="xOffset">0.00</float>
+                                            <float id="yOffset">0.00</float>
+                                            <float id="width">0.50</float>
+                                            <float id="height">0.50</float>
+                                            <string id="check line of sight" values="yesno">yes</string>
+                                            <string id="ignore invisibility" values="yesno">no</string>
+                                            <string id="Minimized">yes</string>
+                                            <normal>
+                                                <condition id="checkCounter">
+                                                    <string id="id">targetHealth</string>
+                                                    <string id="value">pounceDmg + pulseDmg1Charge + deathLenseExtraDmg + clawDmg1Charge</string>
+                                                    <string id="compare method" values="valuecompare">less or equal</string>
+                                                    <normal>
+                                                        <action id="aimStickAtTarget">
+                                                            <float id="duration seconds">0.10</float>
+                                                            <string id="only aim when needed" values="yesno">no</string>
+                                                        </action>
+                                                        <action id="pressButton">
+                                                            <string id="button" values="buttons">FACE_RIGHT</string>
+                                                            <float id="duration in seconds">0.00</float>
+                                                            <string id="Comment">Pounce!</string>
+                                                        </action>
+                                                        <action id="adjustCounter">
+                                                            <string id="id">chaseTimer</string>
+                                                            <string id="value">0</string>
+                                                            <string id="adjust method" values="valueadjust">set</string>
+                                                            <string id="Comment">I don&apos;t need to close my range</string>
+                                                        </action>
+                                                    </normal>
+                                                    <else>
+                                                        <orblock>
+                                                            <string id="Comment">Not running away?</string>
+                                                            <normal>
+                                                                <andblock>
+                                                                    <string id="Comment">Heart shaped net spam</string>
                                                                     <normal>
-                                                                        <andblock>
-                                                                            <string id="Comment">Don&apos;t wait for Energy Pulse?</string>
+                                                                        <action id="aimStickAtTarget">
+                                                                            <float id="duration seconds">0.10</float>
+                                                                            <string id="only aim when needed" values="yesno">no</string>
+                                                                        </action>
+                                                                        <action id="pressButton">
+                                                                            <string id="button" values="buttons">FACE_RIGHT</string>
+                                                                            <float id="duration in seconds">0.00</float>
+                                                                            <string id="Comment">Pounce!</string>
+                                                                        </action>
+                                                                        <action id="adjustCounter">
+                                                                            <string id="id">chaseTimer</string>
+                                                                            <string id="value">0</string>
+                                                                            <string id="adjust method" values="valueadjust">set</string>
+                                                                            <string id="Comment">I don&apos;t need to close my range</string>
+                                                                        </action>
+                                                                    </normal>
+                                                                    <else>
+                                                                        <condition id="getBoolEquals">
+                                                                            <string id="id">chargesFull</string>
+                                                                            <string id="value" values="yesno">yes</string>
+                                                                            <string id="Comment">Full charges?</string>
                                                                             <normal>
                                                                                 <action id="aimStickAtTarget">
                                                                                     <float id="duration seconds">0.10</float>
@@ -2738,81 +2952,26 @@
                                                                                         </action>
                                                                                     </normal>
                                                                                 </condition>
+                                                                                <action id="adjustCounter">
+                                                                                    <string id="id">chaseTimer</string>
+                                                                                    <string id="value">0</string>
+                                                                                    <string id="adjust method" values="valueadjust">set</string>
+                                                                                    <string id="Comment">I don&apos;t need to close my range</string>
+                                                                                </action>
                                                                             </normal>
-                                                                            <or>
-                                                                                <condition id="isUpgradeEnabled">
-                                                                                    <string id="condition" values="yesno">yes</string>
-                                                                                    <string id="upgrade name">AssassinJolt</string>
-                                                                                </condition>
-                                                                                <condition id="isUpgradeEnabled">
-                                                                                    <string id="condition" values="yesno">yes</string>
-                                                                                    <string id="upgrade name">AssassinJoltAvailable</string>
-                                                                                </condition>
-                                                                                <condition id="isSkillOnButtonAvailable">
-                                                                                    <string id="button" values="buttons">FACE_TOP</string>
-                                                                                </condition>
-                                                                                <condition id="isTargetInArea">
-                                                                                    <string id="condition" values="yesno">yes</string>
-                                                                                    <float id="xOffset">0.00</float>
-                                                                                    <float id="yOffset">0.00</float>
-                                                                                    <float id="width">0.30</float>
-                                                                                    <float id="height">0.30</float>
-                                                                                    <string id="check line of sight" values="yesno">no</string>
-                                                                                    <string id="ignore invisibility" values="yesno">no</string>
-                                                                                </condition>
-                                                                            </or>
-                                                                        </andblock>
-                                                                    </normal>
-                                                                </condition>
-                                                            </else>
-                                                            <or>
-                                                                <condition id="isUpgradeEnabled">
-                                                                    <string id="condition" values="yesno">yes</string>
-                                                                    <string id="upgrade name">AssassinAssailCharge</string>
-                                                                </condition>
-                                                                <condition id="isUpgradeEnabled">
-                                                                    <string id="condition" values="yesno">yes</string>
-                                                                    <string id="upgrade name">AssassinJoltCdreset</string>
-                                                                </condition>
-                                                            </or>
-                                                        </andblock>
-                                                    </else>
-                                                </condition>
-                                            </normal>
-                                        </condition>
-                                    </normal>
-                                    <else>
-                                        <condition id="checkCounter">
-                                            <string id="id">targetHealth</string>
-                                            <string id="value">pounceDmg + pulseDmg1Charge + deathLenseExtraDmg + clawDmg1Charge</string>
-                                            <string id="compare method" values="valuecompare">less or equal</string>
-                                            <normal>
-                                                <action id="aimStickAtTarget">
-                                                    <float id="duration seconds">0.10</float>
-                                                    <string id="only aim when needed" values="yesno">no</string>
-                                                </action>
-                                                <action id="pressButton">
-                                                    <string id="button" values="buttons">FACE_RIGHT</string>
-                                                    <float id="duration in seconds">0.00</float>
-                                                    <string id="Comment">Pounce!</string>
-                                                </action>
-                                            </normal>
-                                            <else>
-                                                <andblock>
-                                                    <string id="Comment">Heart shaped net spam</string>
-                                                    <normal>
-                                                        <orblock>
-                                                            <string id="Comment">Not running away?</string>
-                                                            <normal>
-                                                                <action id="aimStickAtTarget">
-                                                                    <float id="duration seconds">0.10</float>
-                                                                    <string id="only aim when needed" values="yesno">no</string>
-                                                                </action>
-                                                                <action id="pressButton">
-                                                                    <string id="button" values="buttons">FACE_RIGHT</string>
-                                                                    <float id="duration in seconds">0.00</float>
-                                                                    <string id="Comment">Pounce!</string>
-                                                                </action>
+                                                                        </condition>
+                                                                    </else>
+                                                                    <or>
+                                                                        <condition id="isUpgradeEnabled">
+                                                                            <string id="condition" values="yesno">yes</string>
+                                                                            <string id="upgrade name">AssassinAssailCharge</string>
+                                                                        </condition>
+                                                                        <condition id="isUpgradeEnabled">
+                                                                            <string id="condition" values="yesno">yes</string>
+                                                                            <string id="upgrade name">AssassinJoltCdreset</string>
+                                                                        </condition>
+                                                                    </or>
+                                                                </andblock>
                                                             </normal>
                                                             <or>
                                                                 <condition id="checkCounter">
@@ -2837,71 +2996,44 @@
                                                                 </condition>
                                                             </or>
                                                         </orblock>
-                                                    </normal>
-                                                    <else>
-                                                        <condition id="getBoolEquals">
-                                                            <string id="id">chargesFull</string>
-                                                            <string id="value" values="yesno">yes</string>
-                                                            <string id="Comment">Full charges?</string>
-                                                            <normal>
-                                                                <andblock>
-                                                                    <string id="Comment">Don&apos;t wait for Energy Pulse?</string>
-                                                                    <normal>
-                                                                        <action id="aimStickAtTarget">
-                                                                            <float id="duration seconds">0.10</float>
-                                                                            <string id="only aim when needed" values="yesno">no</string>
-                                                                        </action>
-                                                                        <action id="pressButton">
-                                                                            <string id="button" values="buttons">FACE_RIGHT</string>
-                                                                            <float id="duration in seconds">0.00</float>
-                                                                            <string id="Comment">Pounce!</string>
-                                                                        </action>
-                                                                        <condition id="isUpgradeEnabled">
-                                                                            <string id="condition" values="yesno">yes</string>
-                                                                            <string id="upgrade name">AssassinAssailCharge</string>
-                                                                            <normal>
-                                                                                <action id="setBool">
-                                                                                    <string id="id">joltInit</string>
-                                                                                    <string id="value" values="flagtoggle">yes</string>
-                                                                                    <string id="Comment">Remember to use Energy Pulse</string>
-                                                                                </action>
-                                                                            </normal>
-                                                                        </condition>
-                                                                    </normal>
-                                                                    <or>
-                                                                        <condition id="isUpgradeEnabled">
-                                                                            <string id="condition" values="yesno">yes</string>
-                                                                            <string id="upgrade name">AssassinJolt</string>
-                                                                        </condition>
-                                                                        <condition id="isUpgradeEnabled">
-                                                                            <string id="condition" values="yesno">yes</string>
-                                                                            <string id="upgrade name">AssassinJoltAvailable</string>
-                                                                        </condition>
-                                                                        <condition id="isSkillOnButtonAvailable">
-                                                                            <string id="button" values="buttons">FACE_TOP</string>
-                                                                        </condition>
-                                                                        <condition id="isTargetInArea">
-                                                                            <string id="condition" values="yesno">yes</string>
-                                                                            <float id="xOffset">0.00</float>
-                                                                            <float id="yOffset">0.00</float>
-                                                                            <float id="width">0.30</float>
-                                                                            <float id="height">0.30</float>
-                                                                            <string id="check line of sight" values="yesno">no</string>
-                                                                            <string id="ignore invisibility" values="yesno">no</string>
-                                                                        </condition>
-                                                                    </or>
-                                                                </andblock>
-                                                            </normal>
-                                                        </condition>
                                                     </else>
+                                                </condition>
+                                            </normal>
+                                            <else>
+                                                <andblock>
+                                                    <string id="Comment">Close range?</string>
+                                                    <normal>
+                                                        <action id="aimStickAtTarget">
+                                                            <float id="duration seconds">0.10</float>
+                                                            <string id="only aim when needed" values="yesno">no</string>
+                                                        </action>
+                                                        <action id="pressButton">
+                                                            <string id="button" values="buttons">FACE_RIGHT</string>
+                                                            <float id="duration in seconds">0.00</float>
+                                                            <string id="Comment">Pounce!</string>
+                                                        </action>
+                                                        <action id="adjustCounter">
+                                                            <string id="id">chaseTimer</string>
+                                                            <string id="value">0</string>
+                                                            <string id="adjust method" values="valueadjust">set</string>
+                                                            <string id="Comment">I don&apos;t need to close my range</string>
+                                                        </action>
+                                                    </normal>
                                                     <or>
-                                                        <condition id="isUpgradeEnabled">
-                                                            <string id="condition" values="yesno">yes</string>
-                                                            <string id="upgrade name">AssassinAssailCharge</string>
+                                                        <condition id="checkCounter">
+                                                            <string id="id">chaseTimer</string>
+                                                            <string id="value">20</string>
+                                                            <string id="compare method" values="valuecompare">greater or equal</string>
                                                         </condition>
-                                                        <condition id="isUpgradeEnabled">
+                                                        <condition id="isTargetInArea">
                                                             <string id="condition" values="yesno">yes</string>
-                                                            <string id="upgrade name">AssassinJoltCdreset</string>
+                                                            <float id="xOffset">0.00</float>
+                                                            <float id="yOffset">0.00</float>
+                                                            <float id="width">5.00</float>
+                                                            <float id="height">5.00</float>
+                                                            <string id="check line of sight" values="yesno">yes</string>
+                                                            <string id="ignore invisibility" values="yesno">no</string>
+                                                            <string id="Comment">Do I have a line of sight?</string>
                                                         </condition>
                                                     </or>
                                                 </andblock>
@@ -2956,15 +3088,6 @@
                         <condition id="isSkillOnButtonAvailable">
                             <string id="button" values="buttons">FACE_RIGHT</string>
                         </condition>
-                        <condition id="isTargetInArea">
-                            <string id="condition" values="yesno">yes</string>
-                            <float id="xOffset">0.00</float>
-                            <float id="yOffset">0.00</float>
-                            <float id="width">0.40</float>
-                            <float id="height">0.40</float>
-                            <string id="check line of sight" values="yesno">yes</string>
-                            <string id="ignore invisibility" values="yesno">no</string>
-                        </condition>
                     </or>
                 </andblock>
                 <andblock>
@@ -3013,6 +3136,12 @@
                                                                     <float id="duration in seconds">0.00</float>
                                                                     <string id="Comment">Energy Pulse!</string>
                                                                 </action>
+                                                                <action id="adjustCounter">
+                                                                    <string id="id">chaseTimer</string>
+                                                                    <string id="value">0</string>
+                                                                    <string id="adjust method" values="valueadjust">set</string>
+                                                                    <string id="Comment">I don&apos;t need to close my range</string>
+                                                                </action>
                                                             </normal>
                                                             <else>
                                                                 <condition id="isTargetInArea">
@@ -3037,6 +3166,12 @@
                                                                                     <string id="button" values="buttons">FACE_TOP</string>
                                                                                     <float id="duration in seconds">0.00</float>
                                                                                     <string id="Comment">Energy Pulse!</string>
+                                                                                </action>
+                                                                                <action id="adjustCounter">
+                                                                                    <string id="id">chaseTimer</string>
+                                                                                    <string id="value">0</string>
+                                                                                    <string id="adjust method" values="valueadjust">set</string>
+                                                                                    <string id="Comment">I don&apos;t need to close my range</string>
                                                                                 </action>
                                                                             </normal>
                                                                             <else>
@@ -3063,6 +3198,12 @@
                                                                                                                     <string id="button" values="buttons">FACE_TOP</string>
                                                                                                                     <float id="duration in seconds">0.00</float>
                                                                                                                     <string id="Comment">Energy Pulse!</string>
+                                                                                                                </action>
+                                                                                                                <action id="adjustCounter">
+                                                                                                                    <string id="id">chaseTimer</string>
+                                                                                                                    <string id="value">0</string>
+                                                                                                                    <string id="adjust method" values="valueadjust">set</string>
+                                                                                                                    <string id="Comment">I don&apos;t need to close my range</string>
                                                                                                                 </action>
                                                                                                             </normal>
                                                                                                         </condition>
@@ -3123,6 +3264,12 @@
                                                                                                     <float id="duration in seconds">0.00</float>
                                                                                                     <string id="Comment">Energy Pulse!</string>
                                                                                                 </action>
+                                                                                                <action id="adjustCounter">
+                                                                                                    <string id="id">chaseTimer</string>
+                                                                                                    <string id="value">0</string>
+                                                                                                    <string id="adjust method" values="valueadjust">set</string>
+                                                                                                    <string id="Comment">I don&apos;t need to close my range</string>
+                                                                                                </action>
                                                                                             </normal>
                                                                                             <or>
                                                                                                 <condition id="getBoolEquals">
@@ -3173,6 +3320,12 @@
                                                             <float id="duration in seconds">0.00</float>
                                                             <string id="Comment">Energy Pulse!</string>
                                                         </action>
+                                                        <action id="adjustCounter">
+                                                            <string id="id">chaseTimer</string>
+                                                            <string id="value">0</string>
+                                                            <string id="adjust method" values="valueadjust">set</string>
+                                                            <string id="Comment">I don&apos;t need to close my range</string>
+                                                        </action>
                                                     </normal>
                                                     <else>
                                                         <condition id="isTargetInArea">
@@ -3197,6 +3350,12 @@
                                                                             <string id="button" values="buttons">FACE_TOP</string>
                                                                             <float id="duration in seconds">0.00</float>
                                                                             <string id="Comment">Energy Pulse!</string>
+                                                                        </action>
+                                                                        <action id="adjustCounter">
+                                                                            <string id="id">chaseTimer</string>
+                                                                            <string id="value">0</string>
+                                                                            <string id="adjust method" values="valueadjust">set</string>
+                                                                            <string id="Comment">I don&apos;t need to close my range</string>
                                                                         </action>
                                                                     </normal>
                                                                     <else>
@@ -3223,6 +3382,12 @@
                                                                                                             <string id="button" values="buttons">FACE_TOP</string>
                                                                                                             <float id="duration in seconds">0.00</float>
                                                                                                             <string id="Comment">Energy Pulse!</string>
+                                                                                                        </action>
+                                                                                                        <action id="adjustCounter">
+                                                                                                            <string id="id">chaseTimer</string>
+                                                                                                            <string id="value">0</string>
+                                                                                                            <string id="adjust method" values="valueadjust">set</string>
+                                                                                                            <string id="Comment">I don&apos;t need to close my range</string>
                                                                                                         </action>
                                                                                                     </normal>
                                                                                                 </condition>
@@ -3282,6 +3447,12 @@
                                                                                             <string id="button" values="buttons">FACE_TOP</string>
                                                                                             <float id="duration in seconds">0.00</float>
                                                                                             <string id="Comment">Energy Pulse!</string>
+                                                                                        </action>
+                                                                                        <action id="adjustCounter">
+                                                                                            <string id="id">chaseTimer</string>
+                                                                                            <string id="value">0</string>
+                                                                                            <string id="adjust method" values="valueadjust">set</string>
+                                                                                            <string id="Comment">I don&apos;t need to close my range</string>
                                                                                         </action>
                                                                                     </normal>
                                                                                     <or>
@@ -3425,6 +3596,12 @@
                                                                     <float id="duration in seconds">0.00</float>
                                                                     <string id="Comment">Claw!</string>
                                                                 </action>
+                                                                <action id="adjustCounter">
+                                                                    <string id="id">chaseTimer</string>
+                                                                    <string id="value">0</string>
+                                                                    <string id="adjust method" values="valueadjust">set</string>
+                                                                    <string id="Comment">I don&apos;t need to close my range</string>
+                                                                </action>
                                                             </normal>
                                                         </condition>
                                                         <andblock>
@@ -3488,6 +3665,12 @@
                                                                                             <float id="duration in seconds">0.00</float>
                                                                                             <string id="Comment">Claw!</string>
                                                                                         </action>
+                                                                                        <action id="adjustCounter">
+                                                                                            <string id="id">chaseTimer</string>
+                                                                                            <string id="value">0</string>
+                                                                                            <string id="adjust method" values="valueadjust">set</string>
+                                                                                            <string id="Comment">I don&apos;t need to close my range</string>
+                                                                                        </action>
                                                                                     </normal>
                                                                                 </condition>
                                                                             </normal>
@@ -3532,6 +3715,12 @@
                                                                                             <string id="button" values="buttons">FACE_LEFT</string>
                                                                                             <float id="duration in seconds">0.00</float>
                                                                                             <string id="Comment">Claw!</string>
+                                                                                        </action>
+                                                                                        <action id="adjustCounter">
+                                                                                            <string id="id">chaseTimer</string>
+                                                                                            <string id="value">0</string>
+                                                                                            <string id="adjust method" values="valueadjust">set</string>
+                                                                                            <string id="Comment">I don&apos;t need to close my range</string>
                                                                                         </action>
                                                                                     </normal>
                                                                                 </condition>
@@ -3594,6 +3783,12 @@
                                                                                     <float id="duration in seconds">0.00</float>
                                                                                     <string id="Comment">Claw!</string>
                                                                                 </action>
+                                                                                <action id="adjustCounter">
+                                                                                    <string id="id">chaseTimer</string>
+                                                                                    <string id="value">0</string>
+                                                                                    <string id="adjust method" values="valueadjust">set</string>
+                                                                                    <string id="Comment">I don&apos;t need to close my range</string>
+                                                                                </action>
                                                                             </normal>
                                                                         </condition>
                                                                     </normal>
@@ -3638,6 +3833,12 @@
                                                                                     <string id="button" values="buttons">FACE_LEFT</string>
                                                                                     <float id="duration in seconds">0.00</float>
                                                                                     <string id="Comment">Claw!</string>
+                                                                                </action>
+                                                                                <action id="adjustCounter">
+                                                                                    <string id="id">chaseTimer</string>
+                                                                                    <string id="value">0</string>
+                                                                                    <string id="adjust method" values="valueadjust">set</string>
+                                                                                    <string id="Comment">I don&apos;t need to close my range</string>
                                                                                 </action>
                                                                             </normal>
                                                                         </condition>
@@ -3740,6 +3941,12 @@
                                                             <float id="duration in seconds">0.00</float>
                                                             <string id="Comment">Claw!</string>
                                                         </action>
+                                                        <action id="adjustCounter">
+                                                            <string id="id">chaseTimer</string>
+                                                            <string id="value">0</string>
+                                                            <string id="adjust method" values="valueadjust">set</string>
+                                                            <string id="Comment">I don&apos;t need to close my range</string>
+                                                        </action>
                                                     </normal>
                                                 </condition>
                                             </else>
@@ -3804,6 +4011,12 @@
                                                             <float id="duration in seconds">0.00</float>
                                                             <string id="Comment">Claw!</string>
                                                         </action>
+                                                        <action id="adjustCounter">
+                                                            <string id="id">chaseTimer</string>
+                                                            <string id="value">0</string>
+                                                            <string id="adjust method" values="valueadjust">set</string>
+                                                            <string id="Comment">I don&apos;t need to close my range</string>
+                                                        </action>
                                                     </normal>
                                                 </condition>
                                                 <andblock>
@@ -3867,6 +4080,12 @@
                                                                                     <float id="duration in seconds">0.00</float>
                                                                                     <string id="Comment">Claw!</string>
                                                                                 </action>
+                                                                                <action id="adjustCounter">
+                                                                                    <string id="id">chaseTimer</string>
+                                                                                    <string id="value">0</string>
+                                                                                    <string id="adjust method" values="valueadjust">set</string>
+                                                                                    <string id="Comment">I don&apos;t need to close my range</string>
+                                                                                </action>
                                                                             </normal>
                                                                         </condition>
                                                                     </normal>
@@ -3911,6 +4130,12 @@
                                                                                     <string id="button" values="buttons">FACE_LEFT</string>
                                                                                     <float id="duration in seconds">0.00</float>
                                                                                     <string id="Comment">Claw!</string>
+                                                                                </action>
+                                                                                <action id="adjustCounter">
+                                                                                    <string id="id">chaseTimer</string>
+                                                                                    <string id="value">0</string>
+                                                                                    <string id="adjust method" values="valueadjust">set</string>
+                                                                                    <string id="Comment">I don&apos;t need to close my range</string>
                                                                                 </action>
                                                                             </normal>
                                                                         </condition>
@@ -3973,6 +4198,12 @@
                                                                             <float id="duration in seconds">0.00</float>
                                                                             <string id="Comment">Claw!</string>
                                                                         </action>
+                                                                        <action id="adjustCounter">
+                                                                            <string id="id">chaseTimer</string>
+                                                                            <string id="value">0</string>
+                                                                            <string id="adjust method" values="valueadjust">set</string>
+                                                                            <string id="Comment">I don&apos;t need to close my range</string>
+                                                                        </action>
                                                                     </normal>
                                                                 </condition>
                                                             </normal>
@@ -4017,6 +4248,12 @@
                                                                             <string id="button" values="buttons">FACE_LEFT</string>
                                                                             <float id="duration in seconds">0.00</float>
                                                                             <string id="Comment">Claw!</string>
+                                                                        </action>
+                                                                        <action id="adjustCounter">
+                                                                            <string id="id">chaseTimer</string>
+                                                                            <string id="value">0</string>
+                                                                            <string id="adjust method" values="valueadjust">set</string>
+                                                                            <string id="Comment">I don&apos;t need to close my range</string>
                                                                         </action>
                                                                     </normal>
                                                                 </condition>
@@ -4118,6 +4355,12 @@
                                                     <string id="button" values="buttons">FACE_LEFT</string>
                                                     <float id="duration in seconds">0.00</float>
                                                     <string id="Comment">Claw!</string>
+                                                </action>
+                                                <action id="adjustCounter">
+                                                    <string id="id">chaseTimer</string>
+                                                    <string id="value">0</string>
+                                                    <string id="adjust method" values="valueadjust">set</string>
+                                                    <string id="Comment">I don&apos;t need to close my range</string>
                                                 </action>
                                             </normal>
                                         </condition>
@@ -5096,7 +5339,7 @@
         </root>
     </behaviour>
     <behaviour>
-        <andblock x="2371" y="50652">
+        <andblock x="3246" y="50652">
             <string id="Comment">Facetank fix</string>
             <normal>
                 <condition id="isUpgradeEnabled">
