@@ -59,6 +59,12 @@
                             <string id="upgrade name">JetterJet</string>
                             <string id="Comment">Self-Enforcing marker for jetpack use</string>
                         </action>
+                        <action id="adjustCounter">
+                            <string id="id">timeAtDrillCore</string>
+                            <string id="value">0</string>
+                            <string id="adjust method" values="valueadjust">set</string>
+                            <string id="Comment">Tracks whether YuriAI is stuck</string>
+                        </action>
                     </normal>
                 </condition>
                 <andblock>
@@ -398,6 +404,68 @@
                         </condition>
                     </normal>
                 </condition>
+                <andblock>
+                    <string id="Comment">Fix getting stuck at drill core</string>
+                    <normal>
+                        <action id="adjustCounter">
+                            <string id="id">timeAtDrillCore</string>
+                            <string id="value">1</string>
+                            <string id="adjust method" values="valueadjust">add</string>
+                        </action>
+                        <condition id="checkCounter">
+                            <string id="id">timeAtDrillCore</string>
+                            <string id="value">50</string>
+                            <string id="compare method" values="valuecompare">greater</string>
+                            <string id="Comment">Stuck for 5 or more seconds?</string>
+                            <normal>
+                                <condition id="checkCounter">
+                                    <string id="id">lane</string>
+                                    <string id="value">1</string>
+                                    <string id="compare method" values="valuecompare">equal</string>
+                                    <string id="Comment">Switch lanes</string>
+                                    <normal>
+                                        <action id="adjustCounter">
+                                            <string id="id">lane</string>
+                                            <string id="value">2</string>
+                                            <string id="adjust method" values="valueadjust">set</string>
+                                        </action>
+                                    </normal>
+                                    <else>
+                                        <action id="adjustCounter">
+                                            <string id="id">lane</string>
+                                            <string id="value">1</string>
+                                            <string id="adjust method" values="valueadjust">set</string>
+                                        </action>
+                                    </else>
+                                </condition>
+                                <action id="adjustCounter">
+                                    <string id="id">timeAtDrillCore</string>
+                                    <string id="value">0</string>
+                                    <string id="adjust method" values="valueadjust">set</string>
+                                </action>
+                            </normal>
+                        </condition>
+                    </normal>
+                    <else>
+                        <action id="adjustCounter">
+                            <string id="id">timeAtDrillCore</string>
+                            <string id="value">0</string>
+                            <string id="adjust method" values="valueadjust">set</string>
+                        </action>
+                    </else>
+                    <or>
+                        <condition id="checkCounter">
+                            <string id="id">state</string>
+                            <string id="value">3</string>
+                            <string id="compare method" values="valuecompare">equal</string>
+                        </condition>
+                        <condition id="isInNamedArea">
+                            <string id="area name">HealAreaClose</string>
+                            <string id="team" values="ownenemy">OWN_TEAM</string>
+                            <string id="who" values="targetself">self</string>
+                        </condition>
+                    </or>
+                </andblock>
                 <condition id="getBoolEquals">
                     <string id="id">MoveAwayFromTarget</string>
                     <string id="value" values="yesno">yes</string>
