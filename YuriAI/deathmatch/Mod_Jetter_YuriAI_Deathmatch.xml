@@ -25,10 +25,6 @@
                     <string id="fileName">Mod_BotSkill</string>
                     <string id="Minimized">yes</string>
                 </action>
-                <action id="executeBehaviourTree">
-                    <string id="fileName">Mod_BotCollab_Main</string>
-                    <string id="Minimized">yes</string>
-                </action>
                 <condition id="isUpgradeEnabled">
                     <string id="condition" values="yesno">no</string>
                     <string id="upgrade name">Piggybank</string>

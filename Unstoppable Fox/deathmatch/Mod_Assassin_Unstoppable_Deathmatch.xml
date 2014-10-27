@@ -25,10 +25,6 @@
                     <string id="fileName">Mod_BotSkill</string>
                     <string id="Minimized">yes</string>
                 </action>
-                <action id="executeBehaviourTree">
-                    <string id="fileName">Mod_BotCollab_Main</string>
-                    <string id="Minimized">yes</string>
-                </action>
                 <condition id="checkCounter">
                     <string id="id">botSkill</string>
                     <string id="value">3</string>
@@ -5339,7 +5335,7 @@
         </root>
     </behaviour>
     <behaviour>
-        <andblock x="3246" y="50652">
+        <andblock x="3421" y="50652">
             <string id="Comment">Facetank fix</string>
             <normal>
                 <condition id="isUpgradeEnabled">

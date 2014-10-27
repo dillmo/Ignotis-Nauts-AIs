@@ -25,10 +25,6 @@
                     <string id="fileName">Mod_BotSkill</string>
                     <string id="Minimized">yes</string>
                 </action>
-                <action id="executeBehaviourTree">
-                    <string id="fileName">Mod_BotCollab_Main</string>
-                    <string id="Minimized">yes</string>
-                </action>
                 <condition id="isInNamedArea">
                     <string id="area name">HEALAREA</string>
                     <string id="team" values="ownenemy">OWN_TEAM</string>

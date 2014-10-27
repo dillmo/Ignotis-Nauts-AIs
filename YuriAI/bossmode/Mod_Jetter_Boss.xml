@@ -26,10 +26,6 @@
                     <string id="Minimized">yes</string>
                 </action>
                 <action id="executeBehaviourTree">
-                    <string id="fileName">Mod_BotCollab_Main</string>
-                    <string id="Minimized">yes</string>
-                </action>
-                <action id="executeBehaviourTree">
                     <string id="fileName">Mod_Bossmode</string>
                     <string id="Minimized">yes</string>
                 </action>
