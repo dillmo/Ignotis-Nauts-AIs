@@ -19,6 +19,18 @@ if [ "$(echo "$*" | grep -c "summoner")" -gt 0 ]; then
   cp -a BrainyVoltar/*.xml "$DEST"
 fi
 
+if [ "$(echo "$*" | grep -c "spy")" -gt 0 ]; then
+  if [ "$(echo "$*" | grep -c "default")" -gt 0 ]; then
+    cp -a Super\ Sentry/default/*.xml "$DEST"
+  elif [ "$(echo "$*" | grep -c "deathmatch")" -gt 0 ]; then
+    cp -a Super\ Sentry/deathmatch/*.xml "$DEST"
+  elif [ "$(echo "$*" | grep -c "bossmode")" -gt 0 ]; then
+    cp -a Super\ Sentry/bossmode/*.xml "$DEST"
+  else
+    cp -a Super\ Sentry/default/*.xml "$DEST"
+  fi
+fi
+
 if [ "$(echo "$*" | grep -c "jetter")" -gt 0 ]; then
   if [ "$(echo "$*" | grep -c "default")" -gt 0 ]; then
     cp -a YuriAI/default/*.xml "$DEST"
