@@ -1,8 +1,8 @@
 diff --git a/../default/Mod_Jetter_YuriAI.xml b/Mod_Jetter_YuriAI_Deathmatch.xml
-index 7927e78..27cb332 100644
+index e3ed771..f88deaa 100644
 --- a/../default/Mod_Jetter_YuriAI.xml
 +++ b/Mod_Jetter_YuriAI_Deathmatch.xml
-@@ -18,29 +18,37 @@
+@@ -18,7 +18,7 @@
                      <string id="Minimized">yes</string>
                  </action>
                  <action id="executeBehaviourTree">
@@ -11,9 +11,10 @@ index 7927e78..27cb332 100644
                      <string id="Minimized">yes</string>
                  </action>
                  <action id="executeBehaviourTree">
-                     <string id="fileName">Mod_BotSkill</string>
-                     <string id="Minimized">yes</string>
-                 </action>
+@@ -212,22 +212,31 @@
+                         </orblock>
+                     </else>
+                 </condition>
 -                <condition id="isInNamedArea">
 -                    <string id="area name">HEALAREA</string>
 -                    <string id="team" values="ownenemy">OWN_TEAM</string>
@@ -22,6 +23,7 @@ index 7927e78..27cb332 100644
 +                <condition id="isUpgradeEnabled">
 +                    <string id="condition" values="yesno">no</string>
 +                    <string id="upgrade name">Piggybank</string>
++                    <string id="Comment">Shop logic</string>
 +                    <string id="Minimized">yes</string>
                      <normal>
 +                        <condition id="canPayUpgrade">
@@ -50,7 +52,7 @@ index 7927e78..27cb332 100644
                                          </action>
                                      </normal>
                                  </condition>
-@@ -48,13 +56,13 @@
+@@ -235,13 +244,13 @@
                              <else>
                                  <condition id="isUpgradeEnabled">
                                      <string id="condition" values="yesno">no</string>
@@ -67,7 +69,7 @@ index 7927e78..27cb332 100644
                                                  </action>
                                              </normal>
                                          </condition>
-@@ -62,13 +70,13 @@
+@@ -249,13 +258,13 @@
                                      <else>
                                          <condition id="isUpgradeEnabled">
                                              <string id="condition" values="yesno">no</string>
@@ -84,7 +86,7 @@ index 7927e78..27cb332 100644
                                                          </action>
                                                      </normal>
                                                  </condition>
-@@ -76,13 +84,13 @@
+@@ -263,13 +272,13 @@
                                              <else>
                                                  <condition id="isUpgradeEnabled">
                                                      <string id="condition" values="yesno">no</string>
@@ -101,7 +103,7 @@ index 7927e78..27cb332 100644
                                                                  </action>
                                                              </normal>
                                                          </condition>
-@@ -90,13 +98,13 @@
+@@ -277,13 +286,13 @@
                                                      <else>
                                                          <condition id="isUpgradeEnabled">
                                                              <string id="condition" values="yesno">no</string>
@@ -118,7 +120,7 @@ index 7927e78..27cb332 100644
                                                                          </action>
                                                                      </normal>
                                                                  </condition>
-@@ -104,13 +112,13 @@
+@@ -291,13 +300,13 @@
                                                              <else>
                                                                  <condition id="isUpgradeEnabled">
                                                                      <string id="condition" values="yesno">no</string>
@@ -135,7 +137,7 @@ index 7927e78..27cb332 100644
                                                                                  </action>
                                                                              </normal>
                                                                          </condition>
-@@ -118,13 +126,13 @@
+@@ -305,13 +314,13 @@
                                                                      <else>
                                                                          <condition id="isUpgradeEnabled">
                                                                              <string id="condition" values="yesno">no</string>
@@ -152,7 +154,7 @@ index 7927e78..27cb332 100644
                                                                                          </action>
                                                                                      </normal>
                                                                                  </condition>
-@@ -132,13 +140,13 @@
+@@ -319,13 +328,13 @@
                                                                              <else>
                                                                                  <condition id="isUpgradeEnabled">
                                                                                      <string id="condition" values="yesno">no</string>
@@ -169,7 +171,7 @@ index 7927e78..27cb332 100644
                                                                                                  </action>
                                                                                              </normal>
                                                                                          </condition>
-@@ -146,13 +154,13 @@
+@@ -333,13 +342,13 @@
                                                                                      <else>
                                                                                          <condition id="isUpgradeEnabled">
                                                                                              <string id="condition" values="yesno">no</string>
@@ -186,7 +188,7 @@ index 7927e78..27cb332 100644
                                                                                                          </action>
                                                                                                      </normal>
                                                                                                  </condition>
-@@ -160,13 +168,13 @@
+@@ -347,13 +356,13 @@
                                                                                              <else>
                                                                                                  <condition id="isUpgradeEnabled">
                                                                                                      <string id="condition" values="yesno">no</string>
@@ -203,7 +205,7 @@ index 7927e78..27cb332 100644
                                                                                                                  </action>
                                                                                                              </normal>
                                                                                                          </condition>
-@@ -174,13 +182,13 @@
+@@ -361,13 +370,13 @@
                                                                                                      <else>
                                                                                                          <condition id="isUpgradeEnabled">
                                                                                                              <string id="condition" values="yesno">no</string>
@@ -220,7 +222,7 @@ index 7927e78..27cb332 100644
                                                                                                                          </action>
                                                                                                                      </normal>
                                                                                                                  </condition>
-@@ -188,13 +196,13 @@
+@@ -375,13 +384,13 @@
                                                                                                              <else>
                                                                                                                  <condition id="isUpgradeEnabled">
                                                                                                                      <string id="condition" values="yesno">no</string>
@@ -237,7 +239,7 @@ index 7927e78..27cb332 100644
                                                                                                                                  </action>
                                                                                                                              </normal>
                                                                                                                          </condition>
-@@ -202,13 +210,13 @@
+@@ -389,13 +398,13 @@
                                                                                                                      <else>
                                                                                                                          <condition id="isUpgradeEnabled">
                                                                                                                              <string id="condition" values="yesno">no</string>
@@ -254,7 +256,7 @@ index 7927e78..27cb332 100644
                                                                                                                                          </action>
                                                                                                                                      </normal>
                                                                                                                                  </condition>
-@@ -216,13 +224,13 @@
+@@ -403,13 +412,13 @@
                                                                                                                              <else>
                                                                                                                                  <condition id="isUpgradeEnabled">
                                                                                                                                      <string id="condition" values="yesno">no</string>
@@ -271,7 +273,7 @@ index 7927e78..27cb332 100644
                                                                                                                                                  </action>
                                                                                                                                              </normal>
                                                                                                                                          </condition>
-@@ -230,13 +238,13 @@
+@@ -417,13 +426,13 @@
                                                                                                                                      <else>
                                                                                                                                          <condition id="isUpgradeEnabled">
                                                                                                                                              <string id="condition" values="yesno">no</string>
@@ -288,7 +290,7 @@ index 7927e78..27cb332 100644
                                                                                                                                                          </action>
                                                                                                                                                      </normal>
                                                                                                                                                  </condition>
-@@ -244,13 +252,13 @@
+@@ -431,13 +440,13 @@
                                                                                                                                              <else>
                                                                                                                                                  <condition id="isUpgradeEnabled">
                                                                                                                                                      <string id="condition" values="yesno">no</string>
@@ -305,7 +307,7 @@ index 7927e78..27cb332 100644
                                                                                                                                                                  </action>
                                                                                                                                                              </normal>
                                                                                                                                                          </condition>
-@@ -258,13 +266,13 @@
+@@ -445,13 +454,13 @@
                                                                                                                                                      <else>
                                                                                                                                                          <condition id="isUpgradeEnabled">
                                                                                                                                                              <string id="condition" values="yesno">no</string>
@@ -322,7 +324,7 @@ index 7927e78..27cb332 100644
                                                                                                                                                                          </action>
                                                                                                                                                                      </normal>
                                                                                                                                                                  </condition>
-@@ -272,13 +280,13 @@
+@@ -459,13 +468,13 @@
                                                                                                                                                              <else>
                                                                                                                                                                  <condition id="isUpgradeEnabled">
                                                                                                                                                                      <string id="condition" values="yesno">no</string>
@@ -339,7 +341,7 @@ index 7927e78..27cb332 100644
                                                                                                                                                                                  </action>
                                                                                                                                                                              </normal>
                                                                                                                                                                          </condition>
-@@ -286,33 +294,17 @@
+@@ -473,33 +482,17 @@
                                                                                                                                                                      <else>
                                                                                                                                                                          <condition id="isUpgradeEnabled">
                                                                                                                                                                              <string id="condition" values="yesno">no</string>
@@ -376,12 +378,12 @@ index 7927e78..27cb332 100644
                                                                                                                                                                          </condition>
                                                                                                                                                                      </else>
                                                                                                                                                                  </condition>
-@@ -350,7 +342,7 @@
+@@ -537,7 +530,7 @@
                                  </condition>
                              </else>
                          </condition>
 -                    </normal>
 +                    </else>
                  </condition>
-                 <condition id="once">
-                     <string id="Comment">Declares Variables</string>
+                 <condition id="isTargetInArea">
+                     <string id="condition" values="yesno">yes</string>
