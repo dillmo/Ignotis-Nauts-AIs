@@ -218,6 +218,10 @@
                         <sequence>
                             <string id="Is blocking">no</string>
                             <normal>
+                                <action id="wait">
+                                    <float id="time">1.50</float>
+                                    <string id="Comment">Ensures sufficient entropy is harvested</string>
+                                </action>
                                 <condition id="isUpgradeEnabled">
                                     <string id="condition" values="yesno">yes</string>
                                     <string id="upgrade name">JetterMineDamage1</string>
@@ -242,10 +246,6 @@
                                                 </action>
                                             </normal>
                                             <else>
-                                                <action id="wait">
-                                                    <float id="time">1.50</float>
-                                                    <string id="Comment">Ensures sufficient entropy is harvested</string>
-                                                </action>
                                                 <condition id="random">
                                                     <string id="amount">2</string>
                                                     <normal>
@@ -269,6 +269,9 @@
                                         </condition>
                                     </else>
                                 </condition>
+                                <action id="wait">
+                                    <float id="time">0.50</float>
+                                </action>
                                 <condition id="isUpgradeEnabled">
                                     <string id="condition" values="yesno">yes</string>
                                     <string id="upgrade name">JetterTimebubbleSpeedup</string>
@@ -305,9 +308,6 @@
                                                         </action>
                                                     </normal>
                                                     <else>
-                                                        <action id="wait">
-                                                            <float id="time">0.50</float>
-                                                        </action>
                                                         <condition id="random">
                                                             <string id="amount">3</string>
                                                             <normal>
@@ -349,6 +349,9 @@
                                         </condition>
                                     </else>
                                 </condition>
+                                <action id="wait">
+                                    <float id="time">0.50</float>
+                                </action>
                                 <condition id="isUpgradeEnabled">
                                     <string id="condition" values="yesno">yes</string>
                                     <string id="upgrade name">JetterSummonerShotRange</string>
@@ -373,9 +376,6 @@
                                                 </action>
                                             </normal>
                                             <else>
-                                                <action id="wait">
-                                                    <float id="time">0.50</float>
-                                                </action>
                                                 <condition id="random">
                                                     <string id="amount">2</string>
                                                     <normal>
