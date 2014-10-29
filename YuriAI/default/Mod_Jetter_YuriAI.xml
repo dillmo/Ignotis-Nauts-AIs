@@ -233,123 +233,122 @@
                                             <string id="id">randomReady</string>
                                             <string id="value" values="flagtoggle">yes</string>
                                         </action>
-                                    </normal>
-                                </sequence>
-                            </normal>
-                        </condition>
-                        <andblock>
-                            <normal>
-                                <condition id="isUpgradeEnabled">
-                                    <string id="condition" values="yesno">yes</string>
-                                    <string id="upgrade name">JetterMineDamage1</string>
-                                    <normal>
-                                        <action id="adjustCounter">
-                                            <string id="id">mineBuild</string>
-                                            <string id="value">1</string>
-                                            <string id="adjust method" values="valueadjust">set</string>
-                                            <string id="Comment">Titanium Spikes + Mine Constructor + Uranium Spikes</string>
-                                        </action>
-                                    </normal>
-                                    <else>
                                         <condition id="isUpgradeEnabled">
                                             <string id="condition" values="yesno">yes</string>
-                                            <string id="upgrade name">JetterMineBounce</string>
+                                            <string id="upgrade name">JetterMineDamage1</string>
                                             <normal>
                                                 <action id="adjustCounter">
                                                     <string id="id">mineBuild</string>
-                                                    <string id="value">2</string>
+                                                    <string id="value">1</string>
                                                     <string id="adjust method" values="valueadjust">set</string>
-                                                    <string id="Comment">Toaster Timer + Aerial Spring + Mine Constructor</string>
+                                                    <string id="Comment">Titanium Spikes + Mine Constructor + Uranium Spikes</string>
                                                 </action>
                                             </normal>
                                             <else>
-                                                <condition id="random">
-                                                    <string id="amount">2</string>
+                                                <condition id="isUpgradeEnabled">
+                                                    <string id="condition" values="yesno">yes</string>
+                                                    <string id="upgrade name">JetterMineBounce</string>
                                                     <normal>
-                                                        <action id="adjustCounter">
-                                                            <string id="id">mineBuild</string>
-                                                            <string id="value">1</string>
-                                                            <string id="adjust method" values="valueadjust">set</string>
-                                                            <string id="Comment">Titanium Spikes + Mine Constructor + Uranium Spikes</string>
-                                                        </action>
-                                                    </normal>
-                                                    <else>
                                                         <action id="adjustCounter">
                                                             <string id="id">mineBuild</string>
                                                             <string id="value">2</string>
                                                             <string id="adjust method" values="valueadjust">set</string>
                                                             <string id="Comment">Toaster Timer + Aerial Spring + Mine Constructor</string>
                                                         </action>
+                                                    </normal>
+                                                    <else>
+                                                        <condition id="random">
+                                                            <string id="amount">2</string>
+                                                            <normal>
+                                                                <action id="adjustCounter">
+                                                                    <string id="id">mineBuild</string>
+                                                                    <string id="value">1</string>
+                                                                    <string id="adjust method" values="valueadjust">set</string>
+                                                                    <string id="Comment">Titanium Spikes + Mine Constructor + Uranium Spikes</string>
+                                                                </action>
+                                                            </normal>
+                                                            <else>
+                                                                <action id="adjustCounter">
+                                                                    <string id="id">mineBuild</string>
+                                                                    <string id="value">2</string>
+                                                                    <string id="adjust method" values="valueadjust">set</string>
+                                                                    <string id="Comment">Toaster Timer + Aerial Spring + Mine Constructor</string>
+                                                                </action>
+                                                            </else>
+                                                        </condition>
                                                     </else>
                                                 </condition>
                                             </else>
                                         </condition>
-                                    </else>
-                                </condition>
-                                <condition id="isUpgradeEnabled">
-                                    <string id="condition" values="yesno">yes</string>
-                                    <string id="upgrade name">JetterTimebubbleSpeedup</string>
-                                    <normal>
-                                        <action id="adjustCounter">
-                                            <string id="id">warpBuild</string>
-                                            <string id="value">1</string>
-                                            <string id="adjust method" values="valueadjust">set</string>
-                                            <string id="Comment">Chrono Rift + Flash Forward + Time Primer</string>
+                                        <action id="wait">
+                                            <float id="time">0.10</float>
                                         </action>
-                                    </normal>
-                                    <else>
                                         <condition id="isUpgradeEnabled">
                                             <string id="condition" values="yesno">yes</string>
-                                            <string id="upgrade name">JetterTimebubbleHeal1</string>
+                                            <string id="upgrade name">JetterTimebubbleSpeedup</string>
                                             <normal>
                                                 <action id="adjustCounter">
                                                     <string id="id">warpBuild</string>
-                                                    <string id="value">2</string>
+                                                    <string id="value">1</string>
                                                     <string id="adjust method" values="valueadjust">set</string>
-                                                    <string id="Comment">Regeneration Pod + Flash Forward + Pod Pad Deluxe with Banana</string>
+                                                    <string id="Comment">Chrono Rift + Flash Forward + Time Primer</string>
                                                 </action>
                                             </normal>
                                             <else>
                                                 <condition id="isUpgradeEnabled">
                                                     <string id="condition" values="yesno">yes</string>
-                                                    <string id="upgrade name">JetterTimebubbleLifesteal</string>
+                                                    <string id="upgrade name">JetterTimebubbleHeal1</string>
                                                     <normal>
                                                         <action id="adjustCounter">
                                                             <string id="id">warpBuild</string>
                                                             <string id="value">2</string>
                                                             <string id="adjust method" values="valueadjust">set</string>
-                                                            <string id="Comment">Pod Pad Deluxe with Banana + Flash Forward + Spacetime Continuity Device</string>
+                                                            <string id="Comment">Regeneration Pod + Flash Forward + Pod Pad Deluxe with Banana</string>
                                                         </action>
                                                     </normal>
                                                     <else>
-                                                        <condition id="random">
-                                                            <string id="amount">3</string>
+                                                        <condition id="isUpgradeEnabled">
+                                                            <string id="condition" values="yesno">yes</string>
+                                                            <string id="upgrade name">JetterTimebubbleLifesteal</string>
                                                             <normal>
                                                                 <action id="adjustCounter">
                                                                     <string id="id">warpBuild</string>
-                                                                    <string id="value">1</string>
+                                                                    <string id="value">2</string>
                                                                     <string id="adjust method" values="valueadjust">set</string>
-                                                                    <string id="Comment">Chrono Rift + Flash Forward + Time Primer</string>
+                                                                    <string id="Comment">Pod Pad Deluxe with Banana + Flash Forward + Spacetime Continuity Device</string>
                                                                 </action>
                                                             </normal>
                                                             <else>
                                                                 <condition id="random">
-                                                                    <string id="amount">2</string>
+                                                                    <string id="amount">3</string>
                                                                     <normal>
                                                                         <action id="adjustCounter">
                                                                             <string id="id">warpBuild</string>
-                                                                            <string id="value">2</string>
+                                                                            <string id="value">1</string>
                                                                             <string id="adjust method" values="valueadjust">set</string>
-                                                                            <string id="Comment">Regeneration Pod + Flash Forward + Pod Pad Deluxe with Banana</string>
+                                                                            <string id="Comment">Chrono Rift + Flash Forward + Time Primer</string>
                                                                         </action>
                                                                     </normal>
                                                                     <else>
-                                                                        <action id="adjustCounter">
-                                                                            <string id="id">warpBuild</string>
-                                                                            <string id="value">2</string>
-                                                                            <string id="adjust method" values="valueadjust">set</string>
-                                                                            <string id="Comment">Pod Pad Deluxe with Banana + Flash Forward + Spacetime Continuity Device</string>
-                                                                        </action>
+                                                                        <condition id="random">
+                                                                            <string id="amount">2</string>
+                                                                            <normal>
+                                                                                <action id="adjustCounter">
+                                                                                    <string id="id">warpBuild</string>
+                                                                                    <string id="value">2</string>
+                                                                                    <string id="adjust method" values="valueadjust">set</string>
+                                                                                    <string id="Comment">Regeneration Pod + Flash Forward + Pod Pad Deluxe with Banana</string>
+                                                                                </action>
+                                                                            </normal>
+                                                                            <else>
+                                                                                <action id="adjustCounter">
+                                                                                    <string id="id">warpBuild</string>
+                                                                                    <string id="value">2</string>
+                                                                                    <string id="adjust method" values="valueadjust">set</string>
+                                                                                    <string id="Comment">Pod Pad Deluxe with Banana + Flash Forward + Spacetime Continuity Device</string>
+                                                                                </action>
+                                                                            </else>
+                                                                        </condition>
                                                                     </else>
                                                                 </condition>
                                                             </else>
@@ -358,64 +357,60 @@
                                                 </condition>
                                             </else>
                                         </condition>
-                                    </else>
-                                </condition>
-                                <condition id="isUpgradeEnabled">
-                                    <string id="condition" values="yesno">yes</string>
-                                    <string id="upgrade name">JetterSummonerShotRange</string>
-                                    <normal>
-                                        <action id="adjustCounter">
-                                            <string id="id">laserBuild</string>
-                                            <string id="value">1</string>
-                                            <string id="adjust method" values="valueadjust">set</string>
-                                            <string id="Comment">Giant Monocle + Instant Charge Battery + Hubble&apos;s Lens</string>
+                                        <action id="wait">
+                                            <float id="time">0.10</float>
                                         </action>
-                                    </normal>
-                                    <else>
                                         <condition id="isUpgradeEnabled">
                                             <string id="condition" values="yesno">yes</string>
-                                            <string id="upgrade name">JetterShotBaseDamage</string>
+                                            <string id="upgrade name">JetterSummonerShotRange</string>
                                             <normal>
                                                 <action id="adjustCounter">
                                                     <string id="id">laserBuild</string>
-                                                    <string id="value">2</string>
+                                                    <string id="value">1</string>
                                                     <string id="adjust method" values="valueadjust">set</string>
-                                                    <string id="Comment">Instant Charge Battery + Flyswatter + Hubble&apos;s Lens</string>
+                                                    <string id="Comment">Giant Monocle + Instant Charge Battery + Hubble&apos;s Lens</string>
                                                 </action>
                                             </normal>
                                             <else>
-                                                <condition id="random">
-                                                    <string id="amount">2</string>
+                                                <condition id="isUpgradeEnabled">
+                                                    <string id="condition" values="yesno">yes</string>
+                                                    <string id="upgrade name">JetterShotBaseDamage</string>
                                                     <normal>
-                                                        <action id="adjustCounter">
-                                                            <string id="id">laserBuild</string>
-                                                            <string id="value">1</string>
-                                                            <string id="adjust method" values="valueadjust">set</string>
-                                                            <string id="Comment">Giant Monocle + Instant Charge Battery + Hubble&apos;s Lens</string>
-                                                        </action>
-                                                    </normal>
-                                                    <else>
                                                         <action id="adjustCounter">
                                                             <string id="id">laserBuild</string>
                                                             <string id="value">2</string>
                                                             <string id="adjust method" values="valueadjust">set</string>
                                                             <string id="Comment">Instant Charge Battery + Flyswatter + Hubble&apos;s Lens</string>
                                                         </action>
+                                                    </normal>
+                                                    <else>
+                                                        <condition id="random">
+                                                            <string id="amount">2</string>
+                                                            <normal>
+                                                                <action id="adjustCounter">
+                                                                    <string id="id">laserBuild</string>
+                                                                    <string id="value">1</string>
+                                                                    <string id="adjust method" values="valueadjust">set</string>
+                                                                    <string id="Comment">Giant Monocle + Instant Charge Battery + Hubble&apos;s Lens</string>
+                                                                </action>
+                                                            </normal>
+                                                            <else>
+                                                                <action id="adjustCounter">
+                                                                    <string id="id">laserBuild</string>
+                                                                    <string id="value">2</string>
+                                                                    <string id="adjust method" values="valueadjust">set</string>
+                                                                    <string id="Comment">Instant Charge Battery + Flyswatter + Hubble&apos;s Lens</string>
+                                                                </action>
+                                                            </else>
+                                                        </condition>
                                                     </else>
                                                 </condition>
                                             </else>
                                         </condition>
-                                    </else>
-                                </condition>
+                                    </normal>
+                                </sequence>
                             </normal>
-                            <or>
-                                <condition id="getBoolEquals">
-                                    <string id="id">randomReady</string>
-                                    <string id="value" values="yesno">yes</string>
-                                </condition>
-                                <condition id="once" />
-                            </or>
-                        </andblock>
+                        </condition>
                     </normal>
                 </condition>
                 <condition id="isInNamedArea">
