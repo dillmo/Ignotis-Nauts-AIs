@@ -699,13 +699,25 @@
                                                                                                                                         </condition>
                                                                                                                                         <orblock>
                                                                                                                                             <normal>
-                                                                                                                                                <condition id="canPayUpgrade">
+                                                                                                                                                <condition id="isUpgradeEnabled">
+                                                                                                                                                    <string id="condition" values="yesno">no</string>
                                                                                                                                                     <string id="upgrade name">JetterTimebubbleSpeedup</string>
                                                                                                                                                     <normal>
-                                                                                                                                                        <action id="buyUpgrade">
+                                                                                                                                                        <condition id="canPayUpgrade">
                                                                                                                                                             <string id="upgrade name">JetterTimebubbleSpeedup</string>
-                                                                                                                                                        </action>
+                                                                                                                                                            <normal>
+                                                                                                                                                                <action id="buyUpgrade">
+                                                                                                                                                                    <string id="upgrade name">JetterTimebubbleSpeedup</string>
+                                                                                                                                                                </action>
+                                                                                                                                                            </normal>
+                                                                                                                                                        </condition>
                                                                                                                                                     </normal>
+                                                                                                                                                    <else>
+                                                                                                                                                        <action id="setBool">
+                                                                                                                                                            <string id="id">speedupPurchased</string>
+                                                                                                                                                            <string id="value" values="flagtoggle">yes</string>
+                                                                                                                                                        </action>
+                                                                                                                                                    </else>
                                                                                                                                                 </condition>
                                                                                                                                             </normal>
                                                                                                                                             <or>
@@ -727,9 +739,9 @@
                                                                                                                                             <string id="condition" values="yesno">yes</string>
                                                                                                                                             <string id="upgrade name">JetterTimebubbleSlow</string>
                                                                                                                                         </condition>
-                                                                                                                                        <condition id="isUpgradeEnabled">
-                                                                                                                                            <string id="condition" values="yesno">yes</string>
-                                                                                                                                            <string id="upgrade name">JetterTimebubbleSpeedup</string>
+                                                                                                                                        <condition id="getBoolEquals">
+                                                                                                                                            <string id="id">speedupPurchased</string>
+                                                                                                                                            <string id="value" values="yesno">yes</string>
                                                                                                                                         </condition>
                                                                                                                                     </or>
                                                                                                                                 </orblock>
