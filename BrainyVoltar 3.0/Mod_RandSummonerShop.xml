@@ -1185,7 +1185,7 @@
                                                             <normal>
                                                                 <condition id="isUpgradeEnabled">
                                                                     <string id="condition" values="yesno">yes</string>
-                                                                    <string id="upgrade name">SummonerShotHealpower2</string>
+                                                                    <string id="upgrade name">SummonerShotHealpower1</string>
                                                                     <normal>
                                                                         <condition id="canPayUpgrade">
                                                                             <string id="upgrade name">SummonerShotHealpower2</string>
@@ -1199,7 +1199,7 @@
                                                                 </condition>
                                                                 <condition id="isUpgradeEnabled">
                                                                     <string id="condition" values="yesno">yes</string>
-                                                                    <string id="upgrade name">SummonerShotHot2</string>
+                                                                    <string id="upgrade name">SummonerShotHot1</string>
                                                                     <normal>
                                                                         <condition id="canPayUpgrade">
                                                                             <string id="upgrade name">SummonerShotHot2</string>
