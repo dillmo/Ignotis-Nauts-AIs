@@ -1,0 +1,18 @@
+diff --git a/Mod_Summoner_BrainyVoltar_Deathmatch.xml b/../default/Mod_Summoner_BrainyVoltar.xml
+index 77a90ce..8fab5b5 100644
+--- a/Mod_Summoner_BrainyVoltar_Deathmatch.xml
++++ b/../default/Mod_Summoner_BrainyVoltar.xml
+@@ -18,11 +18,11 @@
+                     <string id="Minimized">yes</string>
+                 </action>
+                 <action id="executeBehaviourTree">
+-                    <string id="fileName">Mod_VeankoAI_Deathmatch_IgnotisTweaks</string>
++                    <string id="fileName">Mod_VeankoAI_IgnotisTweaks</string>
+                     <string id="Minimized">yes</string>
+                 </action>
+                 <action id="executeBehaviourTree">
+-                    <string id="fileName">Mod_RandSummonerShop_Deathmatch</string>
++                    <string id="fileName">Mod_RandSummonerShop</string>
+                     <string id="Minimized">yes</string>
+                 </action>
+                 <andblock>

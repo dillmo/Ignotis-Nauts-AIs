@@ -1,0 +1,15 @@
+diff --git a/Mod_Summoner_Boss.xml b/../default/Mod_Summoner_BrainyVoltar.xml
+index 0d5c38d..8fab5b5 100644
+--- a/Mod_Summoner_Boss.xml
++++ b/../default/Mod_Summoner_BrainyVoltar.xml
+@@ -25,10 +25,6 @@
+                     <string id="fileName">Mod_RandSummonerShop</string>
+                     <string id="Minimized">yes</string>
+                 </action>
+-                <action id="executeBehaviourTree">
+-                    <string id="fileName">Mod_Bossmode</string>
+-                    <string id="Minimized">yes</string>
+-                </action>
+                 <andblock>
+                     <string id="Comment">Calculate burst damage</string>
+                     <normal>
