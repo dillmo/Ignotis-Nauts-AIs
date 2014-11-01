@@ -144,9 +144,9 @@
                                                             <string id="condition" values="yesno">yes</string>
                                                             <string id="upgrade name">SummonerShotHealpower2</string>
                                                             <normal>
-                                                                <condition id="random">
-                                                                    <string id="amount">2</string>
-                                                                    <string id="Comment">Either 1 or 2</string>
+                                                                <condition id="isUpgradeEnabled">
+                                                                    <string id="condition" values="yesno">yes</string>
+                                                                    <string id="upgrade name">SummonerShotSolar1</string>
                                                                     <normal>
                                                                         <action id="adjustCounter">
                                                                             <string id="id">waveBuild</string>
@@ -161,11 +161,43 @@
                                                                         </action>
                                                                     </normal>
                                                                     <else>
-                                                                        <action id="adjustCounter">
-                                                                            <string id="id">waveBuild</string>
-                                                                            <string id="value">2</string>
-                                                                            <string id="adjust method" values="valueadjust">set</string>
-                                                                        </action>
+                                                                        <condition id="isUpgradeEnabled">
+                                                                            <string id="condition" values="yesno">yes</string>
+                                                                            <string id="upgrade name">SummonerShotHot1</string>
+                                                                            <normal>
+                                                                                <action id="adjustCounter">
+                                                                                    <string id="id">waveBuild</string>
+                                                                                    <string id="value">2</string>
+                                                                                    <string id="adjust method" values="valueadjust">set</string>
+                                                                                </action>
+                                                                            </normal>
+                                                                            <else>
+                                                                                <condition id="random">
+                                                                                    <string id="amount">2</string>
+                                                                                    <string id="Comment">Either 1 or 2</string>
+                                                                                    <normal>
+                                                                                        <action id="adjustCounter">
+                                                                                            <string id="id">waveBuild</string>
+                                                                                            <string id="value">1</string>
+                                                                                            <string id="adjust method" values="valueadjust">set</string>
+                                                                                        </action>
+                                                                                        <action id="adjustCounter">
+                                                                                            <string id="id">botBuild</string>
+                                                                                            <string id="value">1</string>
+                                                                                            <string id="adjust method" values="valueadjust">set</string>
+                                                                                            <string id="Comment">Use this for synergy</string>
+                                                                                        </action>
+                                                                                    </normal>
+                                                                                    <else>
+                                                                                        <action id="adjustCounter">
+                                                                                            <string id="id">waveBuild</string>
+                                                                                            <string id="value">2</string>
+                                                                                            <string id="adjust method" values="valueadjust">set</string>
+                                                                                        </action>
+                                                                                    </else>
+                                                                                </condition>
+                                                                            </else>
+                                                                        </condition>
                                                                     </else>
                                                                 </condition>
                                                             </normal>
@@ -189,24 +221,6 @@
                                                             <normal>
                                                                 <orblock>
                                                                     <normal>
-                                                                        <condition id="isUpgradeEnabled">
-                                                                            <string id="condition" values="yesno">yes</string>
-                                                                            <string id="upgrade name">SummonerShotSolar1</string>
-                                                                            <string id="Comment">Differentiate between builds 1 and 2</string>
-                                                                            <normal>
-                                                                                <action id="adjustCounter">
-                                                                                    <string id="id">waveBuild</string>
-                                                                                    <string id="value">1</string>
-                                                                                    <string id="adjust method" values="valueadjust">set</string>
-                                                                                </action>
-                                                                                <action id="adjustCounter">
-                                                                                    <string id="id">botBuild</string>
-                                                                                    <string id="value">1</string>
-                                                                                    <string id="adjust method" values="valueadjust">set</string>
-                                                                                    <string id="Comment">Use this for synergy</string>
-                                                                                </action>
-                                                                            </normal>
-                                                                        </condition>
                                                                         <condition id="isUpgradeEnabled">
                                                                             <string id="condition" values="yesno">no</string>
                                                                             <string id="upgrade name">addHealth1</string>
@@ -1307,11 +1321,11 @@
                                                     <or>
                                                         <condition id="isUpgradeEnabled">
                                                             <string id="condition" values="yesno">yes</string>
-                                                            <string id="upgrade name">SummonerShotHealpower1</string>
+                                                            <string id="upgrade name">SummonerShotHot1</string>
                                                         </condition>
                                                         <condition id="isUpgradeEnabled">
                                                             <string id="condition" values="yesno">yes</string>
-                                                            <string id="upgrade name">SummonerShotHot1</string>
+                                                            <string id="upgrade name">SummonerShotHealpower1</string>
                                                         </condition>
                                                     </or>
                                                 </orblock>
