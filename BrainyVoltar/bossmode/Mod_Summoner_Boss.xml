@@ -257,7 +257,7 @@
                                                                     <string id="Comment">Unhealthy creep -&gt; target it</string>
                                                                     <normal>
                                                                         <action id="selectTarget">
-                                                                            <string id="groups to select" values="target groups" multiselect="true">PLAYERS;;</string>
+                                                                            <string id="groups to select" values="target groups" multiselect="true">CREEPS;;</string>
                                                                             <string id="teams" values="teams" multiselect="true">OWN_TEAM;;</string>
                                                                             <string id="class"></string>
                                                                             <string id="remove if not found" values="yesno">no</string>
@@ -270,6 +270,7 @@
                                                                             <string id="distance check" values="distance check">NONE</string>
                                                                             <string id="check line of sight" values="yesno">yes</string>
                                                                             <string id="ignore invisibility" values="yesno">no</string>
+                                                                            <string id="Minimized">yes</string>
                                                                         </action>
                                                                     </normal>
                                                                 </condition>
