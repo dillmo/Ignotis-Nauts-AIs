@@ -120,7 +120,7 @@
                                 <condition id="checkCharacterValue">
                                     <string id="property" values="charactervaluesCheckable">health minus dot percentage</string>
                                     <float id="value">100.00</float>
-                                    <string id="compare method" values="valuecompare">equal</string>
+                                    <string id="compare method" values="valuecompare">greater or equal</string>
                                     <string id="check on" values="targetself">target</string>
                                 </condition>
                             </or>
