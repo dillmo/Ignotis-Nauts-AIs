@@ -2718,7 +2718,7 @@
                                         <condition id="isCharacterInArea">
                                             <string id="groups" values="target receive groups" multiselect="true">PLAYERS;;</string>
                                             <string id="teams" values="teams" multiselect="true">ENEMY_TEAM;;</string>
-                                            <string id="class">2</string>
+                                            <string id="class">spy</string>
                                             <string id="condition" values="charactervaluesCheckable">health</string>
                                             <string id="comparison" values="valuecompare">greater or equal</string>
                                             <float id="value">0.00</float>
@@ -3129,7 +3129,7 @@
                                         <condition id="isCharacterInArea">
                                             <string id="groups" values="target receive groups" multiselect="true">PLAYERS;;</string>
                                             <string id="teams" values="teams" multiselect="true">ENEMY_TEAM;;</string>
-                                            <string id="class">2</string>
+                                            <string id="class">spy</string>
                                             <string id="condition" values="charactervaluesCheckable">health</string>
                                             <string id="comparison" values="valuecompare">greater or equal</string>
                                             <float id="value">0.00</float>
@@ -3566,7 +3566,7 @@
                                 <condition id="isCharacterInArea">
                                     <string id="groups" values="target receive groups" multiselect="true">PLAYERS;;</string>
                                     <string id="teams" values="teams" multiselect="true">ENEMY_TEAM;;</string>
-                                    <string id="class">2</string>
+                                    <string id="class">spy</string>
                                     <string id="condition" values="charactervaluesCheckable">health</string>
                                     <string id="comparison" values="valuecompare">greater or equal</string>
                                     <float id="value">0.00</float>
@@ -3638,7 +3638,7 @@
                                                                 <condition id="isCharacterInArea">
                                                                     <string id="groups" values="target receive groups" multiselect="true">PLAYERS;;</string>
                                                                     <string id="teams" values="teams" multiselect="true">ENEMY_TEAM;;</string>
-                                                                    <string id="class">2</string>
+                                                                    <string id="class">spy</string>
                                                                     <string id="condition" values="charactervaluesCheckable">health</string>
                                                                     <string id="comparison" values="valuecompare">greater or equal</string>
                                                                     <float id="value">0.00</float>
@@ -4053,7 +4053,7 @@
                                                         <condition id="isCharacterInArea">
                                                             <string id="groups" values="target receive groups" multiselect="true">PLAYERS;;</string>
                                                             <string id="teams" values="teams" multiselect="true">ENEMY_TEAM;;</string>
-                                                            <string id="class">2</string>
+                                                            <string id="class">spy</string>
                                                             <string id="condition" values="charactervaluesCheckable">health</string>
                                                             <string id="comparison" values="valuecompare">greater or equal</string>
                                                             <float id="value">0.00</float>
@@ -5367,7 +5367,7 @@
         </root>
     </behaviour>
     <behaviour>
-        <andblock x="3421" y="50652">
+        <andblock x="3596" y="50652">
             <string id="Comment">Facetank fix</string>
             <normal>
                 <condition id="isUpgradeEnabled">
