@@ -1601,25 +1601,68 @@
                                         </andblock>
                                     </normal>
                                     <else>
-                                        <condition id="isInNamedArea">
-                                            <string id="area name">AREAHOME</string>
-                                            <string id="team" values="ownenemy">OWN_TEAM</string>
-                                            <string id="who" values="targetself">self</string>
-                                            <string id="Comment">At base -&gt; place beacon</string>
+                                        <orblock>
                                             <normal>
-                                                <action id="pressButton">
-                                                    <string id="button" values="buttons">FACE_TOP</string>
-                                                    <float id="duration in seconds">0.00</float>
-                                                    <string id="Comment">Place beacon</string>
-                                                </action>
-                                                <action id="adjustCounter">
-                                                    <string id="id">beaconLocation</string>
-                                                    <string id="value">1</string>
-                                                    <string id="adjust method" values="valueadjust">set</string>
-                                                    <string id="Comment">Beacon at base</string>
-                                                </action>
+                                                <condition id="isInArea">
+                                                    <string id="condition" values="yesno">yes</string>
+                                                    <string id="collision groups" values="collison groups" multiselect="true">PLAYERS;;</string>
+                                                    <string id="check green obstacles only" values="yesno">no</string>
+                                                    <string id="teams" values="teams" multiselect="true">ENEMY_TEAM;;</string>
+                                                    <string id="areaName"></string>
+                                                    <float id="xOffset">0.00</float>
+                                                    <float id="yOffset">0.00</float>
+                                                    <float id="width">0.50</float>
+                                                    <float id="height">0.50</float>
+                                                    <string id="check line of sight" values="yesno">yes</string>
+                                                    <string id="ignore invisibility" values="yesno">no</string>
+                                                    <string id="Comment">Enemy nearby -&gt; place beacon</string>
+                                                    <normal>
+                                                        <action id="pressButton">
+                                                            <string id="button" values="buttons">FACE_TOP</string>
+                                                            <float id="duration in seconds">0.00</float>
+                                                            <string id="Comment">Place beacon</string>
+                                                        </action>
+                                                        <action id="adjustCounter">
+                                                            <string id="id">beaconLocation</string>
+                                                            <string id="value">2</string>
+                                                            <string id="adjust method" values="valueadjust">set</string>
+                                                            <string id="Comment">Beacon in the open</string>
+                                                        </action>
+                                                    </normal>
+                                                </condition>
                                             </normal>
-                                        </condition>
+                                            <else>
+                                                <condition id="isInNamedArea">
+                                                    <string id="area name">AREAHOME</string>
+                                                    <string id="team" values="ownenemy">OWN_TEAM</string>
+                                                    <string id="who" values="targetself">self</string>
+                                                    <string id="Comment">At base -&gt; place beacon</string>
+                                                    <normal>
+                                                        <action id="pressButton">
+                                                            <string id="button" values="buttons">FACE_TOP</string>
+                                                            <float id="duration in seconds">0.00</float>
+                                                            <string id="Comment">Place beacon</string>
+                                                        </action>
+                                                        <action id="adjustCounter">
+                                                            <string id="id">beaconLocation</string>
+                                                            <string id="value">1</string>
+                                                            <string id="adjust method" values="valueadjust">set</string>
+                                                            <string id="Comment">Beacon at base</string>
+                                                        </action>
+                                                    </normal>
+                                                </condition>
+                                            </else>
+                                            <or>
+                                                <condition id="isUpgradeEnabled">
+                                                    <string id="condition" values="yesno">yes</string>
+                                                    <string id="upgrade name">SpyBoothDamage3</string>
+                                                </condition>
+                                                <condition id="isUpgradeEnabled">
+                                                    <string id="condition" values="yesno">yes</string>
+                                                    <string id="upgrade name">SpyBoothHeal2</string>
+                                                </condition>
+                                            </or>
+                                        </orblock>
                                     </else>
                                 </condition>
                             </normal>
