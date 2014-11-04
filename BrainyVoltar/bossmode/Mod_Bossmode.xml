@@ -161,7 +161,7 @@
                                             <normal>
                                                 <action id="adjustCharacterValue">
                                                     <string id="property" values="charactervaluesAdjustable">health</string>
-                                                    <float id="value">2.00</float>
+                                                    <float id="value">20.00</float>
                                                     <string id="adjust method" values="valueadjust">add</string>
                                                 </action>
                                             </normal>
