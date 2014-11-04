@@ -490,10 +490,7 @@
                                                     <string id="check line of sight" values="yesno">no</string>
                                                     <string id="Comment">Not accurate with multiple Spy&apos;s</string>
                                                     <normal>
-                                                        <condition id="isTargetType">
-                                                            <string id="condition" values="yesno">yes</string>
-                                                            <string id="target groups" values="target groups" multiselect="true">PLAYERS;;</string>
-                                                            <string id="Comment">Don&apos;t BHS creeps</string>
+                                                        <andblock>
                                                             <normal>
                                                                 <action id="aimStickAtTarget">
                                                                     <float id="duration seconds">0.12</float>
@@ -712,16 +709,29 @@
                                                                     </normal>
                                                                 </sequence>
                                                             </normal>
-                                                        </condition>
+                                                            <or>
+                                                                <condition id="isTargetType">
+                                                                    <string id="condition" values="yesno">yes</string>
+                                                                    <string id="target groups" values="target groups" multiselect="true">PLAYERS;;</string>
+                                                                    <string id="Comment">Don&apos;t BHS creeps</string>
+                                                                </condition>
+                                                                <condition id="isTargetInArea">
+                                                                    <string id="condition" values="yesno">yes</string>
+                                                                    <float id="xOffset">0.00</float>
+                                                                    <float id="yOffset">0.00</float>
+                                                                    <float id="width">0.70</float>
+                                                                    <float id="height">0.70</float>
+                                                                    <string id="check line of sight" values="yesno">no</string>
+                                                                    <string id="ignore invisibility" values="yesno">no</string>
+                                                                    <string id="Comment">In range?</string>
+                                                                </condition>
+                                                            </or>
+                                                        </andblock>
                                                     </normal>
                                                 </condition>
                                             </normal>
                                             <else>
-                                                <condition id="isTargetType">
-                                                    <string id="condition" values="yesno">yes</string>
-                                                    <string id="target groups" values="target groups" multiselect="true">PLAYERS;;</string>
-                                                    <string id="Comment">Don&apos;t BHS creeps</string>
-                                                    <string id="Minimized">yes</string>
+                                                <andblock>
                                                     <normal>
                                                         <action id="aimStickAtTarget">
                                                             <float id="duration seconds">0.12</float>
@@ -940,7 +950,24 @@
                                                             </normal>
                                                         </sequence>
                                                     </normal>
-                                                </condition>
+                                                    <or>
+                                                        <condition id="isTargetType">
+                                                            <string id="condition" values="yesno">yes</string>
+                                                            <string id="target groups" values="target groups" multiselect="true">PLAYERS;;</string>
+                                                            <string id="Comment">Don&apos;t BHS creeps</string>
+                                                        </condition>
+                                                        <condition id="isTargetInArea">
+                                                            <string id="condition" values="yesno">yes</string>
+                                                            <float id="xOffset">0.00</float>
+                                                            <float id="yOffset">0.00</float>
+                                                            <float id="width">0.70</float>
+                                                            <float id="height">0.70</float>
+                                                            <string id="check line of sight" values="yesno">no</string>
+                                                            <string id="ignore invisibility" values="yesno">no</string>
+                                                            <string id="Comment">In range?</string>
+                                                        </condition>
+                                                    </or>
+                                                </andblock>
                                             </else>
                                             <or>
                                                 <condition id="checkClass">
