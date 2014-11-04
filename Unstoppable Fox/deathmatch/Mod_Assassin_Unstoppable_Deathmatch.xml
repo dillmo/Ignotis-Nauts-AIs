@@ -35,6 +35,7 @@
                         <condition id="isUpgradeEnabled">
                             <string id="condition" values="yesno">no</string>
                             <string id="upgrade name">PiggyBank</string>
+                            <string id="Minimized">yes</string>
                             <normal>
                                 <condition id="canPayUpgrade">
                                     <string id="upgrade name">PiggyBank</string>
@@ -392,6 +393,7 @@
                                 <condition id="isUpgradeEnabled">
                                     <string id="condition" values="yesno">no</string>
                                     <string id="upgrade name">PiggyBank</string>
+                                    <string id="Minimized">yes</string>
                                     <normal>
                                         <condition id="canPayUpgrade">
                                             <string id="upgrade name">PiggyBank</string>
@@ -765,6 +767,7 @@
                                         <condition id="checkGameTime">
                                             <float id="time in seconds">180.00</float>
                                             <string id="compare method" values="valuecompare">greater</string>
+                                            <string id="Minimized">yes</string>
                                             <normal>
                                                 <condition id="isUpgradeEnabled">
                                                     <string id="condition" values="yesno">no</string>
@@ -2686,7 +2689,7 @@
                                         <condition id="isCharacterInArea">
                                             <string id="groups" values="target receive groups" multiselect="true">PLAYERS;;</string>
                                             <string id="teams" values="teams" multiselect="true">ENEMY_TEAM;;</string>
-                                            <string id="class">2</string>
+                                            <string id="class">spy</string>
                                             <string id="condition" values="charactervaluesCheckable">health</string>
                                             <string id="comparison" values="valuecompare">greater or equal</string>
                                             <float id="value">0.00</float>
@@ -3097,7 +3100,7 @@
                                         <condition id="isCharacterInArea">
                                             <string id="groups" values="target receive groups" multiselect="true">PLAYERS;;</string>
                                             <string id="teams" values="teams" multiselect="true">ENEMY_TEAM;;</string>
-                                            <string id="class">2</string>
+                                            <string id="class">spy</string>
                                             <string id="condition" values="charactervaluesCheckable">health</string>
                                             <string id="comparison" values="valuecompare">greater or equal</string>
                                             <float id="value">0.00</float>
@@ -3534,7 +3537,7 @@
                                 <condition id="isCharacterInArea">
                                     <string id="groups" values="target receive groups" multiselect="true">PLAYERS;;</string>
                                     <string id="teams" values="teams" multiselect="true">ENEMY_TEAM;;</string>
-                                    <string id="class">2</string>
+                                    <string id="class">spy</string>
                                     <string id="condition" values="charactervaluesCheckable">health</string>
                                     <string id="comparison" values="valuecompare">greater or equal</string>
                                     <float id="value">0.00</float>
@@ -3606,7 +3609,7 @@
                                                                 <condition id="isCharacterInArea">
                                                                     <string id="groups" values="target receive groups" multiselect="true">PLAYERS;;</string>
                                                                     <string id="teams" values="teams" multiselect="true">ENEMY_TEAM;;</string>
-                                                                    <string id="class">2</string>
+                                                                    <string id="class">spy</string>
                                                                     <string id="condition" values="charactervaluesCheckable">health</string>
                                                                     <string id="comparison" values="valuecompare">greater or equal</string>
                                                                     <float id="value">0.00</float>
@@ -4021,7 +4024,7 @@
                                                         <condition id="isCharacterInArea">
                                                             <string id="groups" values="target receive groups" multiselect="true">PLAYERS;;</string>
                                                             <string id="teams" values="teams" multiselect="true">ENEMY_TEAM;;</string>
-                                                            <string id="class">2</string>
+                                                            <string id="class">spy</string>
                                                             <string id="condition" values="charactervaluesCheckable">health</string>
                                                             <string id="comparison" values="valuecompare">greater or equal</string>
                                                             <float id="value">0.00</float>
@@ -5335,7 +5338,7 @@
         </root>
     </behaviour>
     <behaviour>
-        <andblock x="3421" y="50652">
+        <andblock x="3771" y="50652">
             <string id="Comment">Facetank fix</string>
             <normal>
                 <condition id="isUpgradeEnabled">
