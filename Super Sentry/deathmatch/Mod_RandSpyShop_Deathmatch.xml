@@ -45,9 +45,7 @@
                                 </condition>
                             </normal>
                             <else>
-                                <condition id="isUpgradeEnabled">
-                                    <string id="condition" values="yesno">no</string>
-                                    <string id="upgrade name">SpySpeed</string>
+                                <andblock>
                                     <normal>
                                         <condition id="canPayUpgrade">
                                             <string id="upgrade name">SpySpeed</string>
@@ -121,9 +119,7 @@
                                                                 </condition>
                                                             </normal>
                                                             <else>
-                                                                <condition id="isUpgradeEnabled">
-                                                                    <string id="condition" values="yesno">no</string>
-                                                                    <string id="upgrade name">addHealth1</string>
+                                                                <andblock>
                                                                     <normal>
                                                                         <condition id="canPayUpgrade">
                                                                             <string id="upgrade name">addHealth1</string>
@@ -230,9 +226,7 @@
                                                                                         </condition>
                                                                                     </normal>
                                                                                 </condition>
-                                                                                <condition id="isUpgradeEnabled">
-                                                                                    <string id="condition" values="yesno">no</string>
-                                                                                    <string id="upgrade name">addHealth2</string>
+                                                                                <andblock>
                                                                                     <normal>
                                                                                         <condition id="canPayUpgrade">
                                                                                             <string id="upgrade name">addHealth2</string>
@@ -296,9 +290,7 @@
                                                                                                 </condition>
                                                                                             </normal>
                                                                                             <else>
-                                                                                                <condition id="isUpgradeEnabled">
-                                                                                                    <string id="condition" values="yesno">no</string>
-                                                                                                    <string id="upgrade name">addHealth3</string>
+                                                                                                <andblock>
                                                                                                     <normal>
                                                                                                         <condition id="canPayUpgrade">
                                                                                                             <string id="upgrade name">addHealth3</string>
@@ -1590,7 +1582,18 @@
                                                                                                             </else>
                                                                                                         </condition>
                                                                                                     </else>
-                                                                                                </condition>
+                                                                                                    <or>
+                                                                                                        <condition id="isUpgradeEnabled">
+                                                                                                            <string id="condition" values="yesno">no</string>
+                                                                                                            <string id="upgrade name">addHealth3</string>
+                                                                                                        </condition>
+                                                                                                        <condition id="checkCounter">
+                                                                                                            <string id="id">botSkill</string>
+                                                                                                            <string id="value">2</string>
+                                                                                                            <string id="compare method" values="valuecompare">greater or equal</string>
+                                                                                                        </condition>
+                                                                                                    </or>
+                                                                                                </andblock>
                                                                                             </else>
                                                                                             <or>
                                                                                                 <condition id="isUpgradeEnabled">
@@ -1604,7 +1607,18 @@
                                                                                             </or>
                                                                                         </andblock>
                                                                                     </else>
-                                                                                </condition>
+                                                                                    <or>
+                                                                                        <condition id="isUpgradeEnabled">
+                                                                                            <string id="condition" values="yesno">no</string>
+                                                                                            <string id="upgrade name">addHealth2</string>
+                                                                                        </condition>
+                                                                                        <condition id="checkCounter">
+                                                                                            <string id="id">botSkill</string>
+                                                                                            <string id="value">2</string>
+                                                                                            <string id="compare method" values="valuecompare">greater or equal</string>
+                                                                                        </condition>
+                                                                                    </or>
+                                                                                </andblock>
                                                                             </else>
                                                                             <or>
                                                                                 <condition id="isUpgradeEnabled">
@@ -1618,7 +1632,18 @@
                                                                             </or>
                                                                         </andblock>
                                                                     </else>
-                                                                </condition>
+                                                                    <or>
+                                                                        <condition id="isUpgradeEnabled">
+                                                                            <string id="condition" values="yesno">no</string>
+                                                                            <string id="upgrade name">addHealth1</string>
+                                                                        </condition>
+                                                                        <condition id="checkCounter">
+                                                                            <string id="id">botSkill</string>
+                                                                            <string id="value">2</string>
+                                                                            <string id="compare method" values="valuecompare">greater or equal</string>
+                                                                        </condition>
+                                                                    </or>
+                                                                </andblock>
                                                             </else>
                                                         </condition>
                                                     </else>
@@ -1633,10 +1658,26 @@
                                                     <string id="condition" values="yesno">no</string>
                                                     <string id="upgrade name">Healthregen2</string>
                                                 </condition>
+                                                <condition id="checkCounter">
+                                                    <string id="id">botSkill</string>
+                                                    <string id="value">2</string>
+                                                    <string id="compare method" values="valuecompare">greater or equal</string>
+                                                </condition>
                                             </or>
                                         </andblock>
                                     </else>
-                                </condition>
+                                    <or>
+                                        <condition id="isUpgradeEnabled">
+                                            <string id="condition" values="yesno">no</string>
+                                            <string id="upgrade name">SpySpeed</string>
+                                        </condition>
+                                        <condition id="checkCounter">
+                                            <string id="id">botSkill</string>
+                                            <string id="value">2</string>
+                                            <string id="compare method" values="valuecompare">greater or equal</string>
+                                        </condition>
+                                    </or>
+                                </andblock>
                             </else>
                         </condition>
                     </else>
@@ -1652,6 +1693,11 @@
                         <condition id="isUpgradeEnabled">
                             <string id="condition" values="yesno">no</string>
                             <string id="upgrade name">Healthregen1</string>
+                        </condition>
+                        <condition id="checkCounter">
+                            <string id="id">botSkill</string>
+                            <string id="value">2</string>
+                            <string id="compare method" values="valuecompare">greater or equal</string>
                         </condition>
                     </or>
                 </andblock>
