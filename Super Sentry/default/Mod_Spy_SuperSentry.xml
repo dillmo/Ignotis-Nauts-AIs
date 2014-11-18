@@ -365,6 +365,110 @@
                                                     <string id="check line of sight" values="yesno">no</string>
                                                     <string id="Comment">Not accurate with multiple Spy&apos;s</string>
                                                     <normal>
+                                                        <orblock>
+                                                            <string id="Comment">Running away -&gt; don&apos;t aim</string>
+                                                            <normal>
+                                                                <andblock>
+                                                                    <string id="Comment">In danger -&gt; Don&apos;t shoot</string>
+                                                                    <else>
+                                                                        <action id="pressButton">
+                                                                            <string id="button" values="buttons">FACE_LEFT</string>
+                                                                            <float id="duration in seconds">0.00</float>
+                                                                            <string id="Comment">Shoot!</string>
+                                                                        </action>
+                                                                    </else>
+                                                                    <or>
+                                                                        <condition id="isInArea">
+                                                                            <string id="condition" values="yesno">yes</string>
+                                                                            <string id="collision groups" values="collison groups" multiselect="true">PLAYERS;;</string>
+                                                                            <string id="check green obstacles only" values="yesno">no</string>
+                                                                            <string id="teams" values="teams" multiselect="true">ENEMY_TEAM;;</string>
+                                                                            <string id="areaName"></string>
+                                                                            <float id="xOffset">0.00</float>
+                                                                            <float id="yOffset">0.00</float>
+                                                                            <float id="width">0.80</float>
+                                                                            <float id="height">0.80</float>
+                                                                            <string id="check line of sight" values="yesno">yes</string>
+                                                                            <string id="ignore invisibility" values="yesno">no</string>
+                                                                        </condition>
+                                                                        <condition id="checkCharacterValue">
+                                                                            <string id="property" values="charactervaluesCheckable">health minus dot percentage</string>
+                                                                            <float id="value">30.00</float>
+                                                                            <string id="compare method" values="valuecompare">less</string>
+                                                                            <string id="check on" values="targetself">self</string>
+                                                                        </condition>
+                                                                    </or>
+                                                                </andblock>
+                                                            </normal>
+                                                            <else>
+                                                                <action id="aimStickAtTarget">
+                                                                    <float id="duration seconds">0.10</float>
+                                                                    <string id="only aim when needed" values="yesno">no</string>
+                                                                </action>
+                                                                <action id="pressButton">
+                                                                    <string id="button" values="buttons">FACE_LEFT</string>
+                                                                    <float id="duration in seconds">0.00</float>
+                                                                    <string id="Comment">Shoot!</string>
+                                                                </action>
+                                                            </else>
+                                                            <or>
+                                                                <condition id="checkCounter">
+                                                                    <string id="id">state</string>
+                                                                    <string id="value">1</string>
+                                                                    <string id="compare method" values="valuecompare">equal</string>
+                                                                </condition>
+                                                                <condition id="checkCounter">
+                                                                    <string id="id">state</string>
+                                                                    <string id="value">6</string>
+                                                                    <string id="compare method" values="valuecompare">equal</string>
+                                                                </condition>
+                                                                <condition id="checkCounter">
+                                                                    <string id="id">state</string>
+                                                                    <string id="value">10</string>
+                                                                    <string id="compare method" values="valuecompare">equal</string>
+                                                                </condition>
+                                                            </or>
+                                                        </orblock>
+                                                    </normal>
+                                                </condition>
+                                            </normal>
+                                            <else>
+                                                <orblock>
+                                                    <string id="Comment">Running away -&gt; don&apos;t aim</string>
+                                                    <normal>
+                                                        <andblock>
+                                                            <string id="Comment">In danger -&gt; Don&apos;t shoot</string>
+                                                            <else>
+                                                                <action id="pressButton">
+                                                                    <string id="button" values="buttons">FACE_LEFT</string>
+                                                                    <float id="duration in seconds">0.00</float>
+                                                                    <string id="Comment">Shoot!</string>
+                                                                </action>
+                                                            </else>
+                                                            <or>
+                                                                <condition id="isInArea">
+                                                                    <string id="condition" values="yesno">yes</string>
+                                                                    <string id="collision groups" values="collison groups" multiselect="true">PLAYERS;;</string>
+                                                                    <string id="check green obstacles only" values="yesno">no</string>
+                                                                    <string id="teams" values="teams" multiselect="true">ENEMY_TEAM;;</string>
+                                                                    <string id="areaName"></string>
+                                                                    <float id="xOffset">0.00</float>
+                                                                    <float id="yOffset">0.00</float>
+                                                                    <float id="width">0.80</float>
+                                                                    <float id="height">0.80</float>
+                                                                    <string id="check line of sight" values="yesno">yes</string>
+                                                                    <string id="ignore invisibility" values="yesno">no</string>
+                                                                </condition>
+                                                                <condition id="checkCharacterValue">
+                                                                    <string id="property" values="charactervaluesCheckable">health minus dot percentage</string>
+                                                                    <float id="value">30.00</float>
+                                                                    <string id="compare method" values="valuecompare">less</string>
+                                                                    <string id="check on" values="targetself">self</string>
+                                                                </condition>
+                                                            </or>
+                                                        </andblock>
+                                                    </normal>
+                                                    <else>
                                                         <action id="aimStickAtTarget">
                                                             <float id="duration seconds">0.10</float>
                                                             <string id="only aim when needed" values="yesno">no</string>
@@ -374,19 +478,25 @@
                                                             <float id="duration in seconds">0.00</float>
                                                             <string id="Comment">Shoot!</string>
                                                         </action>
-                                                    </normal>
-                                                </condition>
-                                            </normal>
-                                            <else>
-                                                <action id="aimStickAtTarget">
-                                                    <float id="duration seconds">0.10</float>
-                                                    <string id="only aim when needed" values="yesno">no</string>
-                                                </action>
-                                                <action id="pressButton">
-                                                    <string id="button" values="buttons">FACE_LEFT</string>
-                                                    <float id="duration in seconds">0.00</float>
-                                                    <string id="Comment">Shoot!</string>
-                                                </action>
+                                                    </else>
+                                                    <or>
+                                                        <condition id="checkCounter">
+                                                            <string id="id">state</string>
+                                                            <string id="value">1</string>
+                                                            <string id="compare method" values="valuecompare">equal</string>
+                                                        </condition>
+                                                        <condition id="checkCounter">
+                                                            <string id="id">state</string>
+                                                            <string id="value">6</string>
+                                                            <string id="compare method" values="valuecompare">equal</string>
+                                                        </condition>
+                                                        <condition id="checkCounter">
+                                                            <string id="id">state</string>
+                                                            <string id="value">10</string>
+                                                            <string id="compare method" values="valuecompare">equal</string>
+                                                        </condition>
+                                                    </or>
+                                                </orblock>
                                             </else>
                                             <or>
                                                 <condition id="checkClass">
