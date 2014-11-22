@@ -209,7 +209,7 @@
                     <string id="Comment">Standard difficulty scaling</string>
                     <normal>
                         <action id="executeBehaviourTree">
-                            <string id="fileName">Mod_RandSpyShop</string>
+                            <string id="fileName">Mod_RandSpyShop_Deathmatch</string>
                             <string id="Comment">Shop logic</string>
                             <string id="Minimized">yes</string>
                         </action>
@@ -225,7 +225,7 @@
                                     <string id="compare method" values="valuecompare">greater or equal</string>
                                     <normal>
                                         <action id="executeBehaviourTree">
-                                            <string id="fileName">Mod_RandSpyShop</string>
+                                            <string id="fileName">Mod_RandSpyShop_Deathmatch</string>
                                             <string id="Comment">Shop logic</string>
                                             <string id="Minimized">yes</string>
                                         </action>
@@ -238,7 +238,7 @@
                                     <string id="compare method" values="valuecompare">greater or equal</string>
                                     <normal>
                                         <action id="executeBehaviourTree">
-                                            <string id="fileName">Mod_RandSpyShop</string>
+                                            <string id="fileName">Mod_RandSpyShop_Deathmatch</string>
                                             <string id="Comment">Shop logic</string>
                                             <string id="Minimized">yes</string>
                                         </action>
