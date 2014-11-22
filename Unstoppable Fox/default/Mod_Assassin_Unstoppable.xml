@@ -1594,8 +1594,8 @@
                             <string id="areaName"></string>
                             <float id="xOffset">0.00</float>
                             <float id="yOffset">-0.10</float>
-                            <float id="width">0.15</float>
-                            <float id="height">0.20</float>
+                            <float id="width">0.20</float>
+                            <float id="height">0.30</float>
                             <string id="check line of sight" values="yesno">yes</string>
                             <string id="ignore invisibility" values="yesno">no</string>
                             <string id="Comment">Dodge bullets</string>
