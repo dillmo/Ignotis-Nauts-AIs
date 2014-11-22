@@ -22,9 +22,54 @@
                     <string id="Minimized">yes</string>
                 </action>
                 <action id="executeBehaviourTree">
-                    <string id="fileName">Mod_RandSummonerShop</string>
+                    <string id="fileName">Mod_BotSkill</string>
                     <string id="Minimized">yes</string>
                 </action>
+                <condition id="checkCounter">
+                    <string id="id">botSkill</string>
+                    <string id="value">2</string>
+                    <string id="compare method" values="valuecompare">greater or equal</string>
+                    <normal>
+                        <action id="executeBehaviourTree">
+                            <string id="fileName">Mod_RandSummonerShop</string>
+                            <string id="Comment">Shop logic</string>
+                            <string id="Minimized">yes</string>
+                        </action>
+                    </normal>
+                    <else>
+                        <condition id="checkCounter">
+                            <string id="id">botSkill</string>
+                            <string id="value">1</string>
+                            <string id="compare method" values="valuecompare">equal</string>
+                            <normal>
+                                <condition id="checkGameTime">
+                                    <float id="time in seconds">180.00</float>
+                                    <string id="compare method" values="valuecompare">greater</string>
+                                    <normal>
+                                        <action id="executeBehaviourTree">
+                                            <string id="fileName">Mod_RandSummonerShop</string>
+                                            <string id="Comment">Shop logic</string>
+                                            <string id="Minimized">yes</string>
+                                        </action>
+                                    </normal>
+                                </condition>
+                            </normal>
+                            <else>
+                                <condition id="checkGameTime">
+                                    <float id="time in seconds">300.00</float>
+                                    <string id="compare method" values="valuecompare">greater</string>
+                                    <normal>
+                                        <action id="executeBehaviourTree">
+                                            <string id="fileName">Mod_RandSummonerShop</string>
+                                            <string id="Comment">Shop logic</string>
+                                            <string id="Minimized">yes</string>
+                                        </action>
+                                    </normal>
+                                </condition>
+                            </else>
+                        </condition>
+                    </else>
+                </condition>
                 <andblock>
                     <string id="Comment">Calculate burst damage</string>
                     <normal>
