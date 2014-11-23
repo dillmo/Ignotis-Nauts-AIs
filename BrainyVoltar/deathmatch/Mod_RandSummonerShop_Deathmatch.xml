@@ -1142,10 +1142,10 @@
                                                                             <string id="Comment">Two or more enemies affected by BKM?</string>
                                                                             <normal>
                                                                                 <condition id="canPayUpgrade">
-                                                                                    <string id="upgrade name">ccReduction1</string>
+                                                                                    <string id="upgrade name">ccReduction</string>
                                                                                     <normal>
                                                                                         <action id="buyUpgrade">
-                                                                                            <string id="upgrade name">ccReduction1</string>
+                                                                                            <string id="upgrade name">ccReduction</string>
                                                                                         </action>
                                                                                     </normal>
                                                                                 </condition>
@@ -1165,11 +1165,11 @@
                                                                     <or>
                                                                         <condition id="isUpgradeEnabled">
                                                                             <string id="condition" values="yesno">yes</string>
-                                                                            <string id="upgrade name">Healthregen1</string>
+                                                                            <string id="upgrade name">ccReduction</string>
                                                                         </condition>
                                                                         <condition id="isUpgradeEnabled">
                                                                             <string id="condition" values="yesno">yes</string>
-                                                                            <string id="upgrade name">ccReduction1</string>
+                                                                            <string id="upgrade name">Healthregen1</string>
                                                                         </condition>
                                                                     </or>
                                                                 </orblock>

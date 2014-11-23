@@ -407,15 +407,65 @@
                         </sequence>
                     </normal>
                 </condition>
-                <condition id="isInNamedArea">
-                    <string id="area name">HEALAREA</string>
-                    <string id="team" values="ownenemy">OWN_TEAM</string>
-                    <string id="who" values="targetself">self</string>
-                    <string id="Comment">Am I in shop?</string>
+                <condition id="checkCounter">
+                    <string id="id">botSkill</string>
+                    <string id="value">2</string>
+                    <string id="compare method" values="valuecompare">greater or equal</string>
+                    <string id="Comment">Delay upgrading on lower difficulties</string>
                     <normal>
-                        <condition id="isUpgradeEnabled">
-                            <string id="condition" values="yesno">no</string>
-                            <string id="upgrade name">Piggybank</string>
+                        <action id="setBool">
+                            <string id="id">canUpgrade</string>
+                            <string id="value" values="flagtoggle">yes</string>
+                        </action>
+                    </normal>
+                    <else>
+                        <condition id="checkCounter">
+                            <string id="id">botSkill</string>
+                            <string id="value">1</string>
+                            <string id="compare method" values="valuecompare">equal</string>
+                            <normal>
+                                <condition id="checkGameTime">
+                                    <float id="time in seconds">180.00</float>
+                                    <string id="compare method" values="valuecompare">greater</string>
+                                    <normal>
+                                        <action id="setBool">
+                                            <string id="id">canUpgrade</string>
+                                            <string id="value" values="flagtoggle">yes</string>
+                                        </action>
+                                    </normal>
+                                    <else>
+                                        <action id="setBool">
+                                            <string id="id">canUpgrade</string>
+                                            <string id="value" values="flagtoggle">no</string>
+                                        </action>
+                                    </else>
+                                </condition>
+                            </normal>
+                            <else>
+                                <condition id="checkGameTime">
+                                    <float id="time in seconds">300.00</float>
+                                    <string id="compare method" values="valuecompare">greater</string>
+                                    <normal>
+                                        <action id="setBool">
+                                            <string id="id">canUpgrade</string>
+                                            <string id="value" values="flagtoggle">yes</string>
+                                        </action>
+                                    </normal>
+                                    <else>
+                                        <action id="setBool">
+                                            <string id="id">canUpgrade</string>
+                                            <string id="value" values="flagtoggle">no</string>
+                                        </action>
+                                    </else>
+                                </condition>
+                            </else>
+                        </condition>
+                    </else>
+                </condition>
+                <andblock>
+                    <string id="Comment">Shop logic</string>
+                    <normal>
+                        <andblock>
                             <normal>
                                 <condition id="canPayUpgrade">
                                     <string id="upgrade name">Piggybank</string>
@@ -441,9 +491,7 @@
                                         </condition>
                                     </normal>
                                     <else>
-                                        <condition id="isUpgradeEnabled">
-                                            <string id="condition" values="yesno">no</string>
-                                            <string id="upgrade name">JetterSpeed</string>
+                                        <andblock>
                                             <normal>
                                                 <condition id="canPayUpgrade">
                                                     <string id="upgrade name">JetterSpeed</string>
@@ -455,31 +503,29 @@
                                                 </condition>
                                             </normal>
                                             <else>
-                                                <orblock>
+                                                <condition id="isUpgradeEnabled">
+                                                    <string id="condition" values="yesno">no</string>
+                                                    <string id="upgrade name">TimeBubble</string>
                                                     <normal>
-                                                        <condition id="isUpgradeEnabled">
-                                                            <string id="condition" values="yesno">no</string>
-                                                            <string id="upgrade name">addHealth1</string>
+                                                        <condition id="canPayUpgrade">
+                                                            <string id="upgrade name">TimeBubble</string>
                                                             <normal>
-                                                                <condition id="canPayUpgrade">
-                                                                    <string id="upgrade name">addHealth1</string>
-                                                                    <normal>
-                                                                        <action id="buyUpgrade">
-                                                                            <string id="upgrade name">addHealth1</string>
-                                                                        </action>
-                                                                    </normal>
-                                                                </condition>
+                                                                <action id="buyUpgrade">
+                                                                    <string id="upgrade name">TimeBubble</string>
+                                                                </action>
                                                             </normal>
-                                                            <else>
-                                                                <condition id="isUpgradeEnabled">
-                                                                    <string id="condition" values="yesno">no</string>
-                                                                    <string id="upgrade name">JetterMineCooldown1</string>
+                                                        </condition>
+                                                    </normal>
+                                                    <else>
+                                                        <orblock>
+                                                            <normal>
+                                                                <andblock>
                                                                     <normal>
                                                                         <condition id="canPayUpgrade">
-                                                                            <string id="upgrade name">JetterMineCooldown1</string>
+                                                                            <string id="upgrade name">addHealth1</string>
                                                                             <normal>
                                                                                 <action id="buyUpgrade">
-                                                                                    <string id="upgrade name">JetterMineCooldown1</string>
+                                                                                    <string id="upgrade name">addHealth1</string>
                                                                                 </action>
                                                                             </normal>
                                                                         </condition>
@@ -487,13 +533,13 @@
                                                                     <else>
                                                                         <condition id="isUpgradeEnabled">
                                                                             <string id="condition" values="yesno">no</string>
-                                                                            <string id="upgrade name">JetterMineCooldown2</string>
+                                                                            <string id="upgrade name">JetterMineCooldown1</string>
                                                                             <normal>
                                                                                 <condition id="canPayUpgrade">
-                                                                                    <string id="upgrade name">JetterMineCooldown2</string>
+                                                                                    <string id="upgrade name">JetterMineCooldown1</string>
                                                                                     <normal>
                                                                                         <action id="buyUpgrade">
-                                                                                            <string id="upgrade name">JetterMineCooldown2</string>
+                                                                                            <string id="upgrade name">JetterMineCooldown1</string>
                                                                                         </action>
                                                                                     </normal>
                                                                                 </condition>
@@ -501,13 +547,13 @@
                                                                             <else>
                                                                                 <condition id="isUpgradeEnabled">
                                                                                     <string id="condition" values="yesno">no</string>
-                                                                                    <string id="upgrade name">addHealth2</string>
+                                                                                    <string id="upgrade name">JetterMineCooldown2</string>
                                                                                     <normal>
                                                                                         <condition id="canPayUpgrade">
-                                                                                            <string id="upgrade name">addHealth2</string>
+                                                                                            <string id="upgrade name">JetterMineCooldown2</string>
                                                                                             <normal>
                                                                                                 <action id="buyUpgrade">
-                                                                                                    <string id="upgrade name">addHealth2</string>
+                                                                                                    <string id="upgrade name">JetterMineCooldown2</string>
                                                                                                 </action>
                                                                                             </normal>
                                                                                         </condition>
@@ -515,29 +561,25 @@
                                                                                     <else>
                                                                                         <orblock>
                                                                                             <normal>
-                                                                                                <condition id="isUpgradeEnabled">
-                                                                                                    <string id="condition" values="yesno">no</string>
-                                                                                                    <string id="upgrade name">addHealth3</string>
+                                                                                                <condition id="canPayUpgrade">
+                                                                                                    <string id="upgrade name">addHealth2</string>
                                                                                                     <normal>
-                                                                                                        <condition id="canPayUpgrade">
-                                                                                                            <string id="upgrade name">addHealth3</string>
-                                                                                                            <normal>
-                                                                                                                <action id="buyUpgrade">
-                                                                                                                    <string id="upgrade name">addHealth3</string>
-                                                                                                                </action>
-                                                                                                            </normal>
-                                                                                                        </condition>
+                                                                                                        <action id="buyUpgrade">
+                                                                                                            <string id="upgrade name">addHealth2</string>
+                                                                                                        </action>
                                                                                                     </normal>
-                                                                                                    <else>
-                                                                                                        <condition id="isUpgradeEnabled">
-                                                                                                            <string id="condition" values="yesno">no</string>
-                                                                                                            <string id="upgrade name">TimeBubble</string>
+                                                                                                </condition>
+                                                                                            </normal>
+                                                                                            <else>
+                                                                                                <orblock>
+                                                                                                    <normal>
+                                                                                                        <andblock>
                                                                                                             <normal>
                                                                                                                 <condition id="canPayUpgrade">
-                                                                                                                    <string id="upgrade name">TimeBubble</string>
+                                                                                                                    <string id="upgrade name">addHealth3</string>
                                                                                                                     <normal>
                                                                                                                         <action id="buyUpgrade">
-                                                                                                                            <string id="upgrade name">TimeBubble</string>
+                                                                                                                            <string id="upgrade name">addHealth3</string>
                                                                                                                         </action>
                                                                                                                     </normal>
                                                                                                                 </condition>
@@ -873,66 +915,88 @@
                                                                                                                     </or>
                                                                                                                 </orblock>
                                                                                                             </else>
-                                                                                                        </condition>
-                                                                                                    </else>
-                                                                                                </condition>
-                                                                                            </normal>
-                                                                                            <else>
-                                                                                                <condition id="checkCounter">
-                                                                                                    <string id="id">mineBuild</string>
-                                                                                                    <string id="value">1</string>
-                                                                                                    <string id="compare method" values="valuecompare">equal</string>
-                                                                                                    <normal>
-                                                                                                        <condition id="canPayUpgrade">
-                                                                                                            <string id="upgrade name">JetterMineDamage4</string>
-                                                                                                            <normal>
-                                                                                                                <action id="buyUpgrade">
-                                                                                                                    <string id="upgrade name">JetterMineDamage4</string>
-                                                                                                                </action>
-                                                                                                            </normal>
-                                                                                                        </condition>
+                                                                                                            <or>
+                                                                                                                <condition id="isUpgradeEnabled">
+                                                                                                                    <string id="condition" values="yesno">no</string>
+                                                                                                                    <string id="upgrade name">addHealth3</string>
+                                                                                                                </condition>
+                                                                                                                <condition id="checkCounter">
+                                                                                                                    <string id="id">botSkill</string>
+                                                                                                                    <string id="value">2</string>
+                                                                                                                    <string id="compare method" values="valuecompare">greater or equal</string>
+                                                                                                                </condition>
+                                                                                                            </or>
+                                                                                                        </andblock>
                                                                                                     </normal>
-                                                                                                </condition>
-                                                                                                <condition id="checkCounter">
-                                                                                                    <string id="id">mineBuild</string>
-                                                                                                    <string id="value">2</string>
-                                                                                                    <string id="compare method" values="valuecompare">equal</string>
-                                                                                                    <normal>
-                                                                                                        <condition id="isUpgradeEnabled">
-                                                                                                            <string id="condition" values="yesno">no</string>
-                                                                                                            <string id="upgrade name">JetterMineLongevity</string>
+                                                                                                    <else>
+                                                                                                        <condition id="checkCounter">
+                                                                                                            <string id="id">mineBuild</string>
+                                                                                                            <string id="value">1</string>
+                                                                                                            <string id="compare method" values="valuecompare">equal</string>
                                                                                                             <normal>
                                                                                                                 <condition id="canPayUpgrade">
+                                                                                                                    <string id="upgrade name">JetterMineDamage4</string>
+                                                                                                                    <normal>
+                                                                                                                        <action id="buyUpgrade">
+                                                                                                                            <string id="upgrade name">JetterMineDamage4</string>
+                                                                                                                        </action>
+                                                                                                                    </normal>
+                                                                                                                </condition>
+                                                                                                            </normal>
+                                                                                                        </condition>
+                                                                                                        <condition id="checkCounter">
+                                                                                                            <string id="id">mineBuild</string>
+                                                                                                            <string id="value">2</string>
+                                                                                                            <string id="compare method" values="valuecompare">equal</string>
+                                                                                                            <normal>
+                                                                                                                <condition id="isUpgradeEnabled">
+                                                                                                                    <string id="condition" values="yesno">no</string>
                                                                                                                     <string id="upgrade name">JetterMineLongevity</string>
                                                                                                                     <normal>
-                                                                                                                        <action id="buyUpgrade">
+                                                                                                                        <condition id="canPayUpgrade">
                                                                                                                             <string id="upgrade name">JetterMineLongevity</string>
-                                                                                                                        </action>
+                                                                                                                            <normal>
+                                                                                                                                <action id="buyUpgrade">
+                                                                                                                                    <string id="upgrade name">JetterMineLongevity</string>
+                                                                                                                                </action>
+                                                                                                                            </normal>
+                                                                                                                        </condition>
                                                                                                                     </normal>
+                                                                                                                    <else>
+                                                                                                                        <condition id="canPayUpgrade">
+                                                                                                                            <string id="upgrade name">JetterMineLongevity2</string>
+                                                                                                                            <normal>
+                                                                                                                                <action id="buyUpgrade">
+                                                                                                                                    <string id="upgrade name">JetterMineLongevity2</string>
+                                                                                                                                </action>
+                                                                                                                            </normal>
+                                                                                                                        </condition>
+                                                                                                                    </else>
                                                                                                                 </condition>
                                                                                                             </normal>
-                                                                                                            <else>
-                                                                                                                <condition id="canPayUpgrade">
-                                                                                                                    <string id="upgrade name">JetterMineLongevity2</string>
-                                                                                                                    <normal>
-                                                                                                                        <action id="buyUpgrade">
-                                                                                                                            <string id="upgrade name">JetterMineLongevity2</string>
-                                                                                                                        </action>
-                                                                                                                    </normal>
-                                                                                                                </condition>
-                                                                                                            </else>
                                                                                                         </condition>
-                                                                                                    </normal>
-                                                                                                </condition>
+                                                                                                    </else>
+                                                                                                    <or>
+                                                                                                        <condition id="isUpgradeEnabled">
+                                                                                                            <string id="condition" values="yesno">yes</string>
+                                                                                                            <string id="upgrade name">JetterMineDamage4</string>
+                                                                                                        </condition>
+                                                                                                        <condition id="isUpgradeEnabled">
+                                                                                                            <string id="condition" values="yesno">yes</string>
+                                                                                                            <string id="upgrade name">JetterMineLongevity2</string>
+                                                                                                        </condition>
+                                                                                                    </or>
+                                                                                                </orblock>
                                                                                             </else>
                                                                                             <or>
                                                                                                 <condition id="isUpgradeEnabled">
-                                                                                                    <string id="condition" values="yesno">yes</string>
-                                                                                                    <string id="upgrade name">JetterMineDamage4</string>
+                                                                                                    <string id="condition" values="yesno">no</string>
+                                                                                                    <string id="upgrade name">addHealth2</string>
                                                                                                 </condition>
-                                                                                                <condition id="isUpgradeEnabled">
-                                                                                                    <string id="condition" values="yesno">yes</string>
-                                                                                                    <string id="upgrade name">JetterMineLongevity2</string>
+                                                                                                <condition id="checkCounter">
+                                                                                                    <string id="id">botSkill</string>
+                                                                                                    <string id="value">2</string>
+                                                                                                    <string id="compare method" values="valuecompare">greater or equal</string>
                                                                                                 </condition>
                                                                                             </or>
                                                                                         </orblock>
@@ -941,145 +1005,367 @@
                                                                             </else>
                                                                         </condition>
                                                                     </else>
-                                                                </condition>
-                                                            </else>
-                                                        </condition>
-                                                    </normal>
-                                                    <else>
-                                                        <condition id="checkCounter">
-                                                            <string id="id">mineBuild</string>
-                                                            <string id="value">1</string>
-                                                            <string id="compare method" values="valuecompare">equal</string>
-                                                            <normal>
-                                                                <condition id="isUpgradeEnabled">
-                                                                    <string id="condition" values="yesno">no</string>
-                                                                    <string id="upgrade name">JetterMineDamage1</string>
-                                                                    <normal>
-                                                                        <condition id="canPayUpgrade">
-                                                                            <string id="upgrade name">JetterMineDamage1</string>
-                                                                            <normal>
-                                                                                <action id="buyUpgrade">
-                                                                                    <string id="upgrade name">JetterMineDamage1</string>
-                                                                                </action>
-                                                                            </normal>
-                                                                        </condition>
-                                                                    </normal>
-                                                                    <else>
+                                                                    <or>
                                                                         <condition id="isUpgradeEnabled">
                                                                             <string id="condition" values="yesno">no</string>
-                                                                            <string id="upgrade name">JetterMineDamage2</string>
+                                                                            <string id="upgrade name">addHealth1</string>
+                                                                        </condition>
+                                                                        <condition id="checkCounter">
+                                                                            <string id="id">botSkill</string>
+                                                                            <string id="value">2</string>
+                                                                            <string id="compare method" values="valuecompare">greater or equal</string>
+                                                                        </condition>
+                                                                    </or>
+                                                                </andblock>
+                                                            </normal>
+                                                            <else>
+                                                                <condition id="checkCounter">
+                                                                    <string id="id">mineBuild</string>
+                                                                    <string id="value">1</string>
+                                                                    <string id="compare method" values="valuecompare">equal</string>
+                                                                    <normal>
+                                                                        <condition id="isUpgradeEnabled">
+                                                                            <string id="condition" values="yesno">no</string>
+                                                                            <string id="upgrade name">JetterMineDamage1</string>
                                                                             <normal>
                                                                                 <condition id="canPayUpgrade">
-                                                                                    <string id="upgrade name">JetterMineDamage2</string>
+                                                                                    <string id="upgrade name">JetterMineDamage1</string>
                                                                                     <normal>
                                                                                         <action id="buyUpgrade">
-                                                                                            <string id="upgrade name">JetterMineDamage2</string>
+                                                                                            <string id="upgrade name">JetterMineDamage1</string>
                                                                                         </action>
                                                                                     </normal>
                                                                                 </condition>
                                                                             </normal>
                                                                             <else>
-                                                                                <condition id="canPayUpgrade">
-                                                                                    <string id="upgrade name">JetterMineDamage3</string>
+                                                                                <condition id="isUpgradeEnabled">
+                                                                                    <string id="condition" values="yesno">no</string>
+                                                                                    <string id="upgrade name">JetterMineDamage2</string>
                                                                                     <normal>
-                                                                                        <action id="buyUpgrade">
-                                                                                            <string id="upgrade name">JetterMineDamage3</string>
-                                                                                        </action>
+                                                                                        <condition id="canPayUpgrade">
+                                                                                            <string id="upgrade name">JetterMineDamage2</string>
+                                                                                            <normal>
+                                                                                                <action id="buyUpgrade">
+                                                                                                    <string id="upgrade name">JetterMineDamage2</string>
+                                                                                                </action>
+                                                                                            </normal>
+                                                                                        </condition>
                                                                                     </normal>
+                                                                                    <else>
+                                                                                        <condition id="canPayUpgrade">
+                                                                                            <string id="upgrade name">JetterMineDamage3</string>
+                                                                                            <normal>
+                                                                                                <action id="buyUpgrade">
+                                                                                                    <string id="upgrade name">JetterMineDamage3</string>
+                                                                                                </action>
+                                                                                            </normal>
+                                                                                        </condition>
+                                                                                    </else>
                                                                                 </condition>
                                                                             </else>
                                                                         </condition>
-                                                                    </else>
-                                                                </condition>
-                                                            </normal>
-                                                        </condition>
-                                                        <condition id="checkCounter">
-                                                            <string id="id">mineBuild</string>
-                                                            <string id="value">2</string>
-                                                            <string id="compare method" values="valuecompare">equal</string>
-                                                            <normal>
-                                                                <condition id="canPayUpgrade">
-                                                                    <string id="upgrade name">JetterMineBounce</string>
-                                                                    <normal>
-                                                                        <action id="buyUpgrade">
-                                                                            <string id="upgrade name">JetterMineBounce</string>
-                                                                        </action>
                                                                     </normal>
                                                                 </condition>
-                                                            </normal>
-                                                        </condition>
+                                                                <condition id="checkCounter">
+                                                                    <string id="id">mineBuild</string>
+                                                                    <string id="value">2</string>
+                                                                    <string id="compare method" values="valuecompare">equal</string>
+                                                                    <normal>
+                                                                        <condition id="canPayUpgrade">
+                                                                            <string id="upgrade name">JetterMineBounce</string>
+                                                                            <normal>
+                                                                                <action id="buyUpgrade">
+                                                                                    <string id="upgrade name">JetterMineBounce</string>
+                                                                                </action>
+                                                                            </normal>
+                                                                        </condition>
+                                                                    </normal>
+                                                                </condition>
+                                                            </else>
+                                                            <or>
+                                                                <condition id="isUpgradeEnabled">
+                                                                    <string id="condition" values="yesno">yes</string>
+                                                                    <string id="upgrade name">JetterMineDamage3</string>
+                                                                </condition>
+                                                                <condition id="isUpgradeEnabled">
+                                                                    <string id="condition" values="yesno">yes</string>
+                                                                    <string id="upgrade name">JetterMineBounce</string>
+                                                                </condition>
+                                                            </or>
+                                                        </orblock>
                                                     </else>
-                                                    <or>
-                                                        <condition id="isUpgradeEnabled">
-                                                            <string id="condition" values="yesno">yes</string>
-                                                            <string id="upgrade name">JetterMineDamage3</string>
-                                                        </condition>
-                                                        <condition id="isUpgradeEnabled">
-                                                            <string id="condition" values="yesno">yes</string>
-                                                            <string id="upgrade name">JetterMineBounce</string>
-                                                        </condition>
-                                                    </or>
-                                                </orblock>
+                                                </condition>
                                             </else>
-                                        </condition>
+                                            <or>
+                                                <condition id="isUpgradeEnabled">
+                                                    <string id="condition" values="yesno">no</string>
+                                                    <string id="upgrade name">JetterSpeed</string>
+                                                </condition>
+                                                <condition id="checkCounter">
+                                                    <string id="id">botSkill</string>
+                                                    <string id="value">2</string>
+                                                    <string id="compare method" values="valuecompare">greater or equal</string>
+                                                </condition>
+                                            </or>
+                                        </andblock>
                                     </else>
                                 </condition>
                             </else>
-                        </condition>
+                            <or>
+                                <condition id="isUpgradeEnabled">
+                                    <string id="condition" values="yesno">no</string>
+                                    <string id="upgrade name">Piggybank</string>
+                                </condition>
+                                <condition id="checkCounter">
+                                    <string id="id">botSkill</string>
+                                    <string id="value">2</string>
+                                    <string id="compare method" values="valuecompare">greater or equal</string>
+                                </condition>
+                            </or>
+                        </andblock>
                     </normal>
-                </condition>
+                    <or>
+                        <condition id="getBoolEquals">
+                            <string id="id">canUpgrade</string>
+                            <string id="value" values="yesno">yes</string>
+                        </condition>
+                        <condition id="isInNamedArea">
+                            <string id="area name">HEALAREA</string>
+                            <string id="team" values="ownenemy">OWN_TEAM</string>
+                            <string id="who" values="targetself">self</string>
+                            <string id="Comment">I am in shop -&gt; upgrade</string>
+                        </condition>
+                    </or>
+                </andblock>
                 <condition id="isTargetInArea">
                     <string id="condition" values="yesno">yes</string>
                     <float id="xOffset">0.00</float>
                     <float id="yOffset">0.00</float>
-                    <float id="width">0.74</float>
-                    <float id="height">0.74</float>
+                    <float id="width">0.93</float>
+                    <float id="height">0.93</float>
                     <string id="check line of sight" values="yesno">yes</string>
                     <string id="ignore invisibility" values="yesno">no</string>
                     <string id="Comment">Laser Logic</string>
                     <normal>
                         <orblock>
-                            <string id="Comment">Not running away?</string>
-                            <normal>
-                                <action id="setBool">
-                                    <string id="id">laseringTurret</string>
-                                    <string id="value" values="flagtoggle">no</string>
-                                </action>
-                            </normal>
+                            <string id="Comment">Not running away/defending?</string>
                             <else>
-                                <action id="aimStickAtTarget">
-                                    <float id="duration seconds">0.10</float>
-                                    <string id="only aim when needed" values="yesno">no</string>
-                                </action>
-                                <action id="pressButton">
-                                    <string id="button" values="buttons">FACE_LEFT</string>
-                                    <float id="duration in seconds">0.10</float>
-                                </action>
                                 <andblock>
-                                    <string id="Comment">I&apos;m lasering a turret</string>
-                                    <normal>
-                                        <action id="setBool">
-                                            <string id="id">laseringTurret</string>
-                                            <string id="value" values="flagtoggle">yes</string>
-                                        </action>
-                                    </normal>
+                                    <string id="Comment">Don&apos;t attack charging Spy</string>
                                     <else>
-                                        <action id="setBool">
-                                            <string id="id">laseringTurret</string>
-                                            <string id="value" values="flagtoggle">no</string>
-                                        </action>
+                                        <orblock>
+                                            <string id="Comment">Targeting critter?</string>
+                                            <normal>
+                                                <condition id="isTargetPosition">
+                                                    <string id="condition" values="yesno">yes</string>
+                                                    <string id="target position" values="offsetposition">BELOW</string>
+                                                    <string id="Comment">Am I above it?</string>
+                                                    <normal>
+                                                        <condition id="isUpgradeEnabled">
+                                                            <string id="condition" values="yesno">yes</string>
+                                                            <string id="upgrade name">JetterSummonerShotRange</string>
+                                                            <string id="Comment">Giant Monocle</string>
+                                                            <normal>
+                                                                <action id="aimStickAtTarget">
+                                                                    <float id="duration seconds">0.10</float>
+                                                                    <string id="only aim when needed" values="yesno">no</string>
+                                                                </action>
+                                                                <action id="pressButton">
+                                                                    <string id="button" values="buttons">FACE_LEFT</string>
+                                                                    <float id="duration in seconds">0.10</float>
+                                                                </action>
+                                                                <andblock>
+                                                                    <string id="Comment">I&apos;m lasering a turret</string>
+                                                                    <normal>
+                                                                        <action id="setBool">
+                                                                            <string id="id">laseringTurret</string>
+                                                                            <string id="value" values="flagtoggle">yes</string>
+                                                                        </action>
+                                                                    </normal>
+                                                                    <or>
+                                                                        <condition id="checkCounter">
+                                                                            <string id="id">state</string>
+                                                                            <string id="value">8</string>
+                                                                            <string id="compare method" values="valuecompare">equal</string>
+                                                                            <string id="Comment">pushTower</string>
+                                                                            <string id="Minimized">yes</string>
+                                                                        </condition>
+                                                                        <condition id="isTargetType">
+                                                                            <string id="condition" values="yesno">yes</string>
+                                                                            <string id="target groups" values="target groups" multiselect="true">DESTROYABLE_OBSTACLES;;</string>
+                                                                        </condition>
+                                                                    </or>
+                                                                </andblock>
+                                                            </normal>
+                                                            <else>
+                                                                <condition id="isTargetInArea">
+                                                                    <string id="condition" values="yesno">yes</string>
+                                                                    <float id="xOffset">0.00</float>
+                                                                    <float id="yOffset">0.00</float>
+                                                                    <float id="width">0.74</float>
+                                                                    <float id="height">0.74</float>
+                                                                    <string id="check line of sight" values="yesno">yes</string>
+                                                                    <string id="ignore invisibility" values="yesno">no</string>
+                                                                    <normal>
+                                                                        <action id="aimStickAtTarget">
+                                                                            <float id="duration seconds">0.10</float>
+                                                                            <string id="only aim when needed" values="yesno">no</string>
+                                                                        </action>
+                                                                        <action id="pressButton">
+                                                                            <string id="button" values="buttons">FACE_LEFT</string>
+                                                                            <float id="duration in seconds">0.10</float>
+                                                                        </action>
+                                                                        <andblock>
+                                                                            <string id="Comment">I&apos;m lasering a turret</string>
+                                                                            <normal>
+                                                                                <action id="setBool">
+                                                                                    <string id="id">laseringTurret</string>
+                                                                                    <string id="value" values="flagtoggle">yes</string>
+                                                                                </action>
+                                                                            </normal>
+                                                                            <or>
+                                                                                <condition id="checkCounter">
+                                                                                    <string id="id">state</string>
+                                                                                    <string id="value">8</string>
+                                                                                    <string id="compare method" values="valuecompare">equal</string>
+                                                                                    <string id="Comment">pushTower</string>
+                                                                                    <string id="Minimized">yes</string>
+                                                                                </condition>
+                                                                                <condition id="isTargetType">
+                                                                                    <string id="condition" values="yesno">yes</string>
+                                                                                    <string id="target groups" values="target groups" multiselect="true">DESTROYABLE_OBSTACLES;;</string>
+                                                                                </condition>
+                                                                            </or>
+                                                                        </andblock>
+                                                                    </normal>
+                                                                </condition>
+                                                            </else>
+                                                        </condition>
+                                                    </normal>
+                                                    <else>
+                                                        <action id="setBool">
+                                                            <string id="id">GoUp</string>
+                                                            <string id="value" values="flagtoggle">yes</string>
+                                                        </action>
+                                                    </else>
+                                                </condition>
+                                            </normal>
+                                            <else>
+                                                <condition id="isUpgradeEnabled">
+                                                    <string id="condition" values="yesno">yes</string>
+                                                    <string id="upgrade name">JetterSummonerShotRange</string>
+                                                    <string id="Comment">Giant Monocle</string>
+                                                    <normal>
+                                                        <action id="aimStickAtTarget">
+                                                            <float id="duration seconds">0.10</float>
+                                                            <string id="only aim when needed" values="yesno">no</string>
+                                                        </action>
+                                                        <action id="pressButton">
+                                                            <string id="button" values="buttons">FACE_LEFT</string>
+                                                            <float id="duration in seconds">0.10</float>
+                                                        </action>
+                                                        <andblock>
+                                                            <string id="Comment">I&apos;m lasering a turret</string>
+                                                            <normal>
+                                                                <action id="setBool">
+                                                                    <string id="id">laseringTurret</string>
+                                                                    <string id="value" values="flagtoggle">yes</string>
+                                                                </action>
+                                                            </normal>
+                                                            <or>
+                                                                <condition id="checkCounter">
+                                                                    <string id="id">state</string>
+                                                                    <string id="value">8</string>
+                                                                    <string id="compare method" values="valuecompare">equal</string>
+                                                                    <string id="Comment">pushTower</string>
+                                                                    <string id="Minimized">yes</string>
+                                                                </condition>
+                                                                <condition id="isTargetType">
+                                                                    <string id="condition" values="yesno">yes</string>
+                                                                    <string id="target groups" values="target groups" multiselect="true">DESTROYABLE_OBSTACLES;;</string>
+                                                                </condition>
+                                                            </or>
+                                                        </andblock>
+                                                    </normal>
+                                                    <else>
+                                                        <condition id="isTargetInArea">
+                                                            <string id="condition" values="yesno">yes</string>
+                                                            <float id="xOffset">0.00</float>
+                                                            <float id="yOffset">0.00</float>
+                                                            <float id="width">0.74</float>
+                                                            <float id="height">0.74</float>
+                                                            <string id="check line of sight" values="yesno">yes</string>
+                                                            <string id="ignore invisibility" values="yesno">no</string>
+                                                            <normal>
+                                                                <action id="aimStickAtTarget">
+                                                                    <float id="duration seconds">0.10</float>
+                                                                    <string id="only aim when needed" values="yesno">no</string>
+                                                                </action>
+                                                                <action id="pressButton">
+                                                                    <string id="button" values="buttons">FACE_LEFT</string>
+                                                                    <float id="duration in seconds">0.10</float>
+                                                                </action>
+                                                                <andblock>
+                                                                    <string id="Comment">I&apos;m lasering a turret</string>
+                                                                    <normal>
+                                                                        <action id="setBool">
+                                                                            <string id="id">laseringTurret</string>
+                                                                            <string id="value" values="flagtoggle">yes</string>
+                                                                        </action>
+                                                                    </normal>
+                                                                    <or>
+                                                                        <condition id="checkCounter">
+                                                                            <string id="id">state</string>
+                                                                            <string id="value">8</string>
+                                                                            <string id="compare method" values="valuecompare">equal</string>
+                                                                            <string id="Comment">pushTower</string>
+                                                                            <string id="Minimized">yes</string>
+                                                                        </condition>
+                                                                        <condition id="isTargetType">
+                                                                            <string id="condition" values="yesno">yes</string>
+                                                                            <string id="target groups" values="target groups" multiselect="true">DESTROYABLE_OBSTACLES;;</string>
+                                                                        </condition>
+                                                                    </or>
+                                                                </andblock>
+                                                            </normal>
+                                                        </condition>
+                                                    </else>
+                                                </condition>
+                                            </else>
+                                            <or>
+                                                <condition id="checkClass">
+                                                    <string id="check on" values="targetself">target</string>
+                                                    <string id="class">CreepCritterRibbit4</string>
+                                                </condition>
+                                                <condition id="checkClass">
+                                                    <string id="check on" values="targetself">target</string>
+                                                    <string id="class">CreepCritterSorona</string>
+                                                </condition>
+                                                <condition id="checkClass">
+                                                    <string id="check on" values="targetself">target</string>
+                                                    <string id="class">CreepCritterAIStation404</string>
+                                                </condition>
+                                            </or>
+                                        </orblock>
                                     </else>
                                     <or>
-                                        <condition id="checkCounter">
-                                            <string id="id">state</string>
-                                            <string id="value">8</string>
-                                            <string id="compare method" values="valuecompare">equal</string>
-                                            <string id="Comment">pushTower</string>
-                                            <string id="Minimized">yes</string>
+                                        <condition id="checkClass">
+                                            <string id="check on" values="targetself">target</string>
+                                            <string id="class">Spy</string>
+                                            <string id="Comment">Sentry X-58</string>
                                         </condition>
-                                        <condition id="isTargetType">
-                                            <string id="condition" values="yesno">yes</string>
-                                            <string id="target groups" values="target groups" multiselect="true">DESTROYABLE_OBSTACLES;;</string>
+                                        <condition id="hasUpgrade">
+                                            <string id="class">Spy</string>
+                                            <string id="team" values="teamswithnumbers">ENEMY_TEAM</string>
+                                            <string id="upgrade name">SpyAbsorbStartOn</string>
+                                            <string id="Comment">Absorb Shield</string>
+                                        </condition>
+                                        <condition id="checkCharacterValue">
+                                            <string id="property" values="charactervaluesCheckable">health</string>
+                                            <float id="value">200.00</float>
+                                            <string id="compare method" values="valuecompare">greater</string>
+                                            <string id="check on" values="targetself">target</string>
+                                            <string id="Comment">But he has such low health!</string>
                                         </condition>
                                     </or>
                                 </andblock>
@@ -1099,6 +1385,11 @@
                                 <condition id="checkCounter">
                                     <string id="id">state</string>
                                     <string id="value">10</string>
+                                    <string id="compare method" values="valuecompare">equal</string>
+                                </condition>
+                                <condition id="checkCounter">
+                                    <string id="id">state</string>
+                                    <string id="value">11</string>
                                     <string id="compare method" values="valuecompare">equal</string>
                                 </condition>
                                 <condition id="isInArea">
@@ -1122,20 +1413,28 @@
                             </or>
                         </orblock>
                     </normal>
-                    <else>
-                        <action id="setBool">
-                            <string id="id">laseringTurret</string>
-                            <string id="value" values="flagtoggle">no</string>
-                        </action>
-                    </else>
                 </condition>
                 <andblock>
                     <string id="Comment">Mine deploying logic</string>
                     <normal>
-                        <action id="pressButton">
-                            <string id="button" values="buttons">FACE_RIGHT</string>
-                            <float id="duration in seconds">0.00</float>
-                        </action>
+                        <condition id="getBoolEquals">
+                            <string id="id">laseringTurret</string>
+                            <string id="value" values="yesno">no</string>
+                            <string id="Comment">Not lasering a turret?</string>
+                            <normal>
+                                <action id="pressButton">
+                                    <string id="button" values="buttons">FACE_RIGHT</string>
+                                    <float id="duration in seconds">0.00</float>
+                                </action>
+                            </normal>
+                            <else>
+                                <action id="setBool">
+                                    <string id="id">laseringTurret</string>
+                                    <string id="value" values="flagtoggle">no</string>
+                                    <string id="Comment">Reset bool</string>
+                                </action>
+                            </else>
+                        </condition>
                     </normal>
                     <or>
                         <condition id="isUpgradeEnabled">
@@ -1144,11 +1443,6 @@
                         </condition>
                         <condition id="isSkillOnButtonAvailable">
                             <string id="button" values="buttons">FACE_RIGHT</string>
-                        </condition>
-                        <condition id="getBoolEquals">
-                            <string id="id">laseringTurret</string>
-                            <string id="value" values="yesno">no</string>
-                            <string id="Comment">Not lasering a turret?</string>
                         </condition>
                         <condition id="getBoolEquals">
                             <string id="id">inField</string>
