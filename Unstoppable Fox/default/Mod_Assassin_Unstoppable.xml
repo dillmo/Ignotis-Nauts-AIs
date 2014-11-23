@@ -1763,6 +1763,23 @@
                                                     <string id="condition" values="yesno">yes</string>
                                                     <string id="target position" values="offsetposition">BACK</string>
                                                 </condition>
+                                                <condition id="isTargetType">
+                                                    <string id="condition" values="yesno">yes</string>
+                                                    <string id="target groups" values="target groups" multiselect="true">PLAYERS;;</string>
+                                                </condition>
+                                                <condition id="isFromTeam">
+                                                    <string id="team" values="teamswithnumbers">ENEMY_TEAM</string>
+                                                    <string id="check on" values="targetself">target</string>
+                                                </condition>
+                                                <condition id="isTargetInArea">
+                                                    <string id="condition" values="yesno">yes</string>
+                                                    <float id="xOffset">0.00</float>
+                                                    <float id="yOffset">0.00</float>
+                                                    <float id="width">1.00</float>
+                                                    <float id="height">1.00</float>
+                                                    <string id="check line of sight" values="yesno">yes</string>
+                                                    <string id="ignore invisibility" values="yesno">no</string>
+                                                </condition>
                                             </or>
                                         </andblock>
                                     </else>
