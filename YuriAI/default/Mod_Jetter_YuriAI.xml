@@ -1028,57 +1028,95 @@
                     <string id="condition" values="yesno">yes</string>
                     <float id="xOffset">0.00</float>
                     <float id="yOffset">0.00</float>
-                    <float id="width">0.74</float>
-                    <float id="height">0.74</float>
+                    <float id="width">0.93</float>
+                    <float id="height">0.93</float>
                     <string id="check line of sight" values="yesno">yes</string>
                     <string id="ignore invisibility" values="yesno">no</string>
                     <string id="Comment">Laser Logic</string>
                     <normal>
                         <orblock>
                             <string id="Comment">Not running away?</string>
-                            <normal>
-                                <action id="setBool">
-                                    <string id="id">laseringTurret</string>
-                                    <string id="value" values="flagtoggle">no</string>
-                                </action>
-                            </normal>
                             <else>
-                                <action id="aimStickAtTarget">
-                                    <float id="duration seconds">0.10</float>
-                                    <string id="only aim when needed" values="yesno">no</string>
-                                </action>
-                                <action id="pressButton">
-                                    <string id="button" values="buttons">FACE_LEFT</string>
-                                    <float id="duration in seconds">0.10</float>
-                                </action>
-                                <andblock>
-                                    <string id="Comment">I&apos;m lasering a turret</string>
+                                <condition id="isUpgradeEnabled">
+                                    <string id="condition" values="yesno">yes</string>
+                                    <string id="upgrade name">JetterSummonerShotRange</string>
+                                    <string id="Comment">Giant Monocle</string>
                                     <normal>
-                                        <action id="setBool">
-                                            <string id="id">laseringTurret</string>
-                                            <string id="value" values="flagtoggle">yes</string>
+                                        <action id="aimStickAtTarget">
+                                            <float id="duration seconds">0.10</float>
+                                            <string id="only aim when needed" values="yesno">no</string>
                                         </action>
+                                        <action id="pressButton">
+                                            <string id="button" values="buttons">FACE_LEFT</string>
+                                            <float id="duration in seconds">0.10</float>
+                                        </action>
+                                        <andblock>
+                                            <string id="Comment">I&apos;m lasering a turret</string>
+                                            <normal>
+                                                <action id="setBool">
+                                                    <string id="id">laseringTurret</string>
+                                                    <string id="value" values="flagtoggle">yes</string>
+                                                </action>
+                                            </normal>
+                                            <or>
+                                                <condition id="checkCounter">
+                                                    <string id="id">state</string>
+                                                    <string id="value">8</string>
+                                                    <string id="compare method" values="valuecompare">equal</string>
+                                                    <string id="Comment">pushTower</string>
+                                                    <string id="Minimized">yes</string>
+                                                </condition>
+                                                <condition id="isTargetType">
+                                                    <string id="condition" values="yesno">yes</string>
+                                                    <string id="target groups" values="target groups" multiselect="true">DESTROYABLE_OBSTACLES;;</string>
+                                                </condition>
+                                            </or>
+                                        </andblock>
                                     </normal>
                                     <else>
-                                        <action id="setBool">
-                                            <string id="id">laseringTurret</string>
-                                            <string id="value" values="flagtoggle">no</string>
-                                        </action>
-                                    </else>
-                                    <or>
-                                        <condition id="checkCounter">
-                                            <string id="id">state</string>
-                                            <string id="value">8</string>
-                                            <string id="compare method" values="valuecompare">equal</string>
-                                            <string id="Comment">pushTower</string>
-                                            <string id="Minimized">yes</string>
-                                        </condition>
-                                        <condition id="isTargetType">
+                                        <condition id="isTargetInArea">
                                             <string id="condition" values="yesno">yes</string>
-                                            <string id="target groups" values="target groups" multiselect="true">DESTROYABLE_OBSTACLES;;</string>
+                                            <float id="xOffset">0.00</float>
+                                            <float id="yOffset">0.00</float>
+                                            <float id="width">0.74</float>
+                                            <float id="height">0.74</float>
+                                            <string id="check line of sight" values="yesno">yes</string>
+                                            <string id="ignore invisibility" values="yesno">no</string>
+                                            <normal>
+                                                <action id="aimStickAtTarget">
+                                                    <float id="duration seconds">0.10</float>
+                                                    <string id="only aim when needed" values="yesno">no</string>
+                                                </action>
+                                                <action id="pressButton">
+                                                    <string id="button" values="buttons">FACE_LEFT</string>
+                                                    <float id="duration in seconds">0.10</float>
+                                                </action>
+                                                <andblock>
+                                                    <string id="Comment">I&apos;m lasering a turret</string>
+                                                    <normal>
+                                                        <action id="setBool">
+                                                            <string id="id">laseringTurret</string>
+                                                            <string id="value" values="flagtoggle">yes</string>
+                                                        </action>
+                                                    </normal>
+                                                    <or>
+                                                        <condition id="checkCounter">
+                                                            <string id="id">state</string>
+                                                            <string id="value">8</string>
+                                                            <string id="compare method" values="valuecompare">equal</string>
+                                                            <string id="Comment">pushTower</string>
+                                                            <string id="Minimized">yes</string>
+                                                        </condition>
+                                                        <condition id="isTargetType">
+                                                            <string id="condition" values="yesno">yes</string>
+                                                            <string id="target groups" values="target groups" multiselect="true">DESTROYABLE_OBSTACLES;;</string>
+                                                        </condition>
+                                                    </or>
+                                                </andblock>
+                                            </normal>
                                         </condition>
-                                    </or>
-                                </andblock>
+                                    </else>
+                                </condition>
                             </else>
                             <or>
                                 <condition id="checkCounter">
@@ -1118,20 +1156,28 @@
                             </or>
                         </orblock>
                     </normal>
-                    <else>
-                        <action id="setBool">
-                            <string id="id">laseringTurret</string>
-                            <string id="value" values="flagtoggle">no</string>
-                        </action>
-                    </else>
                 </condition>
                 <andblock>
                     <string id="Comment">Mine deploying logic</string>
                     <normal>
-                        <action id="pressButton">
-                            <string id="button" values="buttons">FACE_RIGHT</string>
-                            <float id="duration in seconds">0.00</float>
-                        </action>
+                        <condition id="getBoolEquals">
+                            <string id="id">laseringTurret</string>
+                            <string id="value" values="yesno">no</string>
+                            <string id="Comment">Not lasering a turret?</string>
+                            <normal>
+                                <action id="pressButton">
+                                    <string id="button" values="buttons">FACE_RIGHT</string>
+                                    <float id="duration in seconds">0.00</float>
+                                </action>
+                            </normal>
+                            <else>
+                                <action id="setBool">
+                                    <string id="id">laseringTurret</string>
+                                    <string id="value" values="flagtoggle">no</string>
+                                    <string id="Comment">Reset bool</string>
+                                </action>
+                            </else>
+                        </condition>
                     </normal>
                     <or>
                         <condition id="isUpgradeEnabled">
@@ -1140,11 +1186,6 @@
                         </condition>
                         <condition id="isSkillOnButtonAvailable">
                             <string id="button" values="buttons">FACE_RIGHT</string>
-                        </condition>
-                        <condition id="getBoolEquals">
-                            <string id="id">laseringTurret</string>
-                            <string id="value" values="yesno">no</string>
-                            <string id="Comment">Not lasering a turret?</string>
                         </condition>
                         <condition id="getBoolEquals">
                             <string id="id">inField</string>
