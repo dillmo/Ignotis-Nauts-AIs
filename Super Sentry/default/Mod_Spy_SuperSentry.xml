@@ -60,126 +60,276 @@
                             <else>
                                 <condition id="checkCharacterValue">
                                     <string id="property" values="charactervaluesCheckable">health percentage</string>
-                                    <float id="value">90.00</float>
+                                    <float id="value">95.00</float>
                                     <string id="compare method" values="valuecompare">greater or equal</string>
                                     <string id="check on" values="targetself">self</string>
                                     <normal>
                                         <action id="adjustCounter">
                                             <string id="id">health</string>
-                                            <string id="value">90</string>
+                                            <string id="value">95</string>
                                             <string id="adjust method" values="valueadjust">set</string>
                                         </action>
                                     </normal>
                                     <else>
                                         <condition id="checkCharacterValue">
                                             <string id="property" values="charactervaluesCheckable">health percentage</string>
-                                            <float id="value">80.00</float>
+                                            <float id="value">90.00</float>
                                             <string id="compare method" values="valuecompare">greater or equal</string>
                                             <string id="check on" values="targetself">self</string>
                                             <normal>
                                                 <action id="adjustCounter">
                                                     <string id="id">health</string>
-                                                    <string id="value">80</string>
+                                                    <string id="value">90</string>
                                                     <string id="adjust method" values="valueadjust">set</string>
                                                 </action>
                                             </normal>
                                             <else>
                                                 <condition id="checkCharacterValue">
                                                     <string id="property" values="charactervaluesCheckable">health percentage</string>
-                                                    <float id="value">70.00</float>
+                                                    <float id="value">85.00</float>
                                                     <string id="compare method" values="valuecompare">greater or equal</string>
                                                     <string id="check on" values="targetself">self</string>
                                                     <normal>
                                                         <action id="adjustCounter">
                                                             <string id="id">health</string>
-                                                            <string id="value">70</string>
+                                                            <string id="value">85</string>
                                                             <string id="adjust method" values="valueadjust">set</string>
                                                         </action>
                                                     </normal>
                                                     <else>
                                                         <condition id="checkCharacterValue">
                                                             <string id="property" values="charactervaluesCheckable">health percentage</string>
-                                                            <float id="value">60.00</float>
+                                                            <float id="value">80.00</float>
                                                             <string id="compare method" values="valuecompare">greater or equal</string>
                                                             <string id="check on" values="targetself">self</string>
                                                             <normal>
                                                                 <action id="adjustCounter">
                                                                     <string id="id">health</string>
-                                                                    <string id="value">60</string>
+                                                                    <string id="value">80</string>
                                                                     <string id="adjust method" values="valueadjust">set</string>
                                                                 </action>
                                                             </normal>
                                                             <else>
                                                                 <condition id="checkCharacterValue">
                                                                     <string id="property" values="charactervaluesCheckable">health percentage</string>
-                                                                    <float id="value">50.00</float>
+                                                                    <float id="value">75.00</float>
                                                                     <string id="compare method" values="valuecompare">greater or equal</string>
                                                                     <string id="check on" values="targetself">self</string>
                                                                     <normal>
                                                                         <action id="adjustCounter">
                                                                             <string id="id">health</string>
-                                                                            <string id="value">50</string>
+                                                                            <string id="value">75</string>
                                                                             <string id="adjust method" values="valueadjust">set</string>
                                                                         </action>
                                                                     </normal>
                                                                     <else>
                                                                         <condition id="checkCharacterValue">
                                                                             <string id="property" values="charactervaluesCheckable">health percentage</string>
-                                                                            <float id="value">40.00</float>
+                                                                            <float id="value">70.00</float>
                                                                             <string id="compare method" values="valuecompare">greater or equal</string>
                                                                             <string id="check on" values="targetself">self</string>
                                                                             <normal>
                                                                                 <action id="adjustCounter">
                                                                                     <string id="id">health</string>
-                                                                                    <string id="value">40</string>
+                                                                                    <string id="value">70</string>
                                                                                     <string id="adjust method" values="valueadjust">set</string>
                                                                                 </action>
                                                                             </normal>
                                                                             <else>
                                                                                 <condition id="checkCharacterValue">
                                                                                     <string id="property" values="charactervaluesCheckable">health percentage</string>
-                                                                                    <float id="value">30.00</float>
+                                                                                    <float id="value">65.00</float>
                                                                                     <string id="compare method" values="valuecompare">greater or equal</string>
                                                                                     <string id="check on" values="targetself">self</string>
                                                                                     <normal>
                                                                                         <action id="adjustCounter">
                                                                                             <string id="id">health</string>
-                                                                                            <string id="value">30</string>
+                                                                                            <string id="value">65</string>
                                                                                             <string id="adjust method" values="valueadjust">set</string>
                                                                                         </action>
                                                                                     </normal>
                                                                                     <else>
                                                                                         <condition id="checkCharacterValue">
                                                                                             <string id="property" values="charactervaluesCheckable">health percentage</string>
-                                                                                            <float id="value">20.00</float>
+                                                                                            <float id="value">60.00</float>
                                                                                             <string id="compare method" values="valuecompare">greater or equal</string>
                                                                                             <string id="check on" values="targetself">self</string>
                                                                                             <normal>
                                                                                                 <action id="adjustCounter">
                                                                                                     <string id="id">health</string>
-                                                                                                    <string id="value">20</string>
+                                                                                                    <string id="value">60</string>
                                                                                                     <string id="adjust method" values="valueadjust">set</string>
                                                                                                 </action>
                                                                                             </normal>
                                                                                             <else>
                                                                                                 <condition id="checkCharacterValue">
                                                                                                     <string id="property" values="charactervaluesCheckable">health percentage</string>
-                                                                                                    <float id="value">10.00</float>
+                                                                                                    <float id="value">55.00</float>
                                                                                                     <string id="compare method" values="valuecompare">greater or equal</string>
                                                                                                     <string id="check on" values="targetself">self</string>
                                                                                                     <normal>
                                                                                                         <action id="adjustCounter">
                                                                                                             <string id="id">health</string>
-                                                                                                            <string id="value">10</string>
+                                                                                                            <string id="value">55</string>
                                                                                                             <string id="adjust method" values="valueadjust">set</string>
                                                                                                         </action>
                                                                                                     </normal>
                                                                                                     <else>
-                                                                                                        <action id="adjustCounter">
-                                                                                                            <string id="id">health</string>
-                                                                                                            <string id="value">0</string>
-                                                                                                            <string id="adjust method" values="valueadjust">set</string>
-                                                                                                        </action>
+                                                                                                        <condition id="checkCharacterValue">
+                                                                                                            <string id="property" values="charactervaluesCheckable">health percentage</string>
+                                                                                                            <float id="value">50.00</float>
+                                                                                                            <string id="compare method" values="valuecompare">greater or equal</string>
+                                                                                                            <string id="check on" values="targetself">self</string>
+                                                                                                            <normal>
+                                                                                                                <action id="adjustCounter">
+                                                                                                                    <string id="id">health</string>
+                                                                                                                    <string id="value">50</string>
+                                                                                                                    <string id="adjust method" values="valueadjust">set</string>
+                                                                                                                </action>
+                                                                                                            </normal>
+                                                                                                            <else>
+                                                                                                                <condition id="checkCharacterValue">
+                                                                                                                    <string id="property" values="charactervaluesCheckable">health percentage</string>
+                                                                                                                    <float id="value">45.00</float>
+                                                                                                                    <string id="compare method" values="valuecompare">greater or equal</string>
+                                                                                                                    <string id="check on" values="targetself">self</string>
+                                                                                                                    <normal>
+                                                                                                                        <action id="adjustCounter">
+                                                                                                                            <string id="id">health</string>
+                                                                                                                            <string id="value">45</string>
+                                                                                                                            <string id="adjust method" values="valueadjust">set</string>
+                                                                                                                        </action>
+                                                                                                                    </normal>
+                                                                                                                    <else>
+                                                                                                                        <condition id="checkCharacterValue">
+                                                                                                                            <string id="property" values="charactervaluesCheckable">health percentage</string>
+                                                                                                                            <float id="value">40.00</float>
+                                                                                                                            <string id="compare method" values="valuecompare">greater or equal</string>
+                                                                                                                            <string id="check on" values="targetself">self</string>
+                                                                                                                            <normal>
+                                                                                                                                <action id="adjustCounter">
+                                                                                                                                    <string id="id">health</string>
+                                                                                                                                    <string id="value">40</string>
+                                                                                                                                    <string id="adjust method" values="valueadjust">set</string>
+                                                                                                                                </action>
+                                                                                                                            </normal>
+                                                                                                                            <else>
+                                                                                                                                <condition id="checkCharacterValue">
+                                                                                                                                    <string id="property" values="charactervaluesCheckable">health percentage</string>
+                                                                                                                                    <float id="value">35.00</float>
+                                                                                                                                    <string id="compare method" values="valuecompare">greater or equal</string>
+                                                                                                                                    <string id="check on" values="targetself">self</string>
+                                                                                                                                    <normal>
+                                                                                                                                        <action id="adjustCounter">
+                                                                                                                                            <string id="id">health</string>
+                                                                                                                                            <string id="value">35</string>
+                                                                                                                                            <string id="adjust method" values="valueadjust">set</string>
+                                                                                                                                        </action>
+                                                                                                                                    </normal>
+                                                                                                                                    <else>
+                                                                                                                                        <condition id="checkCharacterValue">
+                                                                                                                                            <string id="property" values="charactervaluesCheckable">health percentage</string>
+                                                                                                                                            <float id="value">30.00</float>
+                                                                                                                                            <string id="compare method" values="valuecompare">greater or equal</string>
+                                                                                                                                            <string id="check on" values="targetself">self</string>
+                                                                                                                                            <normal>
+                                                                                                                                                <action id="adjustCounter">
+                                                                                                                                                    <string id="id">health</string>
+                                                                                                                                                    <string id="value">30</string>
+                                                                                                                                                    <string id="adjust method" values="valueadjust">set</string>
+                                                                                                                                                </action>
+                                                                                                                                            </normal>
+                                                                                                                                            <else>
+                                                                                                                                                <condition id="checkCharacterValue">
+                                                                                                                                                    <string id="property" values="charactervaluesCheckable">health percentage</string>
+                                                                                                                                                    <float id="value">25.00</float>
+                                                                                                                                                    <string id="compare method" values="valuecompare">greater or equal</string>
+                                                                                                                                                    <string id="check on" values="targetself">self</string>
+                                                                                                                                                    <normal>
+                                                                                                                                                        <action id="adjustCounter">
+                                                                                                                                                            <string id="id">health</string>
+                                                                                                                                                            <string id="value">25</string>
+                                                                                                                                                            <string id="adjust method" values="valueadjust">set</string>
+                                                                                                                                                        </action>
+                                                                                                                                                    </normal>
+                                                                                                                                                    <else>
+                                                                                                                                                        <condition id="checkCharacterValue">
+                                                                                                                                                            <string id="property" values="charactervaluesCheckable">health percentage</string>
+                                                                                                                                                            <float id="value">20.00</float>
+                                                                                                                                                            <string id="compare method" values="valuecompare">greater or equal</string>
+                                                                                                                                                            <string id="check on" values="targetself">self</string>
+                                                                                                                                                            <normal>
+                                                                                                                                                                <action id="adjustCounter">
+                                                                                                                                                                    <string id="id">health</string>
+                                                                                                                                                                    <string id="value">20</string>
+                                                                                                                                                                    <string id="adjust method" values="valueadjust">set</string>
+                                                                                                                                                                </action>
+                                                                                                                                                            </normal>
+                                                                                                                                                            <else>
+                                                                                                                                                                <condition id="checkCharacterValue">
+                                                                                                                                                                    <string id="property" values="charactervaluesCheckable">health percentage</string>
+                                                                                                                                                                    <float id="value">15.00</float>
+                                                                                                                                                                    <string id="compare method" values="valuecompare">greater or equal</string>
+                                                                                                                                                                    <string id="check on" values="targetself">self</string>
+                                                                                                                                                                    <normal>
+                                                                                                                                                                        <action id="adjustCounter">
+                                                                                                                                                                            <string id="id">health</string>
+                                                                                                                                                                            <string id="value">15</string>
+                                                                                                                                                                            <string id="adjust method" values="valueadjust">set</string>
+                                                                                                                                                                        </action>
+                                                                                                                                                                    </normal>
+                                                                                                                                                                    <else>
+                                                                                                                                                                        <condition id="checkCharacterValue">
+                                                                                                                                                                            <string id="property" values="charactervaluesCheckable">health percentage</string>
+                                                                                                                                                                            <float id="value">10.00</float>
+                                                                                                                                                                            <string id="compare method" values="valuecompare">greater or equal</string>
+                                                                                                                                                                            <string id="check on" values="targetself">self</string>
+                                                                                                                                                                            <normal>
+                                                                                                                                                                                <action id="adjustCounter">
+                                                                                                                                                                                    <string id="id">health</string>
+                                                                                                                                                                                    <string id="value">10</string>
+                                                                                                                                                                                    <string id="adjust method" values="valueadjust">set</string>
+                                                                                                                                                                                </action>
+                                                                                                                                                                            </normal>
+                                                                                                                                                                            <else>
+                                                                                                                                                                                <condition id="checkCharacterValue">
+                                                                                                                                                                                    <string id="property" values="charactervaluesCheckable">health percentage</string>
+                                                                                                                                                                                    <float id="value">5.00</float>
+                                                                                                                                                                                    <string id="compare method" values="valuecompare">greater or equal</string>
+                                                                                                                                                                                    <string id="check on" values="targetself">self</string>
+                                                                                                                                                                                    <normal>
+                                                                                                                                                                                        <action id="adjustCounter">
+                                                                                                                                                                                            <string id="id">health</string>
+                                                                                                                                                                                            <string id="value">5</string>
+                                                                                                                                                                                            <string id="adjust method" values="valueadjust">set</string>
+                                                                                                                                                                                        </action>
+                                                                                                                                                                                    </normal>
+                                                                                                                                                                                    <else>
+                                                                                                                                                                                        <action id="adjustCounter">
+                                                                                                                                                                                            <string id="id">health</string>
+                                                                                                                                                                                            <string id="value">0</string>
+                                                                                                                                                                                            <string id="adjust method" values="valueadjust">set</string>
+                                                                                                                                                                                        </action>
+                                                                                                                                                                                    </else>
+                                                                                                                                                                                </condition>
+                                                                                                                                                                            </else>
+                                                                                                                                                                        </condition>
+                                                                                                                                                                    </else>
+                                                                                                                                                                </condition>
+                                                                                                                                                            </else>
+                                                                                                                                                        </condition>
+                                                                                                                                                    </else>
+                                                                                                                                                </condition>
+                                                                                                                                            </else>
+                                                                                                                                        </condition>
+                                                                                                                                    </else>
+                                                                                                                                </condition>
+                                                                                                                            </else>
+                                                                                                                        </condition>
+                                                                                                                    </else>
+                                                                                                                </condition>
+                                                                                                            </else>
+                                                                                                        </condition>
                                                                                                     </else>
                                                                                                 </condition>
                                                                                             </else>
@@ -280,34 +430,6 @@
                                             <normal>
                                                 <andblock>
                                                     <string id="Comment">Don&apos;t attack charging Spy</string>
-                                                    <normal>
-                                                        <condition id="isCharacterInArea">
-                                                            <string id="groups" values="target receive groups" multiselect="true">PLAYERS;;</string>
-                                                            <string id="teams" values="teams" multiselect="true">ENEMY_TEAM;;</string>
-                                                            <string id="class">spy</string>
-                                                            <string id="condition" values="charactervaluesCheckable">health</string>
-                                                            <string id="comparison" values="valuecompare">greater or equal</string>
-                                                            <float id="value">0.00</float>
-                                                            <string id="character minimum">2</string>
-                                                            <float id="xOffset">0.00</float>
-                                                            <float id="yOffset">0.00</float>
-                                                            <float id="width">50.00</float>
-                                                            <float id="height">50.00</float>
-                                                            <string id="check line of sight" values="yesno">no</string>
-                                                            <string id="Comment">Not accurate with multiple Spy&apos;s</string>
-                                                            <normal>
-                                                                <action id="aimStickAtTarget">
-                                                                    <float id="duration seconds">0.10</float>
-                                                                    <string id="only aim when needed" values="yesno">no</string>
-                                                                </action>
-                                                                <action id="pressButton">
-                                                                    <string id="button" values="buttons">FACE_LEFT</string>
-                                                                    <float id="duration in seconds">0.00</float>
-                                                                    <string id="Comment">Shoot!</string>
-                                                                </action>
-                                                            </normal>
-                                                        </condition>
-                                                    </normal>
                                                     <else>
                                                         <action id="aimStickAtTarget">
                                                             <float id="duration seconds">0.10</float>
@@ -390,89 +512,6 @@
                                     <else>
                                         <andblock>
                                             <string id="Comment">Don&apos;t attack charging Spy</string>
-                                            <normal>
-                                                <condition id="isCharacterInArea">
-                                                    <string id="groups" values="target receive groups" multiselect="true">PLAYERS;;</string>
-                                                    <string id="teams" values="teams" multiselect="true">ENEMY_TEAM;;</string>
-                                                    <string id="class">spy</string>
-                                                    <string id="condition" values="charactervaluesCheckable">health</string>
-                                                    <string id="comparison" values="valuecompare">greater or equal</string>
-                                                    <float id="value">0.00</float>
-                                                    <string id="character minimum">2</string>
-                                                    <float id="xOffset">0.00</float>
-                                                    <float id="yOffset">0.00</float>
-                                                    <float id="width">50.00</float>
-                                                    <float id="height">50.00</float>
-                                                    <string id="check line of sight" values="yesno">no</string>
-                                                    <string id="Comment">Not accurate with multiple Spy&apos;s</string>
-                                                    <normal>
-                                                        <orblock>
-                                                            <string id="Comment">Running away -&gt; don&apos;t aim</string>
-                                                            <normal>
-                                                                <andblock>
-                                                                    <string id="Comment">In danger -&gt; Don&apos;t shoot</string>
-                                                                    <else>
-                                                                        <action id="pressButton">
-                                                                            <string id="button" values="buttons">FACE_LEFT</string>
-                                                                            <float id="duration in seconds">0.00</float>
-                                                                            <string id="Comment">Shoot!</string>
-                                                                        </action>
-                                                                    </else>
-                                                                    <or>
-                                                                        <condition id="isInArea">
-                                                                            <string id="condition" values="yesno">yes</string>
-                                                                            <string id="collision groups" values="collison groups" multiselect="true">PLAYERS;;</string>
-                                                                            <string id="check green obstacles only" values="yesno">no</string>
-                                                                            <string id="teams" values="teams" multiselect="true">ENEMY_TEAM;;</string>
-                                                                            <string id="areaName"></string>
-                                                                            <float id="xOffset">0.00</float>
-                                                                            <float id="yOffset">0.00</float>
-                                                                            <float id="width">0.80</float>
-                                                                            <float id="height">0.80</float>
-                                                                            <string id="check line of sight" values="yesno">yes</string>
-                                                                            <string id="ignore invisibility" values="yesno">no</string>
-                                                                        </condition>
-                                                                        <condition id="checkCharacterValue">
-                                                                            <string id="property" values="charactervaluesCheckable">health minus dot percentage</string>
-                                                                            <float id="value">30.00</float>
-                                                                            <string id="compare method" values="valuecompare">less</string>
-                                                                            <string id="check on" values="targetself">self</string>
-                                                                        </condition>
-                                                                    </or>
-                                                                </andblock>
-                                                            </normal>
-                                                            <else>
-                                                                <action id="aimStickAtTarget">
-                                                                    <float id="duration seconds">0.10</float>
-                                                                    <string id="only aim when needed" values="yesno">no</string>
-                                                                </action>
-                                                                <action id="pressButton">
-                                                                    <string id="button" values="buttons">FACE_LEFT</string>
-                                                                    <float id="duration in seconds">0.00</float>
-                                                                    <string id="Comment">Shoot!</string>
-                                                                </action>
-                                                            </else>
-                                                            <or>
-                                                                <condition id="checkCounter">
-                                                                    <string id="id">state</string>
-                                                                    <string id="value">1</string>
-                                                                    <string id="compare method" values="valuecompare">equal</string>
-                                                                </condition>
-                                                                <condition id="checkCounter">
-                                                                    <string id="id">state</string>
-                                                                    <string id="value">6</string>
-                                                                    <string id="compare method" values="valuecompare">equal</string>
-                                                                </condition>
-                                                                <condition id="checkCounter">
-                                                                    <string id="id">state</string>
-                                                                    <string id="value">10</string>
-                                                                    <string id="compare method" values="valuecompare">equal</string>
-                                                                </condition>
-                                                            </or>
-                                                        </orblock>
-                                                    </normal>
-                                                </condition>
-                                            </normal>
                                             <else>
                                                 <orblock>
                                                     <string id="Comment">Running away -&gt; don&apos;t aim</string>
@@ -625,262 +664,6 @@
                                     <normal>
                                         <andblock>
                                             <string id="Comment">Don&apos;t attack charging Spy</string>
-                                            <normal>
-                                                <condition id="isCharacterInArea">
-                                                    <string id="groups" values="target receive groups" multiselect="true">PLAYERS;;</string>
-                                                    <string id="teams" values="teams" multiselect="true">ENEMY_TEAM;;</string>
-                                                    <string id="class">spy</string>
-                                                    <string id="condition" values="charactervaluesCheckable">health</string>
-                                                    <string id="comparison" values="valuecompare">greater or equal</string>
-                                                    <float id="value">0.00</float>
-                                                    <string id="character minimum">2</string>
-                                                    <float id="xOffset">0.00</float>
-                                                    <float id="yOffset">0.00</float>
-                                                    <float id="width">50.00</float>
-                                                    <float id="height">50.00</float>
-                                                    <string id="check line of sight" values="yesno">no</string>
-                                                    <string id="Comment">Not accurate with multiple Spy&apos;s</string>
-                                                    <normal>
-                                                        <andblock>
-                                                            <normal>
-                                                                <action id="aimStickAtTarget">
-                                                                    <float id="duration seconds">0.12</float>
-                                                                    <string id="only aim when needed" values="yesno">no</string>
-                                                                </action>
-                                                                <sequence>
-                                                                    <string id="Is blocking">no</string>
-                                                                    <normal>
-                                                                        <action id="pressButton">
-                                                                            <string id="button" values="buttons">FACE_RIGHT</string>
-                                                                            <float id="duration in seconds">0.01</float>
-                                                                        </action>
-                                                                        <action id="wait">
-                                                                            <float id="time">0.38</float>
-                                                                        </action>
-                                                                        <condition id="isTargetInArea">
-                                                                            <string id="condition" values="yesno">yes</string>
-                                                                            <float id="xOffset">0.00</float>
-                                                                            <float id="yOffset">0.00</float>
-                                                                            <float id="width">0.10</float>
-                                                                            <float id="height">0.10</float>
-                                                                            <string id="check line of sight" values="yesno">no</string>
-                                                                            <string id="ignore invisibility" values="yesno">no</string>
-                                                                            <normal>
-                                                                                <action id="log">
-                                                                                    <string id="text">BALL 0.05</string>
-                                                                                    <string id="counter"></string>
-                                                                                    <string id="bool"></string>
-                                                                                </action>
-                                                                                <action id="pressButton">
-                                                                                    <string id="button" values="buttons">FACE_RIGHT</string>
-                                                                                    <float id="duration in seconds">0.01</float>
-                                                                                </action>
-                                                                            </normal>
-                                                                            <else>
-                                                                                <sequence>
-                                                                                    <string id="Is blocking">no</string>
-                                                                                    <normal>
-                                                                                        <action id="wait">
-                                                                                            <float id="time">0.12</float>
-                                                                                        </action>
-                                                                                        <condition id="isTargetInArea">
-                                                                                            <string id="condition" values="yesno">yes</string>
-                                                                                            <float id="xOffset">0.00</float>
-                                                                                            <float id="yOffset">0.00</float>
-                                                                                            <float id="width">0.20</float>
-                                                                                            <float id="height">0.20</float>
-                                                                                            <string id="check line of sight" values="yesno">no</string>
-                                                                                            <string id="ignore invisibility" values="yesno">no</string>
-                                                                                            <normal>
-                                                                                                <action id="log">
-                                                                                                    <string id="text">BALL 0.10</string>
-                                                                                                    <string id="counter"></string>
-                                                                                                    <string id="bool"></string>
-                                                                                                </action>
-                                                                                                <action id="pressButton">
-                                                                                                    <string id="button" values="buttons">FACE_RIGHT</string>
-                                                                                                    <float id="duration in seconds">0.01</float>
-                                                                                                </action>
-                                                                                            </normal>
-                                                                                            <else>
-                                                                                                <sequence>
-                                                                                                    <string id="Is blocking">no</string>
-                                                                                                    <normal>
-                                                                                                        <action id="wait">
-                                                                                                            <float id="time">0.12</float>
-                                                                                                        </action>
-                                                                                                        <condition id="isTargetInArea">
-                                                                                                            <string id="condition" values="yesno">yes</string>
-                                                                                                            <float id="xOffset">0.00</float>
-                                                                                                            <float id="yOffset">0.00</float>
-                                                                                                            <float id="width">0.30</float>
-                                                                                                            <float id="height">0.30</float>
-                                                                                                            <string id="check line of sight" values="yesno">no</string>
-                                                                                                            <string id="ignore invisibility" values="yesno">no</string>
-                                                                                                            <normal>
-                                                                                                                <action id="log">
-                                                                                                                    <string id="text">BALL 0.15</string>
-                                                                                                                    <string id="counter"></string>
-                                                                                                                    <string id="bool"></string>
-                                                                                                                </action>
-                                                                                                                <action id="pressButton">
-                                                                                                                    <string id="button" values="buttons">FACE_RIGHT</string>
-                                                                                                                    <float id="duration in seconds">0.01</float>
-                                                                                                                </action>
-                                                                                                            </normal>
-                                                                                                            <else>
-                                                                                                                <sequence>
-                                                                                                                    <string id="Is blocking">no</string>
-                                                                                                                    <normal>
-                                                                                                                        <action id="wait">
-                                                                                                                            <float id="time">0.12</float>
-                                                                                                                        </action>
-                                                                                                                        <condition id="isTargetInArea">
-                                                                                                                            <string id="condition" values="yesno">yes</string>
-                                                                                                                            <float id="xOffset">0.00</float>
-                                                                                                                            <float id="yOffset">0.00</float>
-                                                                                                                            <float id="width">0.40</float>
-                                                                                                                            <float id="height">0.40</float>
-                                                                                                                            <string id="check line of sight" values="yesno">no</string>
-                                                                                                                            <string id="ignore invisibility" values="yesno">no</string>
-                                                                                                                            <normal>
-                                                                                                                                <action id="log">
-                                                                                                                                    <string id="text">BALL 0.20</string>
-                                                                                                                                    <string id="counter"></string>
-                                                                                                                                    <string id="bool"></string>
-                                                                                                                                </action>
-                                                                                                                                <action id="pressButton">
-                                                                                                                                    <string id="button" values="buttons">FACE_RIGHT</string>
-                                                                                                                                    <float id="duration in seconds">0.01</float>
-                                                                                                                                </action>
-                                                                                                                            </normal>
-                                                                                                                            <else>
-                                                                                                                                <sequence>
-                                                                                                                                    <string id="Is blocking">no</string>
-                                                                                                                                    <normal>
-                                                                                                                                        <action id="wait">
-                                                                                                                                            <float id="time">0.12</float>
-                                                                                                                                        </action>
-                                                                                                                                        <condition id="isTargetInArea">
-                                                                                                                                            <string id="condition" values="yesno">yes</string>
-                                                                                                                                            <float id="xOffset">0.00</float>
-                                                                                                                                            <float id="yOffset">0.00</float>
-                                                                                                                                            <float id="width">0.50</float>
-                                                                                                                                            <float id="height">0.50</float>
-                                                                                                                                            <string id="check line of sight" values="yesno">no</string>
-                                                                                                                                            <string id="ignore invisibility" values="yesno">no</string>
-                                                                                                                                            <normal>
-                                                                                                                                                <action id="log">
-                                                                                                                                                    <string id="text">BALL 0.25</string>
-                                                                                                                                                    <string id="counter"></string>
-                                                                                                                                                    <string id="bool"></string>
-                                                                                                                                                </action>
-                                                                                                                                                <action id="pressButton">
-                                                                                                                                                    <string id="button" values="buttons">FACE_RIGHT</string>
-                                                                                                                                                    <float id="duration in seconds">0.01</float>
-                                                                                                                                                </action>
-                                                                                                                                            </normal>
-                                                                                                                                            <else>
-                                                                                                                                                <sequence>
-                                                                                                                                                    <string id="Is blocking">no</string>
-                                                                                                                                                    <normal>
-                                                                                                                                                        <action id="wait">
-                                                                                                                                                            <float id="time">0.12</float>
-                                                                                                                                                        </action>
-                                                                                                                                                        <condition id="isTargetInArea">
-                                                                                                                                                            <string id="condition" values="yesno">yes</string>
-                                                                                                                                                            <float id="xOffset">0.00</float>
-                                                                                                                                                            <float id="yOffset">0.00</float>
-                                                                                                                                                            <float id="width">0.60</float>
-                                                                                                                                                            <float id="height">0.60</float>
-                                                                                                                                                            <string id="check line of sight" values="yesno">no</string>
-                                                                                                                                                            <string id="ignore invisibility" values="yesno">no</string>
-                                                                                                                                                            <normal>
-                                                                                                                                                                <action id="log">
-                                                                                                                                                                    <string id="text">BALL 0.30</string>
-                                                                                                                                                                    <string id="counter"></string>
-                                                                                                                                                                    <string id="bool"></string>
-                                                                                                                                                                </action>
-                                                                                                                                                                <action id="pressButton">
-                                                                                                                                                                    <string id="button" values="buttons">FACE_RIGHT</string>
-                                                                                                                                                                    <float id="duration in seconds">0.01</float>
-                                                                                                                                                                </action>
-                                                                                                                                                            </normal>
-                                                                                                                                                            <else>
-                                                                                                                                                                <sequence>
-                                                                                                                                                                    <string id="Is blocking">no</string>
-                                                                                                                                                                    <normal>
-                                                                                                                                                                        <action id="wait">
-                                                                                                                                                                            <float id="time">0.12</float>
-                                                                                                                                                                        </action>
-                                                                                                                                                                        <condition id="isTargetInArea">
-                                                                                                                                                                            <string id="condition" values="yesno">yes</string>
-                                                                                                                                                                            <float id="xOffset">0.00</float>
-                                                                                                                                                                            <float id="yOffset">0.00</float>
-                                                                                                                                                                            <float id="width">0.70</float>
-                                                                                                                                                                            <float id="height">0.70</float>
-                                                                                                                                                                            <string id="check line of sight" values="yesno">no</string>
-                                                                                                                                                                            <string id="ignore invisibility" values="yesno">no</string>
-                                                                                                                                                                            <normal>
-                                                                                                                                                                                <action id="log">
-                                                                                                                                                                                    <string id="text">BALL 0.35</string>
-                                                                                                                                                                                    <string id="counter"></string>
-                                                                                                                                                                                    <string id="bool"></string>
-                                                                                                                                                                                </action>
-                                                                                                                                                                                <action id="pressButton">
-                                                                                                                                                                                    <string id="button" values="buttons">FACE_RIGHT</string>
-                                                                                                                                                                                    <float id="duration in seconds">0.01</float>
-                                                                                                                                                                                </action>
-                                                                                                                                                                            </normal>
-                                                                                                                                                                        </condition>
-                                                                                                                                                                    </normal>
-                                                                                                                                                                </sequence>
-                                                                                                                                                            </else>
-                                                                                                                                                        </condition>
-                                                                                                                                                    </normal>
-                                                                                                                                                </sequence>
-                                                                                                                                            </else>
-                                                                                                                                        </condition>
-                                                                                                                                    </normal>
-                                                                                                                                </sequence>
-                                                                                                                            </else>
-                                                                                                                        </condition>
-                                                                                                                    </normal>
-                                                                                                                </sequence>
-                                                                                                            </else>
-                                                                                                        </condition>
-                                                                                                    </normal>
-                                                                                                </sequence>
-                                                                                            </else>
-                                                                                        </condition>
-                                                                                    </normal>
-                                                                                </sequence>
-                                                                            </else>
-                                                                        </condition>
-                                                                    </normal>
-                                                                </sequence>
-                                                            </normal>
-                                                            <or>
-                                                                <condition id="isTargetType">
-                                                                    <string id="condition" values="yesno">yes</string>
-                                                                    <string id="target groups" values="target groups" multiselect="true">PLAYERS;;</string>
-                                                                    <string id="Comment">Don&apos;t BHS creeps</string>
-                                                                </condition>
-                                                                <condition id="isTargetInArea">
-                                                                    <string id="condition" values="yesno">yes</string>
-                                                                    <float id="xOffset">0.00</float>
-                                                                    <float id="yOffset">0.00</float>
-                                                                    <float id="width">0.70</float>
-                                                                    <float id="height">0.70</float>
-                                                                    <string id="check line of sight" values="yesno">no</string>
-                                                                    <string id="ignore invisibility" values="yesno">no</string>
-                                                                    <string id="Comment">In range?</string>
-                                                                </condition>
-                                                            </or>
-                                                        </andblock>
-                                                    </normal>
-                                                </condition>
-                                            </normal>
                                             <else>
                                                 <andblock>
                                                     <normal>
@@ -1163,9 +946,9 @@
                                             </normal>
                                             <else>
                                                 <condition id="checkCounter">
-                                                    <string id="id">prevHealth</string>
-                                                    <string id="value">health</string>
-                                                    <string id="compare method" values="valuecompare">greater</string>
+                                                    <string id="id">prevHealth - Health</string>
+                                                    <string id="value">15</string>
+                                                    <string id="compare method" values="valuecompare">greater or equal</string>
                                                     <string id="Comment">Losing health fast?</string>
                                                     <normal>
                                                         <action id="pressButton">
@@ -1680,43 +1463,6 @@
                                             <normal>
                                                 <andblock>
                                                     <string id="Comment">Don&apos;t attack charging Spy</string>
-                                                    <normal>
-                                                        <condition id="isCharacterInArea">
-                                                            <string id="groups" values="target receive groups" multiselect="true">PLAYERS;;</string>
-                                                            <string id="teams" values="teams" multiselect="true">ENEMY_TEAM;;</string>
-                                                            <string id="class">spy</string>
-                                                            <string id="condition" values="charactervaluesCheckable">health</string>
-                                                            <string id="comparison" values="valuecompare">greater or equal</string>
-                                                            <float id="value">0.00</float>
-                                                            <string id="character minimum">2</string>
-                                                            <float id="xOffset">0.00</float>
-                                                            <float id="yOffset">0.00</float>
-                                                            <float id="width">50.00</float>
-                                                            <float id="height">50.00</float>
-                                                            <string id="check line of sight" values="yesno">no</string>
-                                                            <string id="Comment">Not accurate with multiple Spy&apos;s</string>
-                                                            <normal>
-                                                                <sequence>
-                                                                    <string id="Is blocking">no</string>
-                                                                    <normal>
-                                                                        <action id="pressButton">
-                                                                            <string id="button" values="buttons">FACE_TOP</string>
-                                                                            <float id="duration in seconds">0.00</float>
-                                                                            <string id="Comment">Place beacon</string>
-                                                                        </action>
-                                                                        <action id="wait">
-                                                                            <float id="time">0.10</float>
-                                                                        </action>
-                                                                        <action id="pressButton">
-                                                                            <string id="button" values="buttons">FACE_TOP</string>
-                                                                            <float id="duration in seconds">0.00</float>
-                                                                            <string id="Comment">Teleport</string>
-                                                                        </action>
-                                                                    </normal>
-                                                                </sequence>
-                                                            </normal>
-                                                        </condition>
-                                                    </normal>
                                                     <else>
                                                         <sequence>
                                                             <string id="Is blocking">no</string>
@@ -2544,5 +2290,20 @@
                 </condition>
             </normal>
         </root>
+    </behaviour>
+    <behaviour>
+        <condition id="checkCharacterValue" x="3078" y="1917">
+            <string id="property" values="charactervaluesCheckable">health percentage</string>
+            <float id="value">50.00</float>
+            <string id="compare method" values="valuecompare">greater or equal</string>
+            <string id="check on" values="targetself">self</string>
+            <normal>
+                <action id="adjustCounter">
+                    <string id="id">health</string>
+                    <string id="value">50</string>
+                    <string id="adjust method" values="valueadjust">set</string>
+                </action>
+            </normal>
+        </condition>
     </behaviour>
 </enemy>
