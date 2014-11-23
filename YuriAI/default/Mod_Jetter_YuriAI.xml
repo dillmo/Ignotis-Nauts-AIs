@@ -1144,7 +1144,7 @@
                     <string id="Comment">Laser Logic</string>
                     <normal>
                         <orblock>
-                            <string id="Comment">Not running away?</string>
+                            <string id="Comment">Not running away/defending?</string>
                             <else>
                                 <andblock>
                                     <string id="Comment">Don&apos;t attack charging Spy</string>
@@ -1381,6 +1381,11 @@
                                 <condition id="checkCounter">
                                     <string id="id">state</string>
                                     <string id="value">10</string>
+                                    <string id="compare method" values="valuecompare">equal</string>
+                                </condition>
+                                <condition id="checkCounter">
+                                    <string id="id">state</string>
+                                    <string id="value">11</string>
                                     <string id="compare method" values="valuecompare">equal</string>
                                 </condition>
                                 <condition id="isInArea">
