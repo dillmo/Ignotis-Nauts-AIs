@@ -359,7 +359,7 @@
                     <string id="Comment">Standard difficulty scaling</string>
                     <normal>
                         <action id="executeBehaviourTree">
-                            <string id="fileName">Mod_RandSpyShop</string>
+                            <string id="fileName">Mod_RandSpyShop_Deathmatch</string>
                             <string id="Comment">Shop logic</string>
                             <string id="Minimized">yes</string>
                         </action>
@@ -375,7 +375,7 @@
                                     <string id="compare method" values="valuecompare">greater</string>
                                     <normal>
                                         <action id="executeBehaviourTree">
-                                            <string id="fileName">Mod_RandSpyShop</string>
+                                            <string id="fileName">Mod_RandSpyShop_Deathmatch</string>
                                             <string id="Comment">Shop logic</string>
                                             <string id="Minimized">yes</string>
                                         </action>
@@ -388,7 +388,7 @@
                                     <string id="compare method" values="valuecompare">greater</string>
                                     <normal>
                                         <action id="executeBehaviourTree">
-                                            <string id="fileName">Mod_RandSpyShop</string>
+                                            <string id="fileName">Mod_RandSpyShop_Deathmatch</string>
                                             <string id="Comment">Shop logic</string>
                                             <string id="Minimized">yes</string>
                                         </action>
@@ -2287,7 +2287,7 @@
         </root>
     </behaviour>
     <behaviour>
-        <condition id="checkCharacterValue" x="3428" y="1917">
+        <condition id="checkCharacterValue" x="3603" y="1917">
             <string id="property" values="charactervaluesCheckable">health percentage</string>
             <float id="value">50.00</float>
             <string id="compare method" values="valuecompare">greater or equal</string>
