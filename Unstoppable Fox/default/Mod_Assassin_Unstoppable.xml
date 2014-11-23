@@ -894,6 +894,13 @@
                                                     <string id="upgrade name">SpyAbsorbStartOn</string>
                                                     <string id="Comment">Absorb Shield</string>
                                                 </condition>
+                                                <condition id="checkCharacterValue">
+                                                    <string id="property" values="charactervaluesCheckable">health</string>
+                                                    <float id="value">200.00</float>
+                                                    <string id="compare method" values="valuecompare">greater</string>
+                                                    <string id="check on" values="targetself">target</string>
+                                                    <string id="Comment">But he has such low health!</string>
+                                                </condition>
                                             </or>
                                         </andblock>
                                     </normal>
@@ -951,6 +958,13 @@
                                                     <string id="team" values="teamswithnumbers">ENEMY_TEAM</string>
                                                     <string id="upgrade name">SpyAbsorbStartOn</string>
                                                     <string id="Comment">Absorb Shield</string>
+                                                </condition>
+                                                <condition id="checkCharacterValue">
+                                                    <string id="property" values="charactervaluesCheckable">health</string>
+                                                    <float id="value">200.00</float>
+                                                    <string id="compare method" values="valuecompare">greater</string>
+                                                    <string id="check on" values="targetself">target</string>
+                                                    <string id="Comment">But he has such low health!</string>
                                                 </condition>
                                             </or>
                                         </andblock>
@@ -1027,6 +1041,13 @@
                                                                             <string id="upgrade name">SpyAbsorbStartOn</string>
                                                                             <string id="Comment">Absorb Shield</string>
                                                                         </condition>
+                                                                        <condition id="checkCharacterValue">
+                                                                            <string id="property" values="charactervaluesCheckable">health</string>
+                                                                            <float id="value">200.00</float>
+                                                                            <string id="compare method" values="valuecompare">greater</string>
+                                                                            <string id="check on" values="targetself">target</string>
+                                                                            <string id="Comment">But he has such low health!</string>
+                                                                        </condition>
                                                                     </or>
                                                                 </andblock>
                                                                 <action id="adjustCounter">
@@ -1083,6 +1104,13 @@
                                                                             <string id="team" values="teamswithnumbers">ENEMY_TEAM</string>
                                                                             <string id="upgrade name">SpyAbsorbStartOn</string>
                                                                             <string id="Comment">Absorb Shield</string>
+                                                                        </condition>
+                                                                        <condition id="checkCharacterValue">
+                                                                            <string id="property" values="charactervaluesCheckable">health</string>
+                                                                            <float id="value">200.00</float>
+                                                                            <string id="compare method" values="valuecompare">greater</string>
+                                                                            <string id="check on" values="targetself">target</string>
+                                                                            <string id="Comment">But he has such low health!</string>
                                                                         </condition>
                                                                     </or>
                                                                 </andblock>
@@ -1141,6 +1169,13 @@
                                                                                     <string id="upgrade name">SpyAbsorbStartOn</string>
                                                                                     <string id="Comment">Absorb Shield</string>
                                                                                 </condition>
+                                                                                <condition id="checkCharacterValue">
+                                                                                    <string id="property" values="charactervaluesCheckable">health</string>
+                                                                                    <float id="value">200.00</float>
+                                                                                    <string id="compare method" values="valuecompare">greater</string>
+                                                                                    <string id="check on" values="targetself">target</string>
+                                                                                    <string id="Comment">But he has such low health!</string>
+                                                                                </condition>
                                                                             </or>
                                                                         </andblock>
                                                                         <action id="adjustCounter">
@@ -1197,6 +1232,13 @@
                                                                                     <string id="team" values="teamswithnumbers">ENEMY_TEAM</string>
                                                                                     <string id="upgrade name">SpyAbsorbStartOn</string>
                                                                                     <string id="Comment">Absorb Shield</string>
+                                                                                </condition>
+                                                                                <condition id="checkCharacterValue">
+                                                                                    <string id="property" values="charactervaluesCheckable">health</string>
+                                                                                    <float id="value">200.00</float>
+                                                                                    <string id="compare method" values="valuecompare">greater</string>
+                                                                                    <string id="check on" values="targetself">target</string>
+                                                                                    <string id="Comment">But he has such low health!</string>
                                                                                 </condition>
                                                                             </or>
                                                                         </andblock>
@@ -1328,6 +1370,13 @@
                                                             <string id="upgrade name">SpyAbsorbStartOn</string>
                                                             <string id="Comment">Absorb Shield</string>
                                                         </condition>
+                                                        <condition id="checkCharacterValue">
+                                                            <string id="property" values="charactervaluesCheckable">health</string>
+                                                            <float id="value">200.00</float>
+                                                            <string id="compare method" values="valuecompare">greater</string>
+                                                            <string id="check on" values="targetself">target</string>
+                                                            <string id="Comment">But he has such low health!</string>
+                                                        </condition>
                                                     </or>
                                                 </andblock>
                                             </else>
@@ -1428,6 +1477,13 @@
                                                                     <string id="upgrade name">SpyAbsorbStartOn</string>
                                                                     <string id="Comment">Absorb Shield</string>
                                                                 </condition>
+                                                                <condition id="checkCharacterValue">
+                                                                    <string id="property" values="charactervaluesCheckable">health</string>
+                                                                    <float id="value">200.00</float>
+                                                                    <string id="compare method" values="valuecompare">greater</string>
+                                                                    <string id="check on" values="targetself">target</string>
+                                                                    <string id="Comment">But he has such low health!</string>
+                                                                </condition>
                                                             </or>
                                                         </andblock>
                                                         <action id="adjustCounter">
@@ -1484,6 +1540,13 @@
                                                                     <string id="team" values="teamswithnumbers">ENEMY_TEAM</string>
                                                                     <string id="upgrade name">SpyAbsorbStartOn</string>
                                                                     <string id="Comment">Absorb Shield</string>
+                                                                </condition>
+                                                                <condition id="checkCharacterValue">
+                                                                    <string id="property" values="charactervaluesCheckable">health</string>
+                                                                    <float id="value">200.00</float>
+                                                                    <string id="compare method" values="valuecompare">greater</string>
+                                                                    <string id="check on" values="targetself">target</string>
+                                                                    <string id="Comment">But he has such low health!</string>
                                                                 </condition>
                                                             </or>
                                                         </andblock>

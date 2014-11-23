@@ -1,0 +1,1412 @@
+<?xml version="1.0" ?>
+<enemy>
+    <behaviour>
+        <root x="110" y="40">
+            <normal>
+                <condition id="once">
+                    <string id="Comment">Determine build</string>
+                    <normal>
+                        <orblock>
+                            <string id="Comment">Med-i&apos;-can</string>
+                            <normal>
+                                <action id="setBool">
+                                    <string id="id">p4</string>
+                                    <string id="value" values="flagtoggle">yes</string>
+                                </action>
+                                <action id="setBool">
+                                    <string id="id">p5</string>
+                                    <string id="value" values="flagtoggle">yes</string>
+                                </action>
+                                <action id="setBool">
+                                    <string id="id">p8</string>
+                                    <string id="value" values="flagtoggle">no</string>
+                                </action>
+                            </normal>
+                            <else>
+                                <action id="setBool">
+                                    <string id="id">p4</string>
+                                    <string id="value" values="flagtoggle">no</string>
+                                </action>
+                                <action id="setBool">
+                                    <string id="id">p5</string>
+                                    <string id="value" values="flagtoggle">no</string>
+                                </action>
+                                <action id="setBool">
+                                    <string id="id">p8</string>
+                                    <string id="value" values="flagtoggle">yes</string>
+                                </action>
+                            </else>
+                            <or>
+                                <condition id="doesClassExist">
+                                    <string id="teams" values="teams" multiselect="true">ENEMY_TEAM;;</string>
+                                    <string id="class">Maw</string>
+                                </condition>
+                                <condition id="isUpgradeEnabled">
+                                    <string id="condition" values="yesno">yes</string>
+                                    <string id="upgrade name">Healthregen1</string>
+                                </condition>
+                            </or>
+                        </orblock>
+                        <andblock>
+                            <string id="Comment">I should be a pusher</string>
+                            <normal>
+                                <action id="setBool">
+                                    <string id="id">isPusher</string>
+                                    <string id="value" values="flagtoggle">yes</string>
+                                </action>
+                                <action id="setBool">
+                                    <string id="id">isSupport</string>
+                                    <string id="value" values="flagtoggle">no</string>
+                                </action>
+                                <action id="setBool">
+                                    <string id="id">isHarasser</string>
+                                    <string id="value" values="flagtoggle">no</string>
+                                </action>
+                                <andblock>
+                                    <string id="Comment">I should be a fighter</string>
+                                    <normal>
+                                        <action id="setBool">
+                                            <string id="id">isDamageDealer</string>
+                                            <string id="value" values="flagtoggle">no</string>
+                                        </action>
+                                        <action id="setBool">
+                                            <string id="id">isFighter</string>
+                                            <string id="value" values="flagtoggle">yes</string>
+                                        </action>
+                                        <action id="setBool">
+                                            <string id="id">isInitiator</string>
+                                            <string id="value" values="flagtoggle">yes</string>
+                                        </action>
+                                    </normal>
+                                    <else>
+                                        <andblock>
+                                            <string id="Comment">I should be a damage dealer</string>
+                                            <normal>
+                                                <action id="setBool">
+                                                    <string id="id">isDamageDealer</string>
+                                                    <string id="value" values="flagtoggle">yes</string>
+                                                </action>
+                                                <action id="setBool">
+                                                    <string id="id">isFighter</string>
+                                                    <string id="value" values="flagtoggle">no</string>
+                                                </action>
+                                                <action id="setBool">
+                                                    <string id="id">isInitiator</string>
+                                                    <string id="value" values="flagtoggle">no</string>
+                                                </action>
+                                            </normal>
+                                            <else>
+                                                <orblock>
+                                                    <string id="Comment">I should be a fighter</string>
+                                                    <normal>
+                                                        <orblock>
+                                                            <string id="Comment">I should be a damage dealer</string>
+                                                            <normal>
+                                                                <sequence>
+                                                                    <string id="Is blocking" values="yesno">no</string>
+                                                                    <string id="Comment">Choose randomly</string>
+                                                                    <normal>
+                                                                        <action id="wait">
+                                                                            <float id="time">0.50</float>
+                                                                        </action>
+                                                                        <condition id="random">
+                                                                            <string id="amount">2</string>
+                                                                            <normal>
+                                                                                <action id="setBool">
+                                                                                    <string id="id">isDamageDealer</string>
+                                                                                    <string id="value" values="flagtoggle">no</string>
+                                                                                </action>
+                                                                                <action id="setBool">
+                                                                                    <string id="id">isFighter</string>
+                                                                                    <string id="value" values="flagtoggle">yes</string>
+                                                                                </action>
+                                                                                <action id="setBool">
+                                                                                    <string id="id">isInitiator</string>
+                                                                                    <string id="value" values="flagtoggle">yes</string>
+                                                                                </action>
+                                                                            </normal>
+                                                                            <else>
+                                                                                <action id="setBool">
+                                                                                    <string id="id">isDamageDealer</string>
+                                                                                    <string id="value" values="flagtoggle">yes</string>
+                                                                                </action>
+                                                                                <action id="setBool">
+                                                                                    <string id="id">isFighter</string>
+                                                                                    <string id="value" values="flagtoggle">no</string>
+                                                                                </action>
+                                                                                <action id="setBool">
+                                                                                    <string id="id">isInitiator</string>
+                                                                                    <string id="value" values="flagtoggle">no</string>
+                                                                                </action>
+                                                                            </else>
+                                                                        </condition>
+                                                                    </normal>
+                                                                </sequence>
+                                                            </normal>
+                                                            <else>
+                                                                <action id="setBool">
+                                                                    <string id="id">isDamageDealer</string>
+                                                                    <string id="value" values="flagtoggle">yes</string>
+                                                                </action>
+                                                                <action id="setBool">
+                                                                    <string id="id">isFighter</string>
+                                                                    <string id="value" values="flagtoggle">no</string>
+                                                                </action>
+                                                                <action id="setBool">
+                                                                    <string id="id">isInitiator</string>
+                                                                    <string id="value" values="flagtoggle">no</string>
+                                                                </action>
+                                                            </else>
+                                                            <or>
+                                                                <condition id="doesClassExist">
+                                                                    <string id="teams" values="teams" multiselect="true">OWN_TEAM;;</string>
+                                                                    <string id="class">Chameleon</string>
+                                                                </condition>
+                                                                <condition id="doesClassExist">
+                                                                    <string id="teams" values="teams" multiselect="true">OWN_TEAM;;</string>
+                                                                    <string id="class">Maw</string>
+                                                                </condition>
+                                                                <condition id="doesClassExist">
+                                                                    <string id="teams" values="teams" multiselect="true">OWN_TEAM;;</string>
+                                                                    <string id="class">Vampire</string>
+                                                                </condition>
+                                                                <condition id="doesClassExist">
+                                                                    <string id="teams" values="teams" multiselect="true">OWN_TEAM;;</string>
+                                                                    <string id="class">Commando</string>
+                                                                </condition>
+                                                                <condition id="doesClassExist">
+                                                                    <string id="teams" values="teams" multiselect="true">OWN_TEAM;;</string>
+                                                                    <string id="class">Shaman</string>
+                                                                </condition>
+                                                            </or>
+                                                        </orblock>
+                                                    </normal>
+                                                    <else>
+                                                        <action id="setBool">
+                                                            <string id="id">isDamageDealer</string>
+                                                            <string id="value" values="flagtoggle">no</string>
+                                                        </action>
+                                                        <action id="setBool">
+                                                            <string id="id">isFighter</string>
+                                                            <string id="value" values="flagtoggle">yes</string>
+                                                        </action>
+                                                        <action id="setBool">
+                                                            <string id="id">isInitiator</string>
+                                                            <string id="value" values="flagtoggle">yes</string>
+                                                        </action>
+                                                    </else>
+                                                    <or>
+                                                        <condition id="doesClassExist">
+                                                            <string id="teams" values="teams" multiselect="true">OWN_TEAM;;</string>
+                                                            <string id="class">Cowboy</string>
+                                                        </condition>
+                                                        <condition id="doesClassExist">
+                                                            <string id="teams" values="teams" multiselect="true">OWN_TEAM;;</string>
+                                                            <string id="class">Blazer</string>
+                                                        </condition>
+                                                        <condition id="doesClassExist">
+                                                            <string id="teams" values="teams" multiselect="true">OWN_TEAM;;</string>
+                                                            <string id="class">Brute</string>
+                                                        </condition>
+                                                        <condition id="doesClassExist">
+                                                            <string id="teams" values="teams" multiselect="true">OWN_TEAM;;</string>
+                                                            <string id="class">Vampire</string>
+                                                        </condition>
+                                                        <condition id="doesClassExist">
+                                                            <string id="teams" values="teams" multiselect="true">OWN_TEAM;;</string>
+                                                            <string id="class">Captain</string>
+                                                        </condition>
+                                                        <condition id="doesClassExist">
+                                                            <string id="teams" values="teams" multiselect="true">OWN_TEAM;;</string>
+                                                            <string id="class">Commando</string>
+                                                        </condition>
+                                                    </or>
+                                                </orblock>
+                                            </else>
+                                            <or>
+                                                <condition id="isUpgradeEnabled">
+                                                    <string id="condition" values="yesno">yes</string>
+                                                    <string id="upgrade name">SummonerDroneDamage1</string>
+                                                </condition>
+                                                <condition id="isUpgradeEnabled">
+                                                    <string id="condition" values="yesno">yes</string>
+                                                    <string id="upgrade name">SummonerHealtotemDamage</string>
+                                                </condition>
+                                            </or>
+                                        </andblock>
+                                    </else>
+                                    <or>
+                                        <condition id="isUpgradeEnabled">
+                                            <string id="condition" values="yesno">yes</string>
+                                            <string id="upgrade name">SummonerDroneDamage1</string>
+                                        </condition>
+                                        <condition id="isUpgradeEnabled">
+                                            <string id="condition" values="yesno">yes</string>
+                                            <string id="upgrade name">SummonerDroneExplode</string>
+                                        </condition>
+                                    </or>
+                                </andblock>
+                            </normal>
+                            <else>
+                                <andblock>
+                                    <string id="Comment">I should be a support</string>
+                                    <normal>
+                                        <action id="setBool">
+                                            <string id="id">isPusher</string>
+                                            <string id="value" values="flagtoggle">no</string>
+                                        </action>
+                                        <action id="setBool">
+                                            <string id="id">isSupport</string>
+                                            <string id="value" values="flagtoggle">yes</string>
+                                        </action>
+                                        <action id="setBool">
+                                            <string id="id">isHarasser</string>
+                                            <string id="value" values="flagtoggle">no</string>
+                                        </action>
+                                        <action id="setBool">
+                                            <string id="id">isInitiator</string>
+                                            <string id="value" values="flagtoggle">no</string>
+                                        </action>
+                                        <andblock>
+                                            <string id="Comment">I should be a fighter</string>
+                                            <normal>
+                                                <action id="setBool">
+                                                    <string id="id">isDamageDealer</string>
+                                                    <string id="value" values="flagtoggle">no</string>
+                                                </action>
+                                                <action id="setBool">
+                                                    <string id="id">isFighter</string>
+                                                    <string id="value" values="flagtoggle">yes</string>
+                                                </action>
+                                            </normal>
+                                            <else>
+                                                <andblock>
+                                                    <string id="Comment">I should be a damage dealer</string>
+                                                    <normal>
+                                                        <action id="setBool">
+                                                            <string id="id">isDamageDealer</string>
+                                                            <string id="value" values="flagtoggle">yes</string>
+                                                        </action>
+                                                        <action id="setBool">
+                                                            <string id="id">isFighter</string>
+                                                            <string id="value" values="flagtoggle">no</string>
+                                                        </action>
+                                                    </normal>
+                                                    <else>
+                                                        <orblock>
+                                                            <string id="Comment">I should be a fighter</string>
+                                                            <normal>
+                                                                <orblock>
+                                                                    <string id="Comment">I should be a damage dealer</string>
+                                                                    <normal>
+                                                                        <sequence>
+                                                                            <string id="Is blocking">no</string>
+                                                                            <string id="Comment">Choose randomly</string>
+                                                                            <normal>
+                                                                                <action id="wait">
+                                                                                    <float id="time">0.50</float>
+                                                                                </action>
+                                                                                <condition id="random">
+                                                                                    <string id="amount">2</string>
+                                                                                    <normal>
+                                                                                        <action id="setBool">
+                                                                                            <string id="id">isDamageDealer</string>
+                                                                                            <string id="value" values="flagtoggle">no</string>
+                                                                                        </action>
+                                                                                        <action id="setBool">
+                                                                                            <string id="id">isFighter</string>
+                                                                                            <string id="value" values="flagtoggle">yes</string>
+                                                                                        </action>
+                                                                                    </normal>
+                                                                                    <else>
+                                                                                        <action id="setBool">
+                                                                                            <string id="id">isDamageDealer</string>
+                                                                                            <string id="value" values="flagtoggle">yes</string>
+                                                                                        </action>
+                                                                                        <action id="setBool">
+                                                                                            <string id="id">isFighter</string>
+                                                                                            <string id="value" values="flagtoggle">no</string>
+                                                                                        </action>
+                                                                                    </else>
+                                                                                </condition>
+                                                                            </normal>
+                                                                        </sequence>
+                                                                    </normal>
+                                                                    <else>
+                                                                        <action id="setBool">
+                                                                            <string id="id">isDamageDealer</string>
+                                                                            <string id="value" values="flagtoggle">yes</string>
+                                                                        </action>
+                                                                        <action id="setBool">
+                                                                            <string id="id">isFighter</string>
+                                                                            <string id="value" values="flagtoggle">no</string>
+                                                                        </action>
+                                                                    </else>
+                                                                    <or>
+                                                                        <condition id="doesClassExist">
+                                                                            <string id="teams" values="teams" multiselect="true">OWN_TEAM;;</string>
+                                                                            <string id="class">Chameleon</string>
+                                                                        </condition>
+                                                                        <condition id="doesClassExist">
+                                                                            <string id="teams" values="teams" multiselect="true">OWN_TEAM;;</string>
+                                                                            <string id="class">Maw</string>
+                                                                        </condition>
+                                                                        <condition id="doesClassExist">
+                                                                            <string id="teams" values="teams" multiselect="true">OWN_TEAM;;</string>
+                                                                            <string id="class">Vampire</string>
+                                                                        </condition>
+                                                                        <condition id="doesClassExist">
+                                                                            <string id="teams" values="teams" multiselect="true">OWN_TEAM;;</string>
+                                                                            <string id="class">Commando</string>
+                                                                        </condition>
+                                                                        <condition id="doesClassExist">
+                                                                            <string id="teams" values="teams" multiselect="true">OWN_TEAM;;</string>
+                                                                            <string id="class">Shaman</string>
+                                                                        </condition>
+                                                                    </or>
+                                                                </orblock>
+                                                            </normal>
+                                                            <else>
+                                                                <action id="setBool">
+                                                                    <string id="id">isDamageDealer</string>
+                                                                    <string id="value" values="flagtoggle">no</string>
+                                                                </action>
+                                                                <action id="setBool">
+                                                                    <string id="id">isFighter</string>
+                                                                    <string id="value" values="flagtoggle">yes</string>
+                                                                </action>
+                                                            </else>
+                                                            <or>
+                                                                <condition id="doesClassExist">
+                                                                    <string id="teams" values="teams" multiselect="true">OWN_TEAM;;</string>
+                                                                    <string id="class">Cowboy</string>
+                                                                </condition>
+                                                                <condition id="doesClassExist">
+                                                                    <string id="teams" values="teams" multiselect="true">OWN_TEAM;;</string>
+                                                                    <string id="class">Blazer</string>
+                                                                </condition>
+                                                                <condition id="doesClassExist">
+                                                                    <string id="teams" values="teams" multiselect="true">OWN_TEAM;;</string>
+                                                                    <string id="class">Brute</string>
+                                                                </condition>
+                                                                <condition id="doesClassExist">
+                                                                    <string id="teams" values="teams" multiselect="true">OWN_TEAM;;</string>
+                                                                    <string id="class">Vampire</string>
+                                                                </condition>
+                                                                <condition id="doesClassExist">
+                                                                    <string id="teams" values="teams" multiselect="true">OWN_TEAM;;</string>
+                                                                    <string id="class">Captain</string>
+                                                                </condition>
+                                                                <condition id="doesClassExist">
+                                                                    <string id="teams" values="teams" multiselect="true">OWN_TEAM;;</string>
+                                                                    <string id="class">Commando</string>
+                                                                </condition>
+                                                            </or>
+                                                        </orblock>
+                                                    </else>
+                                                    <or>
+                                                        <condition id="isUpgradeEnabled">
+                                                            <string id="condition" values="yesno">yes</string>
+                                                            <string id="upgrade name">SummonerDroneDamage1</string>
+                                                        </condition>
+                                                        <condition id="isUpgradeEnabled">
+                                                            <string id="condition" values="yesno">yes</string>
+                                                            <string id="upgrade name">SummonerHealtotemDamage</string>
+                                                        </condition>
+                                                    </or>
+                                                </andblock>
+                                            </else>
+                                            <or>
+                                                <condition id="isUpgradeEnabled">
+                                                    <string id="condition" values="yesno">yes</string>
+                                                    <string id="upgrade name">SummonerDroneDamage1</string>
+                                                </condition>
+                                                <condition id="isUpgradeEnabled">
+                                                    <string id="condition" values="yesno">yes</string>
+                                                    <string id="upgrade name">SummonerDroneExplode</string>
+                                                </condition>
+                                            </or>
+                                        </andblock>
+                                    </normal>
+                                    <else>
+                                        <andblock>
+                                            <string id="Comment">I should be a harasser</string>
+                                            <normal>
+                                                <action id="setBool">
+                                                    <string id="id">isPusher</string>
+                                                    <string id="value" values="flagtoggle">no</string>
+                                                </action>
+                                                <action id="setBool">
+                                                    <string id="id">isSupport</string>
+                                                    <string id="value" values="flagtoggle">no</string>
+                                                </action>
+                                                <action id="setBool">
+                                                    <string id="id">isHarasser</string>
+                                                    <string id="value" values="flagtoggle">yes</string>
+                                                </action>
+                                                <action id="setBool">
+                                                    <string id="id">isFighter</string>
+                                                    <string id="value" values="flagtoggle">no</string>
+                                                </action>
+                                                <action id="setBool">
+                                                    <string id="id">isDamageDealer</string>
+                                                    <string id="value" values="flagtoggle">no</string>
+                                                </action>
+                                                <action id="setBool">
+                                                    <string id="id">isInitiator</string>
+                                                    <string id="value" values="flagtoggle">yes</string>
+                                                </action>
+                                            </normal>
+                                            <else>
+                                                <orblock>
+                                                    <string id="Comment">I should be a pusher</string>
+                                                    <normal>
+                                                        <orblock>
+                                                            <string id="Comment">I should be a support</string>
+                                                            <normal>
+                                                                <orblock>
+                                                                    <string id="Comment">I should be a harasser</string>
+                                                                    <normal>
+                                                                        <sequence>
+                                                                            <string id="Is blocking" values="yesno">no</string>
+                                                                            <string id="Comment">Choose randomly</string>
+                                                                            <normal>
+                                                                                <action id="wait">
+                                                                                    <float id="time">0.50</float>
+                                                                                </action>
+                                                                                <condition id="random">
+                                                                                    <string id="amount">3</string>
+                                                                                    <normal>
+                                                                                        <action id="setBool">
+                                                                                            <string id="id">isPusher</string>
+                                                                                            <string id="value" values="flagtoggle">yes</string>
+                                                                                        </action>
+                                                                                        <action id="setBool">
+                                                                                            <string id="id">isSupport</string>
+                                                                                            <string id="value" values="flagtoggle">no</string>
+                                                                                        </action>
+                                                                                        <action id="setBool">
+                                                                                            <string id="id">isHarasser</string>
+                                                                                            <string id="value" values="flagtoggle">no</string>
+                                                                                        </action>
+                                                                                        <andblock>
+                                                                                            <string id="Comment">I should be a fighter</string>
+                                                                                            <normal>
+                                                                                                <action id="setBool">
+                                                                                                    <string id="id">isDamageDealer</string>
+                                                                                                    <string id="value" values="flagtoggle">no</string>
+                                                                                                </action>
+                                                                                                <action id="setBool">
+                                                                                                    <string id="id">isFighter</string>
+                                                                                                    <string id="value" values="flagtoggle">yes</string>
+                                                                                                </action>
+                                                                                                <action id="setBool">
+                                                                                                    <string id="id">isInitiator</string>
+                                                                                                    <string id="value" values="flagtoggle">yes</string>
+                                                                                                </action>
+                                                                                            </normal>
+                                                                                            <else>
+                                                                                                <andblock>
+                                                                                                    <string id="Comment">I should be a damage dealer</string>
+                                                                                                    <normal>
+                                                                                                        <action id="setBool">
+                                                                                                            <string id="id">isDamageDealer</string>
+                                                                                                            <string id="value" values="flagtoggle">yes</string>
+                                                                                                        </action>
+                                                                                                        <action id="setBool">
+                                                                                                            <string id="id">isFighter</string>
+                                                                                                            <string id="value" values="flagtoggle">no</string>
+                                                                                                        </action>
+                                                                                                        <action id="setBool">
+                                                                                                            <string id="id">isInitiator</string>
+                                                                                                            <string id="value" values="flagtoggle">no</string>
+                                                                                                        </action>
+                                                                                                    </normal>
+                                                                                                    <else>
+                                                                                                        <orblock>
+                                                                                                            <string id="Comment">I should be a fighter</string>
+                                                                                                            <normal>
+                                                                                                                <orblock>
+                                                                                                                    <string id="Comment">I should be a damage dealer</string>
+                                                                                                                    <normal>
+                                                                                                                        <sequence>
+                                                                                                                            <string id="Is blocking">no</string>
+                                                                                                                            <string id="Comment">Choose randomly</string>
+                                                                                                                            <normal>
+                                                                                                                                <action id="wait">
+                                                                                                                                    <float id="time">0.50</float>
+                                                                                                                                </action>
+                                                                                                                                <condition id="random">
+                                                                                                                                    <string id="amount">2</string>
+                                                                                                                                    <normal>
+                                                                                                                                        <action id="setBool">
+                                                                                                                                            <string id="id">isDamageDealer</string>
+                                                                                                                                            <string id="value" values="flagtoggle">no</string>
+                                                                                                                                        </action>
+                                                                                                                                        <action id="setBool">
+                                                                                                                                            <string id="id">isFighter</string>
+                                                                                                                                            <string id="value" values="flagtoggle">yes</string>
+                                                                                                                                        </action>
+                                                                                                                                        <action id="setBool">
+                                                                                                                                            <string id="id">isInitiator</string>
+                                                                                                                                            <string id="value" values="flagtoggle">yes</string>
+                                                                                                                                        </action>
+                                                                                                                                    </normal>
+                                                                                                                                    <else>
+                                                                                                                                        <action id="setBool">
+                                                                                                                                            <string id="id">isDamageDealer</string>
+                                                                                                                                            <string id="value" values="flagtoggle">yes</string>
+                                                                                                                                        </action>
+                                                                                                                                        <action id="setBool">
+                                                                                                                                            <string id="id">isFighter</string>
+                                                                                                                                            <string id="value" values="flagtoggle">no</string>
+                                                                                                                                        </action>
+                                                                                                                                        <action id="setBool">
+                                                                                                                                            <string id="id">isInitiator</string>
+                                                                                                                                            <string id="value" values="flagtoggle">no</string>
+                                                                                                                                        </action>
+                                                                                                                                    </else>
+                                                                                                                                </condition>
+                                                                                                                            </normal>
+                                                                                                                        </sequence>
+                                                                                                                    </normal>
+                                                                                                                    <else>
+                                                                                                                        <action id="setBool">
+                                                                                                                            <string id="id">isDamageDealer</string>
+                                                                                                                            <string id="value" values="flagtoggle">yes</string>
+                                                                                                                        </action>
+                                                                                                                        <action id="setBool">
+                                                                                                                            <string id="id">isFighter</string>
+                                                                                                                            <string id="value" values="flagtoggle">no</string>
+                                                                                                                        </action>
+                                                                                                                        <action id="setBool">
+                                                                                                                            <string id="id">isInitiator</string>
+                                                                                                                            <string id="value" values="flagtoggle">no</string>
+                                                                                                                        </action>
+                                                                                                                    </else>
+                                                                                                                    <or>
+                                                                                                                        <condition id="doesClassExist">
+                                                                                                                            <string id="teams" values="teams" multiselect="true">OWN_TEAM;;</string>
+                                                                                                                            <string id="class">Chameleon</string>
+                                                                                                                        </condition>
+                                                                                                                        <condition id="doesClassExist">
+                                                                                                                            <string id="teams" values="teams" multiselect="true">OWN_TEAM;;</string>
+                                                                                                                            <string id="class">Maw</string>
+                                                                                                                        </condition>
+                                                                                                                        <condition id="doesClassExist">
+                                                                                                                            <string id="teams" values="teams" multiselect="true">OWN_TEAM;;</string>
+                                                                                                                            <string id="class">Vampire</string>
+                                                                                                                        </condition>
+                                                                                                                        <condition id="doesClassExist">
+                                                                                                                            <string id="teams" values="teams" multiselect="true">OWN_TEAM;;</string>
+                                                                                                                            <string id="class">Commando</string>
+                                                                                                                        </condition>
+                                                                                                                        <condition id="doesClassExist">
+                                                                                                                            <string id="teams" values="teams" multiselect="true">OWN_TEAM;;</string>
+                                                                                                                            <string id="class">Shaman</string>
+                                                                                                                        </condition>
+                                                                                                                    </or>
+                                                                                                                </orblock>
+                                                                                                            </normal>
+                                                                                                            <else>
+                                                                                                                <action id="setBool">
+                                                                                                                    <string id="id">isDamageDealer</string>
+                                                                                                                    <string id="value" values="flagtoggle">no</string>
+                                                                                                                </action>
+                                                                                                                <action id="setBool">
+                                                                                                                    <string id="id">isFighter</string>
+                                                                                                                    <string id="value" values="flagtoggle">yes</string>
+                                                                                                                </action>
+                                                                                                                <action id="setBool">
+                                                                                                                    <string id="id">isInitiator</string>
+                                                                                                                    <string id="value" values="flagtoggle">yes</string>
+                                                                                                                </action>
+                                                                                                            </else>
+                                                                                                            <or>
+                                                                                                                <condition id="doesClassExist">
+                                                                                                                    <string id="teams" values="teams" multiselect="true">OWN_TEAM;;</string>
+                                                                                                                    <string id="class">Cowboy</string>
+                                                                                                                </condition>
+                                                                                                                <condition id="doesClassExist">
+                                                                                                                    <string id="teams" values="teams" multiselect="true">OWN_TEAM;;</string>
+                                                                                                                    <string id="class">Blazer</string>
+                                                                                                                </condition>
+                                                                                                                <condition id="doesClassExist">
+                                                                                                                    <string id="teams" values="teams" multiselect="true">OWN_TEAM;;</string>
+                                                                                                                    <string id="class">Brute</string>
+                                                                                                                </condition>
+                                                                                                                <condition id="doesClassExist">
+                                                                                                                    <string id="teams" values="teams" multiselect="true">OWN_TEAM;;</string>
+                                                                                                                    <string id="class">Vampire</string>
+                                                                                                                </condition>
+                                                                                                                <condition id="doesClassExist">
+                                                                                                                    <string id="teams" values="teams" multiselect="true">OWN_TEAM;;</string>
+                                                                                                                    <string id="class">Captain</string>
+                                                                                                                </condition>
+                                                                                                                <condition id="doesClassExist">
+                                                                                                                    <string id="teams" values="teams" multiselect="true">OWN_TEAM;;</string>
+                                                                                                                    <string id="class">Commando</string>
+                                                                                                                </condition>
+                                                                                                            </or>
+                                                                                                        </orblock>
+                                                                                                    </else>
+                                                                                                    <or>
+                                                                                                        <condition id="isUpgradeEnabled">
+                                                                                                            <string id="condition" values="yesno">yes</string>
+                                                                                                            <string id="upgrade name">SummonerDroneDamage1</string>
+                                                                                                        </condition>
+                                                                                                        <condition id="isUpgradeEnabled">
+                                                                                                            <string id="condition" values="yesno">yes</string>
+                                                                                                            <string id="upgrade name">SummonerHealtotemDamage</string>
+                                                                                                        </condition>
+                                                                                                    </or>
+                                                                                                </andblock>
+                                                                                            </else>
+                                                                                            <or>
+                                                                                                <condition id="isUpgradeEnabled">
+                                                                                                    <string id="condition" values="yesno">yes</string>
+                                                                                                    <string id="upgrade name">SummonerDroneDamage1</string>
+                                                                                                </condition>
+                                                                                                <condition id="isUpgradeEnabled">
+                                                                                                    <string id="condition" values="yesno">yes</string>
+                                                                                                    <string id="upgrade name">SummonerDroneExplode</string>
+                                                                                                </condition>
+                                                                                            </or>
+                                                                                        </andblock>
+                                                                                    </normal>
+                                                                                    <else>
+                                                                                        <sequence>
+                                                                                            <string id="Is blocking">no</string>
+                                                                                            <normal>
+                                                                                                <action id="wait">
+                                                                                                    <float id="time">0.50</float>
+                                                                                                </action>
+                                                                                                <condition id="random">
+                                                                                                    <string id="amount">2</string>
+                                                                                                    <normal>
+                                                                                                        <action id="setBool">
+                                                                                                            <string id="id">isPusher</string>
+                                                                                                            <string id="value" values="flagtoggle">no</string>
+                                                                                                        </action>
+                                                                                                        <action id="setBool">
+                                                                                                            <string id="id">isSupport</string>
+                                                                                                            <string id="value" values="flagtoggle">yes</string>
+                                                                                                        </action>
+                                                                                                        <action id="setBool">
+                                                                                                            <string id="id">isHarasser</string>
+                                                                                                            <string id="value" values="flagtoggle">no</string>
+                                                                                                        </action>
+                                                                                                        <action id="setBool">
+                                                                                                            <string id="id">isInitiator</string>
+                                                                                                            <string id="value" values="flagtoggle">no</string>
+                                                                                                        </action>
+                                                                                                        <andblock>
+                                                                                                            <string id="Comment">I should be a fighter</string>
+                                                                                                            <normal>
+                                                                                                                <action id="setBool">
+                                                                                                                    <string id="id">isDamageDealer</string>
+                                                                                                                    <string id="value" values="flagtoggle">no</string>
+                                                                                                                </action>
+                                                                                                                <action id="setBool">
+                                                                                                                    <string id="id">isFighter</string>
+                                                                                                                    <string id="value" values="flagtoggle">yes</string>
+                                                                                                                </action>
+                                                                                                            </normal>
+                                                                                                            <else>
+                                                                                                                <andblock>
+                                                                                                                    <string id="Comment">I should be a damage dealer</string>
+                                                                                                                    <normal>
+                                                                                                                        <action id="setBool">
+                                                                                                                            <string id="id">isDamageDealer</string>
+                                                                                                                            <string id="value" values="flagtoggle">yes</string>
+                                                                                                                        </action>
+                                                                                                                        <action id="setBool">
+                                                                                                                            <string id="id">isFighter</string>
+                                                                                                                            <string id="value" values="flagtoggle">no</string>
+                                                                                                                        </action>
+                                                                                                                    </normal>
+                                                                                                                    <else>
+                                                                                                                        <orblock>
+                                                                                                                            <string id="Comment">I should be a fighter</string>
+                                                                                                                            <normal>
+                                                                                                                                <orblock>
+                                                                                                                                    <string id="Comment">I should be a damage dealer</string>
+                                                                                                                                    <normal>
+                                                                                                                                        <sequence>
+                                                                                                                                            <string id="Is blocking">no</string>
+                                                                                                                                            <string id="Comment">Choose randomly</string>
+                                                                                                                                            <normal>
+                                                                                                                                                <action id="wait">
+                                                                                                                                                    <float id="time">0.50</float>
+                                                                                                                                                </action>
+                                                                                                                                                <condition id="random">
+                                                                                                                                                    <string id="amount">2</string>
+                                                                                                                                                    <normal>
+                                                                                                                                                        <action id="setBool">
+                                                                                                                                                            <string id="id">isDamageDealer</string>
+                                                                                                                                                            <string id="value" values="flagtoggle">no</string>
+                                                                                                                                                        </action>
+                                                                                                                                                        <action id="setBool">
+                                                                                                                                                            <string id="id">isFighter</string>
+                                                                                                                                                            <string id="value" values="flagtoggle">yes</string>
+                                                                                                                                                        </action>
+                                                                                                                                                    </normal>
+                                                                                                                                                    <else>
+                                                                                                                                                        <action id="setBool">
+                                                                                                                                                            <string id="id">isDamageDealer</string>
+                                                                                                                                                            <string id="value" values="flagtoggle">yes</string>
+                                                                                                                                                        </action>
+                                                                                                                                                        <action id="setBool">
+                                                                                                                                                            <string id="id">isFighter</string>
+                                                                                                                                                            <string id="value" values="flagtoggle">no</string>
+                                                                                                                                                        </action>
+                                                                                                                                                    </else>
+                                                                                                                                                </condition>
+                                                                                                                                            </normal>
+                                                                                                                                        </sequence>
+                                                                                                                                    </normal>
+                                                                                                                                    <else>
+                                                                                                                                        <action id="setBool">
+                                                                                                                                            <string id="id">isDamageDealer</string>
+                                                                                                                                            <string id="value" values="flagtoggle">yes</string>
+                                                                                                                                        </action>
+                                                                                                                                        <action id="setBool">
+                                                                                                                                            <string id="id">isFighter</string>
+                                                                                                                                            <string id="value" values="flagtoggle">no</string>
+                                                                                                                                        </action>
+                                                                                                                                    </else>
+                                                                                                                                    <or>
+                                                                                                                                        <condition id="doesClassExist">
+                                                                                                                                            <string id="teams" values="teams" multiselect="true">OWN_TEAM;;</string>
+                                                                                                                                            <string id="class">Chameleon</string>
+                                                                                                                                        </condition>
+                                                                                                                                        <condition id="doesClassExist">
+                                                                                                                                            <string id="teams" values="teams" multiselect="true">OWN_TEAM;;</string>
+                                                                                                                                            <string id="class">Maw</string>
+                                                                                                                                        </condition>
+                                                                                                                                        <condition id="doesClassExist">
+                                                                                                                                            <string id="teams" values="teams" multiselect="true">OWN_TEAM;;</string>
+                                                                                                                                            <string id="class">Vampire</string>
+                                                                                                                                        </condition>
+                                                                                                                                        <condition id="doesClassExist">
+                                                                                                                                            <string id="teams" values="teams" multiselect="true">OWN_TEAM;;</string>
+                                                                                                                                            <string id="class">Commando</string>
+                                                                                                                                        </condition>
+                                                                                                                                        <condition id="doesClassExist">
+                                                                                                                                            <string id="teams" values="teams" multiselect="true">OWN_TEAM;;</string>
+                                                                                                                                            <string id="class">Shaman</string>
+                                                                                                                                        </condition>
+                                                                                                                                    </or>
+                                                                                                                                </orblock>
+                                                                                                                            </normal>
+                                                                                                                            <else>
+                                                                                                                                <action id="setBool">
+                                                                                                                                    <string id="id">isDamageDealer</string>
+                                                                                                                                    <string id="value" values="flagtoggle">no</string>
+                                                                                                                                </action>
+                                                                                                                                <action id="setBool">
+                                                                                                                                    <string id="id">isFighter</string>
+                                                                                                                                    <string id="value" values="flagtoggle">yes</string>
+                                                                                                                                </action>
+                                                                                                                            </else>
+                                                                                                                            <or>
+                                                                                                                                <condition id="doesClassExist">
+                                                                                                                                    <string id="teams" values="teams" multiselect="true">OWN_TEAM;;</string>
+                                                                                                                                    <string id="class">Cowboy</string>
+                                                                                                                                </condition>
+                                                                                                                                <condition id="doesClassExist">
+                                                                                                                                    <string id="teams" values="teams" multiselect="true">OWN_TEAM;;</string>
+                                                                                                                                    <string id="class">Blazer</string>
+                                                                                                                                </condition>
+                                                                                                                                <condition id="doesClassExist">
+                                                                                                                                    <string id="teams" values="teams" multiselect="true">OWN_TEAM;;</string>
+                                                                                                                                    <string id="class">Brute</string>
+                                                                                                                                </condition>
+                                                                                                                                <condition id="doesClassExist">
+                                                                                                                                    <string id="teams" values="teams" multiselect="true">OWN_TEAM;;</string>
+                                                                                                                                    <string id="class">Vampire</string>
+                                                                                                                                </condition>
+                                                                                                                                <condition id="doesClassExist">
+                                                                                                                                    <string id="teams" values="teams" multiselect="true">OWN_TEAM;;</string>
+                                                                                                                                    <string id="class">Captain</string>
+                                                                                                                                </condition>
+                                                                                                                                <condition id="doesClassExist">
+                                                                                                                                    <string id="teams" values="teams" multiselect="true">OWN_TEAM;;</string>
+                                                                                                                                    <string id="class">Commando</string>
+                                                                                                                                </condition>
+                                                                                                                            </or>
+                                                                                                                        </orblock>
+                                                                                                                    </else>
+                                                                                                                    <or>
+                                                                                                                        <condition id="isUpgradeEnabled">
+                                                                                                                            <string id="condition" values="yesno">yes</string>
+                                                                                                                            <string id="upgrade name">SummonerDroneDamage1</string>
+                                                                                                                        </condition>
+                                                                                                                        <condition id="isUpgradeEnabled">
+                                                                                                                            <string id="condition" values="yesno">yes</string>
+                                                                                                                            <string id="upgrade name">SummonerHealtotemDamage</string>
+                                                                                                                        </condition>
+                                                                                                                    </or>
+                                                                                                                </andblock>
+                                                                                                            </else>
+                                                                                                            <or>
+                                                                                                                <condition id="isUpgradeEnabled">
+                                                                                                                    <string id="condition" values="yesno">yes</string>
+                                                                                                                    <string id="upgrade name">SummonerDroneDamage1</string>
+                                                                                                                </condition>
+                                                                                                                <condition id="isUpgradeEnabled">
+                                                                                                                    <string id="condition" values="yesno">yes</string>
+                                                                                                                    <string id="upgrade name">SummonerDroneExplode</string>
+                                                                                                                </condition>
+                                                                                                            </or>
+                                                                                                        </andblock>
+                                                                                                    </normal>
+                                                                                                    <else>
+                                                                                                        <action id="setBool">
+                                                                                                            <string id="id">isPusher</string>
+                                                                                                            <string id="value" values="flagtoggle">no</string>
+                                                                                                        </action>
+                                                                                                        <action id="setBool">
+                                                                                                            <string id="id">isSupport</string>
+                                                                                                            <string id="value" values="flagtoggle">no</string>
+                                                                                                        </action>
+                                                                                                        <action id="setBool">
+                                                                                                            <string id="id">isHarasser</string>
+                                                                                                            <string id="value" values="flagtoggle">yes</string>
+                                                                                                        </action>
+                                                                                                        <action id="setBool">
+                                                                                                            <string id="id">isFighter</string>
+                                                                                                            <string id="value" values="flagtoggle">no</string>
+                                                                                                        </action>
+                                                                                                        <action id="setBool">
+                                                                                                            <string id="id">isDamageDealer</string>
+                                                                                                            <string id="value" values="flagtoggle">no</string>
+                                                                                                        </action>
+                                                                                                        <action id="setBool">
+                                                                                                            <string id="id">isInitiator</string>
+                                                                                                            <string id="value" values="flagtoggle">yes</string>
+                                                                                                        </action>
+                                                                                                    </else>
+                                                                                                </condition>
+                                                                                            </normal>
+                                                                                        </sequence>
+                                                                                    </else>
+                                                                                </condition>
+                                                                            </normal>
+                                                                        </sequence>
+                                                                    </normal>
+                                                                    <else>
+                                                                        <action id="setBool">
+                                                                            <string id="id">isPusher</string>
+                                                                            <string id="value" values="flagtoggle">no</string>
+                                                                        </action>
+                                                                        <action id="setBool">
+                                                                            <string id="id">isSupport</string>
+                                                                            <string id="value" values="flagtoggle">no</string>
+                                                                        </action>
+                                                                        <action id="setBool">
+                                                                            <string id="id">isHarasser</string>
+                                                                            <string id="value" values="flagtoggle">yes</string>
+                                                                        </action>
+                                                                        <action id="setBool">
+                                                                            <string id="id">isFighter</string>
+                                                                            <string id="value" values="flagtoggle">no</string>
+                                                                        </action>
+                                                                        <action id="setBool">
+                                                                            <string id="id">isDamageDealer</string>
+                                                                            <string id="value" values="flagtoggle">no</string>
+                                                                        </action>
+                                                                        <action id="setBool">
+                                                                            <string id="id">isInitiator</string>
+                                                                            <string id="value" values="flagtoggle">yes</string>
+                                                                        </action>
+                                                                    </else>
+                                                                    <or>
+                                                                        <condition id="doesClassExist">
+                                                                            <string id="teams" values="teams" multiselect="true">OWN_TEAM;;</string>
+                                                                            <string id="class">Maw</string>
+                                                                        </condition>
+                                                                        <condition id="doesClassExist">
+                                                                            <string id="teams" values="teams" multiselect="true">OWN_TEAM;;</string>
+                                                                            <string id="class">Blazer</string>
+                                                                        </condition>
+                                                                        <condition id="doesClassExist">
+                                                                            <string id="teams" values="teams" multiselect="true">OWN_TEAM;;</string>
+                                                                            <string id="class">Hunter</string>
+                                                                        </condition>
+                                                                        <condition id="doesClassExist">
+                                                                            <string id="teams" values="teams" multiselect="true">OWN_TEAM;;</string>
+                                                                            <string id="class">Assassin</string>
+                                                                        </condition>
+                                                                        <condition id="doesClassExist">
+                                                                            <string id="teams" values="teams" multiselect="true">OWN_TEAM;;</string>
+                                                                            <string id="class">Shaman</string>
+                                                                        </condition>
+                                                                    </or>
+                                                                </orblock>
+                                                            </normal>
+                                                            <else>
+                                                                <action id="setBool">
+                                                                    <string id="id">isPusher</string>
+                                                                    <string id="value" values="flagtoggle">no</string>
+                                                                </action>
+                                                                <action id="setBool">
+                                                                    <string id="id">isSupport</string>
+                                                                    <string id="value" values="flagtoggle">yes</string>
+                                                                </action>
+                                                                <action id="setBool">
+                                                                    <string id="id">isHarasser</string>
+                                                                    <string id="value" values="flagtoggle">no</string>
+                                                                </action>
+                                                                <action id="setBool">
+                                                                    <string id="id">isInitiator</string>
+                                                                    <string id="value" values="flagtoggle">no</string>
+                                                                </action>
+                                                                <andblock>
+                                                                    <string id="Comment">I should be a fighter</string>
+                                                                    <normal>
+                                                                        <action id="setBool">
+                                                                            <string id="id">isDamageDealer</string>
+                                                                            <string id="value" values="flagtoggle">no</string>
+                                                                        </action>
+                                                                        <action id="setBool">
+                                                                            <string id="id">isFighter</string>
+                                                                            <string id="value" values="flagtoggle">yes</string>
+                                                                        </action>
+                                                                    </normal>
+                                                                    <else>
+                                                                        <andblock>
+                                                                            <string id="Comment">I should be a damage dealer</string>
+                                                                            <normal>
+                                                                                <action id="setBool">
+                                                                                    <string id="id">isDamageDealer</string>
+                                                                                    <string id="value" values="flagtoggle">yes</string>
+                                                                                </action>
+                                                                                <action id="setBool">
+                                                                                    <string id="id">isFighter</string>
+                                                                                    <string id="value" values="flagtoggle">no</string>
+                                                                                </action>
+                                                                            </normal>
+                                                                            <else>
+                                                                                <orblock>
+                                                                                    <string id="Comment">I should be a fighter</string>
+                                                                                    <normal>
+                                                                                        <orblock>
+                                                                                            <string id="Comment">I should be a damage dealer</string>
+                                                                                            <normal>
+                                                                                                <sequence>
+                                                                                                    <string id="Is blocking">no</string>
+                                                                                                    <string id="Comment">Choose randomly</string>
+                                                                                                    <normal>
+                                                                                                        <action id="wait">
+                                                                                                            <float id="time">0.50</float>
+                                                                                                        </action>
+                                                                                                        <condition id="random">
+                                                                                                            <string id="amount">2</string>
+                                                                                                            <normal>
+                                                                                                                <action id="setBool">
+                                                                                                                    <string id="id">isDamageDealer</string>
+                                                                                                                    <string id="value" values="flagtoggle">no</string>
+                                                                                                                </action>
+                                                                                                                <action id="setBool">
+                                                                                                                    <string id="id">isFighter</string>
+                                                                                                                    <string id="value" values="flagtoggle">yes</string>
+                                                                                                                </action>
+                                                                                                            </normal>
+                                                                                                            <else>
+                                                                                                                <action id="setBool">
+                                                                                                                    <string id="id">isDamageDealer</string>
+                                                                                                                    <string id="value" values="flagtoggle">yes</string>
+                                                                                                                </action>
+                                                                                                                <action id="setBool">
+                                                                                                                    <string id="id">isFighter</string>
+                                                                                                                    <string id="value" values="flagtoggle">no</string>
+                                                                                                                </action>
+                                                                                                            </else>
+                                                                                                        </condition>
+                                                                                                    </normal>
+                                                                                                </sequence>
+                                                                                            </normal>
+                                                                                            <else>
+                                                                                                <action id="setBool">
+                                                                                                    <string id="id">isDamageDealer</string>
+                                                                                                    <string id="value" values="flagtoggle">yes</string>
+                                                                                                </action>
+                                                                                                <action id="setBool">
+                                                                                                    <string id="id">isFighter</string>
+                                                                                                    <string id="value" values="flagtoggle">no</string>
+                                                                                                </action>
+                                                                                            </else>
+                                                                                            <or>
+                                                                                                <condition id="doesClassExist">
+                                                                                                    <string id="teams" values="teams" multiselect="true">OWN_TEAM;;</string>
+                                                                                                    <string id="class">Chameleon</string>
+                                                                                                </condition>
+                                                                                                <condition id="doesClassExist">
+                                                                                                    <string id="teams" values="teams" multiselect="true">OWN_TEAM;;</string>
+                                                                                                    <string id="class">Maw</string>
+                                                                                                </condition>
+                                                                                                <condition id="doesClassExist">
+                                                                                                    <string id="teams" values="teams" multiselect="true">OWN_TEAM;;</string>
+                                                                                                    <string id="class">Vampire</string>
+                                                                                                </condition>
+                                                                                                <condition id="doesClassExist">
+                                                                                                    <string id="teams" values="teams" multiselect="true">OWN_TEAM;;</string>
+                                                                                                    <string id="class">Commando</string>
+                                                                                                </condition>
+                                                                                                <condition id="doesClassExist">
+                                                                                                    <string id="teams" values="teams" multiselect="true">OWN_TEAM;;</string>
+                                                                                                    <string id="class">Shaman</string>
+                                                                                                </condition>
+                                                                                            </or>
+                                                                                        </orblock>
+                                                                                    </normal>
+                                                                                    <else>
+                                                                                        <action id="setBool">
+                                                                                            <string id="id">isDamageDealer</string>
+                                                                                            <string id="value" values="flagtoggle">no</string>
+                                                                                        </action>
+                                                                                        <action id="setBool">
+                                                                                            <string id="id">isFighter</string>
+                                                                                            <string id="value" values="flagtoggle">yes</string>
+                                                                                        </action>
+                                                                                    </else>
+                                                                                    <or>
+                                                                                        <condition id="doesClassExist">
+                                                                                            <string id="teams" values="teams" multiselect="true">OWN_TEAM;;</string>
+                                                                                            <string id="class">Cowboy</string>
+                                                                                        </condition>
+                                                                                        <condition id="doesClassExist">
+                                                                                            <string id="teams" values="teams" multiselect="true">OWN_TEAM;;</string>
+                                                                                            <string id="class">Blazer</string>
+                                                                                        </condition>
+                                                                                        <condition id="doesClassExist">
+                                                                                            <string id="teams" values="teams" multiselect="true">OWN_TEAM;;</string>
+                                                                                            <string id="class">Brute</string>
+                                                                                        </condition>
+                                                                                        <condition id="doesClassExist">
+                                                                                            <string id="teams" values="teams" multiselect="true">OWN_TEAM;;</string>
+                                                                                            <string id="class">Vampire</string>
+                                                                                        </condition>
+                                                                                        <condition id="doesClassExist">
+                                                                                            <string id="teams" values="teams" multiselect="true">OWN_TEAM;;</string>
+                                                                                            <string id="class">Captain</string>
+                                                                                        </condition>
+                                                                                        <condition id="doesClassExist">
+                                                                                            <string id="teams" values="teams" multiselect="true">OWN_TEAM;;</string>
+                                                                                            <string id="class">Commando</string>
+                                                                                        </condition>
+                                                                                    </or>
+                                                                                </orblock>
+                                                                            </else>
+                                                                            <or>
+                                                                                <condition id="isUpgradeEnabled">
+                                                                                    <string id="condition" values="yesno">yes</string>
+                                                                                    <string id="upgrade name">SummonerDroneDamage1</string>
+                                                                                </condition>
+                                                                                <condition id="isUpgradeEnabled">
+                                                                                    <string id="condition" values="yesno">yes</string>
+                                                                                    <string id="upgrade name">SummonerHealtotemDamage</string>
+                                                                                </condition>
+                                                                            </or>
+                                                                        </andblock>
+                                                                    </else>
+                                                                    <or>
+                                                                        <condition id="isUpgradeEnabled">
+                                                                            <string id="condition" values="yesno">yes</string>
+                                                                            <string id="upgrade name">SummonerDroneDamage1</string>
+                                                                        </condition>
+                                                                        <condition id="isUpgradeEnabled">
+                                                                            <string id="condition" values="yesno">yes</string>
+                                                                            <string id="upgrade name">SummonerDroneExplode</string>
+                                                                        </condition>
+                                                                    </or>
+                                                                </andblock>
+                                                            </else>
+                                                            <or>
+                                                                <condition id="doesClassExist">
+                                                                    <string id="teams" values="teams" multiselect="true">OWN_TEAM;;</string>
+                                                                    <string id="class">Jetter</string>
+                                                                </condition>
+                                                                <condition id="doesClassExist">
+                                                                    <string id="teams" values="teams" multiselect="true">OWN_TEAM;;</string>
+                                                                    <string id="class">Butterfly</string>
+                                                                </condition>
+                                                                <condition id="doesClassExist">
+                                                                    <string id="teams" values="teams" multiselect="true">OWN_TEAM;;</string>
+                                                                    <string id="class">Jetter</string>
+                                                                </condition>
+                                                                <condition id="doesClassExist">
+                                                                    <string id="teams" values="teams" multiselect="true">OWN_TEAM;;</string>
+                                                                    <string id="class">Cowboy</string>
+                                                                </condition>
+                                                            </or>
+                                                        </orblock>
+                                                    </normal>
+                                                    <else>
+                                                        <action id="setBool">
+                                                            <string id="id">isPusher</string>
+                                                            <string id="value" values="flagtoggle">yes</string>
+                                                        </action>
+                                                        <action id="setBool">
+                                                            <string id="id">isSupport</string>
+                                                            <string id="value" values="flagtoggle">no</string>
+                                                        </action>
+                                                        <action id="setBool">
+                                                            <string id="id">isHarasser</string>
+                                                            <string id="value" values="flagtoggle">no</string>
+                                                        </action>
+                                                        <andblock>
+                                                            <string id="Comment">I should be a fighter</string>
+                                                            <normal>
+                                                                <action id="setBool">
+                                                                    <string id="id">isDamageDealer</string>
+                                                                    <string id="value" values="flagtoggle">no</string>
+                                                                </action>
+                                                                <action id="setBool">
+                                                                    <string id="id">isFighter</string>
+                                                                    <string id="value" values="flagtoggle">yes</string>
+                                                                </action>
+                                                                <action id="setBool">
+                                                                    <string id="id">isInitiator</string>
+                                                                    <string id="value" values="flagtoggle">yes</string>
+                                                                </action>
+                                                            </normal>
+                                                            <else>
+                                                                <andblock>
+                                                                    <string id="Comment">I should be a damage dealer</string>
+                                                                    <normal>
+                                                                        <action id="setBool">
+                                                                            <string id="id">isDamageDealer</string>
+                                                                            <string id="value" values="flagtoggle">yes</string>
+                                                                        </action>
+                                                                        <action id="setBool">
+                                                                            <string id="id">isFighter</string>
+                                                                            <string id="value" values="flagtoggle">no</string>
+                                                                        </action>
+                                                                        <action id="setBool">
+                                                                            <string id="id">isInitiator</string>
+                                                                            <string id="value" values="flagtoggle">no</string>
+                                                                        </action>
+                                                                    </normal>
+                                                                    <else>
+                                                                        <orblock>
+                                                                            <string id="Comment">I should be a fighter</string>
+                                                                            <normal>
+                                                                                <orblock>
+                                                                                    <string id="Comment">I should be a damage dealer</string>
+                                                                                    <normal>
+                                                                                        <sequence>
+                                                                                            <string id="Is blocking">no</string>
+                                                                                            <string id="Comment">Choose randomly</string>
+                                                                                            <normal>
+                                                                                                <action id="wait">
+                                                                                                    <float id="time">0.50</float>
+                                                                                                </action>
+                                                                                                <condition id="random">
+                                                                                                    <string id="amount">2</string>
+                                                                                                    <normal>
+                                                                                                        <action id="setBool">
+                                                                                                            <string id="id">isDamageDealer</string>
+                                                                                                            <string id="value" values="flagtoggle">no</string>
+                                                                                                        </action>
+                                                                                                        <action id="setBool">
+                                                                                                            <string id="id">isFighter</string>
+                                                                                                            <string id="value" values="flagtoggle">yes</string>
+                                                                                                        </action>
+                                                                                                        <action id="setBool">
+                                                                                                            <string id="id">isInitiator</string>
+                                                                                                            <string id="value" values="flagtoggle">yes</string>
+                                                                                                        </action>
+                                                                                                    </normal>
+                                                                                                    <else>
+                                                                                                        <action id="setBool">
+                                                                                                            <string id="id">isDamageDealer</string>
+                                                                                                            <string id="value" values="flagtoggle">yes</string>
+                                                                                                        </action>
+                                                                                                        <action id="setBool">
+                                                                                                            <string id="id">isFighter</string>
+                                                                                                            <string id="value" values="flagtoggle">no</string>
+                                                                                                        </action>
+                                                                                                        <action id="setBool">
+                                                                                                            <string id="id">isInitiator</string>
+                                                                                                            <string id="value" values="flagtoggle">no</string>
+                                                                                                        </action>
+                                                                                                    </else>
+                                                                                                </condition>
+                                                                                            </normal>
+                                                                                        </sequence>
+                                                                                    </normal>
+                                                                                    <else>
+                                                                                        <action id="setBool">
+                                                                                            <string id="id">isDamageDealer</string>
+                                                                                            <string id="value" values="flagtoggle">yes</string>
+                                                                                        </action>
+                                                                                        <action id="setBool">
+                                                                                            <string id="id">isFighter</string>
+                                                                                            <string id="value" values="flagtoggle">no</string>
+                                                                                        </action>
+                                                                                        <action id="setBool">
+                                                                                            <string id="id">isInitiator</string>
+                                                                                            <string id="value" values="flagtoggle">no</string>
+                                                                                        </action>
+                                                                                    </else>
+                                                                                    <or>
+                                                                                        <condition id="doesClassExist">
+                                                                                            <string id="teams" values="teams" multiselect="true">OWN_TEAM;;</string>
+                                                                                            <string id="class">Chameleon</string>
+                                                                                        </condition>
+                                                                                        <condition id="doesClassExist">
+                                                                                            <string id="teams" values="teams" multiselect="true">OWN_TEAM;;</string>
+                                                                                            <string id="class">Maw</string>
+                                                                                        </condition>
+                                                                                        <condition id="doesClassExist">
+                                                                                            <string id="teams" values="teams" multiselect="true">OWN_TEAM;;</string>
+                                                                                            <string id="class">Vampire</string>
+                                                                                        </condition>
+                                                                                        <condition id="doesClassExist">
+                                                                                            <string id="teams" values="teams" multiselect="true">OWN_TEAM;;</string>
+                                                                                            <string id="class">Commando</string>
+                                                                                        </condition>
+                                                                                        <condition id="doesClassExist">
+                                                                                            <string id="teams" values="teams" multiselect="true">OWN_TEAM;;</string>
+                                                                                            <string id="class">Shaman</string>
+                                                                                        </condition>
+                                                                                    </or>
+                                                                                </orblock>
+                                                                            </normal>
+                                                                            <else>
+                                                                                <action id="setBool">
+                                                                                    <string id="id">isDamageDealer</string>
+                                                                                    <string id="value" values="flagtoggle">no</string>
+                                                                                </action>
+                                                                                <action id="setBool">
+                                                                                    <string id="id">isFighter</string>
+                                                                                    <string id="value" values="flagtoggle">yes</string>
+                                                                                </action>
+                                                                                <action id="setBool">
+                                                                                    <string id="id">isInitiator</string>
+                                                                                    <string id="value" values="flagtoggle">yes</string>
+                                                                                </action>
+                                                                            </else>
+                                                                            <or>
+                                                                                <condition id="doesClassExist">
+                                                                                    <string id="teams" values="teams" multiselect="true">OWN_TEAM;;</string>
+                                                                                    <string id="class">Cowboy</string>
+                                                                                </condition>
+                                                                                <condition id="doesClassExist">
+                                                                                    <string id="teams" values="teams" multiselect="true">OWN_TEAM;;</string>
+                                                                                    <string id="class">Blazer</string>
+                                                                                </condition>
+                                                                                <condition id="doesClassExist">
+                                                                                    <string id="teams" values="teams" multiselect="true">OWN_TEAM;;</string>
+                                                                                    <string id="class">Brute</string>
+                                                                                </condition>
+                                                                                <condition id="doesClassExist">
+                                                                                    <string id="teams" values="teams" multiselect="true">OWN_TEAM;;</string>
+                                                                                    <string id="class">Vampire</string>
+                                                                                </condition>
+                                                                                <condition id="doesClassExist">
+                                                                                    <string id="teams" values="teams" multiselect="true">OWN_TEAM;;</string>
+                                                                                    <string id="class">Captain</string>
+                                                                                </condition>
+                                                                                <condition id="doesClassExist">
+                                                                                    <string id="teams" values="teams" multiselect="true">OWN_TEAM;;</string>
+                                                                                    <string id="class">Commando</string>
+                                                                                </condition>
+                                                                            </or>
+                                                                        </orblock>
+                                                                    </else>
+                                                                    <or>
+                                                                        <condition id="isUpgradeEnabled">
+                                                                            <string id="condition" values="yesno">yes</string>
+                                                                            <string id="upgrade name">SummonerDroneDamage1</string>
+                                                                        </condition>
+                                                                        <condition id="isUpgradeEnabled">
+                                                                            <string id="condition" values="yesno">yes</string>
+                                                                            <string id="upgrade name">SummonerHealtotemDamage</string>
+                                                                        </condition>
+                                                                    </or>
+                                                                </andblock>
+                                                            </else>
+                                                            <or>
+                                                                <condition id="isUpgradeEnabled">
+                                                                    <string id="condition" values="yesno">yes</string>
+                                                                    <string id="upgrade name">SummonerDroneDamage1</string>
+                                                                </condition>
+                                                                <condition id="isUpgradeEnabled">
+                                                                    <string id="condition" values="yesno">yes</string>
+                                                                    <string id="upgrade name">SummonerDroneExplode</string>
+                                                                </condition>
+                                                            </or>
+                                                        </andblock>
+                                                    </else>
+                                                    <or>
+                                                        <condition id="isUpgradeEnabled">
+                                                            <string id="condition" values="yesno">yes</string>
+                                                            <string id="upgrade name">SummonerShotSolar1</string>
+                                                        </condition>
+                                                        <condition id="isUpgradeEnabled">
+                                                            <string id="condition" values="yesno">yes</string>
+                                                            <string id="upgrade name">SummonerShotRange1</string>
+                                                        </condition>
+                                                        <condition id="doesClassExist">
+                                                            <string id="teams" values="teams" multiselect="true">OWN_TEAM;;</string>
+                                                            <string id="class">Assassin</string>
+                                                        </condition>
+                                                        <condition id="doesClassExist">
+                                                            <string id="teams" values="teams" multiselect="true">OWN_TEAM;;</string>
+                                                            <string id="class">Hunter</string>
+                                                        </condition>
+                                                        <condition id="doesClassExist">
+                                                            <string id="teams" values="teams" multiselect="true">OWN_TEAM;;</string>
+                                                            <string id="class">Jetter</string>
+                                                        </condition>
+                                                        <condition id="doesClassExist">
+                                                            <string id="teams" values="teams" multiselect="true">OWN_TEAM;;</string>
+                                                            <string id="class">Cowboy</string>
+                                                        </condition>
+                                                    </or>
+                                                </orblock>
+                                            </else>
+                                            <or>
+                                                <condition id="isUpgradeEnabled">
+                                                    <string id="condition" values="yesno">no</string>
+                                                    <string id="upgrade name">SummonerShotHealpower1</string>
+                                                </condition>
+                                                <condition id="isUpgradeEnabled">
+                                                    <string id="condition" values="yesno">yes</string>
+                                                    <string id="upgrade name">SummonerShotKnockback</string>
+                                                </condition>
+                                            </or>
+                                        </andblock>
+                                    </else>
+                                    <or>
+                                        <condition id="isUpgradeEnabled">
+                                            <string id="condition" values="yesno">yes</string>
+                                            <string id="upgrade name">SummonerShotHealpower1</string>
+                                        </condition>
+                                        <condition id="isUpgradeEnabled">
+                                            <string id="condition" values="yesno">no</string>
+                                            <string id="upgrade name">SummonerShotHot1</string>
+                                        </condition>
+                                    </or>
+                                </andblock>
+                            </else>
+                            <or>
+                                <condition id="isUpgradeEnabled">
+                                    <string id="condition" values="yesno">yes</string>
+                                    <string id="upgrade name">SummonerShotHealpower1</string>
+                                </condition>
+                                <condition id="isUpgradeEnabled">
+                                    <string id="condition" values="yesno">yes</string>
+                                    <string id="upgrade name">SummonerShotHot1</string>
+                                </condition>
+                            </or>
+                        </andblock>
+                    </normal>
+                </condition>
+            </normal>
+        </root>
+    </behaviour>
+</enemy>
