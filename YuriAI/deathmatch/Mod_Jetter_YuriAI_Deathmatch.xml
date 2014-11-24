@@ -1690,30 +1690,37 @@
                         </action>
                         <condition id="checkCounter">
                             <string id="id">timeAtDrillCore</string>
-                            <string id="value">50</string>
+                            <string id="value">20</string>
                             <string id="compare method" values="valuecompare">greater</string>
-                            <string id="Comment">Stuck for 5 or more seconds?</string>
+                            <string id="Comment">Stuck for 2 or more seconds?</string>
                             <normal>
-                                <condition id="checkCounter">
-                                    <string id="id">lane</string>
-                                    <string id="value">1</string>
-                                    <string id="compare method" values="valuecompare">equal</string>
-                                    <string id="Comment">Switch lanes</string>
+                                <sequence>
+                                    <string id="Is blocking">no</string>
+                                    <string id="Comment">Hijack movement for 2 seconds</string>
                                     <normal>
-                                        <action id="adjustCounter">
-                                            <string id="id">lane</string>
-                                            <string id="value">2</string>
-                                            <string id="adjust method" values="valueadjust">set</string>
+                                        <action id="setBool">
+                                            <string id="id">moveOverride</string>
+                                            <string id="value" values="flagtoggle">yes</string>
+                                        </action>
+                                        <action id="log">
+                                            <string id="text">Stuck fix enabled</string>
+                                            <string id="counter"></string>
+                                            <string id="bool"></string>
+                                        </action>
+                                        <action id="wait">
+                                            <float id="time">2.00</float>
+                                        </action>
+                                        <action id="setBool">
+                                            <string id="id">moveOverride</string>
+                                            <string id="value" values="flagtoggle">no</string>
+                                        </action>
+                                        <action id="log">
+                                            <string id="text">Stuck fix disabled</string>
+                                            <string id="counter"></string>
+                                            <string id="bool"></string>
                                         </action>
                                     </normal>
-                                    <else>
-                                        <action id="adjustCounter">
-                                            <string id="id">lane</string>
-                                            <string id="value">1</string>
-                                            <string id="adjust method" values="valueadjust">set</string>
-                                        </action>
-                                    </else>
-                                </condition>
+                                </sequence>
                                 <action id="adjustCounter">
                                     <string id="id">timeAtDrillCore</string>
                                     <string id="value">0</string>
@@ -1730,6 +1737,19 @@
                         </action>
                     </else>
                     <or>
+                        <condition id="isInArea">
+                            <string id="condition" values="yesno">yes</string>
+                            <string id="collision groups" values="collison groups" multiselect="true">INVINCIBLE_OBSTACLES;;</string>
+                            <string id="check green obstacles only" values="yesno">no</string>
+                            <string id="teams" values="teams" multiselect="true">OWN_TEAM;;ENEMY_TEAM;;NEUTRAL_TEAM;;</string>
+                            <string id="areaName"></string>
+                            <float id="xOffset">0.10</float>
+                            <float id="yOffset">0.00</float>
+                            <float id="width">0.10</float>
+                            <float id="height">0.30</float>
+                            <string id="check line of sight" values="yesno">no</string>
+                            <string id="ignore invisibility" values="yesno">no</string>
+                        </condition>
                         <condition id="checkCounter">
                             <string id="id">state</string>
                             <string id="value">3</string>
@@ -2049,10 +2069,36 @@
                     </else>
                 </condition>
                 <condition id="getBoolEquals">
+                    <string id="id">moveOverride</string>
+                    <string id="value" values="yesno">yes</string>
+                    <string id="Comment">Hijack movement to prevent getting stuck</string>
+                    <normal>
+                        <action id="setBool">
+                            <string id="id">GoForward</string>
+                            <string id="value" values="flagtoggle">yes</string>
+                        </action>
+                        <action id="setBool">
+                            <string id="id">GoBack</string>
+                            <string id="value" values="flagtoggle">no</string>
+                        </action>
+                        <action id="setBool">
+                            <string id="id">GoUp</string>
+                            <string id="value" values="flagtoggle">no</string>
+                        </action>
+                        <action id="setBool">
+                            <string id="id">GoDown</string>
+                            <string id="value" values="flagtoggle">no</string>
+                        </action>
+                        <action id="enableUpgrade">
+                            <string id="condition" values="yesno">no</string>
+                            <string id="upgrade name">JetterJet</string>
+                        </action>
+                    </normal>
+                </condition>
+                <condition id="getBoolEquals">
                     <string id="id">CantMove</string>
                     <string id="value" values="yesno">no</string>
                     <string id="Comment">Handle Movement</string>
-                    <string id="Minimized">yes</string>
                     <normal>
                         <action id="setBool">
                             <string id="id">HasMoved</string>

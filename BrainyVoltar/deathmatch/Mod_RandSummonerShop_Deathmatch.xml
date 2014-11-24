@@ -100,12 +100,6 @@
                             <string id="condition" values="yesno">no</string>
                             <string id="upgrade name">SummonDrone</string>
                             <normal>
-                                <action id="adjustCharacterValue">
-                                    <string id="property" values="charactervaluesAdjustable">gold</string>
-                                    <float id="value">35.00</float>
-                                    <string id="adjust method" values="valueadjust">add</string>
-                                    <string id="Comment">Extra starting Solar</string>
-                                </action>
                                 <condition id="canPayUpgrade">
                                     <string id="upgrade name">SummonDrone</string>
                                     <normal>
