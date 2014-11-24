@@ -1019,27 +1019,6 @@
                                                                     <string id="button" values="buttons">FACE_RIGHT</string>
                                                                     <float id="duration in seconds">0.00</float>
                                                                 </action>
-                                                                <action id="selectTarget">
-                                                                    <string id="groups to select" values="target groups" multiselect="true">PLAYERS;;</string>
-                                                                    <string id="teams" values="teams" multiselect="true">ENEMY_TEAM;;</string>
-                                                                    <string id="class">Dasher</string>
-                                                                    <string id="remove if not found" values="yesno">no</string>
-                                                                    <float id="xOffset">0.00</float>
-                                                                    <float id="yOffset">0.00</float>
-                                                                    <float id="width">0.60</float>
-                                                                    <float id="height">0.60</float>
-                                                                    <string id="compare method" values="valuecompare2">greater or equal</string>
-                                                                    <float id="health value">0.00</float>
-                                                                    <string id="distance check" values="distance check">CLOSEST</string>
-                                                                    <string id="check line of sight" values="yesno">no</string>
-                                                                    <string id="ignore invisibility" values="yesno">no</string>
-                                                                </action>
-                                                                <action id="adjustCounter">
-                                                                    <string id="id">setState</string>
-                                                                    <string id="value">4</string>
-                                                                    <string id="adjust method" values="valueadjust">set</string>
-                                                                    <string id="Comment">Chase!</string>
-                                                                </action>
                                                             </normal>
                                                             <else>
                                                                 <andblock>
@@ -1048,27 +1027,6 @@
                                                                         <action id="pressButton">
                                                                             <string id="button" values="buttons">FACE_RIGHT</string>
                                                                             <float id="duration in seconds">0.00</float>
-                                                                        </action>
-                                                                        <action id="selectTarget">
-                                                                            <string id="groups to select" values="target groups" multiselect="true">PLAYERS;;</string>
-                                                                            <string id="teams" values="teams" multiselect="true">ENEMY_TEAM;;</string>
-                                                                            <string id="class">Tank</string>
-                                                                            <string id="remove if not found" values="yesno">no</string>
-                                                                            <float id="xOffset">0.00</float>
-                                                                            <float id="yOffset">0.00</float>
-                                                                            <float id="width">0.60</float>
-                                                                            <float id="height">0.60</float>
-                                                                            <string id="compare method" values="valuecompare2">greater or equal</string>
-                                                                            <float id="health value">0.00</float>
-                                                                            <string id="distance check" values="distance check">CLOSEST</string>
-                                                                            <string id="check line of sight" values="yesno">no</string>
-                                                                            <string id="ignore invisibility" values="yesno">no</string>
-                                                                        </action>
-                                                                        <action id="adjustCounter">
-                                                                            <string id="id">setState</string>
-                                                                            <string id="value">4</string>
-                                                                            <string id="adjust method" values="valueadjust">set</string>
-                                                                            <string id="Comment">Chase!</string>
                                                                         </action>
                                                                     </normal>
                                                                     <else>
@@ -1080,27 +1038,6 @@
                                                                                         <action id="pressButton">
                                                                                             <string id="button" values="buttons">FACE_RIGHT</string>
                                                                                             <float id="duration in seconds">0.00</float>
-                                                                                        </action>
-                                                                                        <action id="selectTarget">
-                                                                                            <string id="groups to select" values="target groups" multiselect="true">PLAYERS;;</string>
-                                                                                            <string id="teams" values="teams" multiselect="true">ENEMY_TEAM;;</string>
-                                                                                            <string id="class">Commando</string>
-                                                                                            <string id="remove if not found" values="yesno">no</string>
-                                                                                            <float id="xOffset">0.00</float>
-                                                                                            <float id="yOffset">0.00</float>
-                                                                                            <float id="width">0.60</float>
-                                                                                            <float id="height">0.60</float>
-                                                                                            <string id="compare method" values="valuecompare2">greater or equal</string>
-                                                                                            <float id="health value">0.00</float>
-                                                                                            <string id="distance check" values="distance check">CLOSEST</string>
-                                                                                            <string id="check line of sight" values="yesno">no</string>
-                                                                                            <string id="ignore invisibility" values="yesno">no</string>
-                                                                                        </action>
-                                                                                        <action id="adjustCounter">
-                                                                                            <string id="id">setState</string>
-                                                                                            <string id="value">4</string>
-                                                                                            <string id="adjust method" values="valueadjust">set</string>
-                                                                                            <string id="Comment">Chase!</string>
                                                                                         </action>
                                                                                     </normal>
                                                                                     <or>
@@ -1130,27 +1067,6 @@
                                                                                             <string id="button" values="buttons">FACE_RIGHT</string>
                                                                                             <float id="duration in seconds">0.00</float>
                                                                                         </action>
-                                                                                        <action id="selectTarget">
-                                                                                            <string id="groups to select" values="target groups" multiselect="true">PLAYERS;;</string>
-                                                                                            <string id="teams" values="teams" multiselect="true">ENEMY_TEAM;;</string>
-                                                                                            <string id="class">Paladin</string>
-                                                                                            <string id="remove if not found" values="yesno">no</string>
-                                                                                            <float id="xOffset">0.00</float>
-                                                                                            <float id="yOffset">0.00</float>
-                                                                                            <float id="width">0.60</float>
-                                                                                            <float id="height">0.60</float>
-                                                                                            <string id="compare method" values="valuecompare2">greater or equal</string>
-                                                                                            <float id="health value">0.00</float>
-                                                                                            <string id="distance check" values="distance check">CLOSEST</string>
-                                                                                            <string id="check line of sight" values="yesno">no</string>
-                                                                                            <string id="ignore invisibility" values="yesno">no</string>
-                                                                                        </action>
-                                                                                        <action id="adjustCounter">
-                                                                                            <string id="id">setState</string>
-                                                                                            <string id="value">4</string>
-                                                                                            <string id="adjust method" values="valueadjust">set</string>
-                                                                                            <string id="Comment">Chase!</string>
-                                                                                        </action>
                                                                                     </normal>
                                                                                     <else>
                                                                                         <andblock>
@@ -1159,27 +1075,6 @@
                                                                                                 <action id="pressButton">
                                                                                                     <string id="button" values="buttons">FACE_RIGHT</string>
                                                                                                     <float id="duration in seconds">0.00</float>
-                                                                                                </action>
-                                                                                                <action id="selectTarget">
-                                                                                                    <string id="groups to select" values="target groups" multiselect="true">PLAYERS;;</string>
-                                                                                                    <string id="teams" values="teams" multiselect="true">ENEMY_TEAM;;</string>
-                                                                                                    <string id="class">Vampire</string>
-                                                                                                    <string id="remove if not found" values="yesno">no</string>
-                                                                                                    <float id="xOffset">0.00</float>
-                                                                                                    <float id="yOffset">0.00</float>
-                                                                                                    <float id="width">0.60</float>
-                                                                                                    <float id="height">0.60</float>
-                                                                                                    <string id="compare method" values="valuecompare2">greater or equal</string>
-                                                                                                    <float id="health value">0.00</float>
-                                                                                                    <string id="distance check" values="distance check">CLOSEST</string>
-                                                                                                    <string id="check line of sight" values="yesno">no</string>
-                                                                                                    <string id="ignore invisibility" values="yesno">no</string>
-                                                                                                </action>
-                                                                                                <action id="adjustCounter">
-                                                                                                    <string id="id">setState</string>
-                                                                                                    <string id="value">4</string>
-                                                                                                    <string id="adjust method" values="valueadjust">set</string>
-                                                                                                    <string id="Comment">Chase!</string>
                                                                                                 </action>
                                                                                             </normal>
                                                                                             <else>
@@ -1190,28 +1085,31 @@
                                                                                                             <string id="button" values="buttons">FACE_RIGHT</string>
                                                                                                             <float id="duration in seconds">0.00</float>
                                                                                                         </action>
-                                                                                                        <action id="selectTarget">
-                                                                                                            <string id="groups to select" values="target groups" multiselect="true">PLAYERS;;</string>
-                                                                                                            <string id="teams" values="teams" multiselect="true">ENEMY_TEAM;;</string>
-                                                                                                            <string id="class">Hunter</string>
-                                                                                                            <string id="remove if not found" values="yesno">no</string>
-                                                                                                            <float id="xOffset">0.00</float>
-                                                                                                            <float id="yOffset">0.00</float>
-                                                                                                            <float id="width">0.60</float>
-                                                                                                            <float id="height">0.60</float>
-                                                                                                            <string id="compare method" values="valuecompare2">greater or equal</string>
-                                                                                                            <float id="health value">0.00</float>
-                                                                                                            <string id="distance check" values="distance check">CLOSEST</string>
-                                                                                                            <string id="check line of sight" values="yesno">no</string>
-                                                                                                            <string id="ignore invisibility" values="yesno">no</string>
-                                                                                                        </action>
-                                                                                                        <action id="adjustCounter">
-                                                                                                            <string id="id">setState</string>
-                                                                                                            <string id="value">4</string>
-                                                                                                            <string id="adjust method" values="valueadjust">set</string>
-                                                                                                            <string id="Comment">Chase!</string>
-                                                                                                        </action>
                                                                                                     </normal>
+                                                                                                    <else>
+                                                                                                        <andblock>
+                                                                                                            <string id="Comment">Use Night Vision Spywatch to chase</string>
+                                                                                                            <normal>
+                                                                                                                <action id="pressButton">
+                                                                                                                    <string id="button" values="buttons">FACE_RIGHT</string>
+                                                                                                                    <float id="duration in seconds">0.00</float>
+                                                                                                                </action>
+                                                                                                            </normal>
+                                                                                                            <or>
+                                                                                                                <condition id="checkCounter">
+                                                                                                                    <string id="id">state</string>
+                                                                                                                    <string id="value">4</string>
+                                                                                                                    <string id="compare method" values="valuecompare">equal</string>
+                                                                                                                    <string id="Comment">Chase</string>
+                                                                                                                </condition>
+                                                                                                                <condition id="isUpgradeEnabled">
+                                                                                                                    <string id="condition" values="yesno">yes</string>
+                                                                                                                    <string id="upgrade name">SpyAbsorbSpeed1</string>
+                                                                                                                    <string id="Comment">Night Vision Spywatch</string>
+                                                                                                                </condition>
+                                                                                                            </or>
+                                                                                                        </andblock>
+                                                                                                    </else>
                                                                                                     <or>
                                                                                                         <condition id="doesClassExist">
                                                                                                             <string id="teams" values="teams" multiselect="true">ENEMY_TEAM;;</string>
