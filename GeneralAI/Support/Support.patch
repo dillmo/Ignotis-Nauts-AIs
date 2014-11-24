@@ -1,75 +1,22 @@
 diff --git a/../Mod_VeankoAI_IgnotisTweaks.xml b/Mod_VeankoAI_Support.xml
-index 76e2fff..d77614e 100755
+index 76e2fff..45ed856 100755
 --- a/../Mod_VeankoAI_IgnotisTweaks.xml
 +++ b/Mod_VeankoAI_Support.xml
+@@ -1637,7 +1637,7 @@
+                                                             <string id="condition" values="charactervaluesCheckable">health percentage</string>
+                                                             <string id="comparison" values="valuecompare">greater or equal</string>
+                                                             <float id="value">30.00</float>
+-                                                            <string id="character minimum">2</string>
++                                                            <string id="character minimum">1</string>
+                                                             <float id="xOffset">0.00</float>
+                                                             <float id="yOffset">0.00</float>
+                                                             <float id="width">2.00</float>
 @@ -1652,7 +1652,7 @@
                                                                      <string id="condition" values="charactervaluesCheckable">health percentage</string>
                                                                      <string id="comparison" values="valuecompare">greater or equal</string>
                                                                      <float id="value">30.00</float>
 -                                                                    <string id="character minimum"></string>
-+                                                                    <string id="character minimum">2</string>
++                                                                    <string id="character minimum">1</string>
                                                                      <float id="xOffset">0.00</float>
                                                                      <float id="yOffset">0.00</float>
                                                                      <float id="width">2.00</float>
-@@ -1675,10 +1675,57 @@
-                                                                 </condition>
-                                                             </normal>
-                                                             <else>
--                                                                <action id="setBool">
--                                                                    <string id="id">Outnumbered</string>
--                                                                    <string id="value" values="flagtoggle">no</string>
--                                                                </action>
-+                                                                <condition id="isCharacterInArea">
-+                                                                    <string id="groups" values="target receive groups" multiselect="true">PLAYERS;;</string>
-+                                                                    <string id="teams" values="teams" multiselect="true">ENEMY_TEAM;;</string>
-+                                                                    <string id="class"></string>
-+                                                                    <string id="condition" values="charactervaluesCheckable">health percentage</string>
-+                                                                    <string id="comparison" values="valuecompare">greater or equal</string>
-+                                                                    <float id="value">30.00</float>
-+                                                                    <string id="character minimum">1</string>
-+                                                                    <float id="xOffset">0.00</float>
-+                                                                    <float id="yOffset">0.00</float>
-+                                                                    <float id="width">2.00</float>
-+                                                                    <float id="height">2.00</float>
-+                                                                    <string id="check line of sight" values="yesno">yes</string>
-+                                                                    <string id="Comment">Am i outnumbered?</string>
-+                                                                    <normal>
-+                                                                        <condition id="isCharacterInArea">
-+                                                                            <string id="groups" values="target receive groups" multiselect="true">PLAYERS;;</string>
-+                                                                            <string id="teams" values="teams" multiselect="true">OWN_TEAM;;</string>
-+                                                                            <string id="class"></string>
-+                                                                            <string id="condition" values="charactervaluesCheckable">health percentage</string>
-+                                                                            <string id="comparison" values="valuecompare">greater or equal</string>
-+                                                                            <float id="value">30.00</float>
-+                                                                            <string id="character minimum">1</string>
-+                                                                            <float id="xOffset">0.00</float>
-+                                                                            <float id="yOffset">0.00</float>
-+                                                                            <float id="width">2.00</float>
-+                                                                            <float id="height">2.00</float>
-+                                                                            <string id="check line of sight" values="yesno">yes</string>
-+                                                                            <string id="Comment">No Teammates?</string>
-+                                                                            <normal>
-+                                                                                <action id="setBool">
-+                                                                                    <string id="id">Outnumbered</string>
-+                                                                                    <string id="value" values="flagtoggle">no</string>
-+                                                                                </action>
-+                                                                            </normal>
-+                                                                            <else>
-+                                                                                <action id="setBool">
-+                                                                                    <string id="id">Outnumbered</string>
-+                                                                                    <string id="value" values="flagtoggle">yes</string>
-+                                                                                    <string id="Comment">I am outnumbered</string>
-+                                                                                </action>
-+                                                                            </else>
-+                                                                        </condition>
-+                                                                    </normal>
-+                                                                    <else>
-+                                                                        <action id="setBool">
-+                                                                            <string id="id">Outnumbered</string>
-+                                                                            <string id="value" values="flagtoggle">no</string>
-+                                                                        </action>
-+                                                                    </else>
-+                                                                </condition>
-                                                             </else>
-                                                         </condition>
-                                                     </else>
