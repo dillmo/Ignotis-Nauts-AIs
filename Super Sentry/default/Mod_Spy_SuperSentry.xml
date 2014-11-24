@@ -25,6 +25,16 @@
                     <string id="fileName">Mod_BotSkill</string>
                     <string id="Minimized">yes</string>
                 </action>
+                <condition id="once">
+                    <string id="Comment">Used to track health loss</string>
+                    <normal>
+                        <action id="adjustCounter">
+                            <string id="id">ten</string>
+                            <string id="value">10</string>
+                            <string id="adjust method" values="valueadjust">set</string>
+                        </action>
+                    </normal>
+                </condition>
                 <condition id="timer">
                     <string id="timeunit" values="timeunits">seconds</string>
                     <float id="time">1.00</float>
@@ -991,9 +1001,9 @@
                                             </normal>
                                             <else>
                                                 <condition id="checkCounter">
-                                                    <string id="id">prevHealth - Health</string>
-                                                    <string id="value">15</string>
-                                                    <string id="compare method" values="valuecompare">greater or equal</string>
+                                                    <string id="id">ten</string>
+                                                    <string id="value">prevHealth-health</string>
+                                                    <string id="compare method" values="valuecompare">less or equal</string>
                                                     <string id="Comment">Losing health fast?</string>
                                                     <normal>
                                                         <action id="pressButton">
@@ -2332,7 +2342,7 @@
         </root>
     </behaviour>
     <behaviour>
-        <condition id="checkCharacterValue" x="3428" y="1917">
+        <condition id="checkCharacterValue" x="3603" y="1917">
             <string id="property" values="charactervaluesCheckable">health percentage</string>
             <float id="value">50.00</float>
             <string id="compare method" values="valuecompare">greater or equal</string>
