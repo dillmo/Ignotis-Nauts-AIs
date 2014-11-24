@@ -561,7 +561,7 @@
                                                                                         </condition>
                                                                                     </normal>
                                                                                     <else>
-                                                                                        <orblock>
+                                                                                        <andblock>
                                                                                             <normal>
                                                                                                 <condition id="canPayUpgrade">
                                                                                                     <string id="upgrade name">addHealth2</string>
@@ -1001,7 +1001,7 @@
                                                                                                     <string id="compare method" values="valuecompare">greater or equal</string>
                                                                                                 </condition>
                                                                                             </or>
-                                                                                        </orblock>
+                                                                                        </andblock>
                                                                                     </else>
                                                                                 </condition>
                                                                             </else>
