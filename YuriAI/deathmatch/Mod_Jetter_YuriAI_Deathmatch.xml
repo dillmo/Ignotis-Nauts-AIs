@@ -479,6 +479,12 @@
                                     <string id="condition" values="yesno">no</string>
                                     <string id="upgrade name">Mine</string>
                                     <normal>
+                                        <action id="adjustCharacterValue">
+                                            <string id="property" values="charactervaluesAdjustable">gold</string>
+                                            <float id="value">35.00</float>
+                                            <string id="adjust method" values="valueadjust">add</string>
+                                            <string id="Comment">Extra starting Solar</string>
+                                        </action>
                                         <condition id="canPayUpgrade">
                                             <string id="upgrade name">Mine</string>
                                             <normal>
@@ -557,7 +563,7 @@
                                                                                         </condition>
                                                                                     </normal>
                                                                                     <else>
-                                                                                        <orblock>
+                                                                                        <andblock>
                                                                                             <normal>
                                                                                                 <condition id="canPayUpgrade">
                                                                                                     <string id="upgrade name">addHealth2</string>
@@ -997,7 +1003,7 @@
                                                                                                     <string id="compare method" values="valuecompare">greater or equal</string>
                                                                                                 </condition>
                                                                                             </or>
-                                                                                        </orblock>
+                                                                                        </andblock>
                                                                                     </else>
                                                                                 </condition>
                                                                             </else>
@@ -1069,13 +1075,28 @@
                                                                     <string id="value">2</string>
                                                                     <string id="compare method" values="valuecompare">equal</string>
                                                                     <normal>
-                                                                        <condition id="canPayUpgrade">
-                                                                            <string id="upgrade name">JetterMineBounce</string>
+                                                                        <condition id="random">
+                                                                            <string id="amount">2</string>
                                                                             <normal>
-                                                                                <action id="buyUpgrade">
+                                                                                <condition id="canPayUpgrade">
                                                                                     <string id="upgrade name">JetterMineBounce</string>
-                                                                                </action>
+                                                                                    <normal>
+                                                                                        <action id="buyUpgrade">
+                                                                                            <string id="upgrade name">JetterMineBounce</string>
+                                                                                        </action>
+                                                                                    </normal>
+                                                                                </condition>
                                                                             </normal>
+                                                                            <else>
+                                                                                <condition id="canPayUpgrade">
+                                                                                    <string id="upgrade name">JetterMineCarpet</string>
+                                                                                    <normal>
+                                                                                        <action id="buyUpgrade">
+                                                                                            <string id="upgrade name">JetterMineCarpet</string>
+                                                                                        </action>
+                                                                                    </normal>
+                                                                                </condition>
+                                                                            </else>
                                                                         </condition>
                                                                     </normal>
                                                                 </condition>
@@ -1083,11 +1104,15 @@
                                                             <or>
                                                                 <condition id="isUpgradeEnabled">
                                                                     <string id="condition" values="yesno">yes</string>
-                                                                    <string id="upgrade name">JetterMineDamage3</string>
+                                                                    <string id="upgrade name">JetterMineBounce</string>
                                                                 </condition>
                                                                 <condition id="isUpgradeEnabled">
                                                                     <string id="condition" values="yesno">yes</string>
-                                                                    <string id="upgrade name">JetterMineBounce</string>
+                                                                    <string id="upgrade name">JetterMineCarpet</string>
+                                                                </condition>
+                                                                <condition id="isUpgradeEnabled">
+                                                                    <string id="condition" values="yesno">yes</string>
+                                                                    <string id="upgrade name">JetterMineDamage3</string>
                                                                 </condition>
                                                             </or>
                                                         </orblock>
@@ -1134,7 +1159,7 @@
                     <string id="Comment">Laser Logic</string>
                     <normal>
                         <orblock>
-                            <string id="Comment">Not running away/defending?</string>
+                            <string id="Comment">Not running away?</string>
                             <else>
                                 <andblock>
                                     <string id="Comment">Don&apos;t attack charging Spy</string>
@@ -1373,11 +1398,6 @@
                                     <string id="value">10</string>
                                     <string id="compare method" values="valuecompare">equal</string>
                                 </condition>
-                                <condition id="checkCounter">
-                                    <string id="id">state</string>
-                                    <string id="value">11</string>
-                                    <string id="compare method" values="valuecompare">equal</string>
-                                </condition>
                                 <condition id="isInArea">
                                     <string id="condition" values="yesno">yes</string>
                                     <string id="collision groups" values="collison groups" multiselect="true">CREEPS;;</string>
@@ -1403,22 +1423,30 @@
                 <andblock>
                     <string id="Comment">Mine deploying logic</string>
                     <normal>
-                        <condition id="getBoolEquals">
-                            <string id="id">laseringTurret</string>
-                            <string id="value" values="yesno">no</string>
-                            <string id="Comment">Not lasering a turret?</string>
-                            <normal>
-                                <action id="pressButton">
-                                    <string id="button" values="buttons">FACE_RIGHT</string>
-                                    <float id="duration in seconds">0.00</float>
-                                </action>
-                            </normal>
+                        <condition id="checkCounter">
+                            <string id="id">state</string>
+                            <string id="value">11</string>
+                            <string id="compare method" values="valuecompare">equal</string>
+                            <string id="Comment">Not defending?</string>
                             <else>
-                                <action id="setBool">
+                                <condition id="getBoolEquals">
                                     <string id="id">laseringTurret</string>
-                                    <string id="value" values="flagtoggle">no</string>
-                                    <string id="Comment">Reset bool</string>
-                                </action>
+                                    <string id="value" values="yesno">no</string>
+                                    <string id="Comment">Not lasering a turret?</string>
+                                    <normal>
+                                        <action id="pressButton">
+                                            <string id="button" values="buttons">FACE_RIGHT</string>
+                                            <float id="duration in seconds">0.00</float>
+                                        </action>
+                                    </normal>
+                                    <else>
+                                        <action id="setBool">
+                                            <string id="id">laseringTurret</string>
+                                            <string id="value" values="flagtoggle">no</string>
+                                            <string id="Comment">Reset bool</string>
+                                        </action>
+                                    </else>
+                                </condition>
                             </else>
                         </condition>
                     </normal>
