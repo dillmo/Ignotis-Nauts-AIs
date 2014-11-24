@@ -260,8 +260,8 @@
                                     <string id="remove if not found" values="yesno">no</string>
                                     <float id="xOffset">0.00</float>
                                     <float id="yOffset">0.00</float>
-                                    <float id="width">0.80</float>
-                                    <float id="height">0.80</float>
+                                    <float id="width">1.00</float>
+                                    <float id="height">1.00</float>
                                     <string id="compare method" values="valuecompare2">lowest</string>
                                     <float id="health value">0.00</float>
                                     <string id="distance check" values="distance check">NONE</string>
@@ -280,8 +280,8 @@
                                             <string id="remove if not found" values="yesno">no</string>
                                             <float id="xOffset">0.00</float>
                                             <float id="yOffset">0.00</float>
-                                            <float id="width">0.80</float>
-                                            <float id="height">0.80</float>
+                                            <float id="width">1.00</float>
+                                            <float id="height">1.00</float>
                                             <string id="compare method" values="valuecompare2">lowest</string>
                                             <float id="health value">0.00</float>
                                             <string id="distance check" values="distance check">NONE</string>
@@ -300,8 +300,8 @@
                                                     <string id="remove if not found" values="yesno">no</string>
                                                     <float id="xOffset">0.00</float>
                                                     <float id="yOffset">0.00</float>
-                                                    <float id="width">0.80</float>
-                                                    <float id="height">0.80</float>
+                                                    <float id="width">1.00</float>
+                                                    <float id="height">1.00</float>
                                                     <string id="compare method" values="valuecompare2">lowest</string>
                                                     <float id="health value">0.00</float>
                                                     <string id="distance check" values="distance check">NONE</string>
@@ -320,8 +320,8 @@
                                                             <string id="remove if not found" values="yesno">no</string>
                                                             <float id="xOffset">0.00</float>
                                                             <float id="yOffset">0.00</float>
-                                                            <float id="width">0.80</float>
-                                                            <float id="height">0.80</float>
+                                                            <float id="width">1.00</float>
+                                                            <float id="height">1.00</float>
                                                             <string id="compare method" values="valuecompare2">lowest</string>
                                                             <float id="health value">0.00</float>
                                                             <string id="distance check" values="distance check">NONE</string>
@@ -399,11 +399,6 @@
                                                         </condition>
                                                     </else>
                                                     <or>
-                                                        <condition id="checkCounter">
-                                                            <string id="id">droneBurst</string>
-                                                            <string id="value">720</string>
-                                                            <string id="compare method" values="valuecompare">equal</string>
-                                                        </condition>
                                                         <condition id="isCharacterInArea">
                                                             <string id="groups" values="target receive groups" multiselect="true">PLAYERS;;</string>
                                                             <string id="teams" values="teams" multiselect="true">ENEMY_TEAM;;</string>
@@ -414,19 +409,19 @@
                                                             <string id="character minimum">1</string>
                                                             <float id="xOffset">0.00</float>
                                                             <float id="yOffset">0.00</float>
-                                                            <float id="width">0.80</float>
-                                                            <float id="height">0.80</float>
+                                                            <float id="width">1.00</float>
+                                                            <float id="height">1.00</float>
                                                             <string id="check line of sight" values="yesno">yes</string>
+                                                        </condition>
+                                                        <condition id="checkCounter">
+                                                            <string id="id">droneBurst</string>
+                                                            <string id="value">720</string>
+                                                            <string id="compare method" values="valuecompare">equal</string>
                                                         </condition>
                                                     </or>
                                                 </andblock>
                                             </else>
                                             <or>
-                                                <condition id="checkCounter">
-                                                    <string id="id">droneBurst</string>
-                                                    <string id="value">600</string>
-                                                    <string id="compare method" values="valuecompare">equal</string>
-                                                </condition>
                                                 <condition id="isCharacterInArea">
                                                     <string id="groups" values="target receive groups" multiselect="true">PLAYERS;;</string>
                                                     <string id="teams" values="teams" multiselect="true">ENEMY_TEAM;;</string>
@@ -437,19 +432,19 @@
                                                     <string id="character minimum">1</string>
                                                     <float id="xOffset">0.00</float>
                                                     <float id="yOffset">0.00</float>
-                                                    <float id="width">0.80</float>
-                                                    <float id="height">0.80</float>
+                                                    <float id="width">1.00</float>
+                                                    <float id="height">1.00</float>
                                                     <string id="check line of sight" values="yesno">yes</string>
+                                                </condition>
+                                                <condition id="checkCounter">
+                                                    <string id="id">droneBurst</string>
+                                                    <string id="value">600</string>
+                                                    <string id="compare method" values="valuecompare">equal</string>
                                                 </condition>
                                             </or>
                                         </andblock>
                                     </else>
                                     <or>
-                                        <condition id="checkCounter">
-                                            <string id="id">droneBurst</string>
-                                            <string id="value">480</string>
-                                            <string id="compare method" values="valuecompare">equal</string>
-                                        </condition>
                                         <condition id="isCharacterInArea">
                                             <string id="groups" values="target receive groups" multiselect="true">PLAYERS;;</string>
                                             <string id="teams" values="teams" multiselect="true">ENEMY_TEAM;;</string>
@@ -460,19 +455,19 @@
                                             <string id="character minimum">1</string>
                                             <float id="xOffset">0.00</float>
                                             <float id="yOffset">0.00</float>
-                                            <float id="width">0.80</float>
-                                            <float id="height">0.80</float>
+                                            <float id="width">1.00</float>
+                                            <float id="height">1.00</float>
                                             <string id="check line of sight" values="yesno">yes</string>
+                                        </condition>
+                                        <condition id="checkCounter">
+                                            <string id="id">droneBurst</string>
+                                            <string id="value">480</string>
+                                            <string id="compare method" values="valuecompare">equal</string>
                                         </condition>
                                     </or>
                                 </andblock>
                             </else>
                             <or>
-                                <condition id="checkCounter">
-                                    <string id="id">droneBurst</string>
-                                    <string id="value">360</string>
-                                    <string id="compare method" values="valuecompare">equal</string>
-                                </condition>
                                 <condition id="isCharacterInArea">
                                     <string id="groups" values="target receive groups" multiselect="true">PLAYERS;;</string>
                                     <string id="teams" values="teams" multiselect="true">ENEMY_TEAM;;</string>
@@ -483,9 +478,14 @@
                                     <string id="character minimum">1</string>
                                     <float id="xOffset">0.00</float>
                                     <float id="yOffset">0.00</float>
-                                    <float id="width">0.80</float>
-                                    <float id="height">0.80</float>
+                                    <float id="width">1.00</float>
+                                    <float id="height">1.00</float>
                                     <string id="check line of sight" values="yesno">yes</string>
+                                </condition>
+                                <condition id="checkCounter">
+                                    <string id="id">droneBurst</string>
+                                    <string id="value">360</string>
+                                    <string id="compare method" values="valuecompare">equal</string>
                                 </condition>
                             </or>
                         </andblock>
