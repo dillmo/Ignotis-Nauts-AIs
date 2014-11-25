@@ -1371,7 +1371,7 @@
                                             <else>
                                                 <andblock>
                                                     <string id="Comment">Don&apos;t attack charging Spy</string>
-                                                    <normal>
+                                                    <else>
                                                         <andblock>
                                                             <normal>
                                                                 <andblock>
@@ -1508,7 +1508,7 @@
                                                                 </condition>
                                                             </or>
                                                         </andblock>
-                                                    </normal>
+                                                    </else>
                                                     <or>
                                                         <condition id="checkClass">
                                                             <string id="check on" values="targetself">target</string>
