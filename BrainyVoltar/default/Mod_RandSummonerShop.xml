@@ -1133,7 +1133,7 @@
                                                                                 </condition>
                                                                                 <condition id="isUpgradeEnabled">
                                                                                     <string id="condition" values="yesno">yes</string>
-                                                                                    <string id="upgrade name">ccReduction1</string>
+                                                                                    <string id="upgrade name">ccReduction</string>
                                                                                     <normal>
                                                                                         <condition id="canPayUpgrade">
                                                                                             <string id="upgrade name">ccReduction2</string>
