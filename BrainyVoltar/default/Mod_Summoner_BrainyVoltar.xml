@@ -340,8 +340,8 @@
                                                             <string id="character minimum">1</string>
                                                             <float id="xOffset">0.00</float>
                                                             <float id="yOffset">0.00</float>
-                                                            <float id="width">1.00</float>
-                                                            <float id="height">1.00</float>
+                                                            <float id="width">2.00</float>
+                                                            <float id="height">2.00</float>
                                                             <string id="check line of sight" values="yesno">no</string>
                                                             <string id="Comment">Unhealthy teammate -&gt; target him</string>
                                                             <normal>
@@ -352,8 +352,8 @@
                                                                     <string id="remove if not found" values="yesno">no</string>
                                                                     <float id="xOffset">0.00</float>
                                                                     <float id="yOffset">0.00</float>
-                                                                    <float id="width">1.00</float>
-                                                                    <float id="height">1.00</float>
+                                                                    <float id="width">2.00</float>
+                                                                    <float id="height">2.00</float>
                                                                     <string id="compare method" values="valuecompare2">lowest</string>
                                                                     <float id="health value">0.00</float>
                                                                     <string id="distance check" values="distance check">NONE</string>
