@@ -1356,15 +1356,7 @@
                                                 <andblock>
                                                     <string id="Comment">Don&apos;t attack charging Spy</string>
                                                     <else>
-                                                        <condition id="isTargetInArea">
-                                                            <string id="condition" values="yesno">yes</string>
-                                                            <float id="xOffset">0.20</float>
-                                                            <float id="yOffset">0.00</float>
-                                                            <float id="width">0.40</float>
-                                                            <float id="height">1.00</float>
-                                                            <string id="check line of sight" values="yesno">yes</string>
-                                                            <string id="ignore invisibility" values="yesno">no</string>
-                                                            <string id="Comment">Can Pounce reach him?</string>
+                                                        <andblock>
                                                             <normal>
                                                                 <andblock>
                                                                     <string id="Comment">Don&apos;t Pounce into Explode</string>
@@ -1440,15 +1432,7 @@
                                                                 </andblock>
                                                             </normal>
                                                             <else>
-                                                                <condition id="isTargetInArea">
-                                                                    <string id="condition" values="yesno">yes</string>
-                                                                    <float id="xOffset">0.15</float>
-                                                                    <float id="yOffset">0.00</float>
-                                                                    <float id="width">0.30</float>
-                                                                    <float id="height">0.60</float>
-                                                                    <string id="check line of sight" values="yesno">no</string>
-                                                                    <string id="ignore invisibility" values="yesno">no</string>
-                                                                    <string id="Comment">Can Energy Pulse reach him?</string>
+                                                                <andblock>
                                                                     <normal>
                                                                         <condition id="isUpgradeEnabled">
                                                                             <string id="condition" values="yesno">yes</string>
@@ -1473,9 +1457,41 @@
                                                                             </else>
                                                                         </condition>
                                                                     </normal>
-                                                                </condition>
+                                                                    <or>
+                                                                        <condition id="isSkillOnButtonAvailable">
+                                                                            <string id="button" values="buttons">FACE_TOP</string>
+                                                                            <string id="Comment">Energy Pulse</string>
+                                                                        </condition>
+                                                                        <condition id="isTargetInArea">
+                                                                            <string id="condition" values="yesno">yes</string>
+                                                                            <float id="xOffset">0.15</float>
+                                                                            <float id="yOffset">0.00</float>
+                                                                            <float id="width">0.30</float>
+                                                                            <float id="height">0.60</float>
+                                                                            <string id="check line of sight" values="yesno">no</string>
+                                                                            <string id="ignore invisibility" values="yesno">no</string>
+                                                                            <string id="Comment">Can Energy Pulse reach him?</string>
+                                                                        </condition>
+                                                                    </or>
+                                                                </andblock>
                                                             </else>
-                                                        </condition>
+                                                            <or>
+                                                                <condition id="isSkillOnButtonAvailable">
+                                                                    <string id="button" values="buttons">FACE_RIGHT</string>
+                                                                    <string id="Comment">Pounce</string>
+                                                                </condition>
+                                                                <condition id="isTargetInArea">
+                                                                    <string id="condition" values="yesno">yes</string>
+                                                                    <float id="xOffset">0.20</float>
+                                                                    <float id="yOffset">0.00</float>
+                                                                    <float id="width">0.40</float>
+                                                                    <float id="height">1.00</float>
+                                                                    <string id="check line of sight" values="yesno">yes</string>
+                                                                    <string id="ignore invisibility" values="yesno">no</string>
+                                                                    <string id="Comment">Can Pounce reach him?</string>
+                                                                </condition>
+                                                            </or>
+                                                        </andblock>
                                                     </else>
                                                     <or>
                                                         <condition id="checkClass">
@@ -1533,9 +1549,6 @@
                                         <condition id="isTargetType">
                                             <string id="condition" values="yesno">yes</string>
                                             <string id="target groups" values="target groups" multiselect="true">PLAYERS;;</string>
-                                        </condition>
-                                        <condition id="isSkillOnButtonAvailable">
-                                            <string id="button" values="buttons">FACE_RIGHT</string>
                                         </condition>
                                         <condition id="checkCounter">
                                             <string id="id">charges</string>
