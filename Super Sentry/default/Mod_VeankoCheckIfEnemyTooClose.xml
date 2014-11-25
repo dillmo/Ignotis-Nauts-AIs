@@ -1,0 +1,531 @@
+<?xml version="1.0" ?>
+<enemy>
+    <behaviour>
+        <root x="110" y="40">
+            <normal>
+                <action id="setBool">
+                    <string id="id">EnemyIsTooClose</string>
+                    <string id="value" values="flagtoggle">no</string>
+                </action>
+                <condition id="checkClass">
+                    <string id="check on" values="targetself">self</string>
+                    <string id="class">Chameleon</string>
+                    <normal>
+                        <condition id="isTargetInArea">
+                            <string id="condition" values="yesno">yes</string>
+                            <float id="xOffset">0.00</float>
+                            <float id="yOffset">0.00</float>
+                            <float id="width">0.05</float>
+                            <float id="height">0.05</float>
+                            <string id="check line of sight" values="yesno">yes</string>
+                            <string id="ignore invisibility" values="yesno">no</string>
+                            <string id="Comment">too close</string>
+                            <normal>
+                                <action id="setBool">
+                                    <string id="id">EnemyIsTooClose</string>
+                                    <string id="value" values="flagtoggle">yes</string>
+                                </action>
+                            </normal>
+                        </condition>
+                    </normal>
+                </condition>
+                <condition id="checkClass">
+                    <string id="check on" values="targetself">self</string>
+                    <string id="class">Cowboy</string>
+                    <normal>
+                        <condition id="isTargetInArea">
+                            <string id="condition" values="yesno">yes</string>
+                            <float id="xOffset">0.00</float>
+                            <float id="yOffset">0.00</float>
+                            <float id="width">0.20</float>
+                            <float id="height">0.10</float>
+                            <string id="check line of sight" values="yesno">yes</string>
+                            <string id="ignore invisibility" values="yesno">no</string>
+                            <string id="Comment">too close</string>
+                            <normal>
+                                <action id="setBool">
+                                    <string id="id">EnemyIsTooClose</string>
+                                    <string id="value" values="flagtoggle">yes</string>
+                                </action>
+                            </normal>
+                        </condition>
+                    </normal>
+                </condition>
+                <condition id="checkClass">
+                    <string id="check on" values="targetself">self</string>
+                    <string id="class">Dasher</string>
+                    <normal>
+                        <condition id="isTargetInArea">
+                            <string id="condition" values="yesno">yes</string>
+                            <float id="xOffset">0.00</float>
+                            <float id="yOffset">0.00</float>
+                            <float id="width">0.20</float>
+                            <float id="height">0.10</float>
+                            <string id="check line of sight" values="yesno">yes</string>
+                            <string id="ignore invisibility" values="yesno">no</string>
+                            <string id="Comment">too close</string>
+                            <normal>
+                                <action id="setBool">
+                                    <string id="id">EnemyIsTooClose</string>
+                                    <string id="value" values="flagtoggle">yes</string>
+                                </action>
+                            </normal>
+                        </condition>
+                    </normal>
+                </condition>
+                <condition id="checkClass">
+                    <string id="check on" values="targetself">self</string>
+                    <string id="class">Tank</string>
+                    <normal>
+                        <condition id="isTargetInArea">
+                            <string id="condition" values="yesno">yes</string>
+                            <float id="xOffset">0.00</float>
+                            <float id="yOffset">0.00</float>
+                            <float id="width">0.30</float>
+                            <float id="height">0.10</float>
+                            <string id="check line of sight" values="yesno">yes</string>
+                            <string id="ignore invisibility" values="yesno">no</string>
+                            <string id="Comment">too close</string>
+                            <normal>
+                                <action id="setBool">
+                                    <string id="id">EnemyIsTooClose</string>
+                                    <string id="value" values="flagtoggle">yes</string>
+                                </action>
+                            </normal>
+                        </condition>
+                    </normal>
+                </condition>
+                <condition id="checkClass">
+                    <string id="check on" values="targetself">self</string>
+                    <string id="class">Vampire</string>
+                    <normal>
+                        <condition id="isTargetInArea">
+                            <string id="condition" values="yesno">yes</string>
+                            <float id="xOffset">0.00</float>
+                            <float id="yOffset">0.00</float>
+                            <float id="width">0.05</float>
+                            <float id="height">0.10</float>
+                            <string id="check line of sight" values="yesno">yes</string>
+                            <string id="ignore invisibility" values="yesno">no</string>
+                            <string id="Comment">too close</string>
+                            <normal>
+                                <action id="setBool">
+                                    <string id="id">EnemyIsTooClose</string>
+                                    <string id="value" values="flagtoggle">yes</string>
+                                </action>
+                            </normal>
+                        </condition>
+                    </normal>
+                </condition>
+                <condition id="checkClass">
+                    <string id="check on" values="targetself">self</string>
+                    <string id="class">Maw</string>
+                    <normal>
+                        <condition id="isTargetInArea">
+                            <string id="condition" values="yesno">yes</string>
+                            <float id="xOffset">0.00</float>
+                            <float id="yOffset">0.00</float>
+                            <float id="width">0.05</float>
+                            <float id="height">0.10</float>
+                            <string id="check line of sight" values="yesno">yes</string>
+                            <string id="ignore invisibility" values="yesno">no</string>
+                            <string id="Comment">too close</string>
+                            <normal>
+                                <action id="setBool">
+                                    <string id="id">EnemyIsTooClose</string>
+                                    <string id="value" values="flagtoggle">yes</string>
+                                </action>
+                            </normal>
+                        </condition>
+                    </normal>
+                </condition>
+                <condition id="checkClass">
+                    <string id="check on" values="targetself">self</string>
+                    <string id="class">Shaman</string>
+                    <normal>
+                        <condition id="isTargetInArea">
+                            <string id="condition" values="yesno">yes</string>
+                            <float id="xOffset">0.00</float>
+                            <float id="yOffset">0.00</float>
+                            <float id="width">0.30</float>
+                            <float id="height">0.10</float>
+                            <string id="check line of sight" values="yesno">yes</string>
+                            <string id="ignore invisibility" values="yesno">no</string>
+                            <string id="Comment">too close</string>
+                            <normal>
+                                <action id="setBool">
+                                    <string id="id">EnemyIsTooClose</string>
+                                    <string id="value" values="flagtoggle">yes</string>
+                                </action>
+                            </normal>
+                        </condition>
+                    </normal>
+                </condition>
+                <condition id="checkClass">
+                    <string id="check on" values="targetself">self</string>
+                    <string id="class">Hunter</string>
+                    <normal>
+                        <condition id="isTargetInArea">
+                            <string id="condition" values="yesno">yes</string>
+                            <float id="xOffset">0.00</float>
+                            <float id="yOffset">0.00</float>
+                            <float id="width">0.20</float>
+                            <float id="height">0.10</float>
+                            <string id="check line of sight" values="yesno">yes</string>
+                            <string id="ignore invisibility" values="yesno">no</string>
+                            <string id="Comment">too close</string>
+                            <normal>
+                                <action id="setBool">
+                                    <string id="id">EnemyIsTooClose</string>
+                                    <string id="value" values="flagtoggle">yes</string>
+                                </action>
+                            </normal>
+                        </condition>
+                    </normal>
+                </condition>
+                <condition id="checkClass">
+                    <string id="check on" values="targetself">self</string>
+                    <string id="class">Heavy</string>
+                    <normal>
+                        <condition id="isTargetInArea">
+                            <string id="condition" values="yesno">yes</string>
+                            <float id="xOffset">0.00</float>
+                            <float id="yOffset">0.00</float>
+                            <float id="width">0.30</float>
+                            <float id="height">0.10</float>
+                            <string id="check line of sight" values="yesno">yes</string>
+                            <string id="ignore invisibility" values="yesno">no</string>
+                            <string id="Comment">too close</string>
+                            <normal>
+                                <action id="setBool">
+                                    <string id="id">EnemyIsTooClose</string>
+                                    <string id="value" values="flagtoggle">yes</string>
+                                </action>
+                            </normal>
+                        </condition>
+                    </normal>
+                </condition>
+                <condition id="checkClass">
+                    <string id="check on" values="targetself">self</string>
+                    <string id="class">Spy</string>
+                    <normal>
+                        <condition id="isTargetInArea">
+                            <string id="condition" values="yesno">yes</string>
+                            <float id="xOffset">0.00</float>
+                            <float id="yOffset">0.00</float>
+                            <float id="width">0.30</float>
+                            <float id="height">0.10</float>
+                            <string id="check line of sight" values="yesno">yes</string>
+                            <string id="ignore invisibility" values="yesno">no</string>
+                            <string id="Comment">too close</string>
+                            <normal>
+                                <action id="setBool">
+                                    <string id="id">EnemyIsTooClose</string>
+                                    <string id="value" values="flagtoggle">yes</string>
+                                </action>
+                            </normal>
+                        </condition>
+                    </normal>
+                </condition>
+                <condition id="checkClass">
+                    <string id="check on" values="targetself">self</string>
+                    <string id="class">Bird</string>
+                    <normal>
+                        <condition id="isUpgradeEnabled">
+                            <string id="condition" values="yesno">yes</string>
+                            <string id="upgrade name">BirdShootRange1</string>
+                            <normal>
+                                <condition id="isTargetInArea">
+                                    <string id="condition" values="yesno">yes</string>
+                                    <float id="xOffset">0.20</float>
+                                    <float id="yOffset">0.00</float>
+                                    <float id="width">0.35</float>
+                                    <float id="height">0.20</float>
+                                    <string id="check line of sight" values="yesno">yes</string>
+                                    <string id="ignore invisibility" values="yesno">no</string>
+                                    <string id="Comment">too close</string>
+                                    <normal>
+                                        <action id="setBool">
+                                            <string id="id">EnemyIsTooClose</string>
+                                            <string id="value" values="flagtoggle">yes</string>
+                                        </action>
+                                    </normal>
+                                </condition>
+                            </normal>
+                            <else>
+                                <condition id="isTargetInArea">
+                                    <string id="condition" values="yesno">yes</string>
+                                    <float id="xOffset">0.20</float>
+                                    <float id="yOffset">0.00</float>
+                                    <float id="width">0.20</float>
+                                    <float id="height">0.20</float>
+                                    <string id="check line of sight" values="yesno">yes</string>
+                                    <string id="ignore invisibility" values="yesno">no</string>
+                                    <string id="Comment">too close</string>
+                                    <normal>
+                                        <action id="setBool">
+                                            <string id="id">EnemyIsTooClose</string>
+                                            <string id="value" values="flagtoggle">yes</string>
+                                        </action>
+                                    </normal>
+                                </condition>
+                            </else>
+                        </condition>
+                    </normal>
+                </condition>
+                <condition id="checkClass">
+                    <string id="check on" values="targetself">self</string>
+                    <string id="class">Captain</string>
+                    <normal>
+                        <condition id="getBoolEquals">
+                            <string id="id">wantAnchor</string>
+                            <string id="value" values="yesno">no</string>
+                            <normal>
+                                <condition id="isUpgradeEnabled">
+                                    <string id="condition" values="yesno">yes</string>
+                                    <string id="upgrade name">CaptainNoAnker</string>
+                                    <normal>
+                                        <condition id="isTargetInArea">
+                                            <string id="condition" values="yesno">yes</string>
+                                            <float id="xOffset">0.00</float>
+                                            <float id="yOffset">0.00</float>
+                                            <float id="width">0.20</float>
+                                            <float id="height">0.10</float>
+                                            <string id="check line of sight" values="yesno">yes</string>
+                                            <string id="ignore invisibility" values="yesno">no</string>
+                                            <string id="Comment">too close</string>
+                                            <normal>
+                                                <action id="setBool">
+                                                    <string id="id">EnemyIsTooClose</string>
+                                                    <string id="value" values="flagtoggle">yes</string>
+                                                </action>
+                                            </normal>
+                                        </condition>
+                                    </normal>
+                                    <else>
+                                        <condition id="isTargetInArea">
+                                            <string id="condition" values="yesno">yes</string>
+                                            <float id="xOffset">0.00</float>
+                                            <float id="yOffset">0.00</float>
+                                            <float id="width">0.05</float>
+                                            <float id="height">0.10</float>
+                                            <string id="check line of sight" values="yesno">yes</string>
+                                            <string id="ignore invisibility" values="yesno">no</string>
+                                            <string id="Comment">too close</string>
+                                            <normal>
+                                                <action id="setBool">
+                                                    <string id="id">EnemyIsTooClose</string>
+                                                    <string id="value" values="flagtoggle">yes</string>
+                                                </action>
+                                            </normal>
+                                        </condition>
+                                    </else>
+                                </condition>
+                            </normal>
+                        </condition>
+                    </normal>
+                </condition>
+                <condition id="checkClass">
+                    <string id="check on" values="targetself">self</string>
+                    <string id="class">Brute</string>
+                    <normal>
+                        <condition id="isTargetInArea">
+                            <string id="condition" values="yesno">yes</string>
+                            <float id="xOffset">0.00</float>
+                            <float id="yOffset">0.00</float>
+                            <float id="width">0.05</float>
+                            <float id="height">0.10</float>
+                            <string id="check line of sight" values="yesno">yes</string>
+                            <string id="ignore invisibility" values="yesno">no</string>
+                            <string id="Comment">too close</string>
+                            <normal>
+                                <action id="setBool">
+                                    <string id="id">EnemyIsTooClose</string>
+                                    <string id="value" values="flagtoggle">yes</string>
+                                </action>
+                            </normal>
+                        </condition>
+                    </normal>
+                </condition>
+                <condition id="checkClass">
+                    <string id="check on" values="targetself">self</string>
+                    <string id="class">Assassin</string>
+                    <normal>
+                        <condition id="isUpgradeEnabled">
+                            <string id="condition" values="yesno">yes</string>
+                            <string id="upgrade name">AssasinStrikeMaxChargeRangedActivate</string>
+                            <normal>
+                                <condition id="isTargetInArea">
+                                    <string id="condition" values="yesno">yes</string>
+                                    <float id="xOffset">0.00</float>
+                                    <float id="yOffset">0.00</float>
+                                    <float id="width">0.30</float>
+                                    <float id="height">0.10</float>
+                                    <string id="check line of sight" values="yesno">yes</string>
+                                    <string id="ignore invisibility" values="yesno">no</string>
+                                    <string id="Comment">too close</string>
+                                    <normal>
+                                        <action id="setBool">
+                                            <string id="id">EnemyIsTooClose</string>
+                                            <string id="value" values="flagtoggle">yes</string>
+                                        </action>
+                                    </normal>
+                                </condition>
+                            </normal>
+                            <else>
+                                <condition id="isTargetInArea">
+                                    <string id="condition" values="yesno">yes</string>
+                                    <float id="xOffset">0.00</float>
+                                    <float id="yOffset">0.00</float>
+                                    <float id="width">0.05</float>
+                                    <float id="height">0.10</float>
+                                    <string id="check line of sight" values="yesno">yes</string>
+                                    <string id="ignore invisibility" values="yesno">no</string>
+                                    <string id="Comment">too close</string>
+                                    <normal>
+                                        <action id="setBool">
+                                            <string id="id">EnemyIsTooClose</string>
+                                            <string id="value" values="flagtoggle">yes</string>
+                                        </action>
+                                    </normal>
+                                </condition>
+                            </else>
+                        </condition>
+                    </normal>
+                </condition>
+                <condition id="checkClass">
+                    <string id="check on" values="targetself">self</string>
+                    <string id="class">Summoner</string>
+                    <normal>
+                        <condition id="isTargetInArea">
+                            <string id="condition" values="yesno">yes</string>
+                            <float id="xOffset">0.00</float>
+                            <float id="yOffset">0.00</float>
+                            <float id="width">0.20</float>
+                            <float id="height">0.10</float>
+                            <string id="check line of sight" values="yesno">yes</string>
+                            <string id="ignore invisibility" values="yesno">no</string>
+                            <string id="Comment">too close</string>
+                            <normal>
+                                <action id="setBool">
+                                    <string id="id">EnemyIsTooClose</string>
+                                    <string id="value" values="flagtoggle">yes</string>
+                                </action>
+                            </normal>
+                        </condition>
+                    </normal>
+                </condition>
+                <condition id="checkClass">
+                    <string id="check on" values="targetself">self</string>
+                    <string id="class">Blazer</string>
+                    <normal>
+                        <condition id="isTargetInArea">
+                            <string id="condition" values="yesno">yes</string>
+                            <float id="xOffset">0.00</float>
+                            <float id="yOffset">0.00</float>
+                            <float id="width">0.05</float>
+                            <float id="height">0.10</float>
+                            <string id="check line of sight" values="yesno">yes</string>
+                            <string id="ignore invisibility" values="yesno">no</string>
+                            <string id="Comment">too close</string>
+                            <normal>
+                                <action id="setBool">
+                                    <string id="id">EnemyIsTooClose</string>
+                                    <string id="value" values="flagtoggle">yes</string>
+                                </action>
+                            </normal>
+                        </condition>
+                    </normal>
+                </condition>
+                <condition id="checkClass">
+                    <string id="check on" values="targetself">self</string>
+                    <string id="class">Jetter</string>
+                    <normal>
+                        <condition id="isTargetInArea">
+                            <string id="condition" values="yesno">yes</string>
+                            <float id="xOffset">0.00</float>
+                            <float id="yOffset">0.00</float>
+                            <float id="width">0.30</float>
+                            <float id="height">0.10</float>
+                            <string id="check line of sight" values="yesno">yes</string>
+                            <string id="ignore invisibility" values="yesno">no</string>
+                            <string id="Comment">too close</string>
+                            <normal>
+                                <action id="setBool">
+                                    <string id="id">EnemyIsTooClose</string>
+                                    <string id="value" values="flagtoggle">yes</string>
+                                </action>
+                            </normal>
+                        </condition>
+                    </normal>
+                </condition>
+                <condition id="checkClass">
+                    <string id="check on" values="targetself">self</string>
+                    <string id="class">Butterfly</string>
+                    <normal>
+                        <condition id="isTargetInArea">
+                            <string id="condition" values="yesno">yes</string>
+                            <float id="xOffset">0.00</float>
+                            <float id="yOffset">0.00</float>
+                            <float id="width">0.20</float>
+                            <float id="height">0.10</float>
+                            <string id="check line of sight" values="yesno">yes</string>
+                            <string id="ignore invisibility" values="yesno">no</string>
+                            <string id="Comment">too close</string>
+                            <normal>
+                                <action id="setBool">
+                                    <string id="id">EnemyIsTooClose</string>
+                                    <string id="value" values="flagtoggle">yes</string>
+                                </action>
+                            </normal>
+                        </condition>
+                    </normal>
+                </condition>
+                <condition id="checkClass">
+                    <string id="check on" values="targetself">self</string>
+                    <string id="class">Commando</string>
+                    <normal>
+                        <condition id="isTargetInArea">
+                            <string id="condition" values="yesno">yes</string>
+                            <float id="xOffset">0.00</float>
+                            <float id="yOffset">0.00</float>
+                            <float id="width">0.20</float>
+                            <float id="height">0.10</float>
+                            <string id="check line of sight" values="yesno">yes</string>
+                            <string id="ignore invisibility" values="yesno">no</string>
+                            <string id="Comment">too close</string>
+                            <normal>
+                                <action id="setBool">
+                                    <string id="id">EnemyIsTooClose</string>
+                                    <string id="value" values="flagtoggle">yes</string>
+                                </action>
+                            </normal>
+                        </condition>
+                    </normal>
+                </condition>
+                <condition id="checkClass">
+                    <string id="check on" values="targetself">self</string>
+                    <string id="class">Paladin</string>
+                    <normal>
+                        <condition id="isTargetInArea">
+                            <string id="condition" values="yesno">yes</string>
+                            <float id="xOffset">0.00</float>
+                            <float id="yOffset">0.00</float>
+                            <float id="width">0.07</float>
+                            <float id="height">0.05</float>
+                            <string id="check line of sight" values="yesno">yes</string>
+                            <string id="ignore invisibility" values="yesno">no</string>
+                            <string id="Comment">too close</string>
+                            <normal>
+                                <action id="setBool">
+                                    <string id="id">EnemyIsTooClose</string>
+                                    <string id="value" values="flagtoggle">yes</string>
+                                </action>
+                            </normal>
+                        </condition>
+                    </normal>
+                </condition>
+            </normal>
+        </root>
+    </behaviour>
+</enemy>

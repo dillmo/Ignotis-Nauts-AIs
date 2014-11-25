@@ -18,7 +18,7 @@
                     <string id="Minimized">yes</string>
                 </action>
                 <action id="executeBehaviourTree">
-                    <string id="fileName">Mod_VeankoAI_IgnotisTweaks</string>
+                    <string id="fileName">Mod_VeankoAI</string>
                     <string id="Minimized">yes</string>
                 </action>
                 <action id="executeBehaviourTree">
@@ -2343,7 +2343,7 @@
         </root>
     </behaviour>
     <behaviour>
-        <condition id="checkCharacterValue" x="3778" y="1917">
+        <condition id="checkCharacterValue" x="3953" y="1917">
             <string id="property" values="charactervaluesCheckable">health percentage</string>
             <float id="value">50.00</float>
             <string id="compare method" values="valuecompare">greater or equal</string>

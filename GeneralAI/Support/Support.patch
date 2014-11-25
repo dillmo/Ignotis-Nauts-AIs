@@ -1,8 +1,10 @@
-diff --git a/../Mod_VeankoAI_IgnotisTweaks.xml b/Mod_VeankoAI_Support.xml
-index 76e2fff..45ed856 100755
---- a/../Mod_VeankoAI_IgnotisTweaks.xml
+diff --git a/home/dillon/Awesomenauts/VeankoAI/Mod_VeankoAI.xml b/Mod_VeankoAI_Support.xml
+old mode 100644
+new mode 100755
+index d134c07..c35975c
+--- a/home/dillon/Awesomenauts/VeankoAI/Mod_VeankoAI.xml
 +++ b/Mod_VeankoAI_Support.xml
-@@ -1637,7 +1637,7 @@
+@@ -1663,7 +1663,7 @@
                                                              <string id="condition" values="charactervaluesCheckable">health percentage</string>
                                                              <string id="comparison" values="valuecompare">greater or equal</string>
                                                              <float id="value">30.00</float>
@@ -11,7 +13,7 @@ index 76e2fff..45ed856 100755
                                                              <float id="xOffset">0.00</float>
                                                              <float id="yOffset">0.00</float>
                                                              <float id="width">2.00</float>
-@@ -1652,7 +1652,7 @@
+@@ -1708,7 +1708,7 @@
                                                                      <string id="condition" values="charactervaluesCheckable">health percentage</string>
                                                                      <string id="comparison" values="valuecompare">greater or equal</string>
                                                                      <float id="value">30.00</float>

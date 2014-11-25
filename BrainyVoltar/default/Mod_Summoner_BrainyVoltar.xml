@@ -1346,6 +1346,50 @@
                                 </condition>
                             </normal>
                         </condition>
+                        <andblock>
+                            <string id="Comment">Keep target in range</string>
+                            <normal>
+                                <condition id="isUpgradeEnabled">
+                                    <string id="condition" values="yesno">yes</string>
+                                    <string id="upgrade name">InAir</string>
+                                    <normal>
+                                        <condition id="isInNamedArea">
+                                            <string id="area name">hazardAreaEnabled</string>
+                                            <string id="team" values="ownenemy">OWN_TEAM</string>
+                                            <string id="who" values="targetself">self</string>
+                                            <string id="Comment">Don&apos;t float in inferno</string>
+                                            <else>
+                                                <action id="pressButton">
+                                                    <string id="button" values="buttons">FACE_BOTTOM</string>
+                                                    <float id="duration in seconds">0.10</float>
+                                                </action>
+                                            </else>
+                                        </condition>
+                                    </normal>
+                                    <else>
+                                        <action id="setBool">
+                                            <string id="id">jump</string>
+                                            <string id="value" values="flagtoggle">no</string>
+                                        </action>
+                                    </else>
+                                </condition>
+                            </normal>
+                            <or>
+                                <condition id="isTargetType">
+                                    <string id="condition" values="yesno">yes</string>
+                                    <string id="target groups" values="target groups" multiselect="true">PLAYERS;;</string>
+                                </condition>
+                                <condition id="getBoolEquals">
+                                    <string id="id">targetInRange</string>
+                                    <string id="value" values="yesno">yes</string>
+                                </condition>
+                                <condition id="checkCounter">
+                                    <string id="id">state</string>
+                                    <string id="value">4</string>
+                                    <string id="compare method" values="valuecompare">equal</string>
+                                </condition>
+                            </or>
+                        </andblock>
                         <condition id="getBoolEquals">
                             <string id="id">CantMove</string>
                             <string id="value" values="yesno">no</string>
@@ -1774,56 +1818,6 @@
                                         </action>
                                     </else>
                                 </condition>
-                                <andblock>
-                                    <string id="Comment">Floating logic</string>
-                                    <normal>
-                                        <orblock>
-                                            <normal>
-                                                <condition id="isInNamedArea">
-                                                    <string id="area name">hazardAreaEnabled</string>
-                                                    <string id="team" values="ownenemy">OWN_TEAM</string>
-                                                    <string id="who" values="targetself">self</string>
-                                                    <string id="Comment">Don&apos;t float in inferno</string>
-                                                    <else>
-                                                        <action id="pressButton">
-                                                            <string id="button" values="buttons">FACE_BOTTOM</string>
-                                                            <float id="duration in seconds">0.10</float>
-                                                        </action>
-                                                    </else>
-                                                </condition>
-                                            </normal>
-                                            <or>
-                                                <condition id="isTargetPosition">
-                                                    <string id="condition" values="yesno">yes</string>
-                                                    <string id="target position" values="offsetposition">BELOW</string>
-                                                </condition>
-                                                <condition id="isTargetPosition">
-                                                    <string id="condition" values="yesno">yes</string>
-                                                    <string id="target position" values="offsetposition">VERTICAL EQUAL</string>
-                                                </condition>
-                                            </or>
-                                        </orblock>
-                                    </normal>
-                                    <or>
-                                        <condition id="isUpgradeEnabled">
-                                            <string id="condition" values="yesno">yes</string>
-                                            <string id="upgrade name">InAir</string>
-                                        </condition>
-                                        <condition id="isTargetType">
-                                            <string id="condition" values="yesno">yes</string>
-                                            <string id="target groups" values="target groups" multiselect="true">PLAYERS;;</string>
-                                        </condition>
-                                        <condition id="getBoolEquals">
-                                            <string id="id">targetInRange</string>
-                                            <string id="value" values="yesno">yes</string>
-                                        </condition>
-                                        <condition id="checkCounter">
-                                            <string id="id">state</string>
-                                            <string id="value">4</string>
-                                            <string id="compare method" values="valuecompare">equal</string>
-                                        </condition>
-                                    </or>
-                                </andblock>
                             </normal>
                         </condition>
                     </normal>

@@ -1,0 +1,293 @@
+<?xml version="1.0" ?>
+<enemy>
+    <behaviour>
+        <root x="110" y="40">
+            <normal>
+                <condition id="getBoolEquals">
+                    <string id="id">VeankoInit</string>
+                    <string id="value" values="yesno">yes</string>
+                    <normal>
+                        <condition id="isInNamedArea">
+                            <string id="area name">StartArea</string>
+                            <string id="team" values="ownenemy">OWN_TEAM</string>
+                            <string id="who" values="targetself">self</string>
+                            <normal>
+                                <condition id="getBoolEquals">
+                                    <string id="id">StartHealthSet</string>
+                                    <string id="value" values="yesno">no</string>
+                                    <normal>
+                                        <action id="adjustCharacterValue">
+                                            <string id="property" values="charactervaluesAdjustable">health percentage</string>
+                                            <float id="value">100.00</float>
+                                            <string id="adjust method" values="valueadjust">set</string>
+                                        </action>
+                                        <action id="setBool">
+                                            <string id="id">StartHealthSet</string>
+                                            <string id="value" values="flagtoggle">yes</string>
+                                        </action>
+                                    </normal>
+                                </condition>
+                            </normal>
+                        </condition>
+                    </normal>
+                </condition>
+                <condition id="getBoolEquals">
+                    <string id="id">VeankoInit</string>
+                    <string id="value" values="yesno">no</string>
+                    <normal>
+                        <condition id="directionToEnemyBase">
+                            <string id="direction" values="forwardbackward">FORWARD</string>
+                            <normal>
+                                <action id="adjustCounter">
+                                    <string id="id">TeamNo</string>
+                                    <string id="value">0</string>
+                                    <string id="adjust method" values="valueadjust">set</string>
+                                </action>
+                            </normal>
+                            <else>
+                                <action id="adjustCounter">
+                                    <string id="id">TeamNo</string>
+                                    <string id="value">1</string>
+                                    <string id="adjust method" values="valueadjust">set</string>
+                                </action>
+                            </else>
+                        </condition>
+                        <condition id="checkCharacterValue">
+                            <string id="property" values="charactervaluesCheckable">AI skill</string>
+                            <float id="value">0.50</float>
+                            <string id="compare method" values="valuecompare">greater</string>
+                            <string id="check on" values="targetself">self</string>
+                            <string id="Comment">bot cheats</string>
+                            <normal>
+                                <action id="enableUpgrade">
+                                    <string id="condition" values="yesno">yes</string>
+                                    <string id="upgrade name">Coinregen1</string>
+                                </action>
+                            </normal>
+                        </condition>
+                        <action id="setBool">
+                            <string id="id">VeankoInit</string>
+                            <string id="value" values="flagtoggle">yes</string>
+                        </action>
+                        <action id="adjustCounter">
+                            <string id="id">EnemiesChecked</string>
+                            <string id="value">0</string>
+                            <string id="adjust method" values="valueadjust">set</string>
+                        </action>
+                        <action id="adjustCounter">
+                            <string id="id">KnownEnemies</string>
+                            <string id="value">0</string>
+                            <string id="adjust method" values="valueadjust">set</string>
+                        </action>
+                        <action id="enableUpgrade">
+                            <string id="condition" values="yesno">yes</string>
+                            <string id="upgrade name">Bot</string>
+                        </action>
+                        <condition id="checkCharacterValue">
+                            <string id="property" values="charactervaluesCheckable">gold</string>
+                            <float id="value">0.00</float>
+                            <string id="compare method" values="valuecompare">equal</string>
+                            <string id="check on" values="targetself">self</string>
+                            <normal>
+                                <action id="adjustCharacterValue">
+                                    <string id="property" values="charactervaluesAdjustable">health</string>
+                                    <float id="value">100.00</float>
+                                    <string id="adjust method" values="valueadjust">set</string>
+                                </action>
+                            </normal>
+                        </condition>
+                        <condition id="isInNamedArea">
+                            <string id="area name">Startarea</string>
+                            <string id="team" values="ownenemy">OWN_TEAM</string>
+                            <string id="who" values="targetself">self</string>
+                            <normal>
+                                <action id="adjustCounter">
+                                    <string id="id">setState</string>
+                                    <string id="value">10</string>
+                                    <string id="adjust method" values="valueadjust">set</string>
+                                    <string id="Comment">returnToUpgrade (10)</string>
+                                </action>
+                            </normal>
+                            <else>
+                                <action id="adjustCounter">
+                                    <string id="id">setState</string>
+                                    <string id="value">3</string>
+                                    <string id="adjust method" values="valueadjust">set</string>
+                                    <string id="Comment">advanceToFrontline(3)</string>
+                                </action>
+                            </else>
+                        </condition>
+                        <condition id="getBoolEquals">
+                            <string id="id">false</string>
+                            <string id="value" values="yesno">no</string>
+                            <string id="Comment">set towers alive</string>
+                            <normal>
+                                <orblock>
+                                    <string id="Comment">different teams - diff named areas - same meaning</string>
+                                    <normal>
+                                        <action id="setBool">
+                                            <string id="id">enemyTower1Lane1</string>
+                                            <string id="value" values="flagtoggle">no</string>
+                                        </action>
+                                    </normal>
+                                    <else>
+                                        <action id="setBool">
+                                            <string id="id">enemyTower1Lane1</string>
+                                            <string id="value" values="flagtoggle">yes</string>
+                                        </action>
+                                    </else>
+                                    <or>
+                                        <condition id="isInNamedArea">
+                                            <string id="area name">DEURBLAUW3</string>
+                                            <string id="team" values="ownenemy">OWN_TEAM</string>
+                                            <string id="who" values="targetself">self</string>
+                                        </condition>
+                                        <condition id="isInNamedArea">
+                                            <string id="area name">DEURROOD3</string>
+                                            <string id="team" values="ownenemy">OWN_TEAM</string>
+                                            <string id="who" values="targetself">self</string>
+                                        </condition>
+                                    </or>
+                                </orblock>
+                                <orblock>
+                                    <normal>
+                                        <action id="setBool">
+                                            <string id="id">enemyTower2Lane1</string>
+                                            <string id="value" values="flagtoggle">no</string>
+                                        </action>
+                                    </normal>
+                                    <else>
+                                        <action id="setBool">
+                                            <string id="id">enemyTower2Lane1</string>
+                                            <string id="value" values="flagtoggle">yes</string>
+                                        </action>
+                                    </else>
+                                    <or>
+                                        <condition id="isInNamedArea">
+                                            <string id="area name">DEURBLAUW2</string>
+                                            <string id="team" values="ownenemy">OWN_TEAM</string>
+                                            <string id="who" values="targetself">self</string>
+                                        </condition>
+                                        <condition id="isInNamedArea">
+                                            <string id="area name">DEURROOD2</string>
+                                            <string id="team" values="ownenemy">OWN_TEAM</string>
+                                            <string id="who" values="targetself">self</string>
+                                        </condition>
+                                    </or>
+                                </orblock>
+                                <orblock>
+                                    <normal>
+                                        <action id="setBool">
+                                            <string id="id">enemyTower2Lane2</string>
+                                            <string id="value" values="flagtoggle">no</string>
+                                        </action>
+                                    </normal>
+                                    <else>
+                                        <action id="setBool">
+                                            <string id="id">enemyTower2Lane2</string>
+                                            <string id="value" values="flagtoggle">yes</string>
+                                        </action>
+                                    </else>
+                                    <or>
+                                        <condition id="isInNamedArea">
+                                            <string id="area name">DEURBLAUW1</string>
+                                            <string id="team" values="ownenemy">OWN_TEAM</string>
+                                            <string id="who" values="targetself">self</string>
+                                        </condition>
+                                        <condition id="isInNamedArea">
+                                            <string id="area name">DEURROOD1</string>
+                                            <string id="team" values="ownenemy">OWN_TEAM</string>
+                                            <string id="who" values="targetself">self</string>
+                                        </condition>
+                                    </or>
+                                </orblock>
+                                <orblock>
+                                    <normal>
+                                        <action id="setBool">
+                                            <string id="id">enemyTower1Lane2</string>
+                                            <string id="value" values="flagtoggle">no</string>
+                                        </action>
+                                    </normal>
+                                    <else>
+                                        <action id="setBool">
+                                            <string id="id">enemyTower1Lane2</string>
+                                            <string id="value" values="flagtoggle">yes</string>
+                                        </action>
+                                    </else>
+                                    <or>
+                                        <condition id="isInNamedArea">
+                                            <string id="area name">DEURBLAUW4</string>
+                                            <string id="team" values="ownenemy">OWN_TEAM</string>
+                                            <string id="who" values="targetself">self</string>
+                                        </condition>
+                                        <condition id="isInNamedArea">
+                                            <string id="area name">DEURROOD4</string>
+                                            <string id="team" values="ownenemy">OWN_TEAM</string>
+                                            <string id="who" values="targetself">self</string>
+                                        </condition>
+                                    </or>
+                                </orblock>
+                                <action id="setBool">
+                                    <string id="id">enemyTower3</string>
+                                    <string id="value" values="flagtoggle">yes</string>
+                                </action>
+                            </normal>
+                        </condition>
+                        <action id="setBool">
+                            <string id="id">SupportMode</string>
+                            <string id="value" values="flagtoggle">no</string>
+                        </action>
+                        <orblock>
+                            <normal>
+                                <action id="setBool">
+                                    <string id="id">SupportMode</string>
+                                    <string id="value" values="flagtoggle">yes</string>
+                                </action>
+                                <action id="adjustCounter">
+                                    <string id="id">SupportBuild</string>
+                                    <string id="value">4</string>
+                                    <string id="adjust method" values="valueadjust">set</string>
+                                </action>
+                            </normal>
+                            <else>
+                                <action id="adjustCounter">
+                                    <string id="id">SupportBuild</string>
+                                    <string id="value">0</string>
+                                    <string id="adjust method" values="valueadjust">set</string>
+                                </action>
+                            </else>
+                            <or>
+                                <condition id="getBoolEquals">
+                                    <string id="id">Jetter</string>
+                                    <string id="value" values="yesno">yes</string>
+                                </condition>
+                                <condition id="getBoolEquals">
+                                    <string id="id">Summoner</string>
+                                    <string id="value" values="yesno">yes</string>
+                                </condition>
+                                <condition id="random">
+                                    <string id="amount">2</string>
+                                </condition>
+                            </or>
+                        </orblock>
+                        <condition id="getBoolEquals">
+                            <string id="id">SupportMode</string>
+                            <string id="value" values="yesno">no</string>
+                            <normal>
+                                <condition id="random">
+                                    <string id="amount">1</string>
+                                    <normal>
+                                        <action id="setBool">
+                                            <string id="id">PushMode</string>
+                                            <string id="value" values="flagtoggle">yes</string>
+                                        </action>
+                                    </normal>
+                                </condition>
+                            </normal>
+                        </condition>
+                    </normal>
+                </condition>
+            </normal>
+        </root>
+    </behaviour>
+</enemy>
