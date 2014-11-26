@@ -1941,6 +1941,201 @@
                         </action>
                     </normal>
                 </condition>
+                <condition id="isInArea">
+                    <string id="condition" values="yesno">yes</string>
+                    <string id="collision groups" values="collison groups" multiselect="true">PROJECTILES;;</string>
+                    <string id="check green obstacles only" values="yesno">no</string>
+                    <string id="teams" values="teams" multiselect="true">ENEMY_TEAM;;</string>
+                    <string id="areaName"></string>
+                    <float id="xOffset">0.00</float>
+                    <float id="yOffset">0.00</float>
+                    <float id="width">1.00</float>
+                    <float id="height">1.00</float>
+                    <string id="check line of sight" values="yesno">yes</string>
+                    <string id="ignore invisibility" values="yesno">no</string>
+                    <string id="Comment">Dodge projectiles</string>
+                    <normal>
+                        <condition id="isInArea">
+                            <string id="condition" values="yesno">yes</string>
+                            <string id="collision groups" values="collison groups" multiselect="true">PROJECTILES;;</string>
+                            <string id="check green obstacles only" values="yesno">no</string>
+                            <string id="teams" values="teams" multiselect="true">ENEMY_TEAM;;</string>
+                            <string id="areaName"></string>
+                            <float id="xOffset">0.00</float>
+                            <float id="yOffset">-0.15</float>
+                            <float id="width">0.10</float>
+                            <float id="height">0.30</float>
+                            <string id="check line of sight" values="yesno">yes</string>
+                            <string id="ignore invisibility" values="yesno">no</string>
+                            <string id="Comment">Below?</string>
+                            <normal>
+                                <condition id="isOnGround">
+                                    <string id="condition" values="yesno">yes</string>
+                                    <string id="check on" values="targetself">self</string>
+                                    <normal>
+                                        <condition id="timer">
+                                            <string id="timeunit" values="timeunits">seconds</string>
+                                            <float id="time">1.30</float>
+                                            <string id="execute first time" values="yesno">yes</string>
+                                            <normal>
+                                                <action id="setBool">
+                                                    <string id="id">jump</string>
+                                                    <string id="value" values="flagtoggle">yes</string>
+                                                </action>
+                                            </normal>
+                                        </condition>
+                                    </normal>
+                                    <else>
+                                        <action id="setBool">
+                                            <string id="id">float</string>
+                                            <string id="value" values="flagtoggle">yes</string>
+                                        </action>
+                                    </else>
+                                </condition>
+                            </normal>
+                            <else>
+                                <condition id="isInArea">
+                                    <string id="condition" values="yesno">yes</string>
+                                    <string id="collision groups" values="collison groups" multiselect="true">PROJECTILES;;</string>
+                                    <string id="check green obstacles only" values="yesno">no</string>
+                                    <string id="teams" values="teams" multiselect="true">ENEMY_TEAM;;</string>
+                                    <string id="areaName"></string>
+                                    <float id="xOffset">0.00</float>
+                                    <float id="yOffset">0.15</float>
+                                    <float id="width">0.10</float>
+                                    <float id="height">0.30</float>
+                                    <string id="check line of sight" values="yesno">yes</string>
+                                    <string id="ignore invisibility" values="yesno">no</string>
+                                    <string id="Comment">Above?</string>
+                                    <normal>
+                                        <condition id="isInArea">
+                                            <string id="condition" values="yesno">yes</string>
+                                            <string id="collision groups" values="collison groups" multiselect="true">INVINCIBLE_OBSTACLES;;</string>
+                                            <string id="check green obstacles only" values="yesno">yes</string>
+                                            <string id="teams" values="teams" multiselect="true">OWN_TEAM;;ENEMY_TEAM;;NEUTRAL_TEAM;;</string>
+                                            <string id="areaName"></string>
+                                            <float id="xOffset">0.00</float>
+                                            <float id="yOffset">-0.02</float>
+                                            <float id="width">0.01</float>
+                                            <float id="height">0.04</float>
+                                            <string id="check line of sight" values="yesno">yes</string>
+                                            <string id="ignore invisibility" values="yesno">no</string>
+                                            <string id="Comment">greens</string>
+                                            <normal>
+                                                <action id="setBool">
+                                                    <string id="id">DownJump</string>
+                                                    <string id="value" values="flagtoggle">yes</string>
+                                                </action>
+                                            </normal>
+                                        </condition>
+                                    </normal>
+                                </condition>
+                            </else>
+                        </condition>
+                        <condition id="isInArea">
+                            <string id="condition" values="yesno">yes</string>
+                            <string id="collision groups" values="collison groups" multiselect="true">PROJECTILES;;</string>
+                            <string id="check green obstacles only" values="yesno">no</string>
+                            <string id="teams" values="teams" multiselect="true">ENEMY_TEAM;;</string>
+                            <string id="areaName"></string>
+                            <float id="xOffset">-0.15</float>
+                            <float id="yOffset">0.00</float>
+                            <float id="width">0.30</float>
+                            <float id="height">0.30</float>
+                            <string id="check line of sight" values="yesno">yes</string>
+                            <string id="ignore invisibility" values="yesno">no</string>
+                            <string id="Comment">Back?</string>
+                            <normal>
+                                <condition id="directionToEnemyBase">
+                                    <string id="direction" values="forwardbackward">FORWARD</string>
+                                    <normal>
+                                        <condition id="isOnGround">
+                                            <string id="condition" values="yesno">yes</string>
+                                            <string id="check on" values="targetself">self</string>
+                                            <normal>
+                                                <condition id="timer">
+                                                    <string id="timeunit" values="timeunits">seconds</string>
+                                                    <float id="time">1.30</float>
+                                                    <string id="execute first time" values="yesno">yes</string>
+                                                    <normal>
+                                                        <action id="setBool">
+                                                            <string id="id">jump</string>
+                                                            <string id="value" values="flagtoggle">yes</string>
+                                                        </action>
+                                                    </normal>
+                                                </condition>
+                                            </normal>
+                                            <else>
+                                                <action id="setBool">
+                                                    <string id="id">float</string>
+                                                    <string id="value" values="flagtoggle">yes</string>
+                                                </action>
+                                            </else>
+                                        </condition>
+                                    </normal>
+                                    <else>
+                                        <action id="setBool">
+                                            <string id="id">GoForward</string>
+                                            <string id="value" values="flagtoggle">yes</string>
+                                        </action>
+                                    </else>
+                                </condition>
+                            </normal>
+                            <else>
+                                <condition id="isInArea">
+                                    <string id="condition" values="yesno">yes</string>
+                                    <string id="collision groups" values="collison groups" multiselect="true">PROJECTILES;;</string>
+                                    <string id="check green obstacles only" values="yesno">no</string>
+                                    <string id="teams" values="teams" multiselect="true">ENEMY_TEAM;;</string>
+                                    <string id="areaName"></string>
+                                    <float id="xOffset">0.15</float>
+                                    <float id="yOffset">0.00</float>
+                                    <float id="width">0.30</float>
+                                    <float id="height">0.30</float>
+                                    <string id="check line of sight" values="yesno">yes</string>
+                                    <string id="ignore invisibility" values="yesno">no</string>
+                                    <string id="Comment">Front?</string>
+                                    <normal>
+                                        <condition id="directionToEnemyBase">
+                                            <string id="direction" values="forwardbackward">FORWARD</string>
+                                            <normal>
+                                                <action id="setBool">
+                                                    <string id="id">GoBack</string>
+                                                    <string id="value" values="flagtoggle">yes</string>
+                                                </action>
+                                            </normal>
+                                            <else>
+                                                <condition id="isOnGround">
+                                                    <string id="condition" values="yesno">yes</string>
+                                                    <string id="check on" values="targetself">self</string>
+                                                    <normal>
+                                                        <condition id="timer">
+                                                            <string id="timeunit" values="timeunits">seconds</string>
+                                                            <float id="time">1.30</float>
+                                                            <string id="execute first time" values="yesno">yes</string>
+                                                            <normal>
+                                                                <action id="setBool">
+                                                                    <string id="id">jump</string>
+                                                                    <string id="value" values="flagtoggle">yes</string>
+                                                                </action>
+                                                            </normal>
+                                                        </condition>
+                                                    </normal>
+                                                    <else>
+                                                        <action id="setBool">
+                                                            <string id="id">float</string>
+                                                            <string id="value" values="flagtoggle">yes</string>
+                                                        </action>
+                                                    </else>
+                                                </condition>
+                                            </else>
+                                        </condition>
+                                    </normal>
+                                </condition>
+                            </else>
+                        </condition>
+                    </normal>
+                </condition>
                 <condition id="checkCounter">
                     <string id="id">botSkill</string>
                     <string id="value">3</string>
@@ -2071,26 +2266,6 @@
                                 </condition>
                             </normal>
                         </condition>
-                    </normal>
-                </condition>
-                <condition id="isInArea">
-                    <string id="condition" values="yesno">yes</string>
-                    <string id="collision groups" values="collison groups" multiselect="true">PROJECTILES;;</string>
-                    <string id="check green obstacles only" values="yesno">no</string>
-                    <string id="teams" values="teams" multiselect="true">ENEMY_TEAM;;</string>
-                    <string id="areaName"></string>
-                    <float id="xOffset">0.00</float>
-                    <float id="yOffset">-0.10</float>
-                    <float id="width">0.20</float>
-                    <float id="height">0.30</float>
-                    <string id="check line of sight" values="yesno">no</string>
-                    <string id="ignore invisibility" values="yesno">no</string>
-                    <string id="Comment">Dodge projectiles</string>
-                    <normal>
-                        <action id="setBool">
-                            <string id="id">jump</string>
-                            <string id="value" values="flagtoggle">yes</string>
-                        </action>
                     </normal>
                 </condition>
                 <condition id="getBoolEquals">
@@ -2347,7 +2522,7 @@
         </root>
     </behaviour>
     <behaviour>
-        <condition id="checkCharacterValue" x="4303" y="1917">
+        <condition id="checkCharacterValue" x="4478" y="1917">
             <string id="property" values="charactervaluesCheckable">health percentage</string>
             <float id="value">50.00</float>
             <string id="compare method" values="valuecompare">greater or equal</string>
