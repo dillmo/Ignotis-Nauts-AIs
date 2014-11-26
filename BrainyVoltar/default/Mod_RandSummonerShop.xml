@@ -95,22 +95,22 @@
                     <string id="team" values="ownenemy">OWN_TEAM</string>
                     <string id="who" values="targetself">self</string>
                     <string id="Comment">In shop?</string>
-                    <normal>
+                    <else>
                         <condition id="isUpgradeEnabled">
                             <string id="condition" values="yesno">no</string>
-                            <string id="upgrade name">SummonDrone</string>
+                            <string id="upgrade name">SummonerSpeed</string>
                             <normal>
-                                <action id="adjustCharacterValue">
-                                    <string id="property" values="charactervaluesAdjustable">gold</string>
-                                    <float id="value">35.00</float>
-                                    <string id="adjust method" values="valueadjust">add</string>
-                                    <string id="Comment">Extra starting Solar</string>
-                                </action>
                                 <condition id="canPayUpgrade">
-                                    <string id="upgrade name">SummonDrone</string>
+                                    <string id="upgrade name">SummonerSpeed</string>
                                     <normal>
+                                        <action id="adjustCharacterValue">
+                                            <string id="property" values="charactervaluesAdjustable">gold</string>
+                                            <float id="value">35.00</float>
+                                            <string id="adjust method" values="valueadjust">add</string>
+                                            <string id="Comment">Extra starting Solar</string>
+                                        </action>
                                         <action id="buyUpgrade">
-                                            <string id="upgrade name">SummonDrone</string>
+                                            <string id="upgrade name">SummonerSpeed</string>
                                         </action>
                                     </normal>
                                 </condition>
@@ -118,13 +118,13 @@
                             <else>
                                 <condition id="isUpgradeEnabled">
                                     <string id="condition" values="yesno">no</string>
-                                    <string id="upgrade name">HealTotem</string>
+                                    <string id="upgrade name">SummonDrone</string>
                                     <normal>
                                         <condition id="canPayUpgrade">
-                                            <string id="upgrade name">HealTotem</string>
+                                            <string id="upgrade name">SummonDrone</string>
                                             <normal>
                                                 <action id="buyUpgrade">
-                                                    <string id="upgrade name">HealTotem</string>
+                                                    <string id="upgrade name">SummonDrone</string>
                                                 </action>
                                             </normal>
                                         </condition>
@@ -132,13 +132,13 @@
                                     <else>
                                         <condition id="isUpgradeEnabled">
                                             <string id="condition" values="yesno">no</string>
-                                            <string id="upgrade name">SummonerSpeed</string>
+                                            <string id="upgrade name">HealTotem</string>
                                             <normal>
                                                 <condition id="canPayUpgrade">
-                                                    <string id="upgrade name">SummonerSpeed</string>
+                                                    <string id="upgrade name">HealTotem</string>
                                                     <normal>
                                                         <action id="buyUpgrade">
-                                                            <string id="upgrade name">SummonerSpeed</string>
+                                                            <string id="upgrade name">HealTotem</string>
                                                         </action>
                                                     </normal>
                                                 </condition>
@@ -374,7 +374,6 @@
                                                                                                                                     <normal>
                                                                                                                                         <action id="buyUpgrade">
                                                                                                                                             <string id="upgrade name">SummonerDroneFaster1</string>
-                                                                                                                                            <string id="Minimized">yes</string>
                                                                                                                                         </action>
                                                                                                                                     </normal>
                                                                                                                                 </condition>
@@ -387,7 +386,6 @@
                                                                                                                                             <normal>
                                                                                                                                                 <action id="buyUpgrade">
                                                                                                                                                     <string id="upgrade name">SummonerDroneFaster2</string>
-                                                                                                                                                    <string id="Minimized">yes</string>
                                                                                                                                                 </action>
                                                                                                                                             </normal>
                                                                                                                                         </condition>
@@ -400,7 +398,6 @@
                                                                                                                                                     <normal>
                                                                                                                                                         <action id="buyUpgrade">
                                                                                                                                                             <string id="upgrade name">SummonerDroneExplode</string>
-                                                                                                                                                            <string id="Minimized">yes</string>
                                                                                                                                                         </action>
                                                                                                                                                     </normal>
                                                                                                                                                 </condition>
@@ -413,7 +410,6 @@
                                                                                                                                                             <normal>
                                                                                                                                                                 <action id="buyUpgrade">
                                                                                                                                                                     <string id="upgrade name">SummonerDroneExplode2</string>
-                                                                                                                                                                    <string id="Minimized">yes</string>
                                                                                                                                                                 </action>
                                                                                                                                                             </normal>
                                                                                                                                                         </condition>
@@ -426,7 +422,6 @@
                                                                                                                                                                     <normal>
                                                                                                                                                                         <action id="buyUpgrade">
                                                                                                                                                                             <string id="upgrade name">SummonerDroneExplode2</string>
-                                                                                                                                                                            <string id="Minimized">yes</string>
                                                                                                                                                                         </action>
                                                                                                                                                                     </normal>
                                                                                                                                                                 </condition>
@@ -439,7 +434,6 @@
                                                                                                                                                                             <normal>
                                                                                                                                                                                 <action id="buyUpgrade">
                                                                                                                                                                                     <string id="upgrade name">SummonerDroneCooldown1</string>
-                                                                                                                                                                                    <string id="Minimized">yes</string>
                                                                                                                                                                                 </action>
                                                                                                                                                                             </normal>
                                                                                                                                                                         </condition>
@@ -755,7 +749,6 @@
                                                                                                                                                                                                 <condition id="isUpgradeEnabled">
                                                                                                                                                                                                     <string id="condition" values="yesno">yes</string>
                                                                                                                                                                                                     <string id="upgrade name">SummonerHealtotemDamage</string>
-                                                                                                                                                                                                    <string id="Minimized">yes</string>
                                                                                                                                                                                                 </condition>
                                                                                                                                                                                             </or>
                                                                                                                                                                                         </orblock>
@@ -772,7 +765,6 @@
                                                                                                                                                                                         <condition id="isUpgradeEnabled">
                                                                                                                                                                                             <string id="condition" values="yesno">yes</string>
                                                                                                                                                                                             <string id="upgrade name">SummonerHealtotemDamage2</string>
-                                                                                                                                                                                            <string id="Minimized">yes</string>
                                                                                                                                                                                         </condition>
                                                                                                                                                                                     </or>
                                                                                                                                                                                 </orblock>
@@ -1359,7 +1351,7 @@
                                 </condition>
                             </else>
                         </condition>
-                    </normal>
+                    </else>
                 </condition>
             </normal>
         </root>

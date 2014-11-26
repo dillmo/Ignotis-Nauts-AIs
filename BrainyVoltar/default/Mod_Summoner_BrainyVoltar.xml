@@ -1323,9 +1323,30 @@
                                             <string id="id">jump</string>
                                             <string id="value" values="flagtoggle">no</string>
                                         </action>
+                                        <action id="setBool">
+                                            <string id="id">GoUp</string>
+                                            <string id="value" values="flagtoggle">no</string>
+                                        </action>
                                     </else>
                                 </condition>
                             </normal>
+                            <else>
+                                <condition id="isUpgradeEnabled">
+                                    <string id="condition" values="yesno">yes</string>
+                                    <string id="upgrade name">InAir</string>
+                                    <string id="Comment">Don&apos;t get stuck floating</string>
+                                    <normal>
+                                        <action id="setBool">
+                                            <string id="id">jump</string>
+                                            <string id="value" values="flagtoggle">no</string>
+                                        </action>
+                                        <action id="setBool">
+                                            <string id="id">GoUp</string>
+                                            <string id="value" values="flagtoggle">no</string>
+                                        </action>
+                                    </normal>
+                                </condition>
+                            </else>
                             <or>
                                 <condition id="isTargetType">
                                     <string id="condition" values="yesno">yes</string>
@@ -1340,13 +1361,16 @@
                                     <string id="value">4</string>
                                     <string id="compare method" values="valuecompare">equal</string>
                                 </condition>
+                                <condition id="isFromTeam">
+                                    <string id="team" values="teamswithnumbers">OWN_TEAM</string>
+                                    <string id="check on" values="targetself">target</string>
+                                </condition>
                             </or>
                         </andblock>
                         <condition id="getBoolEquals">
                             <string id="id">CantMove</string>
                             <string id="value" values="yesno">no</string>
                             <string id="Comment">Handle Movement</string>
-                            <string id="Minimized">yes</string>
                             <normal>
                                 <condition id="getBoolEquals">
                                     <string id="id">GoDown</string>
@@ -1455,10 +1479,34 @@
                                                                     <float id="time">0.40</float>
                                                                     <string id="execute first time" values="yesno">no</string>
                                                                     <else>
-                                                                        <action id="pressButton">
-                                                                            <string id="button" values="buttons">FACE_BOTTOM</string>
-                                                                            <float id="duration in seconds">0.10</float>
-                                                                        </action>
+                                                                        <condition id="isInArea">
+                                                                            <string id="condition" values="yesno">yes</string>
+                                                                            <string id="collision groups" values="collison groups" multiselect="true">INVINCIBLE_OBSTACLES;;</string>
+                                                                            <string id="check green obstacles only" values="yesno">no</string>
+                                                                            <string id="teams" values="teams" multiselect="true">OWN_TEAM;;ENEMY_TEAM;;NEUTRAL_TEAM;;</string>
+                                                                            <string id="areaName"></string>
+                                                                            <float id="xOffset">0.20</float>
+                                                                            <float id="yOffset">0.39</float>
+                                                                            <float id="width">0.30</float>
+                                                                            <float id="height">0.02</float>
+                                                                            <string id="check line of sight" values="yesno">no</string>
+                                                                            <string id="ignore invisibility" values="yesno">no</string>
+                                                                            <string id="Comment">check walls above</string>
+                                                                            <normal>
+                                                                                <action id="pressButton">
+                                                                                    <string id="button" values="buttons">FACE_BOTTOM</string>
+                                                                                    <float id="duration in seconds">0.20</float>
+                                                                                    <string id="Comment">jump</string>
+                                                                                </action>
+                                                                            </normal>
+                                                                            <else>
+                                                                                <action id="pressButton">
+                                                                                    <string id="button" values="buttons">FACE_BOTTOM</string>
+                                                                                    <float id="duration in seconds">0.30</float>
+                                                                                    <string id="Comment">jump</string>
+                                                                                </action>
+                                                                            </else>
+                                                                        </condition>
                                                                     </else>
                                                                 </condition>
                                                             </normal>
