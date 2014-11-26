@@ -846,7 +846,7 @@
                 <andblock>
                     <string id="Comment">Heal Wave logic</string>
                     <normal>
-                        <andblock>
+                        <orblock>
                             <string id="Comment">Not retreating?</string>
                             <else>
                                 <andblock>
@@ -923,7 +923,7 @@
                                     <string id="compare method" values="valuecompare">equal</string>
                                 </condition>
                             </or>
-                        </andblock>
+                        </orblock>
                     </normal>
                     <or>
                         <condition id="isSkillOnButtonAvailable">
