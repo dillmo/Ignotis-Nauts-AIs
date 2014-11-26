@@ -1439,6 +1439,10 @@
                                                     <string id="value" values="flagtoggle">yes</string>
                                                 </action>
                                                 <action id="setBool">
+                                                    <string id="id">MoveTowardsTarget</string>
+                                                    <string id="value" values="flagtoggle">no</string>
+                                                </action>
+                                                <action id="setBool">
                                                     <string id="id">RetreatingFromNauts</string>
                                                     <string id="value" values="flagtoggle">yes</string>
                                                 </action>

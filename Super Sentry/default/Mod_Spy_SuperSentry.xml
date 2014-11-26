@@ -1680,8 +1680,8 @@
                     <string id="condition" values="yesno">yes</string>
                     <float id="xOffset">0.00</float>
                     <float id="yOffset">0.00</float>
-                    <float id="width">0.30</float>
-                    <float id="height">0.30</float>
+                    <float id="width">0.40</float>
+                    <float id="height">0.40</float>
                     <string id="check line of sight" values="yesno">no</string>
                     <string id="ignore invisibility" values="yesno">no</string>
                     <string id="Comment">Keep my distance from enemies</string>
@@ -1693,6 +1693,10 @@
                         <action id="setBool">
                             <string id="id">MoveTowardsTarget</string>
                             <string id="value" values="flagtoggle">no</string>
+                        </action>
+                        <action id="setBool">
+                            <string id="id">RetreatingFromNauts</string>
+                            <string id="value" values="flagtoggle">yes</string>
                         </action>
                     </normal>
                 </condition>
@@ -2343,7 +2347,7 @@
         </root>
     </behaviour>
     <behaviour>
-        <condition id="checkCharacterValue" x="4128" y="1917">
+        <condition id="checkCharacterValue" x="4303" y="1917">
             <string id="property" values="charactervaluesCheckable">health percentage</string>
             <float id="value">50.00</float>
             <string id="compare method" values="valuecompare">greater or equal</string>
