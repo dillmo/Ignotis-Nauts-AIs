@@ -33,6 +33,93 @@
                     <string id="Comment">Shop Logic</string>
                     <normal>
                         <condition id="once">
+                            <string id="Comment">Detect enemies affected by BKM</string>
+                            <normal>
+                                <action id="adjustCounter">
+                                    <string id="id">DebuffEnemies</string>
+                                    <string id="value">0</string>
+                                    <string id="adjust method" values="valueadjust">set</string>
+                                </action>
+                                <condition id="doesClassExist">
+                                    <string id="teams" values="teams" multiselect="true">ENEMY_TEAM;;</string>
+                                    <string id="class">Dasher</string>
+                                    <normal>
+                                        <action id="adjustCounter">
+                                            <string id="id">DebuffEnemies</string>
+                                            <string id="value">1</string>
+                                            <string id="adjust method" values="valueadjust">add</string>
+                                        </action>
+                                    </normal>
+                                </condition>
+                                <condition id="doesClassExist">
+                                    <string id="teams" values="teams" multiselect="true">ENEMY_TEAM;;</string>
+                                    <string id="class">Tank</string>
+                                    <normal>
+                                        <action id="adjustCounter">
+                                            <string id="id">DebuffEnemies</string>
+                                            <string id="value">1</string>
+                                            <string id="adjust method" values="valueadjust">add</string>
+                                        </action>
+                                    </normal>
+                                </condition>
+                                <condition id="doesClassExist">
+                                    <string id="teams" values="teams" multiselect="true">ENEMY_TEAM;;</string>
+                                    <string id="class">Blazer</string>
+                                    <normal>
+                                        <action id="adjustCounter">
+                                            <string id="id">DebuffEnemies</string>
+                                            <string id="value">1</string>
+                                            <string id="adjust method" values="valueadjust">add</string>
+                                        </action>
+                                    </normal>
+                                </condition>
+                                <condition id="doesClassExist">
+                                    <string id="teams" values="teams" multiselect="true">ENEMY_TEAM;;</string>
+                                    <string id="class">Brute</string>
+                                    <normal>
+                                        <action id="adjustCounter">
+                                            <string id="id">DebuffEnemies</string>
+                                            <string id="value">1</string>
+                                            <string id="adjust method" values="valueadjust">add</string>
+                                        </action>
+                                    </normal>
+                                </condition>
+                                <condition id="doesClassExist">
+                                    <string id="teams" values="teams" multiselect="true">ENEMY_TEAM;;</string>
+                                    <string id="class">Heavy</string>
+                                    <normal>
+                                        <action id="adjustCounter">
+                                            <string id="id">DebuffEnemies</string>
+                                            <string id="value">1</string>
+                                            <string id="adjust method" values="valueadjust">add</string>
+                                        </action>
+                                    </normal>
+                                </condition>
+                                <condition id="doesClassExist">
+                                    <string id="teams" values="teams" multiselect="true">ENEMY_TEAM;;</string>
+                                    <string id="class">Assassin</string>
+                                    <normal>
+                                        <action id="adjustCounter">
+                                            <string id="id">DebuffEnemies</string>
+                                            <string id="value">1</string>
+                                            <string id="adjust method" values="valueadjust">add</string>
+                                        </action>
+                                    </normal>
+                                </condition>
+                                <condition id="doesClassExist">
+                                    <string id="teams" values="teams" multiselect="true">ENEMY_TEAM;;</string>
+                                    <string id="class">Paladin</string>
+                                    <normal>
+                                        <action id="adjustCounter">
+                                            <string id="id">DebuffEnemies</string>
+                                            <string id="value">1</string>
+                                            <string id="adjust method" values="valueadjust">add</string>
+                                        </action>
+                                    </normal>
+                                </condition>
+                            </normal>
+                        </condition>
+                        <condition id="once">
                             <normal>
                                 <andblock>
                                     <string id="Comment">I died -&gt; get pills</string>
@@ -326,9 +413,7 @@
                                                                                                     <else>
                                                                                                         <andblock>
                                                                                                             <normal>
-                                                                                                                <condition id="doesClassExist">
-                                                                                                                    <string id="teams" values="teams" multiselect="true">ENEMY_TEAM;;</string>
-                                                                                                                    <string id="class">Tank</string>
+                                                                                                                <orblock>
                                                                                                                     <normal>
                                                                                                                         <condition id="canPayUpgrade">
                                                                                                                             <string id="upgrade name">AssassinJoltSilence1</string>
@@ -364,7 +449,18 @@
                                                                                                                             </else>
                                                                                                                         </condition>
                                                                                                                     </else>
-                                                                                                                </condition>
+                                                                                                                    <or>
+                                                                                                                        <condition id="doesClassExist">
+                                                                                                                            <string id="teams" values="teams" multiselect="true">ENEMY_TEAM;;</string>
+                                                                                                                            <string id="class">Tank</string>
+                                                                                                                        </condition>
+                                                                                                                        <condition id="checkCounter">
+                                                                                                                            <string id="id">DebuffEnemies</string>
+                                                                                                                            <string id="value">2</string>
+                                                                                                                            <string id="compare method" values="valuecompare">greater or equal</string>
+                                                                                                                        </condition>
+                                                                                                                    </or>
+                                                                                                                </orblock>
                                                                                                             </normal>
                                                                                                             <else>
                                                                                                                 <andblock>
