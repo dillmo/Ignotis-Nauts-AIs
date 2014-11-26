@@ -1973,10 +1973,31 @@
                             <string id="ignore invisibility" values="yesno">no</string>
                             <string id="Comment">Dodge bullets</string>
                             <normal>
-                                <action id="setBool">
-                                    <string id="id">jump</string>
-                                    <string id="value" values="flagtoggle">yes</string>
-                                </action>
+                                <orblock>
+                                    <string id="Comment">Don&apos;t mess up AA</string>
+                                    <normal>
+                                        <action id="setBool">
+                                            <string id="id">jump</string>
+                                            <string id="value" values="flagtoggle">yes</string>
+                                        </action>
+                                    </normal>
+                                    <or>
+                                        <condition id="getBoolEquals">
+                                            <string id="id">HSNMode</string>
+                                            <string id="value" values="yesno">yes</string>
+                                        </condition>
+                                        <condition id="checkCounter">
+                                            <string id="id">state</string>
+                                            <string id="value">4</string>
+                                            <string id="compare method" values="valuecompare">less</string>
+                                        </condition>
+                                        <condition id="checkCounter">
+                                            <string id="id">state</string>
+                                            <string id="value">4</string>
+                                            <string id="compare method" values="valuecompare">greater</string>
+                                        </condition>
+                                    </or>
+                                </orblock>
                             </normal>
                         </condition>
                         <condition id="getBoolEquals">
