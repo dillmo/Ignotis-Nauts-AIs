@@ -908,18 +908,18 @@
                             </else>
                             <or>
                                 <condition id="checkCounter">
-                                    <string id="id">1</string>
-                                    <string id="value"></string>
+                                    <string id="id">state</string>
+                                    <string id="value">1</string>
                                     <string id="compare method" values="valuecompare">equal</string>
                                 </condition>
                                 <condition id="checkCounter">
-                                    <string id="id">6</string>
-                                    <string id="value"></string>
+                                    <string id="id">state</string>
+                                    <string id="value">6</string>
                                     <string id="compare method" values="valuecompare">equal</string>
                                 </condition>
                                 <condition id="checkCounter">
-                                    <string id="id">10</string>
-                                    <string id="value"></string>
+                                    <string id="id">state</string>
+                                    <string id="value">10</string>
                                     <string id="compare method" values="valuecompare">equal</string>
                                 </condition>
                             </or>
