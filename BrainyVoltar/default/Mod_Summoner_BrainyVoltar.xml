@@ -847,36 +847,10 @@
                     <string id="Comment">Heal Wave logic</string>
                     <normal>
                         <andblock>
-                            <normal>
-                                <action id="aimStickAtTarget">
-                                    <float id="duration seconds">0.10</float>
-                                    <string id="only aim when needed" values="yesno">no</string>
-                                </action>
-                                <action id="pressButton">
-                                    <string id="button" values="buttons">FACE_LEFT</string>
-                                    <float id="duration in seconds">0.00</float>
-                                </action>
-                            </normal>
-                            <or>
-                                <condition id="isFromTeam">
-                                    <string id="team" values="teamswithnumbers">OWN_TEAM</string>
-                                    <string id="check on" values="targetself">target</string>
-                                </condition>
-                                <condition id="checkCharacterValue">
-                                    <string id="property" values="charactervaluesCheckable">health minus dot percentage</string>
-                                    <float id="value">100.00</float>
-                                    <string id="compare method" values="valuecompare">less</string>
-                                    <string id="check on" values="targetself">target</string>
-                                </condition>
-                            </or>
-                        </andblock>
-                        <condition id="isUpgradeEnabled">
-                            <string id="condition" values="yesno">yes</string>
-                            <string id="upgrade name">SummonerShotHot1</string>
-                            <normal>
+                            <string id="Comment">Not retreating?</string>
+                            <else>
                                 <andblock>
-                                    <string id="Comment">Don&apos;t attack charging Spy</string>
-                                    <else>
+                                    <normal>
                                         <action id="aimStickAtTarget">
                                             <float id="duration seconds">0.10</float>
                                             <string id="only aim when needed" values="yesno">no</string>
@@ -885,23 +859,71 @@
                                             <string id="button" values="buttons">FACE_LEFT</string>
                                             <float id="duration in seconds">0.00</float>
                                         </action>
-                                    </else>
+                                    </normal>
                                     <or>
-                                        <condition id="checkClass">
+                                        <condition id="isFromTeam">
+                                            <string id="team" values="teamswithnumbers">OWN_TEAM</string>
                                             <string id="check on" values="targetself">target</string>
-                                            <string id="class">Spy</string>
-                                            <string id="Comment">Spy</string>
                                         </condition>
-                                        <condition id="hasUpgrade">
-                                            <string id="class">Spy</string>
-                                            <string id="team" values="teamswithnumbers">ENEMY_TEAM</string>
-                                            <string id="upgrade name">SpyAbsorbStartOn</string>
-                                            <string id="Comment">Absorb Shield</string>
+                                        <condition id="checkCharacterValue">
+                                            <string id="property" values="charactervaluesCheckable">health minus dot percentage</string>
+                                            <float id="value">100.00</float>
+                                            <string id="compare method" values="valuecompare">less</string>
+                                            <string id="check on" values="targetself">target</string>
                                         </condition>
                                     </or>
                                 </andblock>
-                            </normal>
-                        </condition>
+                                <condition id="isUpgradeEnabled">
+                                    <string id="condition" values="yesno">yes</string>
+                                    <string id="upgrade name">SummonerShotHot1</string>
+                                    <normal>
+                                        <andblock>
+                                            <string id="Comment">Don&apos;t attack charging Spy</string>
+                                            <else>
+                                                <action id="aimStickAtTarget">
+                                                    <float id="duration seconds">0.10</float>
+                                                    <string id="only aim when needed" values="yesno">no</string>
+                                                </action>
+                                                <action id="pressButton">
+                                                    <string id="button" values="buttons">FACE_LEFT</string>
+                                                    <float id="duration in seconds">0.00</float>
+                                                </action>
+                                            </else>
+                                            <or>
+                                                <condition id="checkClass">
+                                                    <string id="check on" values="targetself">target</string>
+                                                    <string id="class">Spy</string>
+                                                    <string id="Comment">Spy</string>
+                                                </condition>
+                                                <condition id="hasUpgrade">
+                                                    <string id="class">Spy</string>
+                                                    <string id="team" values="teamswithnumbers">ENEMY_TEAM</string>
+                                                    <string id="upgrade name">SpyAbsorbStartOn</string>
+                                                    <string id="Comment">Absorb Shield</string>
+                                                </condition>
+                                            </or>
+                                        </andblock>
+                                    </normal>
+                                </condition>
+                            </else>
+                            <or>
+                                <condition id="checkCounter">
+                                    <string id="id">1</string>
+                                    <string id="value"></string>
+                                    <string id="compare method" values="valuecompare">equal</string>
+                                </condition>
+                                <condition id="checkCounter">
+                                    <string id="id">6</string>
+                                    <string id="value"></string>
+                                    <string id="compare method" values="valuecompare">equal</string>
+                                </condition>
+                                <condition id="checkCounter">
+                                    <string id="id">10</string>
+                                    <string id="value"></string>
+                                    <string id="compare method" values="valuecompare">equal</string>
+                                </condition>
+                            </or>
+                        </andblock>
                     </normal>
                     <or>
                         <condition id="isSkillOnButtonAvailable">
@@ -1364,6 +1386,25 @@
                                 <condition id="isFromTeam">
                                     <string id="team" values="teamswithnumbers">OWN_TEAM</string>
                                     <string id="check on" values="targetself">target</string>
+                                </condition>
+                            </or>
+                        </andblock>
+                        <andblock>
+                            <string id="Comment">Hover towards waypoints</string>
+                            <normal>
+                                <action id="pressButton">
+                                    <string id="button" values="buttons">FACE_BOTTOM</string>
+                                    <float id="duration in seconds">0.10</float>
+                                </action>
+                            </normal>
+                            <or>
+                                <condition id="isTargetPosition">
+                                    <string id="condition" values="yesno">yes</string>
+                                    <string id="target position" values="offsetposition">VERTICAL EQUAL</string>
+                                </condition>
+                                <condition id="isUpgradeEnabled">
+                                    <string id="condition" values="yesno">yes</string>
+                                    <string id="upgrade name">InAir</string>
                                 </condition>
                             </or>
                         </andblock>

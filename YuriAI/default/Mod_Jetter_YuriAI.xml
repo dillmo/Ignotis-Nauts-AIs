@@ -1621,6 +1621,10 @@
                                     <string id="id">MoveAwayFromTarget</string>
                                     <string id="value" values="yesno">yes</string>
                                 </condition>
+                                <condition id="getBoolEquals">
+                                    <string id="id">RetreatingFromNauts</string>
+                                    <string id="value" values="yesno">yes</string>
+                                </condition>
                             </or>
                         </orblock>
                     </normal>
