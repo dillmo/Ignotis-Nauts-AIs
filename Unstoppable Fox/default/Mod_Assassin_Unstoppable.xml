@@ -1878,22 +1878,24 @@
                                                     <string id="condition" values="yesno">yes</string>
                                                     <string id="target position" values="offsetposition">BACK</string>
                                                 </condition>
-                                                <condition id="isTargetType">
+                                                <condition id="isInArea">
                                                     <string id="condition" values="yesno">yes</string>
-                                                    <string id="target groups" values="target groups" multiselect="true">PLAYERS;;</string>
-                                                </condition>
-                                                <condition id="isFromTeam">
-                                                    <string id="team" values="teamswithnumbers">ENEMY_TEAM</string>
-                                                    <string id="check on" values="targetself">target</string>
-                                                </condition>
-                                                <condition id="isTargetInArea">
-                                                    <string id="condition" values="yesno">yes</string>
+                                                    <string id="collision groups" values="collison groups" multiselect="true">PLAYERS;;</string>
+                                                    <string id="check green obstacles only" values="yesno">no</string>
+                                                    <string id="teams" values="teams" multiselect="true">ENEMY_TEAM;;</string>
+                                                    <string id="areaName"></string>
                                                     <float id="xOffset">0.00</float>
                                                     <float id="yOffset">0.00</float>
                                                     <float id="width">1.00</float>
                                                     <float id="height">1.00</float>
                                                     <string id="check line of sight" values="yesno">yes</string>
                                                     <string id="ignore invisibility" values="yesno">no</string>
+                                                </condition>
+                                                <condition id="checkCharacterValue">
+                                                    <string id="property" values="charactervaluesCheckable">health minus dot percentage</string>
+                                                    <float id="value">40.00</float>
+                                                    <string id="compare method" values="valuecompare">less or equal</string>
+                                                    <string id="check on" values="targetself">self</string>
                                                 </condition>
                                             </or>
                                         </andblock>
