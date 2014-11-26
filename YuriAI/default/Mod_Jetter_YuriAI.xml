@@ -319,28 +319,33 @@
                                                                 </action>
                                                             </normal>
                                                             <else>
-                                                                <action id="wait">
-                                                                    <float id="time">0.50</float>
-                                                                </action>
-                                                                <condition id="random">
-                                                                    <string id="amount">2</string>
+                                                                <sequence>
+                                                                    <string id="Is blocking" values="yesno">no</string>
                                                                     <normal>
-                                                                        <action id="adjustCounter">
-                                                                            <string id="id">warpBuild</string>
-                                                                            <string id="value">2</string>
-                                                                            <string id="adjust method" values="valueadjust">set</string>
-                                                                            <string id="Comment">Regeneration Pod + Flash Forward + Pod Pad Deluxe with Banana</string>
+                                                                        <action id="wait">
+                                                                            <float id="time">0.50</float>
                                                                         </action>
+                                                                        <condition id="random">
+                                                                            <string id="amount">2</string>
+                                                                            <normal>
+                                                                                <action id="adjustCounter">
+                                                                                    <string id="id">warpBuild</string>
+                                                                                    <string id="value">2</string>
+                                                                                    <string id="adjust method" values="valueadjust">set</string>
+                                                                                    <string id="Comment">Regeneration Pod + Flash Forward + Pod Pad Deluxe with Banana</string>
+                                                                                </action>
+                                                                            </normal>
+                                                                            <else>
+                                                                                <action id="adjustCounter">
+                                                                                    <string id="id">warpBuild</string>
+                                                                                    <string id="value">3</string>
+                                                                                    <string id="adjust method" values="valueadjust">set</string>
+                                                                                    <string id="Comment">Pod Pad Deluxe with Banana + Flash Forward + Spacetime Continuity Device</string>
+                                                                                </action>
+                                                                            </else>
+                                                                        </condition>
                                                                     </normal>
-                                                                    <else>
-                                                                        <action id="adjustCounter">
-                                                                            <string id="id">warpBuild</string>
-                                                                            <string id="value">3</string>
-                                                                            <string id="adjust method" values="valueadjust">set</string>
-                                                                            <string id="Comment">Pod Pad Deluxe with Banana + Flash Forward + Spacetime Continuity Device</string>
-                                                                        </action>
-                                                                    </else>
-                                                                </condition>
+                                                                </sequence>
                                                             </else>
                                                         </condition>
                                                     </else>
@@ -648,13 +653,13 @@
                                                                                                                                                             <normal>
                                                                                                                                                                 <condition id="isUpgradeEnabled">
                                                                                                                                                                     <string id="condition" values="yesno">no</string>
-                                                                                                                                                                    <string id="upgrade name">JetterTimebubbleSize1</string>
+                                                                                                                                                                    <string id="upgrade name">JetterTimebubbleSize</string>
                                                                                                                                                                     <normal>
                                                                                                                                                                         <condition id="canPayUpgrade">
-                                                                                                                                                                            <string id="upgrade name">JetterTimebubbleSize1</string>
+                                                                                                                                                                            <string id="upgrade name">JetterTimebubbleSize</string>
                                                                                                                                                                             <normal>
                                                                                                                                                                                 <action id="buyUpgrade">
-                                                                                                                                                                                    <string id="upgrade name">JetterTimebubbleSize1</string>
+                                                                                                                                                                                    <string id="upgrade name">JetterTimebubbleSize</string>
                                                                                                                                                                                 </action>
                                                                                                                                                                             </normal>
                                                                                                                                                                         </condition>
