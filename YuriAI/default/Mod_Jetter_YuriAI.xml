@@ -320,7 +320,7 @@
                                                             </normal>
                                                             <else>
                                                                 <sequence>
-                                                                    <string id="Is blocking" values="yesno">no</string>
+                                                                    <string id="Is blocking">no</string>
                                                                     <normal>
                                                                         <action id="wait">
                                                                             <float id="time">0.50</float>
@@ -466,6 +466,10 @@
                 <andblock>
                     <string id="Comment">Shop logic</string>
                     <normal>
+                        <action id="setBool">
+                            <string id="id">DontMove</string>
+                            <string id="value" values="flagtoggle">yes</string>
+                        </action>
                         <andblock>
                             <normal>
                                 <condition id="canPayUpgrade">
@@ -495,6 +499,12 @@
                                                     <string id="upgrade name">Mine</string>
                                                 </action>
                                             </normal>
+                                            <else>
+                                                <action id="setBool">
+                                                    <string id="id">DontMove</string>
+                                                    <string id="value" values="flagtoggle">no</string>
+                                                </action>
+                                            </else>
                                         </condition>
                                     </normal>
                                     <else>
@@ -507,6 +517,12 @@
                                                             <string id="upgrade name">JetterSpeed</string>
                                                         </action>
                                                     </normal>
+                                                    <else>
+                                                        <action id="setBool">
+                                                            <string id="id">DontMove</string>
+                                                            <string id="value" values="flagtoggle">no</string>
+                                                        </action>
+                                                    </else>
                                                 </condition>
                                             </normal>
                                             <else>
@@ -521,6 +537,12 @@
                                                                     <string id="upgrade name">TimeBubble</string>
                                                                 </action>
                                                             </normal>
+                                                            <else>
+                                                                <action id="setBool">
+                                                                    <string id="id">DontMove</string>
+                                                                    <string id="value" values="flagtoggle">no</string>
+                                                                </action>
+                                                            </else>
                                                         </condition>
                                                     </normal>
                                                     <else>
@@ -535,6 +557,12 @@
                                                                                     <string id="upgrade name">addHealth1</string>
                                                                                 </action>
                                                                             </normal>
+                                                                            <else>
+                                                                                <action id="setBool">
+                                                                                    <string id="id">DontMove</string>
+                                                                                    <string id="value" values="flagtoggle">no</string>
+                                                                                </action>
+                                                                            </else>
                                                                         </condition>
                                                                     </normal>
                                                                     <else>
@@ -549,6 +577,12 @@
                                                                                             <string id="upgrade name">JetterMineCooldown1</string>
                                                                                         </action>
                                                                                     </normal>
+                                                                                    <else>
+                                                                                        <action id="setBool">
+                                                                                            <string id="id">DontMove</string>
+                                                                                            <string id="value" values="flagtoggle">no</string>
+                                                                                        </action>
+                                                                                    </else>
                                                                                 </condition>
                                                                             </normal>
                                                                             <else>
@@ -563,6 +597,12 @@
                                                                                                     <string id="upgrade name">JetterMineCooldown2</string>
                                                                                                 </action>
                                                                                             </normal>
+                                                                                            <else>
+                                                                                                <action id="setBool">
+                                                                                                    <string id="id">DontMove</string>
+                                                                                                    <string id="value" values="flagtoggle">no</string>
+                                                                                                </action>
+                                                                                            </else>
                                                                                         </condition>
                                                                                     </normal>
                                                                                     <else>
@@ -575,6 +615,12 @@
                                                                                                             <string id="upgrade name">addHealth2</string>
                                                                                                         </action>
                                                                                                     </normal>
+                                                                                                    <else>
+                                                                                                        <action id="setBool">
+                                                                                                            <string id="id">DontMove</string>
+                                                                                                            <string id="value" values="flagtoggle">no</string>
+                                                                                                        </action>
+                                                                                                    </else>
                                                                                                 </condition>
                                                                                             </normal>
                                                                                             <else>
@@ -589,6 +635,12 @@
                                                                                                                             <string id="upgrade name">addHealth3</string>
                                                                                                                         </action>
                                                                                                                     </normal>
+                                                                                                                    <else>
+                                                                                                                        <action id="setBool">
+                                                                                                                            <string id="id">DontMove</string>
+                                                                                                                            <string id="value" values="flagtoggle">no</string>
+                                                                                                                        </action>
+                                                                                                                    </else>
                                                                                                                 </condition>
                                                                                                             </normal>
                                                                                                             <else>
@@ -609,6 +661,12 @@
                                                                                                                                                             <string id="upgrade name">JetterShotMoreStages3</string>
                                                                                                                                                         </action>
                                                                                                                                                     </normal>
+                                                                                                                                                    <else>
+                                                                                                                                                        <action id="setBool">
+                                                                                                                                                            <string id="id">DontMove</string>
+                                                                                                                                                            <string id="value" values="flagtoggle">no</string>
+                                                                                                                                                        </action>
+                                                                                                                                                    </else>
                                                                                                                                                 </condition>
                                                                                                                                             </normal>
                                                                                                                                             <else>
@@ -625,6 +683,12 @@
                                                                                                                                                                             <string id="upgrade name">JetterShotAttackspeed</string>
                                                                                                                                                                         </action>
                                                                                                                                                                     </normal>
+                                                                                                                                                                    <else>
+                                                                                                                                                                        <action id="setBool">
+                                                                                                                                                                            <string id="id">DontMove</string>
+                                                                                                                                                                            <string id="value" values="flagtoggle">no</string>
+                                                                                                                                                                        </action>
+                                                                                                                                                                    </else>
                                                                                                                                                                 </condition>
                                                                                                                                                             </normal>
                                                                                                                                                             <else>
@@ -639,6 +703,12 @@
                                                                                                                                                                                     <string id="upgrade name">JetterShotAttackspeed2</string>
                                                                                                                                                                                 </action>
                                                                                                                                                                             </normal>
+                                                                                                                                                                            <else>
+                                                                                                                                                                                <action id="setBool">
+                                                                                                                                                                                    <string id="id">DontMove</string>
+                                                                                                                                                                                    <string id="value" values="flagtoggle">no</string>
+                                                                                                                                                                                </action>
+                                                                                                                                                                            </else>
                                                                                                                                                                         </condition>
                                                                                                                                                                     </normal>
                                                                                                                                                                 </condition>
@@ -662,6 +732,12 @@
                                                                                                                                                                                     <string id="upgrade name">JetterTimebubbleSize</string>
                                                                                                                                                                                 </action>
                                                                                                                                                                             </normal>
+                                                                                                                                                                            <else>
+                                                                                                                                                                                <action id="setBool">
+                                                                                                                                                                                    <string id="id">DontMove</string>
+                                                                                                                                                                                    <string id="value" values="flagtoggle">no</string>
+                                                                                                                                                                                </action>
+                                                                                                                                                                            </else>
                                                                                                                                                                         </condition>
                                                                                                                                                                     </normal>
                                                                                                                                                                     <else>
@@ -677,6 +753,12 @@
                                                                                                                                                                                             <string id="Minimized">yes</string>
                                                                                                                                                                                         </action>
                                                                                                                                                                                     </normal>
+                                                                                                                                                                                    <else>
+                                                                                                                                                                                        <action id="setBool">
+                                                                                                                                                                                            <string id="id">DontMove</string>
+                                                                                                                                                                                            <string id="value" values="flagtoggle">no</string>
+                                                                                                                                                                                        </action>
+                                                                                                                                                                                    </else>
                                                                                                                                                                                 </condition>
                                                                                                                                                                             </normal>
                                                                                                                                                                             <else>
@@ -688,6 +770,12 @@
                                                                                                                                                                                             <string id="Minimized">yes</string>
                                                                                                                                                                                         </action>
                                                                                                                                                                                     </normal>
+                                                                                                                                                                                    <else>
+                                                                                                                                                                                        <action id="setBool">
+                                                                                                                                                                                            <string id="id">DontMove</string>
+                                                                                                                                                                                            <string id="value" values="flagtoggle">no</string>
+                                                                                                                                                                                        </action>
+                                                                                                                                                                                    </else>
                                                                                                                                                                                 </condition>
                                                                                                                                                                             </else>
                                                                                                                                                                         </condition>
@@ -704,6 +792,12 @@
                                                                                                                                                                             <string id="upgrade name">JetterTimebubbleHeal4</string>
                                                                                                                                                                         </action>
                                                                                                                                                                     </normal>
+                                                                                                                                                                    <else>
+                                                                                                                                                                        <action id="setBool">
+                                                                                                                                                                            <string id="id">DontMove</string>
+                                                                                                                                                                            <string id="value" values="flagtoggle">no</string>
+                                                                                                                                                                        </action>
+                                                                                                                                                                    </else>
                                                                                                                                                                 </condition>
                                                                                                                                                             </normal>
                                                                                                                                                             <or>
@@ -747,6 +841,12 @@
                                                                                                                                                             <string id="upgrade name">JetterTimebubbleSlow</string>
                                                                                                                                                         </action>
                                                                                                                                                     </normal>
+                                                                                                                                                    <else>
+                                                                                                                                                        <action id="setBool">
+                                                                                                                                                            <string id="id">DontMove</string>
+                                                                                                                                                            <string id="value" values="flagtoggle">no</string>
+                                                                                                                                                        </action>
+                                                                                                                                                    </else>
                                                                                                                                                 </condition>
                                                                                                                                             </normal>
                                                                                                                                         </condition>
@@ -763,6 +863,12 @@
                                                                                                                                                                     <string id="upgrade name">JetterTimebubbleSpeedup</string>
                                                                                                                                                                 </action>
                                                                                                                                                             </normal>
+                                                                                                                                                            <else>
+                                                                                                                                                                <action id="setBool">
+                                                                                                                                                                    <string id="id">DontMove</string>
+                                                                                                                                                                    <string id="value" values="flagtoggle">no</string>
+                                                                                                                                                                </action>
+                                                                                                                                                            </else>
                                                                                                                                                         </condition>
                                                                                                                                                     </normal>
                                                                                                                                                     <else>
@@ -812,6 +918,12 @@
                                                                                                                                                     <string id="upgrade name">JetterSummonerShotRange</string>
                                                                                                                                                 </action>
                                                                                                                                             </normal>
+                                                                                                                                            <else>
+                                                                                                                                                <action id="setBool">
+                                                                                                                                                    <string id="id">DontMove</string>
+                                                                                                                                                    <string id="value" values="flagtoggle">no</string>
+                                                                                                                                                </action>
+                                                                                                                                            </else>
                                                                                                                                         </condition>
                                                                                                                                     </normal>
                                                                                                                                 </condition>
@@ -827,6 +939,12 @@
                                                                                                                                                     <string id="upgrade name">JetterShotBaseDamage</string>
                                                                                                                                                 </action>
                                                                                                                                             </normal>
+                                                                                                                                            <else>
+                                                                                                                                                <action id="setBool">
+                                                                                                                                                    <string id="id">DontMove</string>
+                                                                                                                                                    <string id="value" values="flagtoggle">no</string>
+                                                                                                                                                </action>
+                                                                                                                                            </else>
                                                                                                                                         </condition>
                                                                                                                                     </normal>
                                                                                                                                 </condition>
@@ -856,6 +974,12 @@
                                                                                                                                             <string id="upgrade name">JetterTimebubbleSpeedup</string>
                                                                                                                                         </action>
                                                                                                                                     </normal>
+                                                                                                                                    <else>
+                                                                                                                                        <action id="setBool">
+                                                                                                                                            <string id="id">DontMove</string>
+                                                                                                                                            <string id="value" values="flagtoggle">no</string>
+                                                                                                                                        </action>
+                                                                                                                                    </else>
                                                                                                                                 </condition>
                                                                                                                             </normal>
                                                                                                                         </condition>
@@ -875,6 +999,12 @@
                                                                                                                                                     <string id="upgrade name">JetterTimebubbleHeal1</string>
                                                                                                                                                 </action>
                                                                                                                                             </normal>
+                                                                                                                                            <else>
+                                                                                                                                                <action id="setBool">
+                                                                                                                                                    <string id="id">DontMove</string>
+                                                                                                                                                    <string id="value" values="flagtoggle">no</string>
+                                                                                                                                                </action>
+                                                                                                                                            </else>
                                                                                                                                         </condition>
                                                                                                                                     </normal>
                                                                                                                                     <else>
@@ -885,6 +1015,12 @@
                                                                                                                                                     <string id="upgrade name">JetterTimebubbleHeal2</string>
                                                                                                                                                 </action>
                                                                                                                                             </normal>
+                                                                                                                                            <else>
+                                                                                                                                                <action id="setBool">
+                                                                                                                                                    <string id="id">DontMove</string>
+                                                                                                                                                    <string id="value" values="flagtoggle">no</string>
+                                                                                                                                                </action>
+                                                                                                                                            </else>
                                                                                                                                         </condition>
                                                                                                                                     </else>
                                                                                                                                 </condition>
@@ -902,6 +1038,12 @@
                                                                                                                                             <string id="upgrade name">JetterTimebubbleLifesteal</string>
                                                                                                                                         </action>
                                                                                                                                     </normal>
+                                                                                                                                    <else>
+                                                                                                                                        <action id="setBool">
+                                                                                                                                            <string id="id">DontMove</string>
+                                                                                                                                            <string id="value" values="flagtoggle">no</string>
+                                                                                                                                        </action>
+                                                                                                                                    </else>
                                                                                                                                 </condition>
                                                                                                                             </normal>
                                                                                                                         </condition>
@@ -948,6 +1090,12 @@
                                                                                                                             <string id="upgrade name">JetterMineDamage4</string>
                                                                                                                         </action>
                                                                                                                     </normal>
+                                                                                                                    <else>
+                                                                                                                        <action id="setBool">
+                                                                                                                            <string id="id">DontMove</string>
+                                                                                                                            <string id="value" values="flagtoggle">no</string>
+                                                                                                                        </action>
+                                                                                                                    </else>
                                                                                                                 </condition>
                                                                                                             </normal>
                                                                                                         </condition>
@@ -967,6 +1115,12 @@
                                                                                                                                     <string id="upgrade name">JetterMineLongevity</string>
                                                                                                                                 </action>
                                                                                                                             </normal>
+                                                                                                                            <else>
+                                                                                                                                <action id="setBool">
+                                                                                                                                    <string id="id">DontMove</string>
+                                                                                                                                    <string id="value" values="flagtoggle">no</string>
+                                                                                                                                </action>
+                                                                                                                            </else>
                                                                                                                         </condition>
                                                                                                                     </normal>
                                                                                                                     <else>
@@ -977,6 +1131,12 @@
                                                                                                                                     <string id="upgrade name">JetterMineLongevity2</string>
                                                                                                                                 </action>
                                                                                                                             </normal>
+                                                                                                                            <else>
+                                                                                                                                <action id="setBool">
+                                                                                                                                    <string id="id">DontMove</string>
+                                                                                                                                    <string id="value" values="flagtoggle">no</string>
+                                                                                                                                </action>
+                                                                                                                            </else>
                                                                                                                         </condition>
                                                                                                                     </else>
                                                                                                                 </condition>
@@ -1042,6 +1202,12 @@
                                                                                             <string id="upgrade name">JetterMineDamage1</string>
                                                                                         </action>
                                                                                     </normal>
+                                                                                    <else>
+                                                                                        <action id="setBool">
+                                                                                            <string id="id">DontMove</string>
+                                                                                            <string id="value" values="flagtoggle">no</string>
+                                                                                        </action>
+                                                                                    </else>
                                                                                 </condition>
                                                                             </normal>
                                                                             <else>
@@ -1056,6 +1222,12 @@
                                                                                                     <string id="upgrade name">JetterMineDamage2</string>
                                                                                                 </action>
                                                                                             </normal>
+                                                                                            <else>
+                                                                                                <action id="setBool">
+                                                                                                    <string id="id">DontMove</string>
+                                                                                                    <string id="value" values="flagtoggle">no</string>
+                                                                                                </action>
+                                                                                            </else>
                                                                                         </condition>
                                                                                     </normal>
                                                                                     <else>
@@ -1066,6 +1238,12 @@
                                                                                                     <string id="upgrade name">JetterMineDamage3</string>
                                                                                                 </action>
                                                                                             </normal>
+                                                                                            <else>
+                                                                                                <action id="setBool">
+                                                                                                    <string id="id">DontMove</string>
+                                                                                                    <string id="value" values="flagtoggle">no</string>
+                                                                                                </action>
+                                                                                            </else>
                                                                                         </condition>
                                                                                     </else>
                                                                                 </condition>
@@ -1088,6 +1266,12 @@
                                                                                             <string id="upgrade name">JetterMineBounce</string>
                                                                                         </action>
                                                                                     </normal>
+                                                                                    <else>
+                                                                                        <action id="setBool">
+                                                                                            <string id="id">DontMove</string>
+                                                                                            <string id="value" values="flagtoggle">no</string>
+                                                                                        </action>
+                                                                                    </else>
                                                                                 </condition>
                                                                             </normal>
                                                                             <else>
@@ -1098,6 +1282,12 @@
                                                                                             <string id="upgrade name">JetterMineCarpet</string>
                                                                                         </action>
                                                                                     </normal>
+                                                                                    <else>
+                                                                                        <action id="setBool">
+                                                                                            <string id="id">DontMove</string>
+                                                                                            <string id="value" values="flagtoggle">no</string>
+                                                                                        </action>
+                                                                                    </else>
                                                                                 </condition>
                                                                             </else>
                                                                         </condition>
