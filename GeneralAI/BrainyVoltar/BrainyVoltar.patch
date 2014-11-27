@@ -1,5 +1,5 @@
 diff --git a/../Support/Mod_VeankoAI_Support.xml b/Mod_VeankoAI_BrainyVoltar.xml
-index c35975c..a7fd470 100755
+index 4988233..470bac7 100755
 --- a/../Support/Mod_VeankoAI_Support.xml
 +++ b/Mod_VeankoAI_BrainyVoltar.xml
 @@ -3225,30 +3225,6 @@
@@ -51,7 +51,7 @@ index c35975c..a7fd470 100755
                                  <orblock>
                                      <normal>
                                          <action id="setBool">
-@@ -7492,27 +7457,6 @@
+@@ -7532,27 +7497,6 @@
                                          </action>
                                      </normal>
                                      <else>
@@ -79,7 +79,7 @@ index c35975c..a7fd470 100755
                                          <condition id="getBoolEquals">
                                              <string id="id">isTank</string>
                                              <string id="value" values="yesno">no</string>
-@@ -7539,13 +7483,6 @@
+@@ -7579,13 +7523,6 @@
                                                              <string id="id">EnemyIsInCombatRange</string>
                                                              <string id="value" values="yesno">yes</string>
                                                              <string id="Comment">in range</string>
@@ -93,7 +93,7 @@ index c35975c..a7fd470 100755
                                                              <else>
                                                                  <action id="executeBehaviourTree">
                                                                      <string id="fileName">Mod_VeankoCheckIfEnemyTooClose</string>
-@@ -7654,13 +7591,6 @@
+@@ -7694,13 +7631,6 @@
                                                              <string id="check line of sight" values="yesno">yes</string>
                                                              <string id="ignore invisibility" values="yesno">no</string>
                                                              <string id="Comment">in range (closer)</string>
@@ -107,12 +107,3 @@ index c35975c..a7fd470 100755
                                                              <else>
                                                                  <action id="setBool">
                                                                      <string id="id">GoForward</string>
-@@ -14523,7 +14453,7 @@
-         </root>
-     </behaviour>
-     <behaviour>
--        <andblock x="1135" y="85204">
-+        <andblock x="1485" y="85204">
-             <string id="Comment">Don&apos;t attack charging Spy</string>
-             <or>
-                 <condition id="checkClass">

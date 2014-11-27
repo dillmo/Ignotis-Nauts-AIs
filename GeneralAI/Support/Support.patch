@@ -1,10 +1,10 @@
 diff --git a/home/dillon/Awesomenauts/VeankoAI/Mod_VeankoAI.xml b/Mod_VeankoAI_Support.xml
 old mode 100644
 new mode 100755
-index d134c07..c35975c
+index e4258f1..4988233
 --- a/home/dillon/Awesomenauts/VeankoAI/Mod_VeankoAI.xml
 +++ b/Mod_VeankoAI_Support.xml
-@@ -1663,7 +1663,7 @@
+@@ -1693,7 +1693,7 @@
                                                              <string id="condition" values="charactervaluesCheckable">health percentage</string>
                                                              <string id="comparison" values="valuecompare">greater or equal</string>
                                                              <float id="value">30.00</float>
@@ -22,3 +22,12 @@ index d134c07..c35975c
                                                                      <float id="xOffset">0.00</float>
                                                                      <float id="yOffset">0.00</float>
                                                                      <float id="width">2.00</float>
+@@ -14586,7 +14586,7 @@
+         </root>
+     </behaviour>
+     <behaviour>
+-        <andblock x="1835" y="85204">
++        <andblock x="2010" y="85204">
+             <string id="Comment">Don&apos;t attack charging Spy</string>
+             <or>
+                 <condition id="checkClass">
