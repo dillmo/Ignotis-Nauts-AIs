@@ -1834,67 +1834,6 @@
                                 </condition>
                             </or>
                         </andblock>
-                        <andblock>
-                            <string id="Comment">Hover towards waypoints</string>
-                            <else>
-                                <orblock>
-                                    <else>
-                                        <condition id="isInNamedArea">
-                                            <string id="area name">hazardAreaEnabled</string>
-                                            <string id="team" values="ownenemy">OWN_TEAM</string>
-                                            <string id="who" values="targetself">self</string>
-                                            <string id="Comment">Don&apos;t float in inferno</string>
-                                            <else>
-                                                <action id="pressButton">
-                                                    <string id="button" values="buttons">FACE_BOTTOM</string>
-                                                    <float id="duration in seconds">0.10</float>
-                                                </action>
-                                            </else>
-                                        </condition>
-                                    </else>
-                                    <or>
-                                        <condition id="isInArea">
-                                            <string id="condition" values="yesno">yes</string>
-                                            <string id="collision groups" values="collison groups" multiselect="true">INVINCIBLE_OBSTACLES;;DESTROYABLE_OBSTACLES;;</string>
-                                            <string id="check green obstacles only" values="yesno">no</string>
-                                            <string id="teams" values="teams" multiselect="true">OWN_TEAM;;ENEMY_TEAM;;NEUTRAL_TEAM;;</string>
-                                            <string id="areaName"></string>
-                                            <float id="xOffset">0.04</float>
-                                            <float id="yOffset">0.00</float>
-                                            <float id="width">0.08</float>
-                                            <float id="height">0.05</float>
-                                            <string id="check line of sight" values="yesno">no</string>
-                                            <string id="ignore invisibility" values="yesno">no</string>
-                                            <string id="Comment">check walls</string>
-                                        </condition>
-                                        <condition id="isInArea">
-                                            <string id="condition" values="yesno">yes</string>
-                                            <string id="collision groups" values="collison groups" multiselect="true">CREEPS;;</string>
-                                            <string id="check green obstacles only" values="yesno">no</string>
-                                            <string id="teams" values="teams" multiselect="true">ENEMY_TEAM;;NEUTRAL_TEAM;;</string>
-                                            <string id="areaName"></string>
-                                            <float id="xOffset">0.00</float>
-                                            <float id="yOffset">0.00</float>
-                                            <float id="width">0.16</float>
-                                            <float id="height">0.02</float>
-                                            <string id="check line of sight" values="yesno">no</string>
-                                            <string id="ignore invisibility" values="yesno">no</string>
-                                            <string id="Comment">check creeps</string>
-                                        </condition>
-                                    </or>
-                                </orblock>
-                            </else>
-                            <or>
-                                <condition id="isTargetPosition">
-                                    <string id="condition" values="yesno">yes</string>
-                                    <string id="target position" values="offsetposition">VERTICAL EQUAL</string>
-                                </condition>
-                                <condition id="isUpgradeEnabled">
-                                    <string id="condition" values="yesno">yes</string>
-                                    <string id="upgrade name">InAir</string>
-                                </condition>
-                            </or>
-                        </andblock>
                         <condition id="isInArea">
                             <string id="condition" values="yesno">yes</string>
                             <string id="collision groups" values="collison groups" multiselect="true">PROJECTILES;;</string>
