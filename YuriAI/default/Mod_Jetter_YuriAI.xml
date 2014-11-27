@@ -2033,7 +2033,7 @@
                                     <string id="Comment">Don&apos;t attack charging Spy</string>
                                     <else>
                                         <orblock>
-                                            <string id="Comment">Targeting critter?</string>
+                                            <string id="Comment">Targeting small creep?</string>
                                             <normal>
                                                 <condition id="isTargetPosition">
                                                     <string id="condition" values="yesno">yes</string>
@@ -2214,7 +2214,15 @@
                                             <or>
                                                 <condition id="checkClass">
                                                     <string id="check on" values="targetself">target</string>
-                                                    <string id="class">CreepCritterRibbit4</string>
+                                                    <string id="class">CreepMawTurret</string>
+                                                </condition>
+                                                <condition id="checkClass">
+                                                    <string id="check on" values="targetself">target</string>
+                                                    <string id="class">CreepDroidMelee</string>
+                                                </condition>
+                                                <condition id="checkClass">
+                                                    <string id="check on" values="targetself">target</string>
+                                                    <string id="class">CreepCritterAIStation404</string>
                                                 </condition>
                                                 <condition id="checkClass">
                                                     <string id="check on" values="targetself">target</string>
@@ -2222,7 +2230,12 @@
                                                 </condition>
                                                 <condition id="checkClass">
                                                     <string id="check on" values="targetself">target</string>
-                                                    <string id="class">CreepCritterAIStation404</string>
+                                                    <string id="class">CreepCritterRibbit4</string>
+                                                </condition>
+                                                <condition id="checkClass">
+                                                    <string id="check on" values="targetself">target</string>
+                                                    <string id="class">CreepCritterCrab</string>
+                                                    <string id="Comment">Probably doesn&apos;t exist, but I&apos;d might as well</string>
                                                 </condition>
                                             </or>
                                         </orblock>
