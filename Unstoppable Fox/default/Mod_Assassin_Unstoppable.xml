@@ -811,6 +811,59 @@
                     <string id="Comment">Combat Logic</string>
                     <normal>
                         <andblock>
+                            <string id="Comment">Helps with protecting turret</string>
+                            <normal>
+                                <action id="selectTarget">
+                                    <string id="groups to select" values="target groups" multiselect="true">PLAYERS;;CREEPS;;</string>
+                                    <string id="teams" values="teams" multiselect="true">ENEMY_TEAM;;</string>
+                                    <string id="class"></string>
+                                    <string id="remove if not found" values="yesno">no</string>
+                                    <float id="xOffset">0.00</float>
+                                    <float id="yOffset">0.00</float>
+                                    <float id="width">1.00</float>
+                                    <float id="height">1.00</float>
+                                    <string id="compare method" values="valuecompare2">greater or equal</string>
+                                    <float id="health value">0.00</float>
+                                    <string id="distance check" values="distance check">CLOSEST</string>
+                                    <string id="check line of sight" values="yesno">yes</string>
+                                    <string id="ignore invisibility" values="yesno">no</string>
+                                </action>
+                            </normal>
+                            <or>
+                                <condition id="checkCounter">
+                                    <string id="id">state</string>
+                                    <string id="value">11</string>
+                                    <string id="compare method" values="valuecompare">equal</string>
+                                </condition>
+                                <condition id="isTurretInArea">
+                                    <string id="teams" values="teams" multiselect="true">OWN_TEAM;;</string>
+                                    <string id="health comparison" values="valuecompare">greater</string>
+                                    <float id="health">0.00</float>
+                                    <float id="xOffset">0.00</float>
+                                    <float id="yOffset">0.00</float>
+                                    <float id="width">0.01</float>
+                                    <float id="height">0.01</float>
+                                    <string id="check line of sight" values="yesno">yes</string>
+                                </condition>
+                                <condition id="isInArea">
+                                    <string id="condition" values="yesno">yes</string>
+                                    <string id="collision groups" values="collison groups" multiselect="true">PLAYERS;;CREEPS;;DESTROYABLE_OBSTACLES;;</string>
+                                    <string id="check green obstacles only" values="yesno">no</string>
+                                    <string id="teams" values="teams" multiselect="true">ENEMY_TEAM;;</string>
+                                    <string id="areaName"></string>
+                                    <float id="xOffset">0.00</float>
+                                    <float id="yOffset">0.00</float>
+                                    <float id="width">1.00</float>
+                                    <float id="height">0.50</float>
+                                    <string id="check line of sight" values="yesno">yes</string>
+                                    <string id="ignore invisibility" values="yesno">no</string>
+                                </condition>
+                                <condition id="hasTarget">
+                                    <string id="condition" values="yesno">no</string>
+                                </condition>
+                            </or>
+                        </andblock>
+                        <andblock>
                             <string id="Comment">I can use Heartshaped Net -&gt; use it</string>
                             <normal>
                                 <action id="setBool">
