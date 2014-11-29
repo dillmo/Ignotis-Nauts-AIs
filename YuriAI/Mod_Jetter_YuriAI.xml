@@ -22,7 +22,7 @@
                     <string id="Minimized">yes</string>
                 </action>
                 <action id="executeBehaviourTree">
-                    <string id="fileName">Mod_BotSkill</string>
+                    <string id="fileName">Mod_BetterBotSkill</string>
                     <string id="Minimized">yes</string>
                 </action>
                 <condition id="once">
