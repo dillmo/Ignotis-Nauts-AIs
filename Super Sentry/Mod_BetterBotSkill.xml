@@ -160,13 +160,13 @@
                     <string id="property" values="characterflags">isBlinded</string>
                     <string id="condition" values="yesno">yes</string>
                     <string id="check on" values="targetself">self</string>
-                    <string id="Comment">Lower skill when blinded</string>
+                    <string id="Comment">Blinded?</string>
                     <normal>
                         <condition id="checkCounter">
                             <string id="id">botSkill</string>
                             <string id="value">2</string>
                             <string id="compare method" values="valuecompare">greater or equal</string>
-                            <string id="Comment">Don&apos;t set it below 0</string>
+                            <string id="Comment">Lower skill</string>
                             <normal>
                                 <action id="adjustCounter">
                                     <string id="id">botSkill</string>
@@ -182,6 +182,45 @@
                                 </action>
                             </else>
                         </condition>
+                        <andblock>
+                            <string id="Comment">Randomly lose targets</string>
+                            <normal>
+                                <action id="selectTarget">
+                                    <string id="groups to select" values="target groups" multiselect="true">PLAYERS;;</string>
+                                    <string id="teams" values="teams" multiselect="true">ENEMY_TEAM;;</string>
+                                    <string id="class"></string>
+                                    <string id="remove if not found" values="yesno">yes</string>
+                                    <float id="xOffset">0.00</float>
+                                    <float id="yOffset">0.00</float>
+                                    <float id="width">0.60</float>
+                                    <float id="height">0.60</float>
+                                    <string id="compare method" values="valuecompare2">greater or equal</string>
+                                    <float id="health value">0.00</float>
+                                    <string id="distance check" values="distance check">CLOSEST</string>
+                                    <string id="check line of sight" values="yesno">no</string>
+                                    <string id="ignore invisibility" values="yesno">no</string>
+                                    <string id="Comment">Lose the target</string>
+                                </action>
+                            </normal>
+                            <or>
+                                <condition id="hasTarget">
+                                    <string id="condition" values="yesno">yes</string>
+                                </condition>
+                                <condition id="isTargetInArea">
+                                    <string id="condition" values="yesno">no</string>
+                                    <float id="xOffset">0.00</float>
+                                    <float id="yOffset">0.00</float>
+                                    <float id="width">0.60</float>
+                                    <float id="height">0.60</float>
+                                    <string id="check line of sight" values="yesno">no</string>
+                                    <string id="ignore invisibility" values="yesno">no</string>
+                                    <string id="Comment">Not nearby?</string>
+                                </condition>
+                                <condition id="random">
+                                    <string id="amount">10</string>
+                                </condition>
+                            </or>
+                        </andblock>
                     </normal>
                 </condition>
             </normal>

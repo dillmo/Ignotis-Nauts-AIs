@@ -449,10 +449,24 @@
                                                                 <andblock>
                                                                     <string id="Comment">Beware of RBAY</string>
                                                                     <else>
-                                                                        <action id="aimStickAtTarget">
-                                                                            <float id="duration seconds">0.10</float>
-                                                                            <string id="only aim when needed" values="yesno">no</string>
-                                                                        </action>
+                                                                        <condition id="checkCounter">
+                                                                            <string id="id">botSkill</string>
+                                                                            <string id="value">2</string>
+                                                                            <string id="compare method" values="valuecompare">greater or equal</string>
+                                                                            <string id="Comment">Dumb bots are less accurate</string>
+                                                                            <normal>
+                                                                                <action id="aimStickAtTarget">
+                                                                                    <float id="duration seconds">0.10</float>
+                                                                                    <string id="only aim when needed" values="yesno">no</string>
+                                                                                </action>
+                                                                            </normal>
+                                                                            <else>
+                                                                                <action id="aimStickAtTarget">
+                                                                                    <float id="duration seconds">0.01</float>
+                                                                                    <string id="only aim when needed" values="yesno">no</string>
+                                                                                </action>
+                                                                            </else>
+                                                                        </condition>
                                                                         <action id="pressButton">
                                                                             <string id="button" values="buttons">FACE_LEFT</string>
                                                                             <float id="duration in seconds">0.00</float>
@@ -504,10 +518,24 @@
                                                         </andblock>
                                                     </normal>
                                                     <else>
-                                                        <action id="aimStickAtTarget">
-                                                            <float id="duration seconds">0.10</float>
-                                                            <string id="only aim when needed" values="yesno">no</string>
-                                                        </action>
+                                                        <condition id="checkCounter">
+                                                            <string id="id">botSkill</string>
+                                                            <string id="value">2</string>
+                                                            <string id="compare method" values="valuecompare">greater or equal</string>
+                                                            <string id="Comment">Dumb bots are less accurate</string>
+                                                            <normal>
+                                                                <action id="aimStickAtTarget">
+                                                                    <float id="duration seconds">0.10</float>
+                                                                    <string id="only aim when needed" values="yesno">no</string>
+                                                                </action>
+                                                            </normal>
+                                                            <else>
+                                                                <action id="aimStickAtTarget">
+                                                                    <float id="duration seconds">0.01</float>
+                                                                    <string id="only aim when needed" values="yesno">no</string>
+                                                                </action>
+                                                            </else>
+                                                        </condition>
                                                         <action id="pressButton">
                                                             <string id="button" values="buttons">FACE_LEFT</string>
                                                             <float id="duration in seconds">0.00</float>
@@ -772,10 +800,24 @@
                                                                                 </andblock>
                                                                             </normal>
                                                                             <else>
-                                                                                <action id="aimStickAtTarget">
-                                                                                    <float id="duration seconds">0.10</float>
-                                                                                    <string id="only aim when needed" values="yesno">no</string>
-                                                                                </action>
+                                                                                <condition id="checkCounter">
+                                                                                    <string id="id">botSkill</string>
+                                                                                    <string id="value">2</string>
+                                                                                    <string id="compare method" values="valuecompare">greater or equal</string>
+                                                                                    <string id="Comment">Dumb bots are less accurate</string>
+                                                                                    <normal>
+                                                                                        <action id="aimStickAtTarget">
+                                                                                            <float id="duration seconds">0.10</float>
+                                                                                            <string id="only aim when needed" values="yesno">no</string>
+                                                                                        </action>
+                                                                                    </normal>
+                                                                                    <else>
+                                                                                        <action id="aimStickAtTarget">
+                                                                                            <float id="duration seconds">0.01</float>
+                                                                                            <string id="only aim when needed" values="yesno">no</string>
+                                                                                        </action>
+                                                                                    </else>
+                                                                                </condition>
                                                                                 <action id="pressButton">
                                                                                     <string id="button" values="buttons">FACE_LEFT</string>
                                                                                     <float id="duration in seconds">0.00</float>
@@ -802,10 +844,24 @@
                                                                         </orblock>
                                                                     </normal>
                                                                     <else>
-                                                                        <action id="aimStickAtTarget">
-                                                                            <float id="duration seconds">0.10</float>
-                                                                            <string id="only aim when needed" values="yesno">no</string>
-                                                                        </action>
+                                                                        <condition id="checkCounter">
+                                                                            <string id="id">botSkill</string>
+                                                                            <string id="value">2</string>
+                                                                            <string id="compare method" values="valuecompare">greater or equal</string>
+                                                                            <string id="Comment">Dumb bots are less accurate</string>
+                                                                            <normal>
+                                                                                <action id="aimStickAtTarget">
+                                                                                    <float id="duration seconds">0.10</float>
+                                                                                    <string id="only aim when needed" values="yesno">no</string>
+                                                                                </action>
+                                                                            </normal>
+                                                                            <else>
+                                                                                <action id="aimStickAtTarget">
+                                                                                    <float id="duration seconds">0.01</float>
+                                                                                    <string id="only aim when needed" values="yesno">no</string>
+                                                                                </action>
+                                                                            </else>
+                                                                        </condition>
                                                                         <action id="pressButton">
                                                                             <string id="button" values="buttons">FACE_LEFT</string>
                                                                             <float id="duration in seconds">0.00</float>
@@ -900,10 +956,24 @@
                                                                 </andblock>
                                                             </normal>
                                                             <else>
-                                                                <action id="aimStickAtTarget">
-                                                                    <float id="duration seconds">0.10</float>
-                                                                    <string id="only aim when needed" values="yesno">no</string>
-                                                                </action>
+                                                                <condition id="checkCounter">
+                                                                    <string id="id">botSkill</string>
+                                                                    <string id="value">2</string>
+                                                                    <string id="compare method" values="valuecompare">greater or equal</string>
+                                                                    <string id="Comment">Dumb bots are less accurate</string>
+                                                                    <normal>
+                                                                        <action id="aimStickAtTarget">
+                                                                            <float id="duration seconds">0.10</float>
+                                                                            <string id="only aim when needed" values="yesno">no</string>
+                                                                        </action>
+                                                                    </normal>
+                                                                    <else>
+                                                                        <action id="aimStickAtTarget">
+                                                                            <float id="duration seconds">0.01</float>
+                                                                            <string id="only aim when needed" values="yesno">no</string>
+                                                                        </action>
+                                                                    </else>
+                                                                </condition>
                                                                 <action id="pressButton">
                                                                     <string id="button" values="buttons">FACE_LEFT</string>
                                                                     <float id="duration in seconds">0.00</float>
@@ -931,7 +1001,7 @@
                                                     </normal>
                                                     <else>
                                                         <action id="aimStickAtTarget">
-                                                            <float id="duration seconds">0.10</float>
+                                                            <float id="duration seconds">0.01</float>
                                                             <string id="only aim when needed" values="yesno">no</string>
                                                         </action>
                                                         <action id="pressButton">
@@ -1175,10 +1245,6 @@
                                                             <normal>
                                                                 <orblock>
                                                                     <normal>
-                                                                        <action id="aimStickAtTarget">
-                                                                            <float id="duration seconds">0.12</float>
-                                                                            <string id="only aim when needed" values="yesno">no</string>
-                                                                        </action>
                                                                         <sequence>
                                                                             <string id="Is blocking">no</string>
                                                                             <normal>
@@ -1704,10 +1770,24 @@
                                                     <normal>
                                                         <orblock>
                                                             <normal>
-                                                                <action id="aimStickAtTarget">
-                                                                    <float id="duration seconds">0.12</float>
-                                                                    <string id="only aim when needed" values="yesno">no</string>
-                                                                </action>
+                                                                <condition id="checkCounter">
+                                                                    <string id="id">botSkill</string>
+                                                                    <string id="value">2</string>
+                                                                    <string id="compare method" values="valuecompare">greater or equal</string>
+                                                                    <string id="Comment">Dumb bots are less accurate</string>
+                                                                    <normal>
+                                                                        <action id="aimStickAtTarget">
+                                                                            <float id="duration seconds">0.12</float>
+                                                                            <string id="only aim when needed" values="yesno">no</string>
+                                                                        </action>
+                                                                    </normal>
+                                                                    <else>
+                                                                        <action id="aimStickAtTarget">
+                                                                            <float id="duration seconds">0.01</float>
+                                                                            <string id="only aim when needed" values="yesno">no</string>
+                                                                        </action>
+                                                                    </else>
+                                                                </condition>
                                                                 <sequence>
                                                                     <string id="Is blocking">no</string>
                                                                     <normal>
@@ -1928,7 +2008,7 @@
                                                                     <string id="compare method" values="valuecompare">less or equal</string>
                                                                     <normal>
                                                                         <action id="aimStickAtTarget">
-                                                                            <float id="duration seconds">0.12</float>
+                                                                            <float id="duration seconds">0.01</float>
                                                                             <string id="only aim when needed" values="yesno">no</string>
                                                                         </action>
                                                                         <sequence>
@@ -2216,10 +2296,18 @@
                                             <else>
                                                 <andblock>
                                                     <normal>
-                                                        <action id="aimStickAtTarget">
-                                                            <float id="duration seconds">0.20</float>
-                                                            <string id="only aim when needed" values="yesno">no</string>
-                                                        </action>
+                                                        <condition id="checkCounter">
+                                                            <string id="id">botSkill</string>
+                                                            <string id="value">2</string>
+                                                            <string id="compare method" values="valuecompare">greater or equal</string>
+                                                            <string id="Comment">Dumb bots are less accurate</string>
+                                                            <normal>
+                                                                <action id="aimStickAtTarget">
+                                                                    <float id="duration seconds">0.20</float>
+                                                                    <string id="only aim when needed" values="yesno">no</string>
+                                                                </action>
+                                                            </normal>
+                                                        </condition>
                                                         <action id="setBool">
                                                             <string id="id">MoveTowardsTarget</string>
                                                             <string id="value" values="flagtoggle">yes</string>
@@ -3923,7 +4011,7 @@
         </root>
     </behaviour>
     <behaviour>
-        <condition id="checkCharacterValue" x="5528" y="1917">
+        <condition id="checkCharacterValue" x="5703" y="1917">
             <string id="property" values="charactervaluesCheckable">health percentage</string>
             <float id="value">50.00</float>
             <string id="compare method" values="valuecompare">greater or equal</string>
