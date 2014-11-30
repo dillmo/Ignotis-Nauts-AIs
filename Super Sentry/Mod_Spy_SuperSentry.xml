@@ -3473,10 +3473,28 @@
                                         <condition id="directionToEnemyBase">
                                             <string id="direction" values="forwardbackward">FORWARD</string>
                                             <normal>
-                                                <action id="setBool">
-                                                    <string id="id">GoBack</string>
-                                                    <string id="value" values="flagtoggle">yes</string>
-                                                </action>
+                                                <condition id="isNextWaypointPosition">
+                                                    <string id="position" values="offsetposition">FRONT</string>
+                                                    <normal>
+                                                        <condition id="timer">
+                                                            <string id="timeunit" values="timeunits">seconds</string>
+                                                            <float id="time">1.30</float>
+                                                            <string id="execute first time" values="yesno">yes</string>
+                                                            <normal>
+                                                                <action id="setBool">
+                                                                    <string id="id">jump</string>
+                                                                    <string id="value" values="flagtoggle">yes</string>
+                                                                </action>
+                                                            </normal>
+                                                        </condition>
+                                                    </normal>
+                                                    <else>
+                                                        <action id="setBool">
+                                                            <string id="id">GoBack</string>
+                                                            <string id="value" values="flagtoggle">yes</string>
+                                                        </action>
+                                                    </else>
+                                                </condition>
                                             </normal>
                                             <else>
                                                 <condition id="isOnGround">
@@ -4011,7 +4029,7 @@
         </root>
     </behaviour>
     <behaviour>
-        <condition id="checkCharacterValue" x="5703" y="1917">
+        <condition id="checkCharacterValue" x="5878" y="1917">
             <string id="property" values="charactervaluesCheckable">health percentage</string>
             <float id="value">50.00</float>
             <string id="compare method" values="valuecompare">greater or equal</string>

@@ -1996,10 +1996,21 @@
                                                         <condition id="directionToEnemyBase">
                                                             <string id="direction" values="forwardbackward">FORWARD</string>
                                                             <normal>
-                                                                <action id="setBool">
-                                                                    <string id="id">GoBack</string>
-                                                                    <string id="value" values="flagtoggle">yes</string>
-                                                                </action>
+                                                                <condition id="isNextWaypointPosition">
+                                                                    <string id="position" values="offsetposition">FRONT</string>
+                                                                    <normal>
+                                                                        <action id="setBool">
+                                                                            <string id="id">GoUp</string>
+                                                                            <string id="value" values="flagtoggle">yes</string>
+                                                                        </action>
+                                                                    </normal>
+                                                                    <else>
+                                                                        <action id="setBool">
+                                                                            <string id="id">GoBack</string>
+                                                                            <string id="value" values="flagtoggle">yes</string>
+                                                                        </action>
+                                                                    </else>
+                                                                </condition>
                                                             </normal>
                                                             <else>
                                                                 <condition id="isOnGround">
