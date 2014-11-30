@@ -15,31 +15,19 @@
                                     <string id="id">CheckToSwitchLane</string>
                                     <string id="value" values="flagtoggle">no</string>
                                 </action>
-                                <condition id="isCharacterInArea">
-                                    <string id="groups" values="target receive groups" multiselect="true">PLAYERS;;</string>
-                                    <string id="teams" values="teams" multiselect="true">OWN_TEAM;;</string>
-                                    <string id="class"></string>
-                                    <string id="condition" values="charactervaluesCheckable">health</string>
-                                    <string id="comparison" values="valuecompare">greater or equal</string>
-                                    <float id="value">0.00</float>
-                                    <string id="character minimum"></string>
-                                    <float id="xOffset">0.00</float>
-                                    <float id="yOffset">0.00</float>
-                                    <float id="width">2.00</float>
-                                    <float id="height">1.80</float>
-                                    <string id="check line of sight" values="yesno">no</string>
-                                    <string id="Comment">Allys not close?</string>
-                                    <else>
-                                        <action id="log">
-                                            <string id="text">CHECK TO SWITCH</string>
-                                            <string id="counter"></string>
-                                            <string id="bool"></string>
-                                        </action>
-                                        <condition id="checkCounter">
-                                            <string id="id">lane</string>
-                                            <string id="value">1</string>
-                                            <string id="compare method" values="valuecompare">equal</string>
-                                            <normal>
+                                <action id="log">
+                                    <string id="text">CHECK TO SWITCH</string>
+                                    <string id="counter"></string>
+                                    <string id="bool"></string>
+                                </action>
+                                <condition id="checkCounter">
+                                    <string id="id">lane</string>
+                                    <string id="value">1</string>
+                                    <string id="compare method" values="valuecompare">equal</string>
+                                    <normal>
+                                        <andblock>
+                                            <string id="Comment">Not already busy</string>
+                                            <else>
                                                 <condition id="isInArea">
                                                     <string id="condition" values="yesno">yes</string>
                                                     <string id="collision groups" values="collison groups" multiselect="true">PLAYERS;;</string>
@@ -76,13 +64,48 @@
                                                         </action>
                                                     </normal>
                                                 </condition>
-                                            </normal>
-                                            <else>
-                                                <condition id="checkCounter">
-                                                    <string id="id">lane</string>
-                                                    <string id="value">2</string>
-                                                    <string id="compare method" values="valuecompare">equal</string>
-                                                    <normal>
+                                            </else>
+                                            <or>
+                                                <condition id="isInArea">
+                                                    <string id="condition" values="yesno">yes</string>
+                                                    <string id="collision groups" values="collison groups" multiselect="true">PLAYERS;;</string>
+                                                    <string id="check green obstacles only" values="yesno">no</string>
+                                                    <string id="teams" values="teams" multiselect="true">ENEMY_TEAM;;</string>
+                                                    <string id="areaName"></string>
+                                                    <float id="xOffset">0.00</float>
+                                                    <float id="yOffset">0.00</float>
+                                                    <float id="width">2.00</float>
+                                                    <float id="height">1.80</float>
+                                                    <string id="check line of sight" values="yesno">no</string>
+                                                    <string id="ignore invisibility" values="yesno">yes</string>
+                                                    <string id="Comment">friendlys close?</string>
+                                                </condition>
+                                                <condition id="isInArea">
+                                                    <string id="condition" values="yesno">yes</string>
+                                                    <string id="collision groups" values="collison groups" multiselect="true">PLAYERS;;</string>
+                                                    <string id="check green obstacles only" values="yesno">no</string>
+                                                    <string id="teams" values="teams" multiselect="true">ENEMY_TEAM;;</string>
+                                                    <string id="areaName"></string>
+                                                    <float id="xOffset">0.00</float>
+                                                    <float id="yOffset">0.00</float>
+                                                    <float id="width">1.80</float>
+                                                    <float id="height">1.50</float>
+                                                    <string id="check line of sight" values="yesno">no</string>
+                                                    <string id="ignore invisibility" values="yesno">no</string>
+                                                    <string id="Comment">Enemies close?</string>
+                                                </condition>
+                                            </or>
+                                        </andblock>
+                                    </normal>
+                                    <else>
+                                        <condition id="checkCounter">
+                                            <string id="id">lane</string>
+                                            <string id="value">2</string>
+                                            <string id="compare method" values="valuecompare">equal</string>
+                                            <normal>
+                                                <andblock>
+                                                    <string id="Comment">Not already busy</string>
+                                                    <else>
                                                         <condition id="isInArea">
                                                             <string id="condition" values="yesno">yes</string>
                                                             <string id="collision groups" values="collison groups" multiselect="true">PLAYERS;;</string>
@@ -119,85 +142,52 @@
                                                                 </action>
                                                             </normal>
                                                         </condition>
-                                                    </normal>
-                                                </condition>
-                                            </else>
+                                                    </else>
+                                                    <or>
+                                                        <condition id="isInArea">
+                                                            <string id="condition" values="yesno">yes</string>
+                                                            <string id="collision groups" values="collison groups" multiselect="true">PLAYERS;;</string>
+                                                            <string id="check green obstacles only" values="yesno">no</string>
+                                                            <string id="teams" values="teams" multiselect="true">ENEMY_TEAM;;</string>
+                                                            <string id="areaName"></string>
+                                                            <float id="xOffset">0.00</float>
+                                                            <float id="yOffset">0.00</float>
+                                                            <float id="width">2.00</float>
+                                                            <float id="height">1.80</float>
+                                                            <string id="check line of sight" values="yesno">no</string>
+                                                            <string id="ignore invisibility" values="yesno">yes</string>
+                                                            <string id="Comment">friendlys close?</string>
+                                                        </condition>
+                                                        <condition id="isInArea">
+                                                            <string id="condition" values="yesno">yes</string>
+                                                            <string id="collision groups" values="collison groups" multiselect="true">PLAYERS;;</string>
+                                                            <string id="check green obstacles only" values="yesno">no</string>
+                                                            <string id="teams" values="teams" multiselect="true">ENEMY_TEAM;;</string>
+                                                            <string id="areaName"></string>
+                                                            <float id="xOffset">0.00</float>
+                                                            <float id="yOffset">0.00</float>
+                                                            <float id="width">1.80</float>
+                                                            <float id="height">1.50</float>
+                                                            <string id="check line of sight" values="yesno">no</string>
+                                                            <string id="ignore invisibility" values="yesno">no</string>
+                                                            <string id="Comment">Enemies close?</string>
+                                                        </condition>
+                                                    </or>
+                                                </andblock>
+                                            </normal>
                                         </condition>
+                                    </else>
+                                </condition>
+                                <condition id="getBoolEquals">
+                                    <string id="id">enemyTower1Lane1</string>
+                                    <string id="value" values="yesno">no</string>
+                                    <normal>
                                         <condition id="getBoolEquals">
-                                            <string id="id">enemyTower1Lane1</string>
+                                            <string id="id">enemyTower1Lane2</string>
                                             <string id="value" values="yesno">no</string>
                                             <normal>
                                                 <condition id="getBoolEquals">
-                                                    <string id="id">enemyTower1Lane2</string>
-                                                    <string id="value" values="yesno">no</string>
-                                                    <normal>
-                                                        <condition id="getBoolEquals">
-                                                            <string id="id">enemyTower2Lane2</string>
-                                                            <string id="value" values="yesno">no</string>
-                                                            <normal>
-                                                                <action id="adjustCounter">
-                                                                    <string id="id">lane</string>
-                                                                    <string id="value">2</string>
-                                                                    <string id="adjust method" values="valueadjust">set</string>
-                                                                </action>
-                                                                <action id="adjustCounter">
-                                                                    <string id="id">setState</string>
-                                                                    <string id="value">3</string>
-                                                                    <string id="adjust method" values="valueadjust">set</string>
-                                                                    <string id="Comment">advanceToFrontline (3)</string>
-                                                                </action>
-                                                                <action id="setBool">
-                                                                    <string id="id">LetsSwitchLane</string>
-                                                                    <string id="value" values="flagtoggle">yes</string>
-                                                                </action>
-                                                            </normal>
-                                                            <else>
-                                                                <condition id="getBoolEquals">
-                                                                    <string id="id">enemyTower2Lane1</string>
-                                                                    <string id="value" values="yesno">no</string>
-                                                                    <normal>
-                                                                        <action id="adjustCounter">
-                                                                            <string id="id">lane</string>
-                                                                            <string id="value">1</string>
-                                                                            <string id="adjust method" values="valueadjust">set</string>
-                                                                        </action>
-                                                                        <action id="adjustCounter">
-                                                                            <string id="id">setState</string>
-                                                                            <string id="value">3</string>
-                                                                            <string id="adjust method" values="valueadjust">set</string>
-                                                                            <string id="Comment">advanceToFrontline (3)</string>
-                                                                        </action>
-                                                                        <action id="setBool">
-                                                                            <string id="id">LetsSwitchLane</string>
-                                                                            <string id="value" values="flagtoggle">yes</string>
-                                                                        </action>
-                                                                    </normal>
-                                                                </condition>
-                                                            </else>
-                                                        </condition>
-                                                    </normal>
-                                                    <else>
-                                                        <action id="adjustCounter">
-                                                            <string id="id">lane</string>
-                                                            <string id="value">1</string>
-                                                            <string id="adjust method" values="valueadjust">set</string>
-                                                        </action>
-                                                        <action id="adjustCounter">
-                                                            <string id="id">setState</string>
-                                                            <string id="value">3</string>
-                                                            <string id="adjust method" values="valueadjust">set</string>
-                                                            <string id="Comment">advanceToFrontline (3)</string>
-                                                        </action>
-                                                        <action id="setBool">
-                                                            <string id="id">LetsSwitchLane</string>
-                                                            <string id="value" values="flagtoggle">yes</string>
-                                                        </action>
-                                                    </else>
-                                                </condition>
-                                            </normal>
-                                            <else>
-                                                <condition id="getBoolEquals">
-                                                    <string id="id">enemyTower1Lane2</string>
+                                                    <string id="id">enemyTower2Lane2</string>
                                                     <string id="value" values="yesno">no</string>
                                                     <normal>
                                                         <action id="adjustCounter">
@@ -217,110 +207,85 @@
                                                         </action>
                                                     </normal>
                                                     <else>
-                                                        <condition id="isInArea">
-                                                            <string id="condition" values="yesno">yes</string>
-                                                            <string id="collision groups" values="collison groups" multiselect="true">PLAYERS;;</string>
-                                                            <string id="check green obstacles only" values="yesno">no</string>
-                                                            <string id="teams" values="teams" multiselect="true">ENEMY_TEAM;;</string>
-                                                            <string id="areaName"></string>
-                                                            <float id="xOffset">0.00</float>
-                                                            <float id="yOffset">0.00</float>
-                                                            <float id="width">1.20</float>
-                                                            <float id="height">0.70</float>
-                                                            <string id="check line of sight" values="yesno">no</string>
-                                                            <string id="ignore invisibility" values="yesno">no</string>
-                                                            <string id="Comment">Enemies close?</string>
-                                                            <else>
-                                                                <condition id="checkCounter">
+                                                        <condition id="getBoolEquals">
+                                                            <string id="id">enemyTower2Lane1</string>
+                                                            <string id="value" values="yesno">no</string>
+                                                            <normal>
+                                                                <action id="adjustCounter">
                                                                     <string id="id">lane</string>
                                                                     <string id="value">1</string>
-                                                                    <string id="compare method" values="valuecompare">equal</string>
-                                                                    <normal>
-                                                                        <condition id="isInArea">
-                                                                            <string id="condition" values="yesno">yes</string>
-                                                                            <string id="collision groups" values="collison groups" multiselect="true">PLAYERS;;</string>
-                                                                            <string id="check green obstacles only" values="yesno">no</string>
-                                                                            <string id="teams" values="teams" multiselect="true">ENEMY_TEAM;;</string>
-                                                                            <string id="areaName"></string>
-                                                                            <float id="xOffset">0.00</float>
-                                                                            <float id="yOffset">-2.00</float>
-                                                                            <float id="width">10.00</float>
-                                                                            <float id="height">4.00</float>
-                                                                            <string id="check line of sight" values="yesno">no</string>
-                                                                            <string id="ignore invisibility" values="yesno">yes</string>
-                                                                            <string id="Comment">Enemys at bot lane?</string>
-                                                                            <normal>
-                                                                                <action id="adjustCounter">
-                                                                                    <string id="id">lane</string>
-                                                                                    <string id="value">2</string>
-                                                                                    <string id="adjust method" values="valueadjust">set</string>
-                                                                                </action>
-                                                                                <action id="setBool">
-                                                                                    <string id="id">LetsSwitchLane</string>
-                                                                                    <string id="value" values="flagtoggle">yes</string>
-                                                                                </action>
-                                                                                <action id="log">
-                                                                                    <string id="text">Switch Lane!</string>
-                                                                                    <string id="counter"></string>
-                                                                                    <string id="bool"></string>
-                                                                                </action>
-                                                                                <action id="adjustCounter">
-                                                                                    <string id="id">setState</string>
-                                                                                    <string id="value">3</string>
-                                                                                    <string id="adjust method" values="valueadjust">set</string>
-                                                                                    <string id="Comment">advanceToFrontline (3)</string>
-                                                                                </action>
-                                                                            </normal>
-                                                                        </condition>
-                                                                    </normal>
-                                                                    <else>
-                                                                        <condition id="checkCounter">
-                                                                            <string id="id">lane</string>
-                                                                            <string id="value">2</string>
-                                                                            <string id="compare method" values="valuecompare">equal</string>
-                                                                            <normal>
-                                                                                <condition id="isInArea">
-                                                                                    <string id="condition" values="yesno">yes</string>
-                                                                                    <string id="collision groups" values="collison groups" multiselect="true">PLAYERS;;</string>
-                                                                                    <string id="check green obstacles only" values="yesno">no</string>
-                                                                                    <string id="teams" values="teams" multiselect="true">ENEMY_TEAM;;</string>
-                                                                                    <string id="areaName"></string>
-                                                                                    <float id="xOffset">0.00</float>
-                                                                                    <float id="yOffset">2.00</float>
-                                                                                    <float id="width">10.00</float>
-                                                                                    <float id="height">4.00</float>
-                                                                                    <string id="check line of sight" values="yesno">no</string>
-                                                                                    <string id="ignore invisibility" values="yesno">yes</string>
-                                                                                    <string id="Comment">Enemys at top lane?</string>
-                                                                                    <normal>
-                                                                                        <action id="adjustCounter">
-                                                                                            <string id="id">lane</string>
-                                                                                            <string id="value">1</string>
-                                                                                            <string id="adjust method" values="valueadjust">set</string>
-                                                                                        </action>
-                                                                                        <action id="setBool">
-                                                                                            <string id="id">LetsSwitchLane</string>
-                                                                                            <string id="value" values="flagtoggle">yes</string>
-                                                                                        </action>
-                                                                                        <action id="log">
-                                                                                            <string id="text">Switch Lane!</string>
-                                                                                            <string id="counter"></string>
-                                                                                            <string id="bool"></string>
-                                                                                        </action>
-                                                                                        <action id="adjustCounter">
-                                                                                            <string id="id">setState</string>
-                                                                                            <string id="value">3</string>
-                                                                                            <string id="adjust method" values="valueadjust">set</string>
-                                                                                            <string id="Comment">advanceToFrontline (3)</string>
-                                                                                        </action>
-                                                                                    </normal>
-                                                                                </condition>
-                                                                            </normal>
-                                                                        </condition>
-                                                                    </else>
-                                                                </condition>
-                                                            </else>
+                                                                    <string id="adjust method" values="valueadjust">set</string>
+                                                                </action>
+                                                                <action id="adjustCounter">
+                                                                    <string id="id">setState</string>
+                                                                    <string id="value">3</string>
+                                                                    <string id="adjust method" values="valueadjust">set</string>
+                                                                    <string id="Comment">advanceToFrontline (3)</string>
+                                                                </action>
+                                                                <action id="setBool">
+                                                                    <string id="id">LetsSwitchLane</string>
+                                                                    <string id="value" values="flagtoggle">yes</string>
+                                                                </action>
+                                                            </normal>
                                                         </condition>
+                                                    </else>
+                                                </condition>
+                                            </normal>
+                                            <else>
+                                                <action id="adjustCounter">
+                                                    <string id="id">lane</string>
+                                                    <string id="value">1</string>
+                                                    <string id="adjust method" values="valueadjust">set</string>
+                                                </action>
+                                                <action id="adjustCounter">
+                                                    <string id="id">setState</string>
+                                                    <string id="value">3</string>
+                                                    <string id="adjust method" values="valueadjust">set</string>
+                                                    <string id="Comment">advanceToFrontline (3)</string>
+                                                </action>
+                                                <action id="setBool">
+                                                    <string id="id">LetsSwitchLane</string>
+                                                    <string id="value" values="flagtoggle">yes</string>
+                                                </action>
+                                            </else>
+                                        </condition>
+                                    </normal>
+                                    <else>
+                                        <condition id="getBoolEquals">
+                                            <string id="id">enemyTower1Lane2</string>
+                                            <string id="value" values="yesno">no</string>
+                                            <normal>
+                                                <action id="adjustCounter">
+                                                    <string id="id">lane</string>
+                                                    <string id="value">2</string>
+                                                    <string id="adjust method" values="valueadjust">set</string>
+                                                </action>
+                                                <action id="adjustCounter">
+                                                    <string id="id">setState</string>
+                                                    <string id="value">3</string>
+                                                    <string id="adjust method" values="valueadjust">set</string>
+                                                    <string id="Comment">advanceToFrontline (3)</string>
+                                                </action>
+                                                <action id="setBool">
+                                                    <string id="id">LetsSwitchLane</string>
+                                                    <string id="value" values="flagtoggle">yes</string>
+                                                </action>
+                                            </normal>
+                                            <else>
+                                                <condition id="isInArea">
+                                                    <string id="condition" values="yesno">yes</string>
+                                                    <string id="collision groups" values="collison groups" multiselect="true">PLAYERS;;</string>
+                                                    <string id="check green obstacles only" values="yesno">no</string>
+                                                    <string id="teams" values="teams" multiselect="true">ENEMY_TEAM;;</string>
+                                                    <string id="areaName"></string>
+                                                    <float id="xOffset">0.00</float>
+                                                    <float id="yOffset">0.00</float>
+                                                    <float id="width">1.20</float>
+                                                    <float id="height">0.70</float>
+                                                    <string id="check line of sight" values="yesno">no</string>
+                                                    <string id="ignore invisibility" values="yesno">no</string>
+                                                    <string id="Comment">Enemies close?</string>
+                                                    <else>
                                                         <condition id="checkCounter">
                                                             <string id="id">lane</string>
                                                             <string id="value">1</string>
@@ -328,17 +293,17 @@
                                                             <normal>
                                                                 <condition id="isInArea">
                                                                     <string id="condition" values="yesno">yes</string>
-                                                                    <string id="collision groups" values="collison groups" multiselect="true">CREEPS;;</string>
+                                                                    <string id="collision groups" values="collison groups" multiselect="true">PLAYERS;;</string>
                                                                     <string id="check green obstacles only" values="yesno">no</string>
-                                                                    <string id="teams" values="teams" multiselect="true">OWN_TEAM;;</string>
-                                                                    <string id="areaName">CreepDroidSuper</string>
+                                                                    <string id="teams" values="teams" multiselect="true">ENEMY_TEAM;;</string>
+                                                                    <string id="areaName"></string>
                                                                     <float id="xOffset">0.00</float>
                                                                     <float id="yOffset">-2.00</float>
                                                                     <float id="width">10.00</float>
                                                                     <float id="height">4.00</float>
                                                                     <string id="check line of sight" values="yesno">no</string>
                                                                     <string id="ignore invisibility" values="yesno">yes</string>
-                                                                    <string id="Comment">Ally Superdroid at bot lane?</string>
+                                                                    <string id="Comment">Enemys at bot lane?</string>
                                                                     <normal>
                                                                         <action id="adjustCounter">
                                                                             <string id="id">lane</string>
@@ -371,21 +336,21 @@
                                                                     <normal>
                                                                         <condition id="isInArea">
                                                                             <string id="condition" values="yesno">yes</string>
-                                                                            <string id="collision groups" values="collison groups" multiselect="true">CREEPS;;</string>
+                                                                            <string id="collision groups" values="collison groups" multiselect="true">PLAYERS;;</string>
                                                                             <string id="check green obstacles only" values="yesno">no</string>
-                                                                            <string id="teams" values="teams" multiselect="true">OWN_TEAM;;</string>
-                                                                            <string id="areaName">CreepDroidSuper</string>
+                                                                            <string id="teams" values="teams" multiselect="true">ENEMY_TEAM;;</string>
+                                                                            <string id="areaName"></string>
                                                                             <float id="xOffset">0.00</float>
                                                                             <float id="yOffset">2.00</float>
                                                                             <float id="width">10.00</float>
                                                                             <float id="height">4.00</float>
                                                                             <string id="check line of sight" values="yesno">no</string>
                                                                             <string id="ignore invisibility" values="yesno">yes</string>
-                                                                            <string id="Comment">Ally Superdroid at top lane?</string>
+                                                                            <string id="Comment">Enemys at top lane?</string>
                                                                             <normal>
                                                                                 <action id="adjustCounter">
                                                                                     <string id="id">lane</string>
-                                                                                    <string id="value">2</string>
+                                                                                    <string id="value">1</string>
                                                                                     <string id="adjust method" values="valueadjust">set</string>
                                                                                 </action>
                                                                                 <action id="setBool">
@@ -411,22 +376,6 @@
                                                         </condition>
                                                     </else>
                                                 </condition>
-                                            </else>
-                                        </condition>
-                                        <condition id="isInArea">
-                                            <string id="condition" values="yesno">yes</string>
-                                            <string id="collision groups" values="collison groups" multiselect="true">PLAYERS;;</string>
-                                            <string id="check green obstacles only" values="yesno">no</string>
-                                            <string id="teams" values="teams" multiselect="true">ENEMY_TEAM;;</string>
-                                            <string id="areaName"></string>
-                                            <float id="xOffset">0.00</float>
-                                            <float id="yOffset">0.00</float>
-                                            <float id="width">1.20</float>
-                                            <float id="height">0.70</float>
-                                            <string id="check line of sight" values="yesno">no</string>
-                                            <string id="ignore invisibility" values="yesno">no</string>
-                                            <string id="Comment">Enemies close?</string>
-                                            <else>
                                                 <condition id="checkCounter">
                                                     <string id="id">lane</string>
                                                     <string id="value">1</string>
@@ -434,17 +383,17 @@
                                                     <normal>
                                                         <condition id="isInArea">
                                                             <string id="condition" values="yesno">yes</string>
-                                                            <string id="collision groups" values="collison groups" multiselect="true">PLAYERS;;</string>
+                                                            <string id="collision groups" values="collison groups" multiselect="true">CREEPS;;</string>
                                                             <string id="check green obstacles only" values="yesno">no</string>
-                                                            <string id="teams" values="teams" multiselect="true">ENEMY_TEAM;;</string>
-                                                            <string id="areaName"></string>
+                                                            <string id="teams" values="teams" multiselect="true">OWN_TEAM;;</string>
+                                                            <string id="areaName">CreepDroidSuper</string>
                                                             <float id="xOffset">0.00</float>
                                                             <float id="yOffset">-2.00</float>
                                                             <float id="width">10.00</float>
                                                             <float id="height">4.00</float>
                                                             <string id="check line of sight" values="yesno">no</string>
                                                             <string id="ignore invisibility" values="yesno">yes</string>
-                                                            <string id="Comment">Enemys at bot lane?</string>
+                                                            <string id="Comment">Ally Superdroid at bot lane?</string>
                                                             <normal>
                                                                 <action id="adjustCounter">
                                                                     <string id="id">lane</string>
@@ -477,21 +426,21 @@
                                                             <normal>
                                                                 <condition id="isInArea">
                                                                     <string id="condition" values="yesno">yes</string>
-                                                                    <string id="collision groups" values="collison groups" multiselect="true">PLAYERS;;</string>
+                                                                    <string id="collision groups" values="collison groups" multiselect="true">CREEPS;;</string>
                                                                     <string id="check green obstacles only" values="yesno">no</string>
-                                                                    <string id="teams" values="teams" multiselect="true">ENEMY_TEAM;;</string>
-                                                                    <string id="areaName"></string>
+                                                                    <string id="teams" values="teams" multiselect="true">OWN_TEAM;;</string>
+                                                                    <string id="areaName">CreepDroidSuper</string>
                                                                     <float id="xOffset">0.00</float>
                                                                     <float id="yOffset">2.00</float>
                                                                     <float id="width">10.00</float>
                                                                     <float id="height">4.00</float>
                                                                     <string id="check line of sight" values="yesno">no</string>
                                                                     <string id="ignore invisibility" values="yesno">yes</string>
-                                                                    <string id="Comment">Enemys at top lane?</string>
+                                                                    <string id="Comment">Ally Superdroid at top lane?</string>
                                                                     <normal>
                                                                         <action id="adjustCounter">
                                                                             <string id="id">lane</string>
-                                                                            <string id="value">1</string>
+                                                                            <string id="value">2</string>
                                                                             <string id="adjust method" values="valueadjust">set</string>
                                                                         </action>
                                                                         <action id="setBool">
@@ -514,6 +463,110 @@
                                                             </normal>
                                                         </condition>
                                                     </else>
+                                                </condition>
+                                            </else>
+                                        </condition>
+                                    </else>
+                                </condition>
+                                <condition id="isInArea">
+                                    <string id="condition" values="yesno">yes</string>
+                                    <string id="collision groups" values="collison groups" multiselect="true">PLAYERS;;</string>
+                                    <string id="check green obstacles only" values="yesno">no</string>
+                                    <string id="teams" values="teams" multiselect="true">ENEMY_TEAM;;</string>
+                                    <string id="areaName"></string>
+                                    <float id="xOffset">0.00</float>
+                                    <float id="yOffset">0.00</float>
+                                    <float id="width">1.20</float>
+                                    <float id="height">0.70</float>
+                                    <string id="check line of sight" values="yesno">no</string>
+                                    <string id="ignore invisibility" values="yesno">no</string>
+                                    <string id="Comment">Enemies close?</string>
+                                    <else>
+                                        <condition id="checkCounter">
+                                            <string id="id">lane</string>
+                                            <string id="value">1</string>
+                                            <string id="compare method" values="valuecompare">equal</string>
+                                            <normal>
+                                                <condition id="isInArea">
+                                                    <string id="condition" values="yesno">yes</string>
+                                                    <string id="collision groups" values="collison groups" multiselect="true">PLAYERS;;</string>
+                                                    <string id="check green obstacles only" values="yesno">no</string>
+                                                    <string id="teams" values="teams" multiselect="true">ENEMY_TEAM;;</string>
+                                                    <string id="areaName"></string>
+                                                    <float id="xOffset">0.00</float>
+                                                    <float id="yOffset">-2.00</float>
+                                                    <float id="width">10.00</float>
+                                                    <float id="height">4.00</float>
+                                                    <string id="check line of sight" values="yesno">no</string>
+                                                    <string id="ignore invisibility" values="yesno">yes</string>
+                                                    <string id="Comment">Enemys at bot lane?</string>
+                                                    <normal>
+                                                        <action id="adjustCounter">
+                                                            <string id="id">lane</string>
+                                                            <string id="value">2</string>
+                                                            <string id="adjust method" values="valueadjust">set</string>
+                                                        </action>
+                                                        <action id="setBool">
+                                                            <string id="id">LetsSwitchLane</string>
+                                                            <string id="value" values="flagtoggle">yes</string>
+                                                        </action>
+                                                        <action id="log">
+                                                            <string id="text">Switch Lane!</string>
+                                                            <string id="counter"></string>
+                                                            <string id="bool"></string>
+                                                        </action>
+                                                        <action id="adjustCounter">
+                                                            <string id="id">setState</string>
+                                                            <string id="value">3</string>
+                                                            <string id="adjust method" values="valueadjust">set</string>
+                                                            <string id="Comment">advanceToFrontline (3)</string>
+                                                        </action>
+                                                    </normal>
+                                                </condition>
+                                            </normal>
+                                            <else>
+                                                <condition id="checkCounter">
+                                                    <string id="id">lane</string>
+                                                    <string id="value">2</string>
+                                                    <string id="compare method" values="valuecompare">equal</string>
+                                                    <normal>
+                                                        <condition id="isInArea">
+                                                            <string id="condition" values="yesno">yes</string>
+                                                            <string id="collision groups" values="collison groups" multiselect="true">PLAYERS;;</string>
+                                                            <string id="check green obstacles only" values="yesno">no</string>
+                                                            <string id="teams" values="teams" multiselect="true">ENEMY_TEAM;;</string>
+                                                            <string id="areaName"></string>
+                                                            <float id="xOffset">0.00</float>
+                                                            <float id="yOffset">2.00</float>
+                                                            <float id="width">10.00</float>
+                                                            <float id="height">4.00</float>
+                                                            <string id="check line of sight" values="yesno">no</string>
+                                                            <string id="ignore invisibility" values="yesno">yes</string>
+                                                            <string id="Comment">Enemys at top lane?</string>
+                                                            <normal>
+                                                                <action id="adjustCounter">
+                                                                    <string id="id">lane</string>
+                                                                    <string id="value">1</string>
+                                                                    <string id="adjust method" values="valueadjust">set</string>
+                                                                </action>
+                                                                <action id="setBool">
+                                                                    <string id="id">LetsSwitchLane</string>
+                                                                    <string id="value" values="flagtoggle">yes</string>
+                                                                </action>
+                                                                <action id="log">
+                                                                    <string id="text">Switch Lane!</string>
+                                                                    <string id="counter"></string>
+                                                                    <string id="bool"></string>
+                                                                </action>
+                                                                <action id="adjustCounter">
+                                                                    <string id="id">setState</string>
+                                                                    <string id="value">3</string>
+                                                                    <string id="adjust method" values="valueadjust">set</string>
+                                                                    <string id="Comment">advanceToFrontline (3)</string>
+                                                                </action>
+                                                            </normal>
+                                                        </condition>
+                                                    </normal>
                                                 </condition>
                                             </else>
                                         </condition>
