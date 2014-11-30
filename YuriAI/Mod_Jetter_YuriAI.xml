@@ -2039,9 +2039,14 @@
                                         <orblock>
                                             <string id="Comment">Targeting small creep?</string>
                                             <normal>
-                                                <condition id="isTargetPosition">
+                                                <condition id="isTargetInArea">
                                                     <string id="condition" values="yesno">yes</string>
-                                                    <string id="target position" values="offsetposition">BELOW</string>
+                                                    <float id="xOffset">0.00</float>
+                                                    <float id="yOffset">-0.93</float>
+                                                    <float id="width">0.93</float>
+                                                    <float id="height">0.40</float>
+                                                    <string id="check line of sight" values="yesno">no</string>
+                                                    <string id="ignore invisibility" values="yesno">no</string>
                                                     <string id="Comment">Am I above it?</string>
                                                     <normal>
                                                         <condition id="isUpgradeEnabled">
@@ -2697,33 +2702,16 @@
                                     <string id="compare method" values="valuecompare">greater</string>
                                     <string id="Comment">Stuck for 2 or more seconds?</string>
                                     <normal>
-                                        <sequence>
-                                            <string id="Is blocking">no</string>
-                                            <string id="Comment">Disable jetpack for 0.5 seconds</string>
-                                            <normal>
-                                                <action id="setBool">
-                                                    <string id="id">dontFly</string>
-                                                    <string id="value" values="flagtoggle">yes</string>
-                                                </action>
-                                                <action id="log">
-                                                    <string id="text">Stuck fix enabled</string>
-                                                    <string id="counter"></string>
-                                                    <string id="bool"></string>
-                                                </action>
-                                                <action id="wait">
-                                                    <float id="time">0.50</float>
-                                                </action>
-                                                <action id="setBool">
-                                                    <string id="id">dontFly</string>
-                                                    <string id="value" values="flagtoggle">no</string>
-                                                </action>
-                                                <action id="log">
-                                                    <string id="text">Stuck fix disabled</string>
-                                                    <string id="counter"></string>
-                                                    <string id="bool"></string>
-                                                </action>
-                                            </normal>
-                                        </sequence>
+                                        <action id="setBool">
+                                            <string id="id">dontFly</string>
+                                            <string id="value" values="flagtoggle">yes</string>
+                                            <string id="Comment">Disable jetpack</string>
+                                        </action>
+                                        <action id="log">
+                                            <string id="text">Stuck fix enabled</string>
+                                            <string id="counter"></string>
+                                            <string id="bool"></string>
+                                        </action>
                                         <action id="adjustCounter">
                                             <string id="id">timeStuck</string>
                                             <string id="value">0</string>
@@ -3105,18 +3093,35 @@
                     <string id="value" values="yesno">yes</string>
                     <string id="Comment">Disable jetpack if stuck</string>
                     <normal>
-                        <action id="setBool">
-                            <string id="id">GoUp</string>
-                            <string id="value" values="flagtoggle">no</string>
-                        </action>
-                        <action id="setBool">
-                            <string id="id">GoDown</string>
-                            <string id="value" values="flagtoggle">no</string>
-                        </action>
-                        <action id="enableUpgrade">
-                            <string id="condition" values="yesno">no</string>
-                            <string id="upgrade name">JetterJet</string>
-                        </action>
+                        <condition id="isUpgradeEnabled">
+                            <string id="condition" values="yesno">yes</string>
+                            <string id="upgrade name">InAir</string>
+                            <normal>
+                                <action id="setBool">
+                                    <string id="id">GoUp</string>
+                                    <string id="value" values="flagtoggle">no</string>
+                                </action>
+                                <action id="setBool">
+                                    <string id="id">GoDown</string>
+                                    <string id="value" values="flagtoggle">no</string>
+                                </action>
+                                <action id="enableUpgrade">
+                                    <string id="condition" values="yesno">no</string>
+                                    <string id="upgrade name">JetterJet</string>
+                                </action>
+                            </normal>
+                            <else>
+                                <action id="setBool">
+                                    <string id="id">dontFly</string>
+                                    <string id="value" values="flagtoggle">no</string>
+                                </action>
+                                <action id="log">
+                                    <string id="text">Stuck fix disabled</string>
+                                    <string id="counter"></string>
+                                    <string id="bool"></string>
+                                </action>
+                            </else>
+                        </condition>
                     </normal>
                 </condition>
                 <condition id="getBoolEquals">
