@@ -3450,10 +3450,25 @@
                                         </action>
                                     </normal>
                                     <else>
-                                        <action id="setBool">
-                                            <string id="id">float</string>
-                                            <string id="value" values="flagtoggle">yes</string>
-                                        </action>
+                                        <condition id="isInArea">
+                                            <string id="condition" values="yesno">no</string>
+                                            <string id="collision groups" values="collison groups" multiselect="true">INVINCIBLE_OBSTACLES;;</string>
+                                            <string id="check green obstacles only" values="yesno">no</string>
+                                            <string id="teams" values="teams" multiselect="true">OWN_TEAM;;ENEMY_TEAM;;NEUTRAL_TEAM;;</string>
+                                            <string id="areaName"></string>
+                                            <float id="xOffset">0.25</float>
+                                            <float id="yOffset">0.50</float>
+                                            <float id="width">0.05</float>
+                                            <float id="height">0.10</float>
+                                            <string id="check line of sight" values="yesno">no</string>
+                                            <string id="ignore invisibility" values="yesno">no</string>
+                                            <normal>
+                                                <action id="setBool">
+                                                    <string id="id">float</string>
+                                                    <string id="value" values="flagtoggle">yes</string>
+                                                </action>
+                                            </normal>
+                                        </condition>
                                     </else>
                                 </condition>
                             </normal>
@@ -3523,10 +3538,25 @@
                                                 </action>
                                             </normal>
                                             <else>
-                                                <action id="setBool">
-                                                    <string id="id">float</string>
-                                                    <string id="value" values="flagtoggle">yes</string>
-                                                </action>
+                                                <condition id="isInArea">
+                                                    <string id="condition" values="yesno">no</string>
+                                                    <string id="collision groups" values="collison groups" multiselect="true">INVINCIBLE_OBSTACLES;;</string>
+                                                    <string id="check green obstacles only" values="yesno">no</string>
+                                                    <string id="teams" values="teams" multiselect="true">OWN_TEAM;;ENEMY_TEAM;;NEUTRAL_TEAM;;</string>
+                                                    <string id="areaName"></string>
+                                                    <float id="xOffset">0.25</float>
+                                                    <float id="yOffset">0.50</float>
+                                                    <float id="width">0.05</float>
+                                                    <float id="height">0.10</float>
+                                                    <string id="check line of sight" values="yesno">no</string>
+                                                    <string id="ignore invisibility" values="yesno">no</string>
+                                                    <normal>
+                                                        <action id="setBool">
+                                                            <string id="id">float</string>
+                                                            <string id="value" values="flagtoggle">yes</string>
+                                                        </action>
+                                                    </normal>
+                                                </condition>
                                             </else>
                                         </condition>
                                     </normal>
@@ -3597,10 +3627,25 @@
                                                         </condition>
                                                     </normal>
                                                     <else>
-                                                        <action id="setBool">
-                                                            <string id="id">float</string>
-                                                            <string id="value" values="flagtoggle">yes</string>
-                                                        </action>
+                                                        <condition id="isInArea">
+                                                            <string id="condition" values="yesno">no</string>
+                                                            <string id="collision groups" values="collison groups" multiselect="true">INVINCIBLE_OBSTACLES;;</string>
+                                                            <string id="check green obstacles only" values="yesno">no</string>
+                                                            <string id="teams" values="teams" multiselect="true">OWN_TEAM;;ENEMY_TEAM;;NEUTRAL_TEAM;;</string>
+                                                            <string id="areaName"></string>
+                                                            <float id="xOffset">0.25</float>
+                                                            <float id="yOffset">0.50</float>
+                                                            <float id="width">0.05</float>
+                                                            <float id="height">0.10</float>
+                                                            <string id="check line of sight" values="yesno">no</string>
+                                                            <string id="ignore invisibility" values="yesno">no</string>
+                                                            <normal>
+                                                                <action id="setBool">
+                                                                    <string id="id">float</string>
+                                                                    <string id="value" values="flagtoggle">yes</string>
+                                                                </action>
+                                                            </normal>
+                                                        </condition>
                                                     </else>
                                                 </condition>
                                             </else>
@@ -3650,10 +3695,25 @@
                                                 </action>
                                             </normal>
                                             <else>
-                                                <action id="setBool">
-                                                    <string id="id">float</string>
-                                                    <string id="value" values="flagtoggle">yes</string>
-                                                </action>
+                                                <condition id="isInArea">
+                                                    <string id="condition" values="yesno">no</string>
+                                                    <string id="collision groups" values="collison groups" multiselect="true">INVINCIBLE_OBSTACLES;;</string>
+                                                    <string id="check green obstacles only" values="yesno">no</string>
+                                                    <string id="teams" values="teams" multiselect="true">OWN_TEAM;;ENEMY_TEAM;;NEUTRAL_TEAM;;</string>
+                                                    <string id="areaName"></string>
+                                                    <float id="xOffset">0.25</float>
+                                                    <float id="yOffset">0.50</float>
+                                                    <float id="width">0.05</float>
+                                                    <float id="height">0.10</float>
+                                                    <string id="check line of sight" values="yesno">no</string>
+                                                    <string id="ignore invisibility" values="yesno">no</string>
+                                                    <normal>
+                                                        <action id="setBool">
+                                                            <string id="id">float</string>
+                                                            <string id="value" values="flagtoggle">yes</string>
+                                                        </action>
+                                                    </normal>
+                                                </condition>
                                             </else>
                                         </condition>
                                     </normal>
@@ -3670,10 +3730,25 @@
                                         </action>
                                     </normal>
                                     <else>
-                                        <action id="setBool">
-                                            <string id="id">float</string>
-                                            <string id="value" values="flagtoggle">yes</string>
-                                        </action>
+                                        <condition id="isInArea">
+                                            <string id="condition" values="yesno">no</string>
+                                            <string id="collision groups" values="collison groups" multiselect="true">INVINCIBLE_OBSTACLES;;</string>
+                                            <string id="check green obstacles only" values="yesno">no</string>
+                                            <string id="teams" values="teams" multiselect="true">OWN_TEAM;;ENEMY_TEAM;;NEUTRAL_TEAM;;</string>
+                                            <string id="areaName"></string>
+                                            <float id="xOffset">0.25</float>
+                                            <float id="yOffset">0.50</float>
+                                            <float id="width">0.05</float>
+                                            <float id="height">0.10</float>
+                                            <string id="check line of sight" values="yesno">no</string>
+                                            <string id="ignore invisibility" values="yesno">no</string>
+                                            <normal>
+                                                <action id="setBool">
+                                                    <string id="id">float</string>
+                                                    <string id="value" values="flagtoggle">yes</string>
+                                                </action>
+                                            </normal>
+                                        </condition>
                                     </else>
                                 </condition>
                             </else>
@@ -3735,10 +3810,25 @@
                                 </action>
                             </normal>
                             <else>
-                                <action id="setBool">
-                                    <string id="id">float</string>
-                                    <string id="value" values="flagtoggle">yes</string>
-                                </action>
+                                <condition id="isInArea">
+                                    <string id="condition" values="yesno">no</string>
+                                    <string id="collision groups" values="collison groups" multiselect="true">INVINCIBLE_OBSTACLES;;</string>
+                                    <string id="check green obstacles only" values="yesno">no</string>
+                                    <string id="teams" values="teams" multiselect="true">OWN_TEAM;;ENEMY_TEAM;;NEUTRAL_TEAM;;</string>
+                                    <string id="areaName"></string>
+                                    <float id="xOffset">0.25</float>
+                                    <float id="yOffset">0.50</float>
+                                    <float id="width">0.05</float>
+                                    <float id="height">0.10</float>
+                                    <string id="check line of sight" values="yesno">no</string>
+                                    <string id="ignore invisibility" values="yesno">no</string>
+                                    <normal>
+                                        <action id="setBool">
+                                            <string id="id">float</string>
+                                            <string id="value" values="flagtoggle">yes</string>
+                                        </action>
+                                    </normal>
+                                </condition>
                             </else>
                         </condition>
                     </normal>
@@ -3759,7 +3849,7 @@
                             <float id="xOffset">0.00</float>
                             <float id="yOffset">0.00</float>
                             <float id="width">0.40</float>
-                            <float id="height">0.80</float>
+                            <float id="height">0.10</float>
                             <string id="check line of sight" values="yesno">yes</string>
                             <string id="Comment">Nearby Brute</string>
                         </condition>
@@ -4251,7 +4341,7 @@
         </root>
     </behaviour>
     <behaviour>
-        <condition id="checkCharacterValue" x="7103" y="1917">
+        <condition id="checkCharacterValue" x="7278" y="1917">
             <string id="property" values="charactervaluesCheckable">health percentage</string>
             <float id="value">50.00</float>
             <string id="compare method" values="valuecompare">greater or equal</string>
