@@ -19,7 +19,7 @@
                         </action>
                     </normal>
                 </condition>
-                <orblock>
+                <andblock>
                     <string id="Comment">Health Checker(for 2 people)</string>
                     <normal>
                         <condition id="isCharacterInArea">
@@ -50,7 +50,7 @@
                         </condition>
                     </normal>
                     <else>
-                        <orblock>
+                        <andblock>
                             <string id="Comment">Health Checker</string>
                             <normal>
                                 <condition id="isCharacterInArea">
@@ -81,7 +81,7 @@
                                 </condition>
                             </normal>
                             <else>
-                                <orblock>
+                                <andblock>
                                     <string id="Comment">Health Checker</string>
                                     <normal>
                                         <condition id="isCharacterInArea">
@@ -112,7 +112,7 @@
                                         </condition>
                                     </normal>
                                     <else>
-                                        <orblock>
+                                        <andblock>
                                             <string id="Comment">Health Checker</string>
                                             <normal>
                                                 <condition id="isCharacterInArea">
@@ -143,7 +143,7 @@
                                                 </condition>
                                             </normal>
                                             <else>
-                                                <orblock>
+                                                <andblock>
                                                     <string id="Comment">Health Checker</string>
                                                     <normal>
                                                         <condition id="isCharacterInArea">
@@ -174,7 +174,7 @@
                                                         </condition>
                                                     </normal>
                                                     <else>
-                                                        <orblock>
+                                                        <andblock>
                                                             <string id="Comment">Health Checker</string>
                                                             <normal>
                                                                 <condition id="isCharacterInArea">
@@ -205,7 +205,7 @@
                                                                 </condition>
                                                             </normal>
                                                             <else>
-                                                                <orblock>
+                                                                <andblock>
                                                                     <string id="Comment">Health Checker</string>
                                                                     <normal>
                                                                         <condition id="isCharacterInArea">
@@ -225,7 +225,6 @@
                                                                                 <action id="setBool">
                                                                                     <string id="id">LowerHealth2</string>
                                                                                     <string id="value" values="flagtoggle">yes</string>
-                                                                                    <string id="Minimized">yes</string>
                                                                                 </action>
                                                                             </normal>
                                                                             <else>
@@ -239,8 +238,8 @@
                                                                     <else>
                                                                         <condition id="checkCharacterValue">
                                                                             <string id="property" values="charactervaluesCheckable">health percentage</string>
-                                                                            <float id="value">20.00</float>
-                                                                            <string id="compare method" values="valuecompare">less or equal</string>
+                                                                            <float id="value">21.00</float>
+                                                                            <string id="compare method" values="valuecompare">less</string>
                                                                             <string id="check on" values="targetself">self</string>
                                                                             <normal>
                                                                                 <condition id="isCharacterInArea">
@@ -275,8 +274,8 @@
                                                                     <or>
                                                                         <condition id="checkCharacterValue">
                                                                             <string id="property" values="charactervaluesCheckable">health percentage</string>
-                                                                            <float id="value">30.00</float>
-                                                                            <string id="compare method" values="valuecompare">less or equal</string>
+                                                                            <float id="value">31.00</float>
+                                                                            <string id="compare method" values="valuecompare">less</string>
                                                                             <string id="check on" values="targetself">self</string>
                                                                         </condition>
                                                                         <condition id="checkCharacterValue">
@@ -286,13 +285,13 @@
                                                                             <string id="check on" values="targetself">self</string>
                                                                         </condition>
                                                                     </or>
-                                                                </orblock>
+                                                                </andblock>
                                                             </else>
                                                             <or>
                                                                 <condition id="checkCharacterValue">
                                                                     <string id="property" values="charactervaluesCheckable">health percentage</string>
-                                                                    <float id="value">40.00</float>
-                                                                    <string id="compare method" values="valuecompare">less or equal</string>
+                                                                    <float id="value">41.00</float>
+                                                                    <string id="compare method" values="valuecompare">less</string>
                                                                     <string id="check on" values="targetself">self</string>
                                                                 </condition>
                                                                 <condition id="checkCharacterValue">
@@ -302,13 +301,13 @@
                                                                     <string id="check on" values="targetself">self</string>
                                                                 </condition>
                                                             </or>
-                                                        </orblock>
+                                                        </andblock>
                                                     </else>
                                                     <or>
                                                         <condition id="checkCharacterValue">
                                                             <string id="property" values="charactervaluesCheckable">health percentage</string>
-                                                            <float id="value">50.00</float>
-                                                            <string id="compare method" values="valuecompare">less or equal</string>
+                                                            <float id="value">51.00</float>
+                                                            <string id="compare method" values="valuecompare">less</string>
                                                             <string id="check on" values="targetself">self</string>
                                                         </condition>
                                                         <condition id="checkCharacterValue">
@@ -318,13 +317,13 @@
                                                             <string id="check on" values="targetself">self</string>
                                                         </condition>
                                                     </or>
-                                                </orblock>
+                                                </andblock>
                                             </else>
                                             <or>
                                                 <condition id="checkCharacterValue">
                                                     <string id="property" values="charactervaluesCheckable">health percentage</string>
-                                                    <float id="value">60.00</float>
-                                                    <string id="compare method" values="valuecompare">less or equal</string>
+                                                    <float id="value">61.00</float>
+                                                    <string id="compare method" values="valuecompare">less</string>
                                                     <string id="check on" values="targetself">self</string>
                                                 </condition>
                                                 <condition id="checkCharacterValue">
@@ -334,13 +333,13 @@
                                                     <string id="check on" values="targetself">self</string>
                                                 </condition>
                                             </or>
-                                        </orblock>
+                                        </andblock>
                                     </else>
                                     <or>
                                         <condition id="checkCharacterValue">
                                             <string id="property" values="charactervaluesCheckable">health percentage</string>
-                                            <float id="value">70.00</float>
-                                            <string id="compare method" values="valuecompare">less or equal</string>
+                                            <float id="value">71.00</float>
+                                            <string id="compare method" values="valuecompare">less</string>
                                             <string id="check on" values="targetself">self</string>
                                         </condition>
                                         <condition id="checkCharacterValue">
@@ -350,13 +349,13 @@
                                             <string id="check on" values="targetself">self</string>
                                         </condition>
                                     </or>
-                                </orblock>
+                                </andblock>
                             </else>
                             <or>
                                 <condition id="checkCharacterValue">
                                     <string id="property" values="charactervaluesCheckable">health percentage</string>
-                                    <float id="value">80.00</float>
-                                    <string id="compare method" values="valuecompare">less or equal</string>
+                                    <float id="value">81.00</float>
+                                    <string id="compare method" values="valuecompare">less</string>
                                     <string id="check on" values="targetself">self</string>
                                 </condition>
                                 <condition id="checkCharacterValue">
@@ -366,13 +365,13 @@
                                     <string id="check on" values="targetself">self</string>
                                 </condition>
                             </or>
-                        </orblock>
+                        </andblock>
                     </else>
                     <or>
                         <condition id="checkCharacterValue">
                             <string id="property" values="charactervaluesCheckable">health percentage</string>
-                            <float id="value">90.00</float>
-                            <string id="compare method" values="valuecompare">less or equal</string>
+                            <float id="value">91.00</float>
+                            <string id="compare method" values="valuecompare">less</string>
                             <string id="check on" values="targetself">self</string>
                         </condition>
                         <condition id="checkCharacterValue">
@@ -382,8 +381,8 @@
                             <string id="check on" values="targetself">self</string>
                         </condition>
                     </or>
-                </orblock>
-                <orblock>
+                </andblock>
+                <andblock>
                     <string id="Comment">Health Checker</string>
                     <normal>
                         <condition id="isCharacterInArea">
@@ -414,7 +413,7 @@
                         </condition>
                     </normal>
                     <else>
-                        <orblock>
+                        <andblock>
                             <string id="Comment">Health Checker</string>
                             <normal>
                                 <condition id="isCharacterInArea">
@@ -445,7 +444,7 @@
                                 </condition>
                             </normal>
                             <else>
-                                <orblock>
+                                <andblock>
                                     <string id="Comment">Health Checker</string>
                                     <normal>
                                         <condition id="isCharacterInArea">
@@ -476,7 +475,7 @@
                                         </condition>
                                     </normal>
                                     <else>
-                                        <orblock>
+                                        <andblock>
                                             <string id="Comment">Health Checker</string>
                                             <normal>
                                                 <condition id="isCharacterInArea">
@@ -507,7 +506,7 @@
                                                 </condition>
                                             </normal>
                                             <else>
-                                                <orblock>
+                                                <andblock>
                                                     <string id="Comment">Health Checker</string>
                                                     <normal>
                                                         <condition id="isCharacterInArea">
@@ -538,7 +537,7 @@
                                                         </condition>
                                                     </normal>
                                                     <else>
-                                                        <orblock>
+                                                        <andblock>
                                                             <string id="Comment">Health Checker</string>
                                                             <normal>
                                                                 <condition id="isCharacterInArea">
@@ -569,7 +568,7 @@
                                                                 </condition>
                                                             </normal>
                                                             <else>
-                                                                <orblock>
+                                                                <andblock>
                                                                     <string id="Comment">Health Checker</string>
                                                                     <normal>
                                                                         <condition id="isCharacterInArea">
@@ -602,8 +601,8 @@
                                                                     <else>
                                                                         <condition id="checkCharacterValue">
                                                                             <string id="property" values="charactervaluesCheckable">health percentage</string>
-                                                                            <float id="value">20.00</float>
-                                                                            <string id="compare method" values="valuecompare">less or equal</string>
+                                                                            <float id="value">21.00</float>
+                                                                            <string id="compare method" values="valuecompare">less</string>
                                                                             <string id="check on" values="targetself">self</string>
                                                                             <normal>
                                                                                 <condition id="isCharacterInArea">
@@ -638,8 +637,8 @@
                                                                     <or>
                                                                         <condition id="checkCharacterValue">
                                                                             <string id="property" values="charactervaluesCheckable">health percentage</string>
-                                                                            <float id="value">30.00</float>
-                                                                            <string id="compare method" values="valuecompare">less or equal</string>
+                                                                            <float id="value">31.00</float>
+                                                                            <string id="compare method" values="valuecompare">less</string>
                                                                             <string id="check on" values="targetself">self</string>
                                                                         </condition>
                                                                         <condition id="checkCharacterValue">
@@ -649,12 +648,12 @@
                                                                             <string id="check on" values="targetself">self</string>
                                                                         </condition>
                                                                     </or>
-                                                                </orblock>
+                                                                </andblock>
                                                             </else>
                                                             <or>
                                                                 <condition id="checkCharacterValue">
                                                                     <string id="property" values="charactervaluesCheckable">health percentage</string>
-                                                                    <float id="value">40.00</float>
+                                                                    <float id="value">41.00</float>
                                                                     <string id="compare method" values="valuecompare">less or equal</string>
                                                                     <string id="check on" values="targetself">self</string>
                                                                 </condition>
@@ -665,12 +664,12 @@
                                                                     <string id="check on" values="targetself">self</string>
                                                                 </condition>
                                                             </or>
-                                                        </orblock>
+                                                        </andblock>
                                                     </else>
                                                     <or>
                                                         <condition id="checkCharacterValue">
                                                             <string id="property" values="charactervaluesCheckable">health percentage</string>
-                                                            <float id="value">50.00</float>
+                                                            <float id="value">51.00</float>
                                                             <string id="compare method" values="valuecompare">less or equal</string>
                                                             <string id="check on" values="targetself">self</string>
                                                         </condition>
@@ -681,13 +680,13 @@
                                                             <string id="check on" values="targetself">self</string>
                                                         </condition>
                                                     </or>
-                                                </orblock>
+                                                </andblock>
                                             </else>
                                             <or>
                                                 <condition id="checkCharacterValue">
                                                     <string id="property" values="charactervaluesCheckable">health percentage</string>
-                                                    <float id="value">60.00</float>
-                                                    <string id="compare method" values="valuecompare">less or equal</string>
+                                                    <float id="value">61.00</float>
+                                                    <string id="compare method" values="valuecompare">less</string>
                                                     <string id="check on" values="targetself">self</string>
                                                 </condition>
                                                 <condition id="checkCharacterValue">
@@ -697,13 +696,13 @@
                                                     <string id="check on" values="targetself">self</string>
                                                 </condition>
                                             </or>
-                                        </orblock>
+                                        </andblock>
                                     </else>
                                     <or>
                                         <condition id="checkCharacterValue">
                                             <string id="property" values="charactervaluesCheckable">health percentage</string>
-                                            <float id="value">70.00</float>
-                                            <string id="compare method" values="valuecompare">less or equal</string>
+                                            <float id="value">71.00</float>
+                                            <string id="compare method" values="valuecompare">less</string>
                                             <string id="check on" values="targetself">self</string>
                                         </condition>
                                         <condition id="checkCharacterValue">
@@ -713,13 +712,13 @@
                                             <string id="check on" values="targetself">self</string>
                                         </condition>
                                     </or>
-                                </orblock>
+                                </andblock>
                             </else>
                             <or>
                                 <condition id="checkCharacterValue">
                                     <string id="property" values="charactervaluesCheckable">health percentage</string>
-                                    <float id="value">80.00</float>
-                                    <string id="compare method" values="valuecompare">less or equal</string>
+                                    <float id="value">81.00</float>
+                                    <string id="compare method" values="valuecompare">less</string>
                                     <string id="check on" values="targetself">self</string>
                                 </condition>
                                 <condition id="checkCharacterValue">
@@ -729,13 +728,13 @@
                                     <string id="check on" values="targetself">self</string>
                                 </condition>
                             </or>
-                        </orblock>
+                        </andblock>
                     </else>
                     <or>
                         <condition id="checkCharacterValue">
                             <string id="property" values="charactervaluesCheckable">health percentage</string>
-                            <float id="value">90.00</float>
-                            <string id="compare method" values="valuecompare">less or equal</string>
+                            <float id="value">91.00</float>
+                            <string id="compare method" values="valuecompare">less</string>
                             <string id="check on" values="targetself">self</string>
                         </condition>
                         <condition id="checkCharacterValue">
@@ -745,7 +744,7 @@
                             <string id="check on" values="targetself">self</string>
                         </condition>
                     </or>
-                </orblock>
+                </andblock>
                 <condition id="hasTarget">
                     <string id="condition" values="yesno">yes</string>
                     <normal>

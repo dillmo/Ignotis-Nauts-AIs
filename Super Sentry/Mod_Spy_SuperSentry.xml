@@ -18,7 +18,7 @@
                     <string id="Minimized">yes</string>
                 </action>
                 <action id="executeBehaviourTree">
-                    <string id="fileName">Mod_VeankoAI</string>
+                    <string id="fileName">Mod_VeankoAI_Ignotis</string>
                     <string id="Minimized">yes</string>
                 </action>
                 <action id="executeBehaviourTree">
@@ -362,11 +362,9 @@
                         </condition>
                     </normal>
                 </condition>
-                <condition id="checkCounter">
-                    <string id="id">botSkill</string>
-                    <string id="value">2</string>
-                    <string id="compare method" values="valuecompare">greater or equal</string>
-                    <string id="Comment">Standard difficulty scaling</string>
+                <condition id="getBoolEquals">
+                    <string id="id">CanBuyItems</string>
+                    <string id="value" values="yesno">yes</string>
                     <normal>
                         <action id="executeBehaviourTree">
                             <string id="fileName">Mod_RandSpyShop</string>
@@ -374,39 +372,6 @@
                             <string id="Minimized">yes</string>
                         </action>
                     </normal>
-                    <else>
-                        <condition id="checkCounter">
-                            <string id="id">botSkill</string>
-                            <string id="value">1</string>
-                            <string id="compare method" values="valuecompare">equal</string>
-                            <normal>
-                                <condition id="checkGameTime">
-                                    <float id="time in seconds">180.00</float>
-                                    <string id="compare method" values="valuecompare">greater</string>
-                                    <normal>
-                                        <action id="executeBehaviourTree">
-                                            <string id="fileName">Mod_RandSpyShop</string>
-                                            <string id="Comment">Shop logic</string>
-                                            <string id="Minimized">yes</string>
-                                        </action>
-                                    </normal>
-                                </condition>
-                            </normal>
-                            <else>
-                                <condition id="checkGameTime">
-                                    <float id="time in seconds">300.00</float>
-                                    <string id="compare method" values="valuecompare">greater</string>
-                                    <normal>
-                                        <action id="executeBehaviourTree">
-                                            <string id="fileName">Mod_RandSpyShop</string>
-                                            <string id="Comment">Shop logic</string>
-                                            <string id="Minimized">yes</string>
-                                        </action>
-                                    </normal>
-                                </condition>
-                            </else>
-                        </condition>
-                    </else>
                 </condition>
                 <condition id="isSkillOnButtonAvailable">
                     <string id="button" values="buttons">FACE_LEFT</string>
@@ -458,12 +423,22 @@
                                                                                 <action id="aimStickAtTarget">
                                                                                     <float id="duration seconds">0.10</float>
                                                                                     <string id="only aim when needed" values="yesno">no</string>
+                                                                                    <string id="use rotation speed limits" values="yesno">no</string>
+                                                                                    <float id="min rotation speed per second in degrees">0.00</float>
+                                                                                    <float id="max rotation speed per second in degrees">0.00</float>
+                                                                                    <float id="use min rotation speed when angle to target under">0.00</float>
+                                                                                    <float id="use max rotation speed when angle to target over">0.00</float>
                                                                                 </action>
                                                                             </normal>
                                                                             <else>
                                                                                 <action id="aimStickAtTarget">
                                                                                     <float id="duration seconds">0.01</float>
                                                                                     <string id="only aim when needed" values="yesno">no</string>
+                                                                                    <string id="use rotation speed limits" values="yesno">no</string>
+                                                                                    <float id="min rotation speed per second in degrees">0.00</float>
+                                                                                    <float id="max rotation speed per second in degrees">0.00</float>
+                                                                                    <float id="use min rotation speed when angle to target under">0.00</float>
+                                                                                    <float id="use max rotation speed when angle to target over">0.00</float>
                                                                                 </action>
                                                                             </else>
                                                                         </condition>
@@ -527,12 +502,22 @@
                                                                 <action id="aimStickAtTarget">
                                                                     <float id="duration seconds">0.10</float>
                                                                     <string id="only aim when needed" values="yesno">no</string>
+                                                                    <string id="use rotation speed limits" values="yesno">no</string>
+                                                                    <float id="min rotation speed per second in degrees">0.00</float>
+                                                                    <float id="max rotation speed per second in degrees">0.00</float>
+                                                                    <float id="use min rotation speed when angle to target under">0.00</float>
+                                                                    <float id="use max rotation speed when angle to target over">0.00</float>
                                                                 </action>
                                                             </normal>
                                                             <else>
                                                                 <action id="aimStickAtTarget">
                                                                     <float id="duration seconds">0.01</float>
                                                                     <string id="only aim when needed" values="yesno">no</string>
+                                                                    <string id="use rotation speed limits" values="yesno">no</string>
+                                                                    <float id="min rotation speed per second in degrees">0.00</float>
+                                                                    <float id="max rotation speed per second in degrees">0.00</float>
+                                                                    <float id="use min rotation speed when angle to target under">0.00</float>
+                                                                    <float id="use max rotation speed when angle to target over">0.00</float>
                                                                 </action>
                                                             </else>
                                                         </condition>
@@ -564,6 +549,11 @@
                                                                         <action id="aimStickAtTarget">
                                                                             <float id="duration seconds">0.01</float>
                                                                             <string id="only aim when needed" values="yesno">no</string>
+                                                                            <string id="use rotation speed limits" values="yesno">no</string>
+                                                                            <float id="min rotation speed per second in degrees">0.00</float>
+                                                                            <float id="max rotation speed per second in degrees">0.00</float>
+                                                                            <float id="use min rotation speed when angle to target under">0.00</float>
+                                                                            <float id="use max rotation speed when angle to target over">0.00</float>
                                                                         </action>
                                                                     </normal>
                                                                 </condition>
@@ -583,6 +573,11 @@
                                                                                 <action id="aimStickAtTarget">
                                                                                     <float id="duration seconds">0.01</float>
                                                                                     <string id="only aim when needed" values="yesno">no</string>
+                                                                                    <string id="use rotation speed limits" values="yesno">no</string>
+                                                                                    <float id="min rotation speed per second in degrees">0.00</float>
+                                                                                    <float id="max rotation speed per second in degrees">0.00</float>
+                                                                                    <float id="use min rotation speed when angle to target under">0.00</float>
+                                                                                    <float id="use max rotation speed when angle to target over">0.00</float>
                                                                                 </action>
                                                                             </normal>
                                                                         </condition>
@@ -602,6 +597,11 @@
                                                                                         <action id="aimStickAtTarget">
                                                                                             <float id="duration seconds">0.01</float>
                                                                                             <string id="only aim when needed" values="yesno">no</string>
+                                                                                            <string id="use rotation speed limits" values="yesno">no</string>
+                                                                                            <float id="min rotation speed per second in degrees">0.00</float>
+                                                                                            <float id="max rotation speed per second in degrees">0.00</float>
+                                                                                            <float id="use min rotation speed when angle to target under">0.00</float>
+                                                                                            <float id="use max rotation speed when angle to target over">0.00</float>
                                                                                         </action>
                                                                                     </normal>
                                                                                 </condition>
@@ -625,6 +625,11 @@
                                                                                                         <action id="aimStickAtTarget">
                                                                                                             <float id="duration seconds">0.01</float>
                                                                                                             <string id="only aim when needed" values="yesno">no</string>
+                                                                                                            <string id="use rotation speed limits" values="yesno">no</string>
+                                                                                                            <float id="min rotation speed per second in degrees">0.00</float>
+                                                                                                            <float id="max rotation speed per second in degrees">0.00</float>
+                                                                                                            <float id="use min rotation speed when angle to target under">0.00</float>
+                                                                                                            <float id="use max rotation speed when angle to target over">0.00</float>
                                                                                                         </action>
                                                                                                     </normal>
                                                                                                 </condition>
@@ -809,12 +814,22 @@
                                                                                         <action id="aimStickAtTarget">
                                                                                             <float id="duration seconds">0.10</float>
                                                                                             <string id="only aim when needed" values="yesno">no</string>
+                                                                                            <string id="use rotation speed limits" values="yesno">no</string>
+                                                                                            <float id="min rotation speed per second in degrees">0.00</float>
+                                                                                            <float id="max rotation speed per second in degrees">0.00</float>
+                                                                                            <float id="use min rotation speed when angle to target under">0.00</float>
+                                                                                            <float id="use max rotation speed when angle to target over">0.00</float>
                                                                                         </action>
                                                                                     </normal>
                                                                                     <else>
                                                                                         <action id="aimStickAtTarget">
                                                                                             <float id="duration seconds">0.01</float>
                                                                                             <string id="only aim when needed" values="yesno">no</string>
+                                                                                            <string id="use rotation speed limits" values="yesno">no</string>
+                                                                                            <float id="min rotation speed per second in degrees">0.00</float>
+                                                                                            <float id="max rotation speed per second in degrees">0.00</float>
+                                                                                            <float id="use min rotation speed when angle to target under">0.00</float>
+                                                                                            <float id="use max rotation speed when angle to target over">0.00</float>
                                                                                         </action>
                                                                                     </else>
                                                                                 </condition>
@@ -853,12 +868,22 @@
                                                                                 <action id="aimStickAtTarget">
                                                                                     <float id="duration seconds">0.10</float>
                                                                                     <string id="only aim when needed" values="yesno">no</string>
+                                                                                    <string id="use rotation speed limits" values="yesno">no</string>
+                                                                                    <float id="min rotation speed per second in degrees">0.00</float>
+                                                                                    <float id="max rotation speed per second in degrees">0.00</float>
+                                                                                    <float id="use min rotation speed when angle to target under">0.00</float>
+                                                                                    <float id="use max rotation speed when angle to target over">0.00</float>
                                                                                 </action>
                                                                             </normal>
                                                                             <else>
                                                                                 <action id="aimStickAtTarget">
                                                                                     <float id="duration seconds">0.01</float>
                                                                                     <string id="only aim when needed" values="yesno">no</string>
+                                                                                    <string id="use rotation speed limits" values="yesno">no</string>
+                                                                                    <float id="min rotation speed per second in degrees">0.00</float>
+                                                                                    <float id="max rotation speed per second in degrees">0.00</float>
+                                                                                    <float id="use min rotation speed when angle to target under">0.00</float>
+                                                                                    <float id="use max rotation speed when angle to target over">0.00</float>
                                                                                 </action>
                                                                             </else>
                                                                         </condition>
@@ -965,12 +990,22 @@
                                                                         <action id="aimStickAtTarget">
                                                                             <float id="duration seconds">0.10</float>
                                                                             <string id="only aim when needed" values="yesno">no</string>
+                                                                            <string id="use rotation speed limits" values="yesno">no</string>
+                                                                            <float id="min rotation speed per second in degrees">0.00</float>
+                                                                            <float id="max rotation speed per second in degrees">0.00</float>
+                                                                            <float id="use min rotation speed when angle to target under">0.00</float>
+                                                                            <float id="use max rotation speed when angle to target over">0.00</float>
                                                                         </action>
                                                                     </normal>
                                                                     <else>
                                                                         <action id="aimStickAtTarget">
                                                                             <float id="duration seconds">0.01</float>
                                                                             <string id="only aim when needed" values="yesno">no</string>
+                                                                            <string id="use rotation speed limits" values="yesno">no</string>
+                                                                            <float id="min rotation speed per second in degrees">0.00</float>
+                                                                            <float id="max rotation speed per second in degrees">0.00</float>
+                                                                            <float id="use min rotation speed when angle to target under">0.00</float>
+                                                                            <float id="use max rotation speed when angle to target over">0.00</float>
                                                                         </action>
                                                                     </else>
                                                                 </condition>
@@ -1003,6 +1038,11 @@
                                                         <action id="aimStickAtTarget">
                                                             <float id="duration seconds">0.01</float>
                                                             <string id="only aim when needed" values="yesno">no</string>
+                                                            <string id="use rotation speed limits" values="yesno">no</string>
+                                                            <float id="min rotation speed per second in degrees">0.00</float>
+                                                            <float id="max rotation speed per second in degrees">0.00</float>
+                                                            <float id="use min rotation speed when angle to target under">0.00</float>
+                                                            <float id="use max rotation speed when angle to target over">0.00</float>
                                                         </action>
                                                         <action id="pressButton">
                                                             <string id="button" values="buttons">FACE_LEFT</string>
@@ -1036,6 +1076,11 @@
                                                         <action id="aimStickAtTarget">
                                                             <float id="duration seconds">0.01</float>
                                                             <string id="only aim when needed" values="yesno">no</string>
+                                                            <string id="use rotation speed limits" values="yesno">no</string>
+                                                            <float id="min rotation speed per second in degrees">0.00</float>
+                                                            <float id="max rotation speed per second in degrees">0.00</float>
+                                                            <float id="use min rotation speed when angle to target under">0.00</float>
+                                                            <float id="use max rotation speed when angle to target over">0.00</float>
                                                         </action>
                                                     </normal>
                                                 </condition>
@@ -1055,6 +1100,11 @@
                                                                 <action id="aimStickAtTarget">
                                                                     <float id="duration seconds">0.01</float>
                                                                     <string id="only aim when needed" values="yesno">no</string>
+                                                                    <string id="use rotation speed limits" values="yesno">no</string>
+                                                                    <float id="min rotation speed per second in degrees">0.00</float>
+                                                                    <float id="max rotation speed per second in degrees">0.00</float>
+                                                                    <float id="use min rotation speed when angle to target under">0.00</float>
+                                                                    <float id="use max rotation speed when angle to target over">0.00</float>
                                                                 </action>
                                                             </normal>
                                                         </condition>
@@ -1074,6 +1124,11 @@
                                                                         <action id="aimStickAtTarget">
                                                                             <float id="duration seconds">0.01</float>
                                                                             <string id="only aim when needed" values="yesno">no</string>
+                                                                            <string id="use rotation speed limits" values="yesno">no</string>
+                                                                            <float id="min rotation speed per second in degrees">0.00</float>
+                                                                            <float id="max rotation speed per second in degrees">0.00</float>
+                                                                            <float id="use min rotation speed when angle to target under">0.00</float>
+                                                                            <float id="use max rotation speed when angle to target over">0.00</float>
                                                                         </action>
                                                                     </normal>
                                                                 </condition>
@@ -1097,6 +1152,11 @@
                                                                                         <action id="aimStickAtTarget">
                                                                                             <float id="duration seconds">0.01</float>
                                                                                             <string id="only aim when needed" values="yesno">no</string>
+                                                                                            <string id="use rotation speed limits" values="yesno">no</string>
+                                                                                            <float id="min rotation speed per second in degrees">0.00</float>
+                                                                                            <float id="max rotation speed per second in degrees">0.00</float>
+                                                                                            <float id="use min rotation speed when angle to target under">0.00</float>
+                                                                                            <float id="use max rotation speed when angle to target over">0.00</float>
                                                                                         </action>
                                                                                     </normal>
                                                                                 </condition>
@@ -1467,6 +1527,11 @@
                                                                                 <action id="aimStickAtTarget">
                                                                                     <float id="duration seconds">0.12</float>
                                                                                     <string id="only aim when needed" values="yesno">no</string>
+                                                                                    <string id="use rotation speed limits" values="yesno">no</string>
+                                                                                    <float id="min rotation speed per second in degrees">0.00</float>
+                                                                                    <float id="max rotation speed per second in degrees">0.00</float>
+                                                                                    <float id="use min rotation speed when angle to target under">0.00</float>
+                                                                                    <float id="use max rotation speed when angle to target over">0.00</float>
                                                                                 </action>
                                                                                 <sequence>
                                                                                     <string id="Is blocking">no</string>
@@ -1779,12 +1844,22 @@
                                                                         <action id="aimStickAtTarget">
                                                                             <float id="duration seconds">0.12</float>
                                                                             <string id="only aim when needed" values="yesno">no</string>
+                                                                            <string id="use rotation speed limits" values="yesno">no</string>
+                                                                            <float id="min rotation speed per second in degrees">0.00</float>
+                                                                            <float id="max rotation speed per second in degrees">0.00</float>
+                                                                            <float id="use min rotation speed when angle to target under">0.00</float>
+                                                                            <float id="use max rotation speed when angle to target over">0.00</float>
                                                                         </action>
                                                                     </normal>
                                                                     <else>
                                                                         <action id="aimStickAtTarget">
                                                                             <float id="duration seconds">0.01</float>
                                                                             <string id="only aim when needed" values="yesno">no</string>
+                                                                            <string id="use rotation speed limits" values="yesno">no</string>
+                                                                            <float id="min rotation speed per second in degrees">0.00</float>
+                                                                            <float id="max rotation speed per second in degrees">0.00</float>
+                                                                            <float id="use min rotation speed when angle to target under">0.00</float>
+                                                                            <float id="use max rotation speed when angle to target over">0.00</float>
                                                                         </action>
                                                                     </else>
                                                                 </condition>
@@ -2010,6 +2085,11 @@
                                                                         <action id="aimStickAtTarget">
                                                                             <float id="duration seconds">0.01</float>
                                                                             <string id="only aim when needed" values="yesno">no</string>
+                                                                            <string id="use rotation speed limits" values="yesno">no</string>
+                                                                            <float id="min rotation speed per second in degrees">0.00</float>
+                                                                            <float id="max rotation speed per second in degrees">0.00</float>
+                                                                            <float id="use min rotation speed when angle to target under">0.00</float>
+                                                                            <float id="use max rotation speed when angle to target over">0.00</float>
                                                                         </action>
                                                                         <sequence>
                                                                             <string id="Is blocking">no</string>
@@ -2305,6 +2385,11 @@
                                                                 <action id="aimStickAtTarget">
                                                                     <float id="duration seconds">0.20</float>
                                                                     <string id="only aim when needed" values="yesno">no</string>
+                                                                    <string id="use rotation speed limits" values="yesno">no</string>
+                                                                    <float id="min rotation speed per second in degrees">0.00</float>
+                                                                    <float id="max rotation speed per second in degrees">0.00</float>
+                                                                    <float id="use min rotation speed when angle to target under">0.00</float>
+                                                                    <float id="use max rotation speed when angle to target over">0.00</float>
                                                                 </action>
                                                             </normal>
                                                         </condition>
@@ -4029,7 +4114,7 @@
         </root>
     </behaviour>
     <behaviour>
-        <condition id="checkCharacterValue" x="5878" y="1917">
+        <condition id="checkCharacterValue" x="6053" y="1917">
             <string id="property" values="charactervaluesCheckable">health percentage</string>
             <float id="value">50.00</float>
             <string id="compare method" values="valuecompare">greater or equal</string>
