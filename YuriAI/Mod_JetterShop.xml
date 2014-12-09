@@ -44,63 +44,682 @@
                                         </condition>
                                     </normal>
                                     <else>
-                                        <action id="setBool">
-                                            <string id="id">buyPills</string>
-                                            <string id="value" values="flagtoggle">yes</string>
-                                        </action>
+                                        <condition id="isUpgradeEnabled">
+                                            <string id="condition" values="yesno">yes</string>
+                                            <string id="upgrade name">JetterTimebubbleSpeedup</string>
+                                            <normal>
+                                                <action id="setBool">
+                                                    <string id="id">buyPills</string>
+                                                    <string id="value" values="flagtoggle">yes</string>
+                                                </action>
+                                            </normal>
+                                        </condition>
                                     </else>
                                 </condition>
                             </normal>
                         </condition>
                     </normal>
                 </condition>
-                <action id="adjustCounter">
-                    <string id="id">friendlyTanks</string>
-                    <string id="value">0</string>
-                    <string id="adjust method" values="valueadjust">set</string>
-                </action>
-                <condition id="doesClassExist">
-                    <string id="teams" values="teams" multiselect="true">OWN_TEAM;;</string>
-                    <string id="class">Paladin</string>
+                <condition id="checkCharacterValue">
+                    <string id="property" values="charactervaluesCheckable">health</string>
+                    <float id="value">0.00</float>
+                    <string id="compare method" values="valuecompare">greater or equal</string>
+                    <string id="check on" values="targetself">self</string>
+                    <string id="Comment">Count friendly tanks</string>
                     <normal>
                         <action id="adjustCounter">
                             <string id="id">friendlyTanks</string>
-                            <string id="value">1</string>
-                            <string id="adjust method" values="valueadjust">add</string>
+                            <string id="value">0</string>
+                            <string id="adjust method" values="valueadjust">set</string>
                         </action>
+                        <condition id="doesClassExist">
+                            <string id="teams" values="teams" multiselect="true">OWN_TEAM;;</string>
+                            <string id="class">Paladin</string>
+                            <normal>
+                                <action id="adjustCounter">
+                                    <string id="id">friendlyTanks</string>
+                                    <string id="value">1</string>
+                                    <string id="adjust method" values="valueadjust">add</string>
+                                </action>
+                            </normal>
+                        </condition>
+                        <condition id="doesClassExist">
+                            <string id="teams" values="teams" multiselect="true">OWN_TEAM;;</string>
+                            <string id="class">Tank</string>
+                            <normal>
+                                <action id="adjustCounter">
+                                    <string id="id">friendlyTanks</string>
+                                    <string id="value">1</string>
+                                    <string id="adjust method" values="valueadjust">add</string>
+                                </action>
+                            </normal>
+                        </condition>
+                        <condition id="doesClassExist">
+                            <string id="teams" values="teams" multiselect="true">OWN_TEAM;;</string>
+                            <string id="class">Heavy</string>
+                            <normal>
+                                <action id="adjustCounter">
+                                    <string id="id">friendlyTanks</string>
+                                    <string id="value">1</string>
+                                    <string id="adjust method" values="valueadjust">add</string>
+                                </action>
+                            </normal>
+                        </condition>
+                        <condition id="doesClassExist">
+                            <string id="teams" values="teams" multiselect="true">OWN_TEAM;;</string>
+                            <string id="class">Spy</string>
+                            <normal>
+                                <action id="adjustCounter">
+                                    <string id="id">friendlyTanks</string>
+                                    <string id="value">1</string>
+                                    <string id="adjust method" values="valueadjust">add</string>
+                                </action>
+                            </normal>
+                        </condition>
                     </normal>
                 </condition>
-                <condition id="doesClassExist">
-                    <string id="teams" values="teams" multiselect="true">OWN_TEAM;;</string>
-                    <string id="class">Tank</string>
+                <condition id="checkCharacterValue">
+                    <string id="property" values="charactervaluesCheckable">health</string>
+                    <float id="value">0.00</float>
+                    <string id="compare method" values="valuecompare">greater or equal</string>
+                    <string id="check on" values="targetself">self</string>
+                    <string id="Comment">Check enemy burst power</string>
                     <normal>
                         <action id="adjustCounter">
-                            <string id="id">friendlyTanks</string>
-                            <string id="value">1</string>
-                            <string id="adjust method" values="valueadjust">add</string>
+                            <string id="id">enemyBurst</string>
+                            <string id="value">0</string>
+                            <string id="adjust method" values="valueadjust">set</string>
                         </action>
+                        <condition id="doesClassExist">
+                            <string id="teams" values="teams" multiselect="true">ENEMY_TEAM;;</string>
+                            <string id="class">Dasher</string>
+                            <normal>
+                                <andblock>
+                                    <normal>
+                                        <action id="adjustCounter">
+                                            <string id="id">enemyBurst</string>
+                                            <string id="value">1</string>
+                                            <string id="adjust method" values="valueadjust">add</string>
+                                        </action>
+                                    </normal>
+                                    <or>
+                                        <condition id="hasUpgrade">
+                                            <string id="class">Dasher</string>
+                                            <string id="team" values="teamswithnumbers">ENEMY_TEAM</string>
+                                            <string id="upgrade name">DasherDashDamage3</string>
+                                        </condition>
+                                        <condition id="hasUpgrade">
+                                            <string id="class">Dasher</string>
+                                            <string id="team" values="teamswithnumbers">ENEMY_TEAM</string>
+                                            <string id="upgrade name">DasherDashDamage6</string>
+                                        </condition>
+                                    </or>
+                                </andblock>
+                                <condition id="hasUpgrade">
+                                    <string id="class">Dasher</string>
+                                    <string id="team" values="teamswithnumbers">ENEMY_TEAM</string>
+                                    <string id="upgrade name">DasherWhirlwindExplode2</string>
+                                    <normal>
+                                        <action id="adjustCounter">
+                                            <string id="id">enemyBurst</string>
+                                            <string id="value">1</string>
+                                            <string id="adjust method" values="valueadjust">add</string>
+                                        </action>
+                                    </normal>
+                                </condition>
+                            </normal>
+                        </condition>
+                        <condition id="doesClassExist">
+                            <string id="teams" values="teams" multiselect="true">ENEMY_TEAM;;</string>
+                            <string id="class">Chameleon</string>
+                            <normal>
+                                <andblock>
+                                    <normal>
+                                        <action id="adjustCounter">
+                                            <string id="id">enemyBurst</string>
+                                            <string id="value">1</string>
+                                            <string id="adjust method" values="valueadjust">add</string>
+                                        </action>
+                                    </normal>
+                                    <or>
+                                        <condition id="hasUpgrade">
+                                            <string id="class">Chameleon</string>
+                                            <string id="team" values="teamswithnumbers">ENEMY_TEAM</string>
+                                            <string id="upgrade name">ChameleonTongueDamage3</string>
+                                        </condition>
+                                        <condition id="hasUpgrade">
+                                            <string id="class">Chameleon</string>
+                                            <string id="team" values="teamswithnumbers">ENEMY_TEAM</string>
+                                            <string id="upgrade name">ChameleonTongueDamage4</string>
+                                        </condition>
+                                    </or>
+                                </andblock>
+                                <condition id="hasUpgrade">
+                                    <string id="class">Chameleon</string>
+                                    <string id="team" values="teamswithnumbers">ENEMY_TEAM</string>
+                                    <string id="upgrade name">ChameleonStealthCloneExplode</string>
+                                    <normal>
+                                        <action id="adjustCounter">
+                                            <string id="id">enemyBurst</string>
+                                            <string id="value">1</string>
+                                            <string id="adjust method" values="valueadjust">add</string>
+                                        </action>
+                                    </normal>
+                                </condition>
+                                <condition id="hasUpgrade">
+                                    <string id="class">Chameleon</string>
+                                    <string id="team" values="teamswithnumbers">ENEMY_TEAM</string>
+                                    <string id="upgrade name">ChameleonStealthCloneExplode2</string>
+                                    <normal>
+                                        <action id="adjustCounter">
+                                            <string id="id">enemyBurst</string>
+                                            <string id="value">1</string>
+                                            <string id="adjust method" values="valueadjust">add</string>
+                                        </action>
+                                    </normal>
+                                </condition>
+                            </normal>
+                        </condition>
+                        <condition id="doesClassExist">
+                            <string id="teams" values="teams" multiselect="true">ENEMY_TEAM;;</string>
+                            <string id="class">Tank</string>
+                            <normal>
+                                <condition id="hasUpgrade">
+                                    <string id="class">Tank</string>
+                                    <string id="team" values="teamswithnumbers">ENEMY_TEAM</string>
+                                    <string id="upgrade name">TankExplodeDamage1</string>
+                                    <normal>
+                                        <action id="adjustCounter">
+                                            <string id="id">enemyBurst</string>
+                                            <string id="value">1</string>
+                                            <string id="adjust method" values="valueadjust">add</string>
+                                        </action>
+                                    </normal>
+                                </condition>
+                                <condition id="hasUpgrade">
+                                    <string id="class">Tank</string>
+                                    <string id="team" values="teamswithnumbers">ENEMY_TEAM</string>
+                                    <string id="upgrade name">TankExplodeDamage2</string>
+                                    <normal>
+                                        <action id="adjustCounter">
+                                            <string id="id">enemyBurst</string>
+                                            <string id="value">1</string>
+                                            <string id="adjust method" values="valueadjust">add</string>
+                                        </action>
+                                    </normal>
+                                </condition>
+                                <andblock>
+                                    <normal>
+                                        <action id="adjustCounter">
+                                            <string id="id">enemyBurst</string>
+                                            <string id="value">1</string>
+                                            <string id="adjust method" values="valueadjust">add</string>
+                                        </action>
+                                    </normal>
+                                    <or>
+                                        <condition id="hasUpgrade">
+                                            <string id="class">Tank</string>
+                                            <string id="team" values="teamswithnumbers">ENEMY_TEAM</string>
+                                            <string id="upgrade name">TankBiteDamage1</string>
+                                        </condition>
+                                        <condition id="hasUpgrade">
+                                            <string id="class">Tank</string>
+                                            <string id="team" values="teamswithnumbers">ENEMY_TEAM</string>
+                                            <string id="upgrade name">TankBiteDamage3</string>
+                                        </condition>
+                                    </or>
+                                </andblock>
+                            </normal>
+                        </condition>
+                        <andblock>
+                            <normal>
+                                <action id="adjustCounter">
+                                    <string id="id">enemyBurst</string>
+                                    <string id="value">1</string>
+                                    <string id="adjust method" values="valueadjust">add</string>
+                                </action>
+                            </normal>
+                            <or>
+                                <condition id="doesClassExist">
+                                    <string id="teams" values="teams" multiselect="true">ENEMY_TEAM;;</string>
+                                    <string id="class">Summoner</string>
+                                </condition>
+                                <condition id="hasUpgrade">
+                                    <string id="class">Summoner</string>
+                                    <string id="team" values="teamswithnumbers">ENEMY_TEAM</string>
+                                    <string id="upgrade name">SummonerDroneAmount1</string>
+                                </condition>
+                                <condition id="hasUpgrade">
+                                    <string id="class">Summoner</string>
+                                    <string id="team" values="teamswithnumbers">ENEMY_TEAM</string>
+                                    <string id="upgrade name">SummonerDroneExplode2</string>
+                                </condition>
+                            </or>
+                        </andblock>
+                        <andblock>
+                            <normal>
+                                <action id="adjustCounter">
+                                    <string id="id">enemyBurst</string>
+                                    <string id="value">1</string>
+                                    <string id="adjust method" values="valueadjust">add</string>
+                                </action>
+                            </normal>
+                            <or>
+                                <condition id="doesClassExist">
+                                    <string id="teams" values="teams" multiselect="true">ENEMY_TEAM;;</string>
+                                    <string id="class">Blazer</string>
+                                </condition>
+                                <condition id="hasUpgrade">
+                                    <string id="class">Blazer</string>
+                                    <string id="team" values="teamswithnumbers">ENEMY_TEAM</string>
+                                    <string id="upgrade name">BlazerBallDamage3</string>
+                                </condition>
+                            </or>
+                        </andblock>
+                        <condition id="doesClassExist">
+                            <string id="teams" values="teams" multiselect="true">ENEMY_TEAM;;</string>
+                            <string id="class">Brute</string>
+                            <normal>
+                                <condition id="hasUpgrade">
+                                    <string id="class">Brute</string>
+                                    <string id="team" values="teamswithnumbers">ENEMY_TEAM</string>
+                                    <string id="upgrade name">BruteThrowGnome</string>
+                                    <normal>
+                                        <action id="adjustCounter">
+                                            <string id="id">enemyBurst</string>
+                                            <string id="value">1</string>
+                                            <string id="adjust method" values="valueadjust">add</string>
+                                        </action>
+                                    </normal>
+                                </condition>
+                                <condition id="hasUpgrade">
+                                    <string id="class">Brute</string>
+                                    <string id="team" values="teamswithnumbers">ENEMY_TEAM</string>
+                                    <string id="upgrade name">BruteThrowGnome2</string>
+                                    <normal>
+                                        <action id="adjustCounter">
+                                            <string id="id">enemyBurst</string>
+                                            <string id="value">1</string>
+                                            <string id="adjust method" values="valueadjust">add</string>
+                                        </action>
+                                    </normal>
+                                </condition>
+                            </normal>
+                        </condition>
+                        <condition id="doesClassExist">
+                            <string id="teams" values="teams" multiselect="true">ENEMY_TEAM;;</string>
+                            <string id="class">Jetter</string>
+                            <normal>
+                                <condition id="hasUpgrade">
+                                    <string id="class">Jetter</string>
+                                    <string id="team" values="teamswithnumbers">ENEMY_TEAM</string>
+                                    <string id="upgrade name">JetterMineDamage3</string>
+                                    <normal>
+                                        <action id="adjustCounter">
+                                            <string id="id">enemyBurst</string>
+                                            <string id="value">1</string>
+                                            <string id="adjust method" values="valueadjust">add</string>
+                                        </action>
+                                    </normal>
+                                </condition>
+                                <condition id="hasUpgrade">
+                                    <string id="class">Jetter</string>
+                                    <string id="team" values="teamswithnumbers">ENEMY_TEAM</string>
+                                    <string id="upgrade name">JetterMineDamage4</string>
+                                    <normal>
+                                        <action id="adjustCounter">
+                                            <string id="id">enemyBurst</string>
+                                            <string id="value">1</string>
+                                            <string id="adjust method" values="valueadjust">add</string>
+                                        </action>
+                                    </normal>
+                                </condition>
+                            </normal>
+                        </condition>
+                        <andblock>
+                            <normal>
+                                <action id="adjustCounter">
+                                    <string id="id">enemyBurst</string>
+                                    <string id="value">1</string>
+                                    <string id="adjust method" values="valueadjust">add</string>
+                                </action>
+                            </normal>
+                            <or>
+                                <condition id="doesClassExist">
+                                    <string id="teams" values="teams" multiselect="true">ENEMY_TEAM;;</string>
+                                    <string id="class">Hunter</string>
+                                </condition>
+                                <condition id="hasUpgrade">
+                                    <string id="class">Hunter</string>
+                                    <string id="team" values="teamswithnumbers">ENEMY_TEAM</string>
+                                    <string id="upgrade name">HunterSnipeDamage3</string>
+                                </condition>
+                            </or>
+                        </andblock>
+                        <andblock>
+                            <normal>
+                                <action id="adjustCounter">
+                                    <string id="id">enemyBurst</string>
+                                    <string id="value">1</string>
+                                    <string id="adjust method" values="valueadjust">add</string>
+                                </action>
+                            </normal>
+                            <or>
+                                <condition id="doesClassExist">
+                                    <string id="teams" values="teams" multiselect="true">ENEMY_TEAM;;</string>
+                                    <string id="class">Heavy</string>
+                                </condition>
+                                <condition id="hasUpgrade">
+                                    <string id="class">Heavy</string>
+                                    <string id="team" values="teamswithnumbers">ENEMY_TEAM</string>
+                                    <string id="upgrade name">HeavyTrapNukeDamage2</string>
+                                </condition>
+                            </or>
+                        </andblock>
+                        <andblock>
+                            <normal>
+                                <action id="adjustCounter">
+                                    <string id="id">enemyBurst</string>
+                                    <string id="value">1</string>
+                                    <string id="adjust method" values="valueadjust">add</string>
+                                </action>
+                            </normal>
+                            <or>
+                                <condition id="doesClassExist">
+                                    <string id="teams" values="teams" multiselect="true">ENEMY_TEAM;;</string>
+                                    <string id="class">Bird</string>
+                                </condition>
+                                <condition id="hasUpgrade">
+                                    <string id="class">Bird</string>
+                                    <string id="team" values="teamswithnumbers">ENEMY_TEAM</string>
+                                    <string id="upgrade name">BirdDiveDamage2</string>
+                                </condition>
+                            </or>
+                        </andblock>
+                        <condition id="doesClassExist">
+                            <string id="teams" values="teams" multiselect="true">ENEMY_TEAM;;</string>
+                            <string id="class">Butterfly</string>
+                            <normal>
+                                <condition id="hasUpgrade">
+                                    <string id="class">Butterfly</string>
+                                    <string id="team" values="teamswithnumbers">ENEMY_TEAM</string>
+                                    <string id="upgrade name">ButterflyCocoonExplode1</string>
+                                    <normal>
+                                        <action id="adjustCounter">
+                                            <string id="id">enemyBurst</string>
+                                            <string id="value">1</string>
+                                            <string id="adjust method" values="valueadjust">add</string>
+                                        </action>
+                                    </normal>
+                                </condition>
+                                <condition id="hasUpgrade">
+                                    <string id="class">Butterfly</string>
+                                    <string id="team" values="teamswithnumbers">ENEMY_TEAM</string>
+                                    <string id="upgrade name">ButterflyCocoonExplode2</string>
+                                    <normal>
+                                        <action id="adjustCounter">
+                                            <string id="id">enemyBurst</string>
+                                            <string id="value">1</string>
+                                            <string id="adjust method" values="valueadjust">add</string>
+                                        </action>
+                                    </normal>
+                                </condition>
+                            </normal>
+                        </condition>
+                        <andblock>
+                            <normal>
+                                <action id="adjustCounter">
+                                    <string id="id">enemyBurst</string>
+                                    <string id="value">1</string>
+                                    <string id="adjust method" values="valueadjust">add</string>
+                                </action>
+                            </normal>
+                            <or>
+                                <condition id="doesClassExist">
+                                    <string id="teams" values="teams" multiselect="true">ENEMY_TEAM;;</string>
+                                    <string id="class">Vampire</string>
+                                </condition>
+                                <condition id="hasUpgrade">
+                                    <string id="class">Vampire</string>
+                                    <string id="team" values="teamswithnumbers">ENEMY_TEAM</string>
+                                    <string id="upgrade name">VampireBolasDamage3</string>
+                                </condition>
+                            </or>
+                        </andblock>
+                        <andblock>
+                            <normal>
+                                <action id="adjustCounter">
+                                    <string id="id">enemyBurst</string>
+                                    <string id="value">1</string>
+                                    <string id="adjust method" values="valueadjust">add</string>
+                                </action>
+                            </normal>
+                            <or>
+                                <condition id="doesClassExist">
+                                    <string id="teams" values="teams" multiselect="true">ENEMY_TEAM;;</string>
+                                    <string id="class">Captain</string>
+                                </condition>
+                                <condition id="hasUpgrade">
+                                    <string id="class">Captain</string>
+                                    <string id="team" values="teamswithnumbers">ENEMY_TEAM</string>
+                                    <string id="upgrade name">CaptainHookDamage2</string>
+                                </condition>
+                            </or>
+                        </andblock>
+                        <andblock>
+                            <normal>
+                                <action id="adjustCounter">
+                                    <string id="id">enemyBurst</string>
+                                    <string id="value">1</string>
+                                    <string id="adjust method" values="valueadjust">add</string>
+                                </action>
+                            </normal>
+                            <or>
+                                <condition id="doesClassExist">
+                                    <string id="teams" values="teams" multiselect="true">ENEMY_TEAM;;</string>
+                                    <string id="class">Commando</string>
+                                </condition>
+                                <condition id="hasUpgrade">
+                                    <string id="class">Commando</string>
+                                    <string id="team" values="teamswithnumbers">ENEMY_TEAM</string>
+                                    <string id="upgrade name">CommandoAirstrikeDamage3</string>
+                                </condition>
+                            </or>
+                        </andblock>
+                        <condition id="doesClassExist">
+                            <string id="teams" values="teams" multiselect="true">ENEMY_TEAM;;</string>
+                            <string id="class">Assassin</string>
+                            <normal>
+                                <condition id="hasUpgrade">
+                                    <string id="class">Assassin</string>
+                                    <string id="team" values="teamswithnumbers">ENEMY_TEAM</string>
+                                    <string id="upgrade name">AssassinJoltNexthit2</string>
+                                    <normal>
+                                        <action id="adjustCounter">
+                                            <string id="id">enemyBurst</string>
+                                            <string id="value">1</string>
+                                            <string id="adjust method" values="valueadjust">add</string>
+                                        </action>
+                                    </normal>
+                                </condition>
+                                <condition id="hasUpgrade">
+                                    <string id="class">Assassin</string>
+                                    <string id="team" values="teamswithnumbers">ENEMY_TEAM</string>
+                                    <string id="upgrade name">AssassinJoltDmgpercharge3</string>
+                                    <normal>
+                                        <action id="adjustCounter">
+                                            <string id="id">enemyBurst</string>
+                                            <string id="value">1</string>
+                                            <string id="adjust method" values="valueadjust">add</string>
+                                        </action>
+                                    </normal>
+                                </condition>
+                            </normal>
+                        </condition>
+                        <condition id="doesClassExist">
+                            <string id="teams" values="teams" multiselect="true">ENEMY_TEAM;;</string>
+                            <string id="class">Spy</string>
+                            <normal>
+                                <condition id="hasUpgrade">
+                                    <string id="class">Spy</string>
+                                    <string id="team" values="teamswithnumbers">ENEMY_TEAM</string>
+                                    <string id="upgrade name">SpyBoothClone1</string>
+                                    <normal>
+                                        <action id="adjustCounter">
+                                            <string id="id">enemyBurst</string>
+                                            <string id="value">1</string>
+                                            <string id="adjust method" values="valueadjust">add</string>
+                                        </action>
+                                    </normal>
+                                </condition>
+                                <condition id="hasUpgrade">
+                                    <string id="class">Spy</string>
+                                    <string id="team" values="teamswithnumbers">ENEMY_TEAM</string>
+                                    <string id="upgrade name">SpyBoothClone2</string>
+                                    <normal>
+                                        <action id="adjustCounter">
+                                            <string id="id">enemyBurst</string>
+                                            <string id="value">1</string>
+                                            <string id="adjust method" values="valueadjust">add</string>
+                                        </action>
+                                    </normal>
+                                </condition>
+                                <condition id="hasUpgrade">
+                                    <string id="class">Spy</string>
+                                    <string id="team" values="teamswithnumbers">ENEMY_TEAM</string>
+                                    <string id="upgrade name">SpyBoothClone3</string>
+                                    <normal>
+                                        <action id="adjustCounter">
+                                            <string id="id">enemyBurst</string>
+                                            <string id="value">1</string>
+                                            <string id="adjust method" values="valueadjust">add</string>
+                                        </action>
+                                    </normal>
+                                </condition>
+                                <condition id="hasUpgrade">
+                                    <string id="class">Spy</string>
+                                    <string id="team" values="teamswithnumbers">ENEMY_TEAM</string>
+                                    <string id="upgrade name">SpyBoothDamage1</string>
+                                    <normal>
+                                        <action id="adjustCounter">
+                                            <string id="id">enemyBurst</string>
+                                            <string id="value">1</string>
+                                            <string id="adjust method" values="valueadjust">add</string>
+                                        </action>
+                                    </normal>
+                                </condition>
+                                <condition id="hasUpgrade">
+                                    <string id="class">Spy</string>
+                                    <string id="team" values="teamswithnumbers">ENEMY_TEAM</string>
+                                    <string id="upgrade name">SpyBoothDamage2</string>
+                                    <normal>
+                                        <action id="adjustCounter">
+                                            <string id="id">enemyBurst</string>
+                                            <string id="value">1</string>
+                                            <string id="adjust method" values="valueadjust">add</string>
+                                        </action>
+                                    </normal>
+                                </condition>
+                                <condition id="hasUpgrade">
+                                    <string id="class">Spy</string>
+                                    <string id="team" values="teamswithnumbers">ENEMY_TEAM</string>
+                                    <string id="upgrade name">SpyBoothDamage3</string>
+                                    <normal>
+                                        <action id="adjustCounter">
+                                            <string id="id">enemyBurst</string>
+                                            <string id="value">1</string>
+                                            <string id="adjust method" values="valueadjust">add</string>
+                                        </action>
+                                    </normal>
+                                </condition>
+                                <condition id="hasUpgrade">
+                                    <string id="class">Spy</string>
+                                    <string id="team" values="teamswithnumbers">ENEMY_TEAM</string>
+                                    <string id="upgrade name">SpyAbsorbDamage3</string>
+                                    <normal>
+                                        <action id="adjustCounter">
+                                            <string id="id">enemyBurst</string>
+                                            <string id="value">1</string>
+                                            <string id="adjust method" values="valueadjust">add</string>
+                                        </action>
+                                    </normal>
+                                </condition>
+                                <condition id="hasUpgrade">
+                                    <string id="class">Spy</string>
+                                    <string id="team" values="teamswithnumbers">ENEMY_TEAM</string>
+                                    <string id="upgrade name">SpyAbsorbFlatDamage3</string>
+                                    <normal>
+                                        <action id="adjustCounter">
+                                            <string id="id">enemyBurst</string>
+                                            <string id="value">1</string>
+                                            <string id="adjust method" values="valueadjust">add</string>
+                                        </action>
+                                    </normal>
+                                </condition>
+                            </normal>
+                        </condition>
                     </normal>
                 </condition>
-                <condition id="doesClassExist">
-                    <string id="teams" values="teams" multiselect="true">OWN_TEAM;;</string>
-                    <string id="class">Heavy</string>
+                <condition id="isUpgradeEnabled">
+                    <string id="condition" values="yesno">yes</string>
+                    <string id="upgrade name">JetterTimebubbleSpeedup</string>
+                    <string id="Comment">Buy pills to deal with burst</string>
                     <normal>
-                        <action id="adjustCounter">
-                            <string id="id">friendlyTanks</string>
-                            <string id="value">1</string>
-                            <string id="adjust method" values="valueadjust">add</string>
-                        </action>
-                    </normal>
-                </condition>
-                <condition id="doesClassExist">
-                    <string id="teams" values="teams" multiselect="true">OWN_TEAM;;</string>
-                    <string id="class">Spy</string>
-                    <normal>
-                        <action id="adjustCounter">
-                            <string id="id">friendlyTanks</string>
-                            <string id="value">1</string>
-                            <string id="adjust method" values="valueadjust">add</string>
-                        </action>
+                        <condition id="isUpgradeEnabled">
+                            <string id="condition" values="yesno">no</string>
+                            <string id="upgrade name">addHealth1</string>
+                            <normal>
+                                <condition id="checkCounter">
+                                    <string id="id">enemyBurst</string>
+                                    <string id="value">1</string>
+                                    <string id="compare method" values="valuecompare">greater or equal</string>
+                                    <normal>
+                                        <action id="setBool">
+                                            <string id="id">buyPills</string>
+                                            <string id="value" values="flagtoggle">yes</string>
+                                        </action>
+                                    </normal>
+                                </condition>
+                            </normal>
+                            <else>
+                                <condition id="isUpgradeEnabled">
+                                    <string id="condition" values="yesno">no</string>
+                                    <string id="upgrade name">addHealth2</string>
+                                    <normal>
+                                        <condition id="checkCounter">
+                                            <string id="id">enemyBurst</string>
+                                            <string id="value">2</string>
+                                            <string id="compare method" values="valuecompare">greater or equal</string>
+                                            <normal>
+                                                <action id="setBool">
+                                                    <string id="id">buyPills</string>
+                                                    <string id="value" values="flagtoggle">yes</string>
+                                                </action>
+                                            </normal>
+                                        </condition>
+                                    </normal>
+                                    <else>
+                                        <condition id="isUpgradeEnabled">
+                                            <string id="condition" values="yesno">no</string>
+                                            <string id="upgrade name">addHealth3</string>
+                                            <normal>
+                                                <condition id="checkCounter">
+                                                    <string id="id">enemyBurst</string>
+                                                    <string id="value">3</string>
+                                                    <string id="compare method" values="valuecompare">greater or equal</string>
+                                                    <normal>
+                                                        <action id="setBool">
+                                                            <string id="id">buyPills</string>
+                                                            <string id="value" values="flagtoggle">yes</string>
+                                                        </action>
+                                                    </normal>
+                                                </condition>
+                                            </normal>
+                                        </condition>
+                                    </else>
+                                </condition>
+                            </else>
+                        </condition>
                     </normal>
                 </condition>
                 <andblock>
@@ -197,50 +816,6 @@
                                 </condition>
                             </normal>
                         </condition>
-                        <orblock>
-                            <normal>
-                                <condition id="isUpgradeEnabled">
-                                    <string id="condition" values="yesno">no</string>
-                                    <string id="upgrade name">JetterTimebubbleHeal1</string>
-                                    <normal>
-                                        <condition id="canPayUpgrade">
-                                            <string id="upgrade name">JetterTimebubbleHeal1</string>
-                                            <normal>
-                                                <action id="buyUpgrade">
-                                                    <string id="upgrade name">JetterTimebubbleHeal1</string>
-                                                </action>
-                                            </normal>
-                                        </condition>
-                                    </normal>
-                                    <else>
-                                        <condition id="isUpgradeEnabled">
-                                            <string id="condition" values="yesno">no</string>
-                                            <string id="upgrade name">JetterTimebubbleHeal2</string>
-                                            <normal>
-                                                <condition id="canPayUpgrade">
-                                                    <string id="upgrade name">JetterTimebubbleHeal2</string>
-                                                    <normal>
-                                                        <action id="buyUpgrade">
-                                                            <string id="upgrade name">JetterTimebubbleHeal2</string>
-                                                        </action>
-                                                    </normal>
-                                                </condition>
-                                            </normal>
-                                        </condition>
-                                    </else>
-                                </condition>
-                            </normal>
-                            <or>
-                                <condition id="isUpgradeEnabled">
-                                    <string id="condition" values="yesno">yes</string>
-                                    <string id="upgrade name">JetterMineDamage3</string>
-                                </condition>
-                                <condition id="isUpgradeEnabled">
-                                    <string id="condition" values="yesno">yes</string>
-                                    <string id="upgrade name">JetterTimebubbleSize3</string>
-                                </condition>
-                            </or>
-                        </orblock>
                         <condition id="isUpgradeEnabled">
                             <string id="condition" values="yesno">no</string>
                             <string id="upgrade name">Mine</string>
@@ -373,13 +948,13 @@
                                                                                                             <else>
                                                                                                                 <condition id="isUpgradeEnabled">
                                                                                                                     <string id="condition" values="yesno">no</string>
-                                                                                                                    <string id="upgrade name">JetterMineDamage2</string>
+                                                                                                                    <string id="upgrade name">JetterTimebubbleHeal1</string>
                                                                                                                     <normal>
                                                                                                                         <condition id="canPayUpgrade">
-                                                                                                                            <string id="upgrade name">JetterMineDamage2</string>
+                                                                                                                            <string id="upgrade name">JetterTimebubbleHeal1</string>
                                                                                                                             <normal>
                                                                                                                                 <action id="buyUpgrade">
-                                                                                                                                    <string id="upgrade name">JetterMineDamage2</string>
+                                                                                                                                    <string id="upgrade name">JetterTimebubbleHeal1</string>
                                                                                                                                 </action>
                                                                                                                             </normal>
                                                                                                                         </condition>
@@ -387,13 +962,13 @@
                                                                                                                     <else>
                                                                                                                         <condition id="isUpgradeEnabled">
                                                                                                                             <string id="condition" values="yesno">no</string>
-                                                                                                                            <string id="upgrade name">JetterMineDamage3</string>
+                                                                                                                            <string id="upgrade name">JetterTimebubbleHeal2</string>
                                                                                                                             <normal>
                                                                                                                                 <condition id="canPayUpgrade">
-                                                                                                                                    <string id="upgrade name">JetterMineDamage3</string>
+                                                                                                                                    <string id="upgrade name">JetterTimebubbleHeal2</string>
                                                                                                                                     <normal>
                                                                                                                                         <action id="buyUpgrade">
-                                                                                                                                            <string id="upgrade name">JetterMineDamage3</string>
+                                                                                                                                            <string id="upgrade name">JetterTimebubbleHeal2</string>
                                                                                                                                         </action>
                                                                                                                                     </normal>
                                                                                                                                 </condition>
@@ -401,13 +976,13 @@
                                                                                                                             <else>
                                                                                                                                 <condition id="isUpgradeEnabled">
                                                                                                                                     <string id="condition" values="yesno">no</string>
-                                                                                                                                    <string id="upgrade name">JetterMineDamage4</string>
+                                                                                                                                    <string id="upgrade name">JetterMineDamage2</string>
                                                                                                                                     <normal>
                                                                                                                                         <condition id="canPayUpgrade">
-                                                                                                                                            <string id="upgrade name">JetterMineDamage4</string>
+                                                                                                                                            <string id="upgrade name">JetterMineDamage2</string>
                                                                                                                                             <normal>
                                                                                                                                                 <action id="buyUpgrade">
-                                                                                                                                                    <string id="upgrade name">JetterMineDamage4</string>
+                                                                                                                                                    <string id="upgrade name">JetterMineDamage2</string>
                                                                                                                                                 </action>
                                                                                                                                             </normal>
                                                                                                                                         </condition>
@@ -415,13 +990,13 @@
                                                                                                                                     <else>
                                                                                                                                         <condition id="isUpgradeEnabled">
                                                                                                                                             <string id="condition" values="yesno">no</string>
-                                                                                                                                            <string id="upgrade name">JetterMineLongevity</string>
+                                                                                                                                            <string id="upgrade name">JetterMineDamage3</string>
                                                                                                                                             <normal>
                                                                                                                                                 <condition id="canPayUpgrade">
-                                                                                                                                                    <string id="upgrade name">JetterMineLongevity</string>
+                                                                                                                                                    <string id="upgrade name">JetterMineDamage3</string>
                                                                                                                                                     <normal>
                                                                                                                                                         <action id="buyUpgrade">
-                                                                                                                                                            <string id="upgrade name">JetterMineLongevity</string>
+                                                                                                                                                            <string id="upgrade name">JetterMineDamage3</string>
                                                                                                                                                         </action>
                                                                                                                                                     </normal>
                                                                                                                                                 </condition>
@@ -429,17 +1004,49 @@
                                                                                                                                             <else>
                                                                                                                                                 <condition id="isUpgradeEnabled">
                                                                                                                                                     <string id="condition" values="yesno">no</string>
-                                                                                                                                                    <string id="upgrade name">JetterMineLongevity2</string>
+                                                                                                                                                    <string id="upgrade name">JetterMineDamage4</string>
                                                                                                                                                     <normal>
                                                                                                                                                         <condition id="canPayUpgrade">
-                                                                                                                                                            <string id="upgrade name">JetterMineLongevity2</string>
+                                                                                                                                                            <string id="upgrade name">JetterMineDamage4</string>
                                                                                                                                                             <normal>
                                                                                                                                                                 <action id="buyUpgrade">
-                                                                                                                                                                    <string id="upgrade name">JetterMineLongevity2</string>
+                                                                                                                                                                    <string id="upgrade name">JetterMineDamage4</string>
                                                                                                                                                                 </action>
                                                                                                                                                             </normal>
                                                                                                                                                         </condition>
                                                                                                                                                     </normal>
+                                                                                                                                                    <else>
+                                                                                                                                                        <condition id="isUpgradeEnabled">
+                                                                                                                                                            <string id="condition" values="yesno">no</string>
+                                                                                                                                                            <string id="upgrade name">JetterMineLongevity</string>
+                                                                                                                                                            <normal>
+                                                                                                                                                                <condition id="canPayUpgrade">
+                                                                                                                                                                    <string id="upgrade name">JetterMineLongevity</string>
+                                                                                                                                                                    <normal>
+                                                                                                                                                                        <action id="buyUpgrade">
+                                                                                                                                                                            <string id="upgrade name">JetterMineLongevity</string>
+                                                                                                                                                                        </action>
+                                                                                                                                                                    </normal>
+                                                                                                                                                                </condition>
+                                                                                                                                                            </normal>
+                                                                                                                                                            <else>
+                                                                                                                                                                <condition id="isUpgradeEnabled">
+                                                                                                                                                                    <string id="condition" values="yesno">no</string>
+                                                                                                                                                                    <string id="upgrade name">JetterMineLongevity2</string>
+                                                                                                                                                                    <normal>
+                                                                                                                                                                        <condition id="canPayUpgrade">
+                                                                                                                                                                            <string id="upgrade name">JetterMineLongevity2</string>
+                                                                                                                                                                            <normal>
+                                                                                                                                                                                <action id="buyUpgrade">
+                                                                                                                                                                                    <string id="upgrade name">JetterMineLongevity2</string>
+                                                                                                                                                                                </action>
+                                                                                                                                                                            </normal>
+                                                                                                                                                                        </condition>
+                                                                                                                                                                    </normal>
+                                                                                                                                                                </condition>
+                                                                                                                                                            </else>
+                                                                                                                                                        </condition>
+                                                                                                                                                    </else>
                                                                                                                                                 </condition>
                                                                                                                                             </else>
                                                                                                                                         </condition>
@@ -527,10 +1134,42 @@
                                                                                                                                 </condition>
                                                                                                                             </normal>
                                                                                                                             <else>
-                                                                                                                                <action id="setBool">
-                                                                                                                                    <string id="id">buyBubble</string>
-                                                                                                                                    <string id="value" values="flagtoggle">yes</string>
-                                                                                                                                </action>
+                                                                                                                                <condition id="isUpgradeEnabled">
+                                                                                                                                    <string id="condition" values="yesno">no</string>
+                                                                                                                                    <string id="upgrade name">JetterTimebubbleHeal1</string>
+                                                                                                                                    <normal>
+                                                                                                                                        <condition id="canPayUpgrade">
+                                                                                                                                            <string id="upgrade name">JetterTimebubbleHeal1</string>
+                                                                                                                                            <normal>
+                                                                                                                                                <action id="buyUpgrade">
+                                                                                                                                                    <string id="upgrade name">JetterTimebubbleHeal1</string>
+                                                                                                                                                </action>
+                                                                                                                                            </normal>
+                                                                                                                                        </condition>
+                                                                                                                                    </normal>
+                                                                                                                                    <else>
+                                                                                                                                        <condition id="isUpgradeEnabled">
+                                                                                                                                            <string id="condition" values="yesno">no</string>
+                                                                                                                                            <string id="upgrade name">JetterTimebubbleHeal2</string>
+                                                                                                                                            <normal>
+                                                                                                                                                <condition id="canPayUpgrade">
+                                                                                                                                                    <string id="upgrade name">JetterTimebubbleHeal2</string>
+                                                                                                                                                    <normal>
+                                                                                                                                                        <action id="buyUpgrade">
+                                                                                                                                                            <string id="upgrade name">JetterTimebubbleHeal2</string>
+                                                                                                                                                        </action>
+                                                                                                                                                    </normal>
+                                                                                                                                                </condition>
+                                                                                                                                            </normal>
+                                                                                                                                            <else>
+                                                                                                                                                <action id="setBool">
+                                                                                                                                                    <string id="id">buyBubble</string>
+                                                                                                                                                    <string id="value" values="flagtoggle">yes</string>
+                                                                                                                                                </action>
+                                                                                                                                            </else>
+                                                                                                                                        </condition>
+                                                                                                                                    </else>
+                                                                                                                                </condition>
                                                                                                                             </else>
                                                                                                                         </condition>
                                                                                                                     </else>
