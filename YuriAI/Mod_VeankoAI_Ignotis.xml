@@ -10208,6 +10208,14 @@
                                                             <string id="id">Jetter</string>
                                                             <string id="value" values="yesno">yes</string>
                                                         </condition>
+                                                        <condition id="getBoolEquals">
+                                                            <string id="id">Spy</string>
+                                                            <string id="value" values="yesno">yes</string>
+                                                        </condition>
+                                                        <condition id="getBoolEquals">
+                                                            <string id="id">Heavy</string>
+                                                            <string id="value" values="yesno">yes</string>
+                                                        </condition>
                                                     </or>
                                                 </orblock>
                                             </normal>
@@ -14644,7 +14652,7 @@
         </root>
     </behaviour>
     <behaviour>
-        <andblock x="2710" y="85204">
+        <andblock x="2885" y="85204">
             <string id="Comment">Don&apos;t attack charging Spy</string>
             <or>
                 <condition id="checkClass">
