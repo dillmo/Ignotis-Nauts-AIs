@@ -3663,6 +3663,11 @@
                         </condition>
                     </normal>
                     <or>
+                        <condition id="isUpgradeEnabled">
+                            <string id="condition" values="yesno">no</string>
+                            <string id="upgrade name">SpyAbsorbStartOn</string>
+                            <string id="Comment">Not charging BHS?</string>
+                        </condition>
                         <condition id="checkCounter">
                             <string id="id">botSkill</string>
                             <string id="value">2</string>
@@ -4351,7 +4356,7 @@
         </root>
     </behaviour>
     <behaviour>
-        <condition id="checkCharacterValue" x="7803" y="1917">
+        <condition id="checkCharacterValue" x="8153" y="1917">
             <string id="property" values="charactervaluesCheckable">health percentage</string>
             <float id="value">50.00</float>
             <string id="compare method" values="valuecompare">greater or equal</string>
