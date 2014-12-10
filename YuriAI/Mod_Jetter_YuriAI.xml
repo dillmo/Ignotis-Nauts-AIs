@@ -1795,65 +1795,10 @@
                                         </condition>
                                     </else>
                                 </condition>
-                                <condition id="isInArea">
-                                    <string id="condition" values="yesno">yes</string>
-                                    <string id="collision groups" values="collison groups" multiselect="true">PROJECTILES;;</string>
-                                    <string id="check green obstacles only" values="yesno">no</string>
-                                    <string id="teams" values="teams" multiselect="true">ENEMY_TEAM;;</string>
-                                    <string id="areaName"></string>
-                                    <float id="xOffset">-0.15</float>
-                                    <float id="yOffset">0.00</float>
-                                    <float id="width">0.30</float>
-                                    <float id="height">0.30</float>
-                                    <string id="check line of sight" values="yesno">yes</string>
-                                    <string id="ignore invisibility" values="yesno">no</string>
-                                    <string id="Comment">Back?</string>
-                                    <normal>
-                                        <condition id="directionToEnemyBase">
-                                            <string id="direction" values="forwardbackward">FORWARD</string>
-                                            <normal>
-                                                <condition id="isOnGround">
-                                                    <string id="condition" values="yesno">yes</string>
-                                                    <string id="check on" values="targetself">self</string>
-                                                    <normal>
-                                                        <condition id="timer">
-                                                            <string id="timeunit" values="timeunits">seconds</string>
-                                                            <float id="time">1.30</float>
-                                                            <string id="execute first time" values="yesno">yes</string>
-                                                            <normal>
-                                                                <action id="setBool">
-                                                                    <string id="id">GoUp</string>
-                                                                    <string id="value" values="flagtoggle">yes</string>
-                                                                </action>
-                                                                <action id="setBool">
-                                                                    <string id="id">GoDown</string>
-                                                                    <string id="value" values="flagtoggle">no</string>
-                                                                </action>
-                                                            </normal>
-                                                        </condition>
-                                                    </normal>
-                                                    <else>
-                                                        <condition id="isUpgradeEnabled">
-                                                            <string id="condition" values="yesno">no</string>
-                                                            <string id="upgrade name">JetterJet</string>
-                                                            <normal>
-                                                                <action id="enableUpgrade">
-                                                                    <string id="condition" values="yesno">yes</string>
-                                                                    <string id="upgrade name">JetterJet</string>
-                                                                </action>
-                                                            </normal>
-                                                        </condition>
-                                                    </else>
-                                                </condition>
-                                            </normal>
-                                            <else>
-                                                <action id="setBool">
-                                                    <string id="id">GoForward</string>
-                                                    <string id="value" values="flagtoggle">yes</string>
-                                                </action>
-                                            </else>
-                                        </condition>
-                                    </normal>
+                                <condition id="checkCounter">
+                                    <string id="id">state</string>
+                                    <string id="value">8</string>
+                                    <string id="compare method" values="valuecompare">equal</string>
                                     <else>
                                         <condition id="isInArea">
                                             <string id="condition" values="yesno">yes</string>
@@ -1861,45 +1806,17 @@
                                             <string id="check green obstacles only" values="yesno">no</string>
                                             <string id="teams" values="teams" multiselect="true">ENEMY_TEAM;;</string>
                                             <string id="areaName"></string>
-                                            <float id="xOffset">0.15</float>
+                                            <float id="xOffset">-0.15</float>
                                             <float id="yOffset">0.00</float>
                                             <float id="width">0.30</float>
                                             <float id="height">0.30</float>
                                             <string id="check line of sight" values="yesno">yes</string>
                                             <string id="ignore invisibility" values="yesno">no</string>
-                                            <string id="Comment">Front?</string>
+                                            <string id="Comment">Back?</string>
                                             <normal>
                                                 <condition id="directionToEnemyBase">
                                                     <string id="direction" values="forwardbackward">FORWARD</string>
                                                     <normal>
-                                                        <condition id="isNextWaypointPosition">
-                                                            <string id="position" values="offsetposition">FRONT</string>
-                                                            <normal>
-                                                                <condition id="timer">
-                                                                    <string id="timeunit" values="timeunits">seconds</string>
-                                                                    <float id="time">1.30</float>
-                                                                    <string id="execute first time" values="yesno">yes</string>
-                                                                    <normal>
-                                                                        <action id="setBool">
-                                                                            <string id="id">GoUp</string>
-                                                                            <string id="value" values="flagtoggle">yes</string>
-                                                                        </action>
-                                                                        <action id="setBool">
-                                                                            <string id="id">GoDown</string>
-                                                                            <string id="value" values="flagtoggle">no</string>
-                                                                        </action>
-                                                                    </normal>
-                                                                </condition>
-                                                            </normal>
-                                                            <else>
-                                                                <action id="setBool">
-                                                                    <string id="id">GoBack</string>
-                                                                    <string id="value" values="flagtoggle">yes</string>
-                                                                </action>
-                                                            </else>
-                                                        </condition>
-                                                    </normal>
-                                                    <else>
                                                         <condition id="isOnGround">
                                                             <string id="condition" values="yesno">yes</string>
                                                             <string id="check on" values="targetself">self</string>
@@ -1933,9 +1850,99 @@
                                                                 </condition>
                                                             </else>
                                                         </condition>
+                                                    </normal>
+                                                    <else>
+                                                        <action id="setBool">
+                                                            <string id="id">GoForward</string>
+                                                            <string id="value" values="flagtoggle">yes</string>
+                                                        </action>
                                                     </else>
                                                 </condition>
                                             </normal>
+                                            <else>
+                                                <condition id="isInArea">
+                                                    <string id="condition" values="yesno">yes</string>
+                                                    <string id="collision groups" values="collison groups" multiselect="true">PROJECTILES;;</string>
+                                                    <string id="check green obstacles only" values="yesno">no</string>
+                                                    <string id="teams" values="teams" multiselect="true">ENEMY_TEAM;;</string>
+                                                    <string id="areaName"></string>
+                                                    <float id="xOffset">0.15</float>
+                                                    <float id="yOffset">0.00</float>
+                                                    <float id="width">0.30</float>
+                                                    <float id="height">0.30</float>
+                                                    <string id="check line of sight" values="yesno">yes</string>
+                                                    <string id="ignore invisibility" values="yesno">no</string>
+                                                    <string id="Comment">Front?</string>
+                                                    <normal>
+                                                        <condition id="directionToEnemyBase">
+                                                            <string id="direction" values="forwardbackward">FORWARD</string>
+                                                            <normal>
+                                                                <condition id="isNextWaypointPosition">
+                                                                    <string id="position" values="offsetposition">FRONT</string>
+                                                                    <normal>
+                                                                        <condition id="timer">
+                                                                            <string id="timeunit" values="timeunits">seconds</string>
+                                                                            <float id="time">1.30</float>
+                                                                            <string id="execute first time" values="yesno">yes</string>
+                                                                            <normal>
+                                                                                <action id="setBool">
+                                                                                    <string id="id">GoUp</string>
+                                                                                    <string id="value" values="flagtoggle">yes</string>
+                                                                                </action>
+                                                                                <action id="setBool">
+                                                                                    <string id="id">GoDown</string>
+                                                                                    <string id="value" values="flagtoggle">no</string>
+                                                                                </action>
+                                                                            </normal>
+                                                                        </condition>
+                                                                    </normal>
+                                                                    <else>
+                                                                        <action id="setBool">
+                                                                            <string id="id">GoBack</string>
+                                                                            <string id="value" values="flagtoggle">yes</string>
+                                                                        </action>
+                                                                    </else>
+                                                                </condition>
+                                                            </normal>
+                                                            <else>
+                                                                <condition id="isOnGround">
+                                                                    <string id="condition" values="yesno">yes</string>
+                                                                    <string id="check on" values="targetself">self</string>
+                                                                    <normal>
+                                                                        <condition id="timer">
+                                                                            <string id="timeunit" values="timeunits">seconds</string>
+                                                                            <float id="time">1.30</float>
+                                                                            <string id="execute first time" values="yesno">yes</string>
+                                                                            <normal>
+                                                                                <action id="setBool">
+                                                                                    <string id="id">GoUp</string>
+                                                                                    <string id="value" values="flagtoggle">yes</string>
+                                                                                </action>
+                                                                                <action id="setBool">
+                                                                                    <string id="id">GoDown</string>
+                                                                                    <string id="value" values="flagtoggle">no</string>
+                                                                                </action>
+                                                                            </normal>
+                                                                        </condition>
+                                                                    </normal>
+                                                                    <else>
+                                                                        <condition id="isUpgradeEnabled">
+                                                                            <string id="condition" values="yesno">no</string>
+                                                                            <string id="upgrade name">JetterJet</string>
+                                                                            <normal>
+                                                                                <action id="enableUpgrade">
+                                                                                    <string id="condition" values="yesno">yes</string>
+                                                                                    <string id="upgrade name">JetterJet</string>
+                                                                                </action>
+                                                                            </normal>
+                                                                        </condition>
+                                                                    </else>
+                                                                </condition>
+                                                            </else>
+                                                        </condition>
+                                                    </normal>
+                                                </condition>
+                                            </else>
                                         </condition>
                                     </else>
                                 </condition>
