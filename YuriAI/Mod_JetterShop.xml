@@ -73,6 +73,22 @@
                                                     <string id="teams" values="teams" multiselect="true">OWN_TEAM;;</string>
                                                     <string id="class">Shaman</string>
                                                 </condition>
+                                                <condition id="doesClassExist">
+                                                    <string id="teams" values="teams" multiselect="true">ENEMY_TEAM;;</string>
+                                                    <string id="class">Vampire</string>
+                                                </condition>
+                                                <condition id="doesClassExist">
+                                                    <string id="teams" values="teams" multiselect="true">ENEMY_TEAM;;</string>
+                                                    <string id="class">Chameleon</string>
+                                                </condition>
+                                                <condition id="doesClassExist">
+                                                    <string id="teams" values="teams" multiselect="true">ENEMY_TEAM;;</string>
+                                                    <string id="class">Assassin</string>
+                                                </condition>
+                                                <condition id="doesClassExist">
+                                                    <string id="teams" values="teams" multiselect="true">ENEMY_TEAM;;</string>
+                                                    <string id="class">Bird</string>
+                                                </condition>
                                             </or>
                                         </orblock>
                                     </else>
