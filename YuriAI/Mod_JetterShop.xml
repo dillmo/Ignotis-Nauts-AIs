@@ -733,25 +733,32 @@
                             <string id="id">enemyDOT</string>
                             <string id="value" values="flagtoggle">no</string>
                         </action>
-                        <andblock>
+                        <condition id="doesClassExist">
+                            <string id="teams" values="teams" multiselect="true">ENEMY_TEAM;;</string>
+                            <string id="class">Maw</string>
                             <normal>
-                                <action id="setBool">
-                                    <string id="id">enemyDOT</string>
-                                    <string id="value" values="flagtoggle">yes</string>
-                                </action>
+                                <orblock>
+                                    <normal>
+                                        <action id="setBool">
+                                            <string id="id">enemyDOT</string>
+                                            <string id="value" values="flagtoggle">yes</string>
+                                        </action>
+                                    </normal>
+                                    <or>
+                                        <condition id="hasUpgrade">
+                                            <string id="class">Maw</string>
+                                            <string id="team" values="teamswithnumbers">ENEMY_TEAM</string>
+                                            <string id="upgrade name">MawSpit</string>
+                                        </condition>
+                                        <condition id="hasUpgrade">
+                                            <string id="class">Maw</string>
+                                            <string id="team" values="teamswithnumbers">ENEMY_TEAM</string>
+                                            <string id="upgrade name">MawShotDot2</string>
+                                        </condition>
+                                    </or>
+                                </orblock>
                             </normal>
-                            <or>
-                                <condition id="doesClassExist">
-                                    <string id="teams" values="teams" multiselect="true">ENEMY_TEAM;;</string>
-                                    <string id="class">Maw</string>
-                                </condition>
-                                <condition id="hasUpgrade">
-                                    <string id="class">Maw</string>
-                                    <string id="team" values="teamswithnumbers">ENEMY_TEAM</string>
-                                    <string id="upgrade name">MawSpit</string>
-                                </condition>
-                            </or>
-                        </andblock>
+                        </condition>
                         <andblock>
                             <normal>
                                 <action id="setBool">
