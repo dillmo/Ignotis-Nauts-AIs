@@ -1659,6 +1659,46 @@
                         </action>
                     </normal>
                 </condition>
+                <condition id="getBoolEquals">
+                    <string id="id">DownJump</string>
+                    <string id="value" values="yesno">no</string>
+                    <string id="Comment">JUMPIN</string>
+                    <normal>
+                        <condition id="isInNamedArea">
+                            <string id="area name">NODOWNJUMP</string>
+                            <string id="team" values="ownenemy">OWN_TEAM</string>
+                            <string id="who" values="targetself">self</string>
+                            <else>
+                                <condition id="getBoolEquals">
+                                    <string id="id">jump</string>
+                                    <string id="value" values="yesno">yes</string>
+                                    <normal>
+                                        <action id="setBool">
+                                            <string id="id">jump</string>
+                                            <string id="value" values="flagtoggle">no</string>
+                                        </action>
+                                        <action id="setBool">
+                                            <string id="id">GoUp</string>
+                                            <string id="value" values="flagtoggle">yes</string>
+                                            <string id="Comment">Remap jump to GoUp</string>
+                                        </action>
+                                    </normal>
+                                </condition>
+                            </else>
+                        </condition>
+                    </normal>
+                    <else>
+                        <action id="setBool">
+                            <string id="id">DownJump</string>
+                            <string id="value" values="flagtoggle">no</string>
+                        </action>
+                        <action id="setBool">
+                            <string id="id">GoDown</string>
+                            <string id="value" values="flagtoggle">yes</string>
+                            <string id="Comment">Remap downjump to GoDown</string>
+                        </action>
+                    </else>
+                </condition>
                 <andblock>
                     <string id="Comment">Dodge projectiles</string>
                     <normal>
@@ -2063,10 +2103,6 @@
                                                             <string id="value" values="flagtoggle">no</string>
                                                         </action>
                                                         <action id="setBool">
-                                                            <string id="id">DownJump</string>
-                                                            <string id="value" values="flagtoggle">no</string>
-                                                        </action>
-                                                        <action id="setBool">
                                                             <string id="id">dontFly</string>
                                                             <string id="value" values="flagtoggle">no</string>
                                                         </action>
@@ -2251,46 +2287,130 @@
                         </condition>
                     </or>
                 </andblock>
-                <condition id="getBoolEquals">
-                    <string id="id">DownJump</string>
-                    <string id="value" values="yesno">no</string>
-                    <string id="Comment">JUMPIN</string>
+                <andblock>
+                    <string id="Comment">Avoid triangle dashes</string>
                     <normal>
-                        <condition id="isInNamedArea">
-                            <string id="area name">NODOWNJUMP</string>
-                            <string id="team" values="ownenemy">OWN_TEAM</string>
-                            <string id="who" values="targetself">self</string>
-                            <else>
-                                <condition id="getBoolEquals">
-                                    <string id="id">jump</string>
-                                    <string id="value" values="yesno">yes</string>
+                        <andblock>
+                            <normal>
+                                <andblock>
                                     <normal>
-                                        <action id="setBool">
-                                            <string id="id">jump</string>
-                                            <string id="value" values="flagtoggle">no</string>
-                                        </action>
                                         <action id="setBool">
                                             <string id="id">GoUp</string>
                                             <string id="value" values="flagtoggle">yes</string>
-                                            <string id="Comment">Remap jump to GoUp</string>
+                                        </action>
+                                    </normal>
+                                    <or>
+                                        <condition id="isTargetPosition">
+                                            <string id="condition" values="yesno">yes</string>
+                                            <string id="target position" values="offsetposition">ABOVE</string>
+                                        </condition>
+                                        <condition id="isOnGround">
+                                            <string id="condition" values="yesno">yes</string>
+                                            <string id="check on" values="targetself">self</string>
+                                        </condition>
+                                    </or>
+                                </andblock>
+                            </normal>
+                            <else>
+                                <condition id="isOnGround">
+                                    <string id="condition" values="yesno">yes</string>
+                                    <string id="check on" values="targetself">self</string>
+                                    <normal>
+                                        <action id="setBool">
+                                            <string id="id">GoUp</string>
+                                            <string id="value" values="flagtoggle">yes</string>
                                         </action>
                                     </normal>
                                 </condition>
                             </else>
-                        </condition>
+                            <or>
+                                <condition id="hasTarget">
+                                    <string id="condition" values="yesno">yes</string>
+                                </condition>
+                                <condition id="isFromTeam">
+                                    <string id="team" values="teamswithnumbers">ENEMY_TEAM</string>
+                                    <string id="check on" values="targetself">target</string>
+                                </condition>
+                                <condition id="checkClass">
+                                    <string id="check on" values="targetself">target</string>
+                                    <string id="class">Dasher</string>
+                                </condition>
+                            </or>
+                        </andblock>
                     </normal>
-                    <else>
+                    <or>
+                        <condition id="checkCounter">
+                            <string id="id">botSkill</string>
+                            <string id="value">3</string>
+                            <string id="compare method" values="valuecompare">greater or equal</string>
+                        </condition>
+                        <condition id="isCharacterInArea">
+                            <string id="groups" values="target receive groups" multiselect="true">PLAYERS;;</string>
+                            <string id="teams" values="teams" multiselect="true">ENEMY_TEAM;;</string>
+                            <string id="class">Dasher</string>
+                            <string id="condition" values="charactervaluesCheckable">health</string>
+                            <string id="comparison" values="valuecompare">greater or equal</string>
+                            <float id="value">0.00</float>
+                            <string id="character minimum"></string>
+                            <float id="xOffset">0.00</float>
+                            <float id="yOffset">0.00</float>
+                            <float id="width">0.80</float>
+                            <float id="height">0.80</float>
+                            <string id="check line of sight" values="yesno">yes</string>
+                            <string id="Comment">Nearby Dasher</string>
+                        </condition>
+                        <condition id="hasUpgrade">
+                            <string id="class">Dasher</string>
+                            <string id="team" values="teamswithnumbers">ENEMY_TEAM</string>
+                            <string id="upgrade name">InAir</string>
+                        </condition>
+                        <condition id="hasUpgrade">
+                            <string id="class">Dasher</string>
+                            <string id="team" values="teamswithnumbers">ENEMY_TEAM</string>
+                            <string id="upgrade name">dash</string>
+                        </condition>
+                    </or>
+                </andblock>
+                <andblock>
+                    <string id="Comment">Avoid Earthquake</string>
+                    <normal>
                         <action id="setBool">
-                            <string id="id">DownJump</string>
-                            <string id="value" values="flagtoggle">no</string>
-                        </action>
-                        <action id="setBool">
-                            <string id="id">GoDown</string>
+                            <string id="id">GoUp</string>
                             <string id="value" values="flagtoggle">yes</string>
-                            <string id="Comment">Remap downjump to GoDown</string>
                         </action>
-                    </else>
-                </condition>
+                    </normal>
+                    <or>
+                        <condition id="checkCounter">
+                            <string id="id">botSkill</string>
+                            <string id="value">3</string>
+                            <string id="compare method" values="valuecompare">greater or equal</string>
+                        </condition>
+                        <condition id="isCharacterInArea">
+                            <string id="groups" values="target receive groups" multiselect="true">PLAYERS;;</string>
+                            <string id="teams" values="teams" multiselect="true">ENEMY_TEAM;;</string>
+                            <string id="class">Brute</string>
+                            <string id="condition" values="charactervaluesCheckable">health</string>
+                            <string id="comparison" values="valuecompare">greater or equal</string>
+                            <float id="value">0.00</float>
+                            <string id="character minimum"></string>
+                            <float id="xOffset">0.00</float>
+                            <float id="yOffset">0.00</float>
+                            <float id="width">0.40</float>
+                            <float id="height">0.10</float>
+                            <string id="check line of sight" values="yesno">yes</string>
+                            <string id="Comment">Nearby Brute</string>
+                        </condition>
+                        <condition id="hasUpgrade">
+                            <string id="class">Brute</string>
+                            <string id="team" values="teamswithnumbers">ENEMY_TEAM</string>
+                            <string id="upgrade name">BruteStamp</string>
+                        </condition>
+                        <condition id="isOnGround">
+                            <string id="condition" values="yesno">yes</string>
+                            <string id="check on" values="targetself">self</string>
+                        </condition>
+                    </or>
+                </andblock>
                 <condition id="getBoolEquals">
                     <string id="id">GoUp</string>
                     <string id="value" values="yesno">yes</string>

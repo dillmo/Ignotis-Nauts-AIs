@@ -3753,8 +3753,11 @@
                                 </condition>
                             </else>
                             <or>
+                                <condition id="hasTarget">
+                                    <string id="condition" values="yesno">yes</string>
+                                </condition>
                                 <condition id="isFromTeam">
-                                    <string id="team" values="teamswithnumbers">OWN_TEAM</string>
+                                    <string id="team" values="teamswithnumbers">ENEMY_TEAM</string>
                                     <string id="check on" values="targetself">target</string>
                                 </condition>
                                 <condition id="checkClass">
@@ -4341,7 +4344,7 @@
         </root>
     </behaviour>
     <behaviour>
-        <condition id="checkCharacterValue" x="7278" y="1917">
+        <condition id="checkCharacterValue" x="7453" y="1917">
             <string id="property" values="charactervaluesCheckable">health percentage</string>
             <float id="value">50.00</float>
             <string id="compare method" values="valuecompare">greater or equal</string>
