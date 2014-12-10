@@ -42,31 +42,11 @@
                                                 </action>
                                             </normal>
                                             <else>
-                                                <sequence>
-                                                    <string id="Is blocking" values="yesno">no</string>
-                                                    <normal>
-                                                        <action id="wait">
-                                                            <float id="time">0.50</float>
-                                                        </action>
-                                                        <condition id="random">
-                                                            <string id="amount"></string>
-                                                            <normal>
-                                                                <action id="adjustCounter">
-                                                                    <string id="id">jetterBuild</string>
-                                                                    <string id="value">1</string>
-                                                                    <string id="adjust method" values="valueadjust">set</string>
-                                                                </action>
-                                                            </normal>
-                                                            <else>
-                                                                <action id="adjustCounter">
-                                                                    <string id="id">jetterBuild</string>
-                                                                    <string id="value">2</string>
-                                                                    <string id="adjust method" values="valueadjust">set</string>
-                                                                </action>
-                                                            </else>
-                                                        </condition>
-                                                    </normal>
-                                                </sequence>
+                                                <action id="adjustCounter">
+                                                    <string id="id">jetterBuild</string>
+                                                    <string id="value">1</string>
+                                                    <string id="adjust method" values="valueadjust">set</string>
+                                                </action>
                                             </else>
                                             <or>
                                                 <condition id="doesClassExist">
