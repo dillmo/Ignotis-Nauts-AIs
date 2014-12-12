@@ -3081,7 +3081,7 @@
                                             <or>
                                                 <condition id="isUpgradeEnabled">
                                                     <string id="condition" values="yesno">yes</string>
-                                                    <string id="upgrade name">SpyBoothDamage3</string>
+                                                    <string id="upgrade name">SpyBoothDamage1</string>
                                                 </condition>
                                                 <condition id="isUpgradeEnabled">
                                                     <string id="condition" values="yesno">yes</string>
@@ -3094,7 +3094,10 @@
                                         <condition id="isUpgradeEnabled">
                                             <string id="condition" values="yesno">yes</string>
                                             <string id="upgrade name">SpyBoothClone2</string>
-                                            <string id="Comment">I can tele-bomb</string>
+                                        </condition>
+                                        <condition id="isUpgradeEnabled">
+                                            <string id="condition" values="yesno">yes</string>
+                                            <string id="upgrade name">SpyBoothDamage1</string>
                                         </condition>
                                         <condition id="checkCounter">
                                             <string id="id">botSkill</string>
@@ -4382,7 +4385,7 @@
         </root>
     </behaviour>
     <behaviour>
-        <condition id="checkCharacterValue" x="8328" y="1917">
+        <condition id="checkCharacterValue" x="8503" y="1917">
             <string id="property" values="charactervaluesCheckable">health percentage</string>
             <float id="value">50.00</float>
             <string id="compare method" values="valuecompare">greater or equal</string>
