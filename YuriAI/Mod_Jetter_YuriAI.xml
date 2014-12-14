@@ -2128,6 +2128,11 @@
                                         </condition>
                                         <condition id="checkCounter">
                                             <string id="id">state</string>
+                                            <string id="value">3</string>
+                                            <string id="compare method" values="valuecompare">equal</string>
+                                        </condition>
+                                        <condition id="checkCounter">
+                                            <string id="id">state</string>
                                             <string id="value">6</string>
                                             <string id="compare method" values="valuecompare">equal</string>
                                         </condition>

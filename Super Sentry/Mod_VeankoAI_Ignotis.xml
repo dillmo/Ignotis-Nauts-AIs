@@ -549,7 +549,7 @@
                     <string id="Minimized">yes</string>
                 </action>
                 <action id="executeBehaviourTree">
-                    <string id="fileName">VeankoCheckToSwitchLane</string>
+                    <string id="fileName">Mod_VeankoCheckToSwitchLane_Ignotis</string>
                     <string id="Minimized">yes</string>
                 </action>
                 <condition id="checkCharacterValue">
@@ -7605,64 +7605,82 @@
                                                     <string id="Comment">creeps in front</string>
                                                     <normal>
                                                         <action id="executeBehaviourTree">
-                                                            <string id="fileName">VeankoCheckIfEnemyTooClose</string>
+                                                            <string id="fileName">VeankoCheckIfEnemyInCombatRange</string>
                                                             <string id="Minimized">yes</string>
                                                         </action>
                                                         <condition id="getBoolEquals">
-                                                            <string id="id">EnemyIsTooClose</string>
+                                                            <string id="id">EnemyIsInCombatRange</string>
                                                             <string id="value" values="yesno">yes</string>
+                                                            <string id="Comment">in range</string>
                                                             <normal>
-                                                                <sequence>
-                                                                    <string id="Is blocking">no</string>
-                                                                    <normal>
-                                                                        <action id="setBool">
-                                                                            <string id="id">GoBack</string>
-                                                                            <string id="value" values="flagtoggle">yes</string>
-                                                                        </action>
-                                                                        <action id="setBool">
-                                                                            <string id="id">GoForward</string>
-                                                                            <string id="value" values="flagtoggle">yes</string>
-                                                                        </action>
-                                                                        <action id="setBool">
-                                                                            <string id="id">GoForward</string>
-                                                                            <string id="value" values="flagtoggle">yes</string>
-                                                                        </action>
-                                                                        <action id="setBool">
-                                                                            <string id="id">GoForward</string>
-                                                                            <string id="value" values="flagtoggle">yes</string>
-                                                                        </action>
-                                                                    </normal>
-                                                                </sequence>
+                                                                <action id="pressButton">
+                                                                    <string id="button" values="buttons">FACE_LEFT</string>
+                                                                    <float id="duration in seconds">0.00</float>
+                                                                    <string id="Comment">bullet distance +max collision width/2 + a little offset</string>
+                                                                </action>
                                                             </normal>
                                                             <else>
-                                                                <action id="setBool">
-                                                                    <string id="id">GoForward</string>
-                                                                    <string id="value" values="flagtoggle">yes</string>
+                                                                <action id="executeBehaviourTree">
+                                                                    <string id="fileName">VeankoCheckIfEnemyTooClose</string>
+                                                                    <string id="Minimized">yes</string>
                                                                 </action>
-                                                                <orblock>
+                                                                <condition id="getBoolEquals">
+                                                                    <string id="id">EnemyIsTooClose</string>
+                                                                    <string id="value" values="yesno">yes</string>
                                                                     <normal>
+                                                                        <sequence>
+                                                                            <string id="Is blocking">no</string>
+                                                                            <normal>
+                                                                                <action id="setBool">
+                                                                                    <string id="id">GoBack</string>
+                                                                                    <string id="value" values="flagtoggle">yes</string>
+                                                                                </action>
+                                                                                <action id="setBool">
+                                                                                    <string id="id">GoForward</string>
+                                                                                    <string id="value" values="flagtoggle">yes</string>
+                                                                                </action>
+                                                                                <action id="setBool">
+                                                                                    <string id="id">GoForward</string>
+                                                                                    <string id="value" values="flagtoggle">yes</string>
+                                                                                </action>
+                                                                                <action id="setBool">
+                                                                                    <string id="id">GoForward</string>
+                                                                                    <string id="value" values="flagtoggle">yes</string>
+                                                                                </action>
+                                                                            </normal>
+                                                                        </sequence>
+                                                                    </normal>
+                                                                    <else>
                                                                         <action id="setBool">
-                                                                            <string id="id">jump</string>
+                                                                            <string id="id">GoForward</string>
                                                                             <string id="value" values="flagtoggle">yes</string>
                                                                         </action>
-                                                                    </normal>
-                                                                    <or>
-                                                                        <condition id="isInArea">
-                                                                            <string id="condition" values="yesno">yes</string>
-                                                                            <string id="collision groups" values="collison groups" multiselect="true">INVINCIBLE_OBSTACLES;;</string>
-                                                                            <string id="check green obstacles only" values="yesno">no</string>
-                                                                            <string id="teams" values="teams" multiselect="true">OWN_TEAM;;ENEMY_TEAM;;NEUTRAL_TEAM;;</string>
-                                                                            <string id="areaName"></string>
-                                                                            <float id="xOffset">0.04</float>
-                                                                            <float id="yOffset">0.00</float>
-                                                                            <float id="width">0.08</float>
-                                                                            <float id="height">0.05</float>
-                                                                            <string id="check line of sight" values="yesno">no</string>
-                                                                            <string id="ignore invisibility" values="yesno">no</string>
-                                                                            <string id="Comment">check walls</string>
-                                                                        </condition>
-                                                                    </or>
-                                                                </orblock>
+                                                                        <orblock>
+                                                                            <normal>
+                                                                                <action id="setBool">
+                                                                                    <string id="id">jump</string>
+                                                                                    <string id="value" values="flagtoggle">yes</string>
+                                                                                </action>
+                                                                            </normal>
+                                                                            <or>
+                                                                                <condition id="isInArea">
+                                                                                    <string id="condition" values="yesno">yes</string>
+                                                                                    <string id="collision groups" values="collison groups" multiselect="true">INVINCIBLE_OBSTACLES;;</string>
+                                                                                    <string id="check green obstacles only" values="yesno">no</string>
+                                                                                    <string id="teams" values="teams" multiselect="true">OWN_TEAM;;ENEMY_TEAM;;NEUTRAL_TEAM;;</string>
+                                                                                    <string id="areaName"></string>
+                                                                                    <float id="xOffset">0.04</float>
+                                                                                    <float id="yOffset">0.00</float>
+                                                                                    <float id="width">0.08</float>
+                                                                                    <float id="height">0.05</float>
+                                                                                    <string id="check line of sight" values="yesno">no</string>
+                                                                                    <string id="ignore invisibility" values="yesno">no</string>
+                                                                                    <string id="Comment">check walls</string>
+                                                                                </condition>
+                                                                            </or>
+                                                                        </orblock>
+                                                                    </else>
+                                                                </condition>
                                                             </else>
                                                         </condition>
                                                     </normal>
@@ -14652,7 +14670,7 @@
         </root>
     </behaviour>
     <behaviour>
-        <andblock x="2885" y="85204">
+        <andblock x="3410" y="85204">
             <string id="Comment">Don&apos;t attack charging Spy</string>
             <or>
                 <condition id="checkClass">
