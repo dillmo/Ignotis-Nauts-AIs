@@ -64,11 +64,7 @@
                         </condition>
                     </normal>
                 </condition>
-                <condition id="isInNamedArea">
-                    <string id="area name">HEALAREA</string>
-                    <string id="team" values="ownenemy">OWN_TEAM</string>
-                    <string id="who" values="targetself">self</string>
-                    <string id="Comment">Am I in shop?</string>
+                <andblock>
                     <normal>
                         <action id="setBool">
                             <string id="id">CantMove</string>
@@ -104,7 +100,19 @@
                             </or>
                         </andblock>
                     </normal>
-                </condition>
+                    <or>
+                        <condition id="isInNamedArea">
+                            <string id="area name">HEALAREA</string>
+                            <string id="team" values="ownenemy">OWN_TEAM</string>
+                            <string id="who" values="targetself">self</string>
+                            <string id="Comment">Am I in shop?</string>
+                        </condition>
+                        <condition id="getBoolEquals">
+                            <string id="id">CanBuyItems</string>
+                            <string id="value" values="yesno">yes</string>
+                        </condition>
+                    </or>
+                </andblock>
                 <condition id="checkCharacterValue">
                     <string id="property" values="charactervaluesCheckable">health</string>
                     <float id="value">0.00</float>
@@ -1182,6 +1190,10 @@
                         </condition>
                     </normal>
                     <or>
+                        <condition id="getBoolEquals">
+                            <string id="id">CanBuyItems</string>
+                            <string id="value" values="yesno">yes</string>
+                        </condition>
                         <condition id="isUpgradeEnabled">
                             <string id="condition" values="yesno">yes</string>
                             <string id="upgrade name">TutorialTalk</string>
@@ -1191,10 +1203,6 @@
                             <string id="team" values="ownenemy">OWN_TEAM</string>
                             <string id="who" values="targetself">self</string>
                             <string id="Comment">Am I in shop?</string>
-                        </condition>
-                        <condition id="getBoolEquals">
-                            <string id="id">CanBuyItems</string>
-                            <string id="value" values="yesno">yes</string>
                         </condition>
                     </or>
                 </andblock>
